@@ -1,0 +1,22 @@
+.app-note {
+    position: relative;
+    padding: 2rem;
+    margin-bottom: 10rem;
+    min-height: 35rem;
+    width: 70vw;
+    background: white;
+    border: 1px solid;
+    border-radius: 0.25rem;
+    z-index: 1;
+}
+
+.app-note > div { margin-bottom: 2.25rem; }
+
+.app-note > div > h1 {
+    margin-bottom: 1.75rem;
+    font-weight: bold;
+    width: fit-content;
+    border-bottom: 2px solid black;
+}
+
+.app-note > div > li { font-size: clamp(1rem, 2.5vw, 1.5rem); }

@@ -1,0 +1,62 @@
+.logo { 
+    position: relative;
+    margin: 7.5rem 2.5%;
+    width: fit-content;
+    z-index: 1; 
+}
+
+.logo > img { position: absolute; height: 10rem; object-fit: cover; z-index: -1; }
+
+.tomato {
+    inset: 0 auto auto 0;
+    animation: slideLeft 0.5s linear forwards;
+}
+
+.vine {  
+    inset: 0 0 auto auto;
+    animation: slideRight 0.5s linear forwards;
+}
+
+.bread { 
+    inset: 0 50% auto 50%;
+    margin: auto 0;
+    animation: slideDown 0.5s forwards;
+}
+
+.logo > div {
+    padding: clamp(1.25rem, 2.5vw, 1.375rem);
+    font-size: clamp(3rem, 5vw, 8rem); 
+    font-family: 'Lobster', cursive;
+    height: 100%;
+    letter-spacing: 0.25rem;
+    background: white;
+    border: 5px solid black;
+    border-radius: 0.25rem;
+}
+
+@keyframes slideLeft {
+    0% { transform: rotate(-45deg) translate3d(20%, -75%, 0) }
+    100% { transform: rotate(-45deg) translate3d(20%, -50%, 0); }
+}
+@keyframes slideRight {
+    0% { transform: translate3d(30%, -75%, 0) }
+    100% { transform: translate3d(30%, -55%, 0); }
+}
+@keyframes slideDown {
+    0% { transform: translate3d(-42%, -90%, 0); }
+    100% { transform: translate3d(-42%, -65%, 0); }
+}
+
+.app-wrapper {
+    align-items: flex-start !important;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+@media (max-width: 50rem) {
+    .logo { margin: 5rem auto; }
+    .logo > img { height: 8rem; }
+}
+
+
+

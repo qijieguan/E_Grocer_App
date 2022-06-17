@@ -1,1 +1,68 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$E-Grocer-primary: mat.define-palette(mat.$indigo-palette);
+$E-Grocer-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$E-Grocer-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$E-Grocer-theme: mat.define-light-theme((
+  color: (
+    primary: $E-Grocer-primary,
+    accent: $E-Grocer-accent,
+    warn: $E-Grocer-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($E-Grocer-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '~primeicons/primeicons.css';
+
+* { line-height: 1.5; box-sizing: border-box; }
+
+.flex { display: flex; align-items: center; }
+
+.grid { display: grid; justify-content: space-evenly; row-gap: 2rem; }
+
+img { display: block; }
+
+button { letter-spacing: 0.05rem; border: 0; box-shadow: 0 0 2px; }
+
+html { position: relative; }
+html, body { min-height: 100vh; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+a { text-decoration: none; }

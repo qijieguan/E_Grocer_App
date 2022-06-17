@@ -1,0 +1,68 @@
+.app-home {
+    align-items: flex-start !important;
+    position: relative;
+    margin: 0 0 20rem 12.5%;
+    width: 70vw;
+    border-radius: 0.25rem; 
+    overflow: hidden;
+    z-index: 1;
+}
+
+.app-home > h1 { 
+    font-size: clamp(1rem, 2.5vw, 1.75rem);
+    font-weight: bold;
+    font-style: oblique;
+    letter-spacing: 0.5rem;
+    color: white;
+}
+
+.app-home > h1 > span { color: gold; }
+
+.app-home > h2 {
+    margin-top: 4rem;
+    font-size: clamp(0.75rem, 2.5vw, 1.25rem);
+    color: white;
+    letter-spacing: 0.25rem;
+}
+
+.contact { position: relative; margin-top: 6rem; column-gap: 2rem; z-index: 1; }
+
+.icon-wrapper { 
+    background: black;
+    border-radius: 5rem;
+    border: 1.5px solid gold;
+    overflow: hidden;
+}
+
+.icon-wrapper > mat-icon { 
+    margin-right: auto;
+    padding: 0.75rem 2.5rem 2.5rem 0.75rem; 
+    font-size: clamp(1.5rem, 2.5vw, 1.75rem); 
+    color: gold; 
+    background: rgb(20, 20, 20);  
+    border-radius: 0 5rem 5rem 0;
+}
+
+.icon-wrapper > i { 
+    margin-right: auto;
+    padding: 0.875rem; 
+    font-size: clamp(1.3rem, 2.5vw, 1.5rem); 
+    color: gold; 
+    background: rgb(20, 20, 20);  
+    border-radius: 0 5rem 5rem 0;
+}
+
+.email-content, .linked-in-content { font-weight: 500; letter-spacing: 0.05rem; height: 3rem; width: 0; color:gold; transition: all 1s; z-index: 3; }
+.icon-wrapper:hover .email-content { margin-left: 0.5rem; width: 12rem; }
+.icon-wrapper:hover .linked-in-content { margin-left: 0.5rem; width: 17.5rem; }
+.linked-in-content > a { color: gold; text-decoration: underline; }
+
+
+@media (max-width: 50rem) {
+    .app-home { margin-bottom: 8rem; }
+    .contact { flex-direction: column; row-gap: 1.5rem; align-items: flex-start!important;}
+    .icon-wrapper > mat-icon { padding: 0.625rem 2.25rem 2.125rem 0.75rem; }
+}
+
+
+

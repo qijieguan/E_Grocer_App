@@ -1,0 +1,12 @@
+<span class="quantity flex" *ngIf="this.context ==='cell-quantity'">
+    <mat-icon 
+        [ngStyle]="{'color':'black', 'font-size':'1.5rem'}"
+        (click)="setQuantity('decrement')"
+    >arrow_left</mat-icon>
+    <div>{{params.data.quantity}}</div>
+    <mat-icon 
+        [ngStyle]="{'color':'black', 'font-size':'1.5rem'}"
+        (click)="setQuantity('increment')"
+    >arrow_right</mat-icon>
+</span>
+<span class="delete" *ngIf="this.context ==='cell-delete'" (click)="handleDelete()">delete</span>

@@ -1,0 +1,28 @@
+<div class="item-list grid">
+    <div *ngFor="let item of data_set">
+        <div class="item flex">
+            <img [src]=item.url alt=""/>
+            <div class="item-label flex">
+                <h1>{{item.name}}</h1>
+                <span>${{item.price.toFixed(2)}}</span>
+            </div>
+        
+            <div class="item-input">
+                <button class="add-button" *ngIf="!item.hide_quantity" (click)="hideButton(item._id)">Add To Cart</button>
+                <div class="quantity-input flex" *ngIf="item.hide_quantity">
+                    <button class="decrement" (click)="setQuantity('decrement', item._id)">
+                        <mat-icon [ngStyle]="{'color':'white'}">remove</mat-icon>
+                    </button>
+                    <span>{{item.quantity}}</span>
+                    <button class="increment" (click)="setQuantity('increment', item._id)">
+                        <mat-icon [ngStyle]="{'color':'white'}" >add</mat-icon>
+                    </button>
+                    <button class="confirm-button flex" (click)="addCart(item)">
+                        <div>Add Quantity</div>
+                        <mat-icon>shopping_cart</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
