@@ -10,11 +10,11 @@
             <div class="item-input">
                 <button class="add-button" *ngIf="!item.hide_quantity" (click)="hideButton(item._id)">Add To Cart</button>
                 <div class="quantity-input flex" *ngIf="item.hide_quantity">
-                    <button class="decrement" (click)="setQuantity('decrement', item._id)">
+                    <button class="decrement flex" (click)="setQuantity('decrement', item._id)">
                         <mat-icon [ngStyle]="{'color':'white'}">remove</mat-icon>
                     </button>
                     <span>{{item.quantity}}</span>
-                    <button class="increment" (click)="setQuantity('increment', item._id)">
+                    <button class="increment flex" (click)="setQuantity('increment', item._id)">
                         <mat-icon [ngStyle]="{'color':'white'}" >add</mat-icon>
                     </button>
                     <button class="confirm-button flex" (click)="addCart(item)">

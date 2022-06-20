@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  private subject = new Subject();
+  private subject = new BehaviorSubject<any>([]);
   private cart: any[] = [];
 
   constructor() { }
@@ -36,9 +36,8 @@ export class CartService {
 
     this.cart[findIndex].quantity = item.quantity;
     this.cart[findIndex].price = unit_price * this.cart[findIndex].quantity; 
+    this.subject.next(this.cart);
   }
 
-  getCartItem() {
-    return this.cart;
-  }
+  getCartItem() { return this.subject.asObservable(); }
 }
