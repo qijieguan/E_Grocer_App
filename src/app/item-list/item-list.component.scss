@@ -25,16 +25,16 @@
 .item > img { height: 60%; width: 100%; border-bottom: 1px solid rgb(218, 218, 218); border-radius: 0.25rem 0.25rem 0 0; }
 
 .item-label {  
-    margin-left: 17.5%;
     align-items: flex-start !important;
     justify-content: space-evenly;
     flex-direction: column;
     height: 30%;
-    width: 100%;
+    width: 85%;
 }
-.item-label > h1 { margin: 0; font-weight: bold; font-size: clamp(1.125rem, 2.5vw, 1.5rem); }
-.item-label > span { font-size: clamp(0.9rem, 2.5vw, 1rem); font-weight: 500; }
-
+.item-name { margin: 0; font-weight: bold; font-size: clamp(1.125rem, 2.5vw, 1.5rem); }
+.item-label > div { justify-content: space-between; font-size: clamp(0.9rem, 2.5vw, 1rem); font-weight: 500; width: 100%; }
+.item-more { color: gray; font-weight: normal; }
+.item-more:hover { text-decoration: underline; }
 
 .item-input { height: 10%; width: 100%; border-top: 1px solid rgb(219, 219, 219); }
 

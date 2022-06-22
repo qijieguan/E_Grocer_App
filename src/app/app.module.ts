@@ -15,6 +15,7 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { CartComponent } from './cart/cart.component';
 import { NoteComponent } from './note/note.component';
 import { CustomizedCellComponent } from './customized-cell/customized-cell.component';
+import { ItemExpandComponent } from './item-expand/item-expand.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { CustomizedCellComponent } from './customized-cell/customized-cell.compo
     CustomizedCellComponent,
     NavBarComponent,
     NoteComponent,
+    ItemExpandComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { CustomizedCellComponent } from './customized-cell/customized-cell.compo
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'item_list', component: ItemListComponent},
+      {path: 'item_list/:id', component: ItemExpandComponent},
       {path: 'shop_cart', component: CartComponent}, 
       {path: 'note', component: NoteComponent},
   ]),

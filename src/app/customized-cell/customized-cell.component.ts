@@ -21,7 +21,6 @@ export class CustomizedCellComponent implements OnInit, ICellRendererAngularComp
   agInit(params: ICellRendererParams): void {
     this.params = params;
     this.context = params.context;
-    console.log(params.data);
   }
 
   refresh(params: ICellRendererParams): boolean {

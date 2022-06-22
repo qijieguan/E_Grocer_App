@@ -18,7 +18,7 @@
     font-weight: 500;
     width: 100%;
     color: black;
-    border-bottom: 1px solid rgb(235, 235, 235);
+   
 }
 
 .nav-bar > a:hover { background: red; border-bottom: 0; }
@@ -30,9 +30,7 @@
 .highlight { 
     background: red; 
     color: white!important;
-    border-bottom: 0!important;
     box-shadow: 0 0 5px; 
-    pointer-events: none; 
 }
 
 @media (max-width: 50rem) {

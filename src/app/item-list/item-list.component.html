@@ -3,8 +3,11 @@
         <div class="item flex">
             <img [src]=item.url alt=""/>
             <div class="item-label flex">
-                <h1>{{item.name}}</h1>
-                <span>${{item.price.toFixed(2)}}</span>
+                <h1 class="item-name">{{item.name}}</h1>
+                <div class="flex">
+                    <span class="item-price">${{item.price.toFixed(2)}}</span> 
+                    <a class="item-more" (click)="handleNav(item)">More...</a>
+                </div>
             </div>
         
             <div class="item-input">

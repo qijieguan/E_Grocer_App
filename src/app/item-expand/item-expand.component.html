@@ -1,0 +1,13 @@
+<div class="item-expand grid">
+    <img class="item-expand-img" [src]=item.url alt=""/>
+    <div class="item-expand-detail grid">
+        <h1>{{item.name}}</h1>
+        <p>{{item.description}}</p>
+        <div class="item-expand-input flex">
+            <span>QTY: </span>
+            <input type="number" [value]=quantity_input (change)="setQuantity($event)" min="1"/>
+            <button (click)="addCart()">Add to cart</button>
+            <span>PRICE: $<span>{{item.price.toFixed(2)}}</span></span>
+        </div>
+    </div>
+</div>
