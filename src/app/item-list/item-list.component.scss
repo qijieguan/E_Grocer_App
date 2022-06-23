@@ -33,8 +33,8 @@
 }
 .item-name { margin: 0; font-weight: bold; font-size: clamp(1.125rem, 2.5vw, 1.5rem); }
 .item-label > div { justify-content: space-between; font-size: clamp(0.9rem, 2.5vw, 1rem); font-weight: 500; width: 100%; }
-.item-more { color: gray; font-weight: normal; }
-.item-more:hover { text-decoration: underline; }
+.item-link { color: gray; font-weight: normal; }
+.item-link:hover { text-decoration: underline; }
 
 .item-input { height: 10%; width: 100%; border-top: 1px solid rgb(219, 219, 219); }
 

@@ -10,25 +10,34 @@ import { CartService } from '../cart.service';
 export class ItemExpandComponent implements OnInit {
 
   item: any;
+  unit_price: number = 0;
   quantity_input: number = 1;
 
   constructor(private route: ActivatedRoute, private cart_service: CartService) {
-    this.route.queryParams.subscribe(params => { this.item = JSON.parse(params['data']);});
+    this.route.queryParams.subscribe(params => { 
+      this.item = JSON.parse(params['data']); 
+      this.unit_price = this.item.price;
+    });
   }
 
   ngOnInit(): void {
   }
 
   setQuantity = (event: any) => { 
-    let unit_price = this.item.price / this.item.quantity;
+    this.unit_price = this.item.price / this.item.quantity;
 
-    this.quantity_input = event.target.value; 
-    this.item.quantity = this.quantity_input;
-    this.item.price = this.item.quantity * unit_price;
+    this.quantity_input = event.target.value;
+    this.item.quantity = event.target.value;
+
+    this.item.price = this.item.quantity * this.unit_price;
   }
 
   addCart = () => {
     this.cart_service.addCartItem(this.item);
+    this.item.price /= this.quantity_input;
+    
+    this.unit_price = this.item.price;
+    this.item.quantity = 1;
     this.quantity_input = 1;
   }
 

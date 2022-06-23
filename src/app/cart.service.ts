@@ -15,12 +15,10 @@ export class CartService {
   addCartItem = (item: any) => {    
     let match_data = this.cart.find(x => x._id === item._id);
 
-    console.log(item._id)
-
     if (!match_data) { this.cart.push({...item}); }
     else {
-      match_data.quantity += Number(item.quantity);
-      match_data.price += Number(item.price);
+      match_data.quantity = Number(match_data.quantity) + Number(item.quantity);
+      match_data.price = Number(match_data.price) + Number(item.price);
     }
 
     this.subject.next(this.cart);
