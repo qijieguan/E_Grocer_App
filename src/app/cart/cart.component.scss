@@ -1,5 +1,4 @@
 .order-summary {
-    position: relative;
     padding: 0.75rem 0;
     margin-bottom: 2rem;
     grid-template-columns: 25% 50%;
@@ -10,7 +9,6 @@
     border: 1px solid rgb(224, 224, 224);
     border-radius: 0.075rem;
     box-shadow: 2px 2px 5px;
-    z-index: 1;
 }
 
 .order-summary > h1 {

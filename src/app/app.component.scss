@@ -1,6 +1,6 @@
 .logo { 
     position: relative;
-    margin: 7.5rem 2.5%;
+    margin: 7.5rem 2.5% 2rem 2.5%;
     width: fit-content;
     z-index: 1; 
 }
@@ -34,6 +34,15 @@
     border-radius: 0.25rem;
 }
 
+.app-wrapper {
+    position: relative;
+    min-height: 100vh;
+    padding: 6rem 0;
+    z-index: 1;
+}
+
+.background {  background: rgb(207, 207, 207); }
+
 @keyframes slideLeft {
     0% { transform: rotate(-45deg) translate3d(20%, -75%, 0) }
     100% { transform: rotate(-45deg) translate3d(20%, -50%, 0); }
@@ -54,8 +63,9 @@
 }
 
 @media (max-width: 50rem) {
-    .logo { margin: 6rem auto 5rem auto; }
+    .logo { margin: 6rem auto 0 auto; }
     .logo > img { height: 8rem; }
+    .app-wrapper { margin: 4rem 2.5% 0 2.5%; padding: 3rem 0; }
 }
 
 

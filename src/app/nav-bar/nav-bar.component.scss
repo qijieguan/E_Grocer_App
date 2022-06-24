@@ -1,13 +1,10 @@
 .nav-bar {
-    position: relative;
     flex-direction: column;
     min-height: 12.5rem;
     width: 17.5vw;
     background: white;
-    border: 1px solid rgb(65, 65, 65);
+    box-shadow: 1px 1px 2px;
     border-radius: 0.25rem;
-    box-shadow: 2px 2px 5px;
-    z-index: 1;
     overflow: hidden;
 }
 

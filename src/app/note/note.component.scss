@@ -1,14 +1,10 @@
 .app-note {
-    position: relative;
     padding: 2rem;
-    margin-bottom: 10rem;
     min-height: 35rem;
     width: 70vw;
     background: white;
-    border: 1px solid;
     box-shadow: 2px 2px 5px;
-    border-radius: 0.25rem;
-    z-index: 1;
+    border-radius: 0.125rem;
 }
 
 .app-note > div { margin-bottom: 2.25rem; }

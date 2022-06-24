@@ -12,11 +12,15 @@ export class NavBarComponent implements OnInit {
     this.location.onUrlChange(url => {
       let path = url.split('/');
       let querySelect = "";
+      let apply_bg = document.querySelector(".app-wrapper");
 
       if (path[1] === 'item_list') { querySelect = 'item-list-link'; }
       else if (path[1] === 'shop_cart') { querySelect = 'cart-link'; }
       else if (path[1] === 'note') { querySelect = 'note-link'; }
       else { querySelect = 'home-link'; }
+
+      if (querySelect === "home-link") { apply_bg?.classList.remove('background') }
+      else { apply_bg?.classList.add('background'); }
 
       document.querySelector('.highlight')?.classList.remove('highlight');
       document.querySelector('.' + querySelect)?.classList.add('highlight')
