@@ -1,6 +1,7 @@
 .app-home {
     align-items: flex-start !important;
-    margin: 0 0 15rem 12.5%;
+    padding-left: 12.5%;
+    margin-bottom: 15rem;
     width: 70vw;
     border-radius: 0.25rem; 
     overflow: hidden;
@@ -57,7 +58,7 @@
 
 
 @media (max-width: 50rem) {
-    .app-home { margin-bottom: 8rem; }
+    .app-home { margin-bottom: 8rem; padding-left: 7.5%; }
     .contact { flex-direction: column; row-gap: 1.5rem; align-items: flex-start!important;}
     .icon-wrapper > mat-icon { padding: 0.625rem 2.25rem 2.125rem 0.75rem; }
 }

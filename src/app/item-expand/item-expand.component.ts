@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ItemService } from '../item.service';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class ItemExpandComponent implements OnInit {
   unit_price: number = 0;
   quantity_input: number = 1;
 
-  constructor(private route: ActivatedRoute, private cart_service: CartService) {
+  constructor(private route: ActivatedRoute, private item_service: ItemService, private cart_service: CartService, private router: Router) {
+    
     this.route.queryParams.subscribe(params => { 
       this.item = JSON.parse(params['data']); 
       this.unit_price = this.item.price;
@@ -21,6 +23,7 @@ export class ItemExpandComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
   setQuantity = (event: any) => { 

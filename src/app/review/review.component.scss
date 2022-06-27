@@ -1,0 +1,71 @@
+.review-section {  
+    flex-direction: column;
+    align-items: flex-start !important;
+    padding: 2rem 2rem 7rem 2rem;
+    row-gap: 1rem;
+    width: 70vw;
+    background: white;
+    border-radius: 0.125rem;
+    box-shadow: 2px 2px 5px;
+}
+
+.review-section > h1 {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: bold;
+    font-style: italic;
+    color: darkorange;
+}
+
+.review-section > textarea {
+    padding: 1% 2%;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    min-height: 10rem;
+    width: 100%;
+    color: rgb(54, 54, 54);
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 0.25rem;
+}
+
+.review-section > textarea:focus { outline-color: grey; }
+
+.review-section > button {
+    align-self: flex-end;
+    padding: 0.25rem 0.5rem;
+    font-size: clamp(0.875rem, 2.5vw, 0.9rem);
+    color: white;
+    background: darkorange;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.line { margin: 5rem 0; width: 100%; border-color: rgb(241, 241, 241); opacity: 0.5; }
+
+.review-list { width: 100%; }
+
+.review-text {
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: space-between;
+    margin: 0 0 1rem auto;
+    padding: 0.5rem 1.25rem;
+    min-height: 6rem;  
+    width: 80%;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    color: darkgoldenrod;
+    border: 2px solid darkorange;
+    border-radius: 1rem 1rem 0.125rem 1rem;
+    box-shadow: 2px 2px 3px grey;
+}
+
+.review-name { align-self: flex-end; }
+
+.review-default {
+    margin: auto;
+    font-weight: bold !important;
+    letter-spacing: 0.05rem;
+    color: rgb(184, 184, 184) !important;
+    width: 80%;
+}

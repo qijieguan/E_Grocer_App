@@ -14,6 +14,7 @@ export class ItemService {
       description: 'Fresh and bright red. Please don\'t throw me.',
       quantity: 1,
       price: 1.99,
+      reviews: [],
       hide_quantity: false,
     },
     {
@@ -23,6 +24,7 @@ export class ItemService {
       description: 'Yellow Tropical fruit. Packed with nutrients and protective antioxidants.',
       quantity: 1,
       price: 2.99,
+      reviews: [],
       hide_quantity: false,
     },
     {
@@ -32,6 +34,7 @@ export class ItemService {
       description: 'Leafy green flowering plant from Asia. Eat your daily vegetables.',
       quantity: 1,
       price: 1.50,
+      reviews: [],
       hide_quantity: false,
     },
     {
@@ -41,6 +44,7 @@ export class ItemService {
       description: 'Hungry? Just bake or fry up some potatoes.',
       quantity: 1,
       price: 1.39,
+      reviews: [],
       hide_quantity: false,
     },
     {
@@ -50,6 +54,7 @@ export class ItemService {
       description: 'A spice extracted from bark of cinnamon trees. Used in various cooking. Do not consume by itself.',
       quantity: 1,
       price: 2.59,
+      reviews: [],
       hide_quantity: false,
     },
     {
@@ -59,6 +64,7 @@ export class ItemService {
       description: 'Fresh raw meat. Keep up with your protein diet, bro.',
       quantity: 1,
       price: 8.39,
+      reviews: [],
       hide_quantity: false,
     }
   ]
@@ -68,6 +74,14 @@ export class ItemService {
 
   getItemList() {
     return this.DEFAULT_LIST;
+  }
+
+  getItem(id: string) {
+    return this.DEFAULT_LIST.find(x => x._id === id);
+  }
+
+  addReview(id: string, review: object) {
+    this.DEFAULT_LIST.find(x => x._id === id)?.reviews.push({...review});
   }
 
 }

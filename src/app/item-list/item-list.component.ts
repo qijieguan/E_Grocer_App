@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ItemListComponent implements OnInit {
 
-  data_set;
+  data_set: any[] = [];
   unit_price: number = 1;
 
   constructor(private item_service: ItemService, private cart_service: CartService, private router: Router) {
@@ -21,13 +21,13 @@ export class ItemListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  hideButton = (id: any) => { 
+  hideButton = (id: string) => { 
     let data = this.data_set.find(x => x._id === id);
     if (!data) { return; }
     data.hide_quantity = true;
   }
 
-  setQuantity = (action: String, id: any) => {
+  setQuantity = (action: string, id: string) => {
     let data = this.data_set.find(x => x._id === id);
     if (!data) { return; }
     this.unit_price = data.price / data.quantity;

@@ -16,6 +16,7 @@ import { CartComponent } from './cart/cart.component';
 import { NoteComponent } from './note/note.component';
 import { CustomizedCellComponent } from './customized-cell/customized-cell.component';
 import { ItemExpandComponent } from './item-expand/item-expand.component';
+import { ReviewComponent } from './review/review.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ItemExpandComponent } from './item-expand/item-expand.component';
     NavBarComponent,
     NoteComponent,
     ItemExpandComponent,
+    ReviewComponent,
   ],
   imports: [
     BrowserModule,
