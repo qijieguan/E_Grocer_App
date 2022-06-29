@@ -11,7 +11,6 @@ export class CartService {
 
   constructor() { }
 
-
   addCartItem = (item: any) => {    
     let match_data = this.cart.find(x => x._id === item._id);
 

@@ -6,11 +6,7 @@ header {
     z-index: 1;
 }
 
-.logo { 
-    position: relative;
-    width: fit-content;
-}
-
+.logo { position: relative; width: fit-content; }
 .logo > img { position: absolute; height: 10rem; object-fit: cover; z-index: -1; }
 
 .tomato {
@@ -40,14 +36,10 @@ header {
     border-radius: 0.25rem;
 }
 
-.app-wrapper {
-    position: relative;
-    min-height: 100vh;
-    padding: 6rem 0;
-    z-index: 1;
-}
+.app-wrapper { position: relative; min-height: 100vh; padding: 6rem 0; z-index: 1; }
 
-.background {  background: rgb(207, 207, 207) !important; }
+header.background {  background: rgb(243, 243, 243) !important; box-shadow: 0 2px 2px rgb(36, 36, 36); z-index: 2 !important; }
+.app-wrapper.background { background: white !important; }
 
 @keyframes slideLeft {
     0% { transform: rotate(-45deg) translate3d(20%, -75%, 0) }

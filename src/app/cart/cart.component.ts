@@ -14,9 +14,6 @@ export class CartComponent implements OnInit, OnDestroy {
   tax: number = 0.1;
 
   constructor(private cart_service: CartService) {
-  }
-
-  ngOnInit(): void {
     this.cart_service.getCartItem().subscribe((cart_data) => { 
       this.subtotal = 0;
       this.tax = 0.1;
@@ -26,6 +23,9 @@ export class CartComponent implements OnInit, OnDestroy {
 
       this.tax *= this.subtotal; 
     });
+  }
+
+  ngOnInit(): void {
   }
 
   gridApi: any;
@@ -59,8 +59,6 @@ export class CartComponent implements OnInit, OnDestroy {
     }
   ]
 
-  ngOnDestroy(): void {
-    this.gridApi.destroy();
-  }
+  ngOnDestroy(): void { this.gridApi.destroy(); }
   
 }

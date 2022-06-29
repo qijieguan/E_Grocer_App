@@ -35,9 +35,7 @@ export class CustomizedCellComponent implements OnInit, ICellRendererAngularComp
   setQuantity = (action: String) => {
     let unit_price = this.params.data.price / this.params.data.quantity;
 
-    if (action === 'increment') { 
-      ++this.params.data.quantity; 
-    }
+    if (action === 'increment') { ++this.params.data.quantity; }
     else {
       if (this.params.data.quantity - 1 >= 1 ) { --this.params.data.quantity; }
       else { return; }

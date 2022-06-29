@@ -9,26 +9,24 @@ import { Router } from '@angular/router';
 })
 export class ReviewComponent implements OnInit {
 
-  params: any[] = [];
+  item: any;
+  param: string = "";
   reviews: any[] = [];
   reviewInp: string = "";
 
-  constructor(private item_service: ItemService, private route: Router) {
-    this.params = this.route.url.split('?')[0].split('/');
-    
-    let result = this.item_service.getItem(this.params[2]);
-    if (result) { this.reviews = result.reviews }
-    
+  constructor(private route: Router, private item_service: ItemService) {
+    this.param = this.route.url.split('/')[2];
+    this.item = this.item_service.getItem(this.param);
+    this.reviews = this.item.reviews;
   }
 
   ngOnInit(): void {
-
   }
 
   handleChange = (event: any) => { this.reviewInp = event.target.value }
 
   handleSubmit = () => {
-    this.item_service.addReview(this.params[2], {content: this.reviewInp, name: 'anonymous'})
+    this.item_service.addReview(this.param, {content: this.reviewInp, name: 'anonymous'})
     this.reviewInp = "";
   }
 

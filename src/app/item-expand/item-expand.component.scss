@@ -8,13 +8,9 @@
     box-shadow: 2px 2px 5px;
 }
 
-.item-expand-img { 
-    width: 100%;
-}
+.item-expand-img { width: 100%; }
 
-.item-expand-detail {
-    grid-template-columns: 45% 45%;
-}
+.item-expand-detail { grid-template-columns: 45% 45%; }
 
 .item-expand-detail > h1 {
     grid-column: 1 / 3;

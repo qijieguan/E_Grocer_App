@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ItemService } from '../item.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CartService } from '../cart.service';
+import { ItemService } from '../item.service';
 
 @Component({
   selector: 'app-item-expand',
@@ -10,20 +10,25 @@ import { CartService } from '../cart.service';
 })
 export class ItemExpandComponent implements OnInit {
 
+  param: string = "";
   item: any;
   unit_price: number = 0;
   quantity_input: number = 1;
 
-  constructor(private route: ActivatedRoute, private item_service: ItemService, private cart_service: CartService, private router: Router) {
-    
+  constructor(private route: Router, private item_service: ItemService, private cart_service: CartService) {
+    this.param = this.route.url.split('/')[2];
+    this.item = this.item_service.getItem(this.param);
+
+    /*
+    ---private route: ActivatedRoute---
     this.route.queryParams.subscribe(params => { 
       this.item = JSON.parse(params['data']); 
       this.unit_price = this.item.price;
     });
+    */
   }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void { 
   }
 
   setQuantity = (event: any) => { 
