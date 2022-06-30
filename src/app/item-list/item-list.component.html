@@ -1,13 +1,11 @@
 <div class="item-list grid">
     <div *ngFor="let item of data_set">
-        <div class="item flex">
+        <div class="item grid item._id">
             <img [src]=item.url alt=""/>
-            <div class="item-label flex">
+            <div class="item-label grid">
                 <h1 class="item-name">{{item.name}}</h1>
-                <div class="flex">
-                    <span class="item-price">${{item.price.toFixed(2)}}</span> 
-                    <a class="item-link" (click)="handleNav(item)">More...</a>
-                </div>
+                <span class="item-price">${{item.price.toFixed(2)}}</span> 
+                <a class="item-link" (click)="handleNav(item)">More...</a>
             </div>
         
             <div class="item-input">

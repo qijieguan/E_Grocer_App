@@ -22,7 +22,6 @@ export class ItemListComponent implements OnInit {
 
   hideButton = (id: string) => { 
     let data = this.data_set.find(x => x._id === id);
-    if (!data) { return; }
     data.hide_quantity = true;
   }
 
