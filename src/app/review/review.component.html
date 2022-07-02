@@ -1,5 +1,9 @@
 <div class="review-section flex">
     <h1>Review this product</h1>
+    <div class="review-rating flex">
+        <span>Rate this product: </span>
+        <ngb-rating [max]="5" [(rate)]="ratingInp" (rateChange)="onRateChange($event)"></ngb-rating>
+    </div>
     <textarea
         placeholder="Type your review here..."
         [value]="reviewInp"
@@ -10,6 +14,7 @@
     <div class="review-list" *ngFor="let review of reviews">
         <div class="review-text flex">
             <span class="review-content">{{review.content}}</span>
+            <app-rating [reviewRating]="review.rating" style="align-self: flex-end"></app-rating>
             <span class="review-name">- {{review.name}}</span>
         </div>
     </div>

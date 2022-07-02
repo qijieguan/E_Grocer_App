@@ -6,23 +6,23 @@ header {
     z-index: 1;
 }
 
-.logo { position: relative; width: fit-content; }
+.logo { position: relative; width: fit-content; animation: slideDown 0.7s ease-in forwards; }
 .logo > img { position: absolute; height: 8rem; object-fit: cover; z-index: -1; }
 
 .tomato {
     inset: 0 auto auto 0;
-    animation: slideLeft 0.5s ease-in forwards;
+    transform: rotate(-45deg) translate3d(20%, -40%, 0)
 }
 
 .vine {  
     inset: 0 0 auto auto;
-    animation: slideRight 0.5s ease-in forwards;
+    transform: translate3d(25%, -55%, 0);
 }
 
 .bread { 
     inset: 0 50% auto 50%;
     margin: auto 0;
-    animation: slideDown 0.5s ease-in forwards;
+    transform: translate3d(-40%, -55%, 0);
 }
 
 .logo > div {
@@ -47,20 +47,12 @@ header {
     z-index: 1; 
 }
 
-header.background { background: rgb(230, 230, 230) !important; box-shadow: 0 2px 2px rgb(36, 36, 36); z-index: 2 !important; }
+header.background { background: darkred !important; box-shadow: 0 2px 2px rgb(36, 36, 36); z-index: 2 !important; }
 .background { background: rgb(243, 243, 243) !important; }
 
-@keyframes slideLeft {
-    0% { transform: rotate(-45deg) translate3d(20%, -75%, 0) }
-    100% { transform: rotate(-45deg) translate3d(20%, -40%, 0); }
-}
-@keyframes slideRight {
-    0% { transform: translate3d(25%, -75%, 0) }
-    100% { transform: translate3d(25%, -55%, 0); }
-}
 @keyframes slideDown {
-    0% { transform: translate3d(-40%, -90%, 0); }
-    100% { transform: translate3d(-40%, -55%, 0); }
+    0% {transform: translateY(-50%); opacity: 0;}
+    100% {transform: translateY(0); opacity: 1;}
 }
 
 @media (max-width: 50rem) {

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, APP_ID } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CustomizedCellComponent } from '../customized-cell/customized-cell.component';
 import { CartService } from '../cart.service';
 

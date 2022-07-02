@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AgGridModule } from 'ag-grid-angular';
 import {MatIconModule} from '@angular/material/icon';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ItemService } from './item.service';
 import { CartService } from './cart.service';
@@ -17,6 +18,7 @@ import { NoteComponent } from './note/note.component';
 import { CustomizedCellComponent } from './customized-cell/customized-cell.component';
 import { ItemExpandComponent } from './item-expand/item-expand.component';
 import { ReviewComponent } from './review/review.component';
+import { RatingComponent } from './rating/rating.component';
 
 
 @NgModule({
@@ -30,11 +32,13 @@ import { ReviewComponent } from './review/review.component';
     NoteComponent,
     ItemExpandComponent,
     ReviewComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
     AgGridModule.withComponents([CustomizedCellComponent]),
     MatIconModule,
+    NgbModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},

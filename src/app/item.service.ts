@@ -14,7 +14,8 @@ export class ItemService {
       description: 'Fresh and bright red. Please don\'t throw me.',
       quantity: 1,
       price: 1.99,
-      reviews: [{content: "It was rotten. Don\'t buy it. I had to sue the company to receive compensation.",  name: 'anonymous'}],
+      ratings: {average: 2.0, values: [2.0]},
+      reviews: [{content: "It was rotten. Don\'t buy it. I had to sue the company to receive compensation.", rating: 2.0, name: 'anonymous'}],
       hide_quantity: false,
     },
     {
@@ -24,7 +25,8 @@ export class ItemService {
       description: 'Yellow Tropical fruit. Packed with nutrients and protective antioxidants.',
       quantity: 1,
       price: 2.99,
-      reviews: [{content: "10/10. Very delicious and I am addicted to mangos!",  name: 'anonymous'}],
+      ratings: {average: 4.5, values: [4.5]},
+      reviews: [{content: "10/10. Very delicious and I am addicted to mangos!", rating: 4.5, name: 'anonymous'}],
       hide_quantity: false,
     },
     {
@@ -34,7 +36,8 @@ export class ItemService {
       description: 'Leafy green flowering plant from Asia. Eat your daily vegetables.',
       quantity: 1,
       price: 1.50,
-      reviews: [{content: "7.5/10. Came in warm. Would have loved it if it was refrigerated on delivery.",  name: 'anonymous'}],
+      ratings: {average: 3.8, values: [3.8]},
+      reviews: [{content: "7.5/10. Came in warm. Would have loved it if it was refrigerated on delivery.", rating: 3.8, name: 'anonymous'}],
       hide_quantity: false,
     },
     {
@@ -44,7 +47,8 @@ export class ItemService {
       description: 'Hungry? Just bake or fry up some potatoes.',
       quantity: 1,
       price: 1.39,
-      reviews: [{content: "Loved it! Great value for its price.",  name: 'anonymous'}],
+      ratings: {average: 4.0, values: [4.0]},
+      reviews: [{content: "Loved it! Great value for its price.", rating: 4.0, name: 'anonymous'}],
       hide_quantity: false,
     },
     {
@@ -54,7 +58,8 @@ export class ItemService {
       description: 'A spice extracted from bark of cinnamon trees. Used in various cooking. Do not consume by itself.',
       quantity: 1,
       price: 2.59,
-      reviews: [{content: "8/10. Very happy with the product!",  name: 'anonymous'}],
+      ratings: {average: 3.0, values: [3.0]},
+      reviews: [{content: "8/10. Very happy with the product!", rating: 3.0, name: 'anonymous'}],
       hide_quantity: false,
     },
     {
@@ -64,7 +69,8 @@ export class ItemService {
       description: 'Fresh raw meat. Keep up with your protein diet, bro.',
       quantity: 1,
       price: 8.39,
-      reviews: [{content: "10/10. The package was delivered to me cold!",  name: 'anonymous'}],
+      ratings: {average: 5.0, values: [5.0]},
+      reviews: [{content: "10/10. The package was delivered to me cold!", rating: 5.0, name: 'anonymous'}],
       hide_quantity: false,
     }
   ]
@@ -86,8 +92,19 @@ export class ItemService {
 
   getItemList() { return this.DEFAULT_LIST || []; }
 
-  getItem(id: string) { return this.DEFAULT_LIST.find(x => x._id === id) || []; }
+  getItem(id: string) { return this.DEFAULT_LIST.find(x => x._id === id) || {}; }
 
-  addReview(id: string, review: object) { this.DEFAULT_LIST.find(x => x._id === id)?.reviews.push({...review}); }
+  addReview(id: string, review: any) { 
+    this.DEFAULT_LIST.find(x => x._id === id)?.reviews.push({...review}); 
+    
+    let average: number = 0;
+    let size: number = 0;
+    let foundIndex = this.DEFAULT_LIST.findIndex(x => x._id === id);
+
+    this.DEFAULT_LIST[foundIndex].ratings.values.push(review.rating);
+    this.DEFAULT_LIST[foundIndex].ratings.values.forEach((x: number) => { average += x; ++size; });
+    this.DEFAULT_LIST[foundIndex].ratings.average = average / size;
+  
+  }
 
 }

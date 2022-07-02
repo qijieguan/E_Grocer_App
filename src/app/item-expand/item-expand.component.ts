@@ -18,7 +18,7 @@ export class ItemExpandComponent implements OnInit {
   constructor(private route: Router, private item_service: ItemService, private cart_service: CartService) {
     this.param = this.route.url.split('/')[2];
     this.item = this.item_service.getItem(this.param);
-
+    console.log(this.item.ratings)
     /*
     ---private route: ActivatedRoute---
     this.route.queryParams.subscribe(params => { 

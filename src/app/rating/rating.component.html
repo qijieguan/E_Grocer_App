@@ -1,0 +1,8 @@
+<ngb-rating [max]="5" [(rate)]="rating" [readonly]="true" *ngIf="!expand && itemID"></ngb-rating>
+<ngb-rating [max]="5" [(rate)]="rating" [readonly]="true" *ngIf="expand && itemID" class="large"></ngb-rating>
+
+<ngb-rating [max]="5" [(rate)]="reviewRating" [readonly]="true" *ngIf="reviewRating && !itemID" class="review"></ngb-rating>
+
+
+
+

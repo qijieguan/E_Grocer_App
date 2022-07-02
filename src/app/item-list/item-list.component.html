@@ -4,10 +4,10 @@
             <img [src]=item.url alt=""/>
             <div class="item-label grid">
                 <h1 class="item-name">{{item.name}}</h1>
+                <app-rating [itemID]="item._id"></app-rating>
                 <span class="item-price">${{item.price.toFixed(2)}}</span> 
                 <a class="item-link" (click)="handleNav(item)">More...</a>
             </div>
-        
             <div class="item-input">
                 <button class="add-button" *ngIf="!item.hide_quantity" (click)="hideButton(item._id)">Add To Cart</button>
                 <div class="quantity-input flex" *ngIf="item.hide_quantity">

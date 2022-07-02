@@ -25,7 +25,7 @@ export class NavBarComponent implements OnInit {
       else { header?.classList.add('background'); apply_bg?.classList.add('background'); }
 
       document.querySelector('.highlight')?.classList.remove('highlight');
-      document.querySelector('.' + querySelect)?.classList.add('highlight')
+      document.querySelector('.' + querySelect)?.classList.add('highlight');
 
     });
   }

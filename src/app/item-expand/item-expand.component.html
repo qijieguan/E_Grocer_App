@@ -2,6 +2,7 @@
     <img class="item-expand-img" [src]=item.url alt=""/>
     <div class="item-expand-detail grid">
         <h1>{{item.name}}</h1>
+        <app-rating [itemID]="param" [expand]="true"></app-rating>
         <p>{{item.description}}</p>
         <div class="item-expand-input flex">
             <span>QTY: </span>

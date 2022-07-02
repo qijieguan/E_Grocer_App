@@ -13,7 +13,7 @@
 .item-expand-detail { grid-template-columns: 45% 45%; }
 
 .item-expand-detail > h1 {
-    grid-column: 1 / 3;
+    margin: 0;
     font-size: clamp(1.5rem, 2.5vw, 1.75rem);
     font-weight: bold;
 }
@@ -28,14 +28,14 @@
     font-weight: 500;
     color: white; 
     background: red; 
+    box-shadow: 1px 1px 1px rgb(199, 199, 199); 
     border-radius: 0.125rem; 
-    box-shadow: 2px 2px 2px rgb(199, 199, 199); 
 }
 
 .item-expand-input > span { font-weight: bold; }
 
 @media (max-width: 50rem) {
     .item-expand { padding: 2rem 0; }
-    .item-expand-img, .item-expand-detail { grid-column: 1 / 3; }
+    .item-expand-img, .item-expand-detail, .item-expand-detail > h1 { grid-column: 1 / 3; }
     .item-expand-input { column-gap: 0.75rem; }
 }
