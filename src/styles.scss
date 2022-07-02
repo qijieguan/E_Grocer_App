@@ -66,4 +66,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   z-index: 1;
 }
 
+body.main_bg{ 
+  background: url("https://images.pexels.com/photos/9811160/pexels-photo-9811160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") !important;
+}
+
 a { text-decoration: none; }

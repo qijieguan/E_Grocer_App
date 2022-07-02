@@ -23,11 +23,7 @@
 
 .nav-bar > a:hover { color: white; box-shadow: 0 0 3px; }
 
-.highlight { 
-    background: red; 
-    color: white!important;
-    box-shadow: 0 0 5px; 
-}
+.highlight { background: red; color: white!important; box-shadow: 0 0 5px; }
 
 @media (max-width: 50rem) {
     .nav-bar { width: 25vw; }

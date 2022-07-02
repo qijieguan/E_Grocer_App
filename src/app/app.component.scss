@@ -47,7 +47,7 @@ header {
     z-index: 1; 
 }
 
-header.background { background: darkred !important; box-shadow: 0 2px 2px rgb(36, 36, 36); z-index: 2 !important; }
+header.background { background: linear-gradient(270deg, transparent, gray 100%) !important; box-shadow: 0 2px 2px rgb(36, 36, 36); z-index: 2 !important; }
 .background { background: rgb(243, 243, 243) !important; }
 
 @keyframes slideDown {
@@ -57,6 +57,7 @@ header.background { background: darkred !important; box-shadow: 0 2px 2px rgb(36
 
 @media (max-width: 50rem) {
     header { padding: 5rem 0 1rem 0; }
+    header.background { background: linear-gradient(transparent, gray 100%) !important;}
     .logo { margin: 0 auto 0 auto; }
     .logo > img { height: 7rem; }
     .app-wrapper { padding: 5rem 0; }

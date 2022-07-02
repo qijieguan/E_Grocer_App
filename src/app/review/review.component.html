@@ -10,7 +10,9 @@
         (change)="handleChange($event)"
     ></textarea>
     <button (click)="handleSubmit()">SUBMIT</button>
+    
     <hr class="line"/>
+
     <div class="review-list" *ngFor="let review of reviews">
         <div class="review-text flex">
             <span class="review-content">{{review.content}}</span>
