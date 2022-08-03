@@ -17,12 +17,13 @@ export class ReviewComponent implements OnInit {
 
   constructor(private route: Router, private item_service: ItemService) {
     this.param = this.route.url.split('/')[2];
-    this.item = this.item_service.getItem(this.param);
-    this.reviews = this.item.reviews;
-   
   }
 
   ngOnInit(): void { 
+    setTimeout(() => {
+      this.item = this.item_service.getItem(this.param);
+      this.reviews = this.item.reviews;
+    });
   }
 
   onRateChange = (event: any) => { this.ratingInp = event; }

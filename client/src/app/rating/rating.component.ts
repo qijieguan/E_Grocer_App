@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ItemService } from '../item.service';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-rating',
@@ -17,14 +16,13 @@ export class RatingComponent implements OnInit {
   rating: number = 0;
 
   constructor(private item_service: ItemService) { 
-    
   }
 
   ngOnInit(): void {
-    if (this.itemID) {
+    setTimeout(() => {
       this.item = this.item_service.getItem(this.itemID);
       this.rating = this.item.ratings.average;
-    }
+    });
   }
 
 }

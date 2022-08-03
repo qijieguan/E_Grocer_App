@@ -3,10 +3,9 @@ header {
     padding: 6rem 0 2rem 2.5%;
     min-height: 25vh;
     width: 100%;
-    z-index: 1;
 }
 
-.logo { position: relative; width: fit-content; animation: slideDown 0.7s ease-in forwards; }
+.logo { position: relative; width: fit-content; animation: slideDown 0.7s ease-in forwards; z-index: 2; }
 .logo > img { position: absolute; height: 8rem; object-fit: cover; z-index: -1; }
 
 .tomato {
@@ -47,8 +46,18 @@ header {
     z-index: 1; 
 }
 
-header.background { background: linear-gradient(270deg, transparent, gray 100%) !important; box-shadow: 0 2px 2px rgb(36, 36, 36); z-index: 2 !important; }
-.background { background: rgb(243, 243, 243) !important; }
+.header-overlay { position: absolute; inset: 0 auto auto 0; height: 100%; z-index: 1; }
+.header-overlay.background { box-shadow: 0 2px 2px rgb(36, 36, 36); animation: scrollEffect 0.5s ease-in forwards; }
+.header-overlay.background.item-list-link { background: linear-gradient(245deg, transparent, brown 75%) !important; }
+.header-overlay.background.cart-link { background: linear-gradient(245deg, transparent, forestgreen 75%) !important;  }
+.header-overlay.background.note-link { background: linear-gradient(245deg, transparent, orange 75%) !important;  }
+
+@keyframes scrollEffect {
+    0% {width: 0;}
+    100% {width: 100%;}
+}
+
+.app-wrapper.background { background: rgb(243, 243, 243) !important; }
 
 @keyframes slideDown {
     0% {transform: translateY(-50%); opacity: 0;}

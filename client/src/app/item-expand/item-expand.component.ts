@@ -17,23 +17,16 @@ export class ItemExpandComponent implements OnInit {
 
   constructor(private route: Router, private item_service: ItemService, private cart_service: CartService) {
     this.param = this.route.url.split('/')[2];
-    this.item = this.item_service.getItem(this.param);
-    console.log(this.item.ratings)
-    /*
-    ---private route: ActivatedRoute---
-    this.route.queryParams.subscribe(params => { 
-      this.item = JSON.parse(params['data']); 
-      this.unit_price = this.item.price;
-    });
-    */
   }
 
   ngOnInit(): void { 
+    setTimeout(() => {
+      this.item = this.item_service.getItem(this.param);
+      this.unit_price = this.item.price / this.item.quantity;
+    });
   }
 
   setQuantity = (event: any) => { 
-    this.unit_price = this.item.price / this.item.quantity;
-
     this.quantity_input = event.target.value;
     this.item.quantity = event.target.value;
 

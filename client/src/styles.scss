@@ -66,8 +66,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   z-index: 1;
 }
 
-body.main_bg{ 
-  background: url("https://images.pexels.com/photos/9811160/pexels-photo-9811160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") !important;
+body.main_bg { 
+  background-image: url("https://images.pexels.com/photos/9811160/pexels-photo-9811160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") !important;
+  background-position: right;
+}
+
+body.main_bg.animate {
+  animation: slideBg 1s ease-in forwards;
+}
+
+@keyframes slideBg {
+  0% { background-position: center; }
+  100%{ background-position: right; }
 }
 
 a { text-decoration: none; }

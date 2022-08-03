@@ -40,7 +40,8 @@ export class CartComponent implements OnInit, OnDestroy {
   colDefs = [
     { headerName: '', field: 'url', 
       cellRenderer: (params: any) => 
-      `<img style="height: 4rem; width: 4rem; border-radius: 2rem; margin: 0.5rem 0"  src=${params.data.url} alt="" />`
+      `<img style="height: 4rem; width: 4rem; border-radius: 2rem; margin: 0.5rem; border: 1px solid grey;"  
+      src=${params.data.url} alt="" />`
     },
     { headerName: 'Product', field: 'name',
      cellRenderer: (params: any) => `<div style="font-weight: 400">${params.data.name}</div>`},

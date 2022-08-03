@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AgGridModule } from 'ag-grid-angular';
 import {MatIconModule} from '@angular/material/icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ItemService } from './item.service';
 import { CartService } from './cart.service';
@@ -46,7 +47,8 @@ import { RatingComponent } from './rating/rating.component';
       {path: 'item_list/:id', component: ItemExpandComponent},
       {path: 'shop_cart', component: CartComponent}, 
       {path: 'note', component: NoteComponent},
-  ]),
+    ]),
+    HttpClientModule,
   ],
   providers: [ItemService, CartService],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
@@ -6,9 +8,12 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class ItemService {
 
-  DEFAULT_LIST: any[] = [
+  private subject = new BehaviorSubject<any>([]);
+  private DEFAULT_LIST: any[] = [];
+  /*
+  private data_set = [
     {
-      _id: uuidv4(),
+      id: uuidv4(),
       url: 'https://images.pexels.com/photos/6555515/pexels-photo-6555515.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       name: 'Tomato',
       description: 'Fresh and bright red. Please don\'t throw me.',
@@ -19,7 +24,7 @@ export class ItemService {
       hide_quantity: false,
     },
     {
-      _id: uuidv4(),
+      id: uuidv4(),
       url: 'https://images.pexels.com/photos/8446853/pexels-photo-8446853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       name: 'Mango',
       description: 'Yellow Tropical fruit. Packed with nutrients and protective antioxidants.',
@@ -30,7 +35,7 @@ export class ItemService {
       hide_quantity: false,
     },
     {
-      _id: uuidv4(),
+      id: uuidv4(),
       url: 'https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/05/spinach-1296x728-header.jpg?w=1155&h=1528',
       name: 'Spinach',
       description: 'Leafy green flowering plant from Asia. Eat your daily vegetables.',
@@ -41,7 +46,7 @@ export class ItemService {
       hide_quantity: false,
     },
     {
-      _id: uuidv4(),
+      id: uuidv4(),
       url: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Patates.jpg',
       name: 'Potato',
       description: 'Hungry? Just bake or fry up some potatoes.',
@@ -52,7 +57,7 @@ export class ItemService {
       hide_quantity: false,
     },
     {
-      _id: uuidv4(),
+      id: uuidv4(),
       url: 'https://images.pexels.com/photos/301669/pexels-photo-301669.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       name: 'Cinnamon',
       description: 'A spice extracted from bark of cinnamon trees. Used in various cooking. Do not consume by itself.',
@@ -63,7 +68,7 @@ export class ItemService {
       hide_quantity: false,
     },
     {
-      _id: uuidv4(),
+      id: uuidv4(),
       url: 'https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       name: 'Red Meat',
       description: 'Fresh raw meat. Keep up with your protein diet, bro.',
@@ -73,38 +78,52 @@ export class ItemService {
       reviews: [{content: "10/10. The package was delivered to me cold!", rating: 5.0, name: 'anonymous'}],
       hide_quantity: false,
     }
-  ]
+  ];
+  */
 
-  constructor() {
-    //TODO: Persist unique IDs when connected to database
-    let UNIQUE_IDS: any[] = [];
-    let i: number = 0;
+  constructor(private http: HttpClient) {
 
-    if (!sessionStorage.getItem("unique_ids")) {
-      this.DEFAULT_LIST.forEach(x => { UNIQUE_IDS.push(x._id); } );
-      sessionStorage.setItem("unique_ids", JSON.stringify(UNIQUE_IDS));
-    }
-    else {
-      UNIQUE_IDS = JSON.parse(sessionStorage.getItem('unique_ids') || "");
-      this.DEFAULT_LIST.forEach(x => { x._id = UNIQUE_IDS[i]; ++i; });
-    }
+    const headers = new HttpHeaders().set('Content-Type', 'application/json;charset=UTF-8')
+
+    let options = { headers: headers };
+  
+    this.http.get('http://localhost:8080/api/item-list/', options)
+    .subscribe(
+      data => { 
+        this.subject.next(data);
+        console.log(data);
+      }
+    );
+    this.subject.asObservable().subscribe(list => {
+      list.forEach((item: any) => { this.DEFAULT_LIST.push(item); });    
+    });
   }
+  /*
+  initList() {
+    this.http.post('http://localhost:8080/api/item-list/init', {item_list: this.data_set}).subscribe(
+      data => {console.log(data)}
+    );
+  }
+  */
 
   getItemList() { return this.DEFAULT_LIST || []; }
 
-  getItem(id: string) { return this.DEFAULT_LIST.find(x => x._id === id) || {}; }
+  getItem(id: string) {
+    return this.DEFAULT_LIST.find(x => x.id === id) || {}; 
+  }
 
   addReview(id: string, review: any) { 
-    this.DEFAULT_LIST.find(x => x._id === id)?.reviews.push({...review}); 
+    this.DEFAULT_LIST.find(x => x.id === id)?.reviews.push({...review}); 
     
     let average: number = 0;
     let size: number = 0;
-    let foundIndex = this.DEFAULT_LIST.findIndex(x => x._id === id);
+    let foundIndex = this.DEFAULT_LIST.findIndex(x => x.id === id);
 
     this.DEFAULT_LIST[foundIndex].ratings.values.push(review.rating);
     this.DEFAULT_LIST[foundIndex].ratings.values.forEach((x: number) => { average += x; ++size; });
     this.DEFAULT_LIST[foundIndex].ratings.average = average / size;
-  
+
+    this.subject.next(this.DEFAULT_LIST);
   }
 
 }

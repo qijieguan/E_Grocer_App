@@ -20,13 +20,17 @@ export class ItemListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //init_list = () => {
+  //  setTimeout(() => {this.item_service.initList();});
+  //}
+
   hideButton = (id: string) => { 
-    let data = this.data_set.find(x => x._id === id);
+    let data = this.data_set.find(x => x.id === id);
     data.hide_quantity = true;
   }
 
   setQuantity = (action: string, id: string) => {
-    let data = this.data_set.find(x => x._id === id);
+    let data = this.data_set.find(x => x.id === id);
     if (!data) { return; }
 
     if (action === "increment") { ++data.quantity; }
@@ -43,7 +47,7 @@ export class ItemListComponent implements OnInit {
   }
 
   handleNav = (item: any) => {
-    this.router.navigate(["item_list", item._id]);
+    this.router.navigate(["item_list", item.id]);
     // {queryParams: {data: JSON.stringify(item)}}
   }
 

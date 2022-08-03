@@ -12,7 +12,7 @@ export class CartService {
   constructor() { }
 
   addCartItem = (item: any) => {    
-    let match_data = this.cart.find(x => x._id === item._id);
+    let match_data = this.cart.find(x => x.id === item.id);
 
     if (!match_data) { this.cart.push({...item}); }
     else {
@@ -24,13 +24,13 @@ export class CartService {
   }
 
   deleteCartItem = (item: any) => {
-    let findIndex = this.cart.findIndex(x => x._id === item._id);
+    let findIndex = this.cart.findIndex(x => x.id === item.id);
     this.cart.splice(findIndex, 1)
     this.subject.next(this.cart)
   }
 
   updateCartItem = (item: any) => {
-    let findIndex = this.cart.findIndex(x => x._id === item._id);
+    let findIndex = this.cart.findIndex(x => x.id === item.id);
     let unit_price = this.cart[findIndex].price / this.cart[findIndex].quantity;
 
     this.cart[findIndex].quantity = item.quantity;
@@ -38,5 +38,5 @@ export class CartService {
     this.subject.next(this.cart);
   }
 
-  getCartItem() { return this.subject.asObservable(); }
+  getCartItem() { return this.subject.asObservable() || []; }
 }

@@ -8,6 +8,9 @@
     box-shadow: 2px 2px 5px;
 }
 
+.set-data { z-index: 2; }
+.set-data:hover { color: red; }
+
 .item {
     grid-template-columns: 50% 50%;
     row-gap: 0.75rem;
