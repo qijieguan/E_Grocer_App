@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "heroku-postbuild": "cd client && npm install && npm install -g @angular/cli && npm install @angular-devkit/build-angular && npm run build --prod",
+    "heroku-postbuild": "cd client && npm install && npm install -g @angular/cli && npm run build --prod",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
