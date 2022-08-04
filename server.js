@@ -12,17 +12,18 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'dist/e-grocer/client')));
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri);
 
 const itemListRouter = require('./routes/item-list');
 
 app.use('/api/item-list', itemListRouter);
-
+/*
 app.get('/*', function(req, res) {
  res.sendFile(path.join(__dirname + '/client/src/index.html'));
 });
+*/
 
 const port = process.env.PORT || 8080;
 
