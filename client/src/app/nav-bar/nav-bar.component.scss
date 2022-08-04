@@ -1,9 +1,9 @@
 .nav-bar {
-    flex-direction: column;
-    min-height: 12.5rem;
-    width: 17.5vw;
-    background: white;
-    box-shadow: 1px 1px 2px;
+    justify-content: center;
+    margin: 2rem 0 4rem 0;
+    width: 100vw;
+    background: transparent;
+    box-shadow: 0 0 1px 1px gray;
     border-radius: 0.25rem;
     overflow: hidden;
 }
@@ -11,21 +11,18 @@
 .nav-bar > a {
     list-style: none;
     padding: 0.5rem 0;
-    column-gap: 0.5rem;
     font-weight: 500;
-    width: 100%;
+    width: 15vw;
     color: black;  
 }
 
-.nav-bar > a:hover { background: red; border-bottom: 0; }
+.nav-bar > a:hover { color: grey; border-bottom: 0; }
 
-.nav-bar > a > mat-icon { margin-left: 27.5%;}
+.nav-bar > a > mat-icon { margin-left: 33%;}
 
-.nav-bar > a:hover { color: white; box-shadow: 0 0 3px; }
-
-.highlight { background: red; color: white!important; box-shadow: 0 0 5px; }
+.highlight { background: brown; color: yellow!important; box-shadow: 0 0 2px 1px gray; pointer-events: none; }
 
 @media (max-width: 50rem) {
-    .nav-bar { width: 25vw; }
-    .nav-bar > a > mat-icon { margin-left: 15%;}
+    .nav-bar > a { width: 25vw; margin: 0; padding: 0.5rem 0; }
+    .nav-bar > a > mat-icon { margin-left: 22.5%; }
 }

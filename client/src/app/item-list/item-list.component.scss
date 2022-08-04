@@ -1,8 +1,8 @@
 .item-list {
-    grid-template-columns: 33% 33%;
-    width: 70vw;
+    grid-template-columns: 25% 25% 25%;
     row-gap: 5rem;
     padding: 4rem 0;
+    width: 90vw;
     background: white;
     border-radius: 0.125rem;
     box-shadow: 2px 2px 5px;
@@ -16,12 +16,12 @@
     row-gap: 0.75rem;
     margin-bottom: 1rem;
     width: 100%;
-    border: 1px solid rgb(212, 212, 212);
-    box-shadow: 0 0 2px gray;
-    border-radius: 0.25rem;
+    border-radius: 0 0 0.125rem 0.125rem;
 }
 
-.item > img { grid-column: 1 / 3; width: 100%; border-radius: 0.25rem 0.25rem 0 0; }
+.item:hover { box-shadow: 0 0 5px 1px black; }
+
+.item > img { grid-column: 1 / 3; width: 100%; }
 
 .item-label {  
     grid-column: 1 / 3;
@@ -29,6 +29,7 @@
     grid-template-columns: 40% 40%;
     font-size: clamp(0.9rem, 2.5vw, 1rem); 
     font-weight: 500; 
+    border-radius: 0 0 0.125rem 0.125rem;
 }
 .item-name { margin: auto 0; font-weight: bold; font-size: clamp(1.125rem, 2.5vw, 1.5rem); }
 .item-price { color: green; font-weight: 500; }
@@ -43,7 +44,8 @@
     width: 100%; 
     background: rgb(29, 29, 29); 
     color: white; 
-    border-radius: 0 0 0.25rem 0.25rem;
+    border-radius: 0 0 0.125rem 0.125rem;
+    box-shadow: 0 -1px 2px grey;
 }
 .add-button.remove { display: none !important; }
 
@@ -56,7 +58,7 @@
     width: 20%;
     background: red;
     border: 0;
-    border-radius: 0.25rem;
+    border-radius: 0.125rem;
 }
 
 .increment:hover, .decrement:hover { box-shadow: 0 0 3px; }
@@ -72,11 +74,16 @@
     width: 100%;
     color: white;
     background: red;
-    box-shadow: 2px 2px 2px rgb(209, 209, 209);
     border-radius: 3rem;
 }
 
+.confirm-button:hover { box-shadow: 0 0 5px black; }
+
 ::ng-deep app-rating { display: flex; align-items: center; margin-left: auto; }
+
+@media (max-width: 70rem) {
+    .item-list { grid-template-columns: 33% 33%; row-gap: 2.5rem; }
+}
 
 @media (max-width: 50rem) {
     .item-list { grid-template-columns: 90%; row-gap: 2.5rem; }

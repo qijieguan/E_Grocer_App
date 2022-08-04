@@ -23,7 +23,7 @@ export class ItemExpandComponent implements OnInit {
     setTimeout(() => {
       this.item = this.item_service.getItem(this.param);
       this.unit_price = this.item.price / this.item.quantity;
-    }, 100);
+    }, 250);
   }
 
   setQuantity = (event: any) => { 

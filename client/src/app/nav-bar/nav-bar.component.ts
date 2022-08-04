@@ -14,6 +14,7 @@ export class NavBarComponent implements OnInit {
       let querySelect = "";
 
       let header = document.querySelector(".header-overlay");
+      let nav = document.querySelector(".nav-bar");
       let bg_image = document.querySelector(".app-wrapper");
 
       header?.classList.remove('item-list-link', 'cart-link', 'note-link', 'background');
@@ -24,6 +25,7 @@ export class NavBarComponent implements OnInit {
       else { querySelect = 'home-link'; }
 
       if (querySelect === "home-link") { 
+        nav?.classList.add("home");
         bg_image?.classList.remove('background');
         document.querySelector('.main_bg')?.classList.add('animate'); 
       }
@@ -32,6 +34,7 @@ export class NavBarComponent implements OnInit {
           header?.classList.add('background'); 
           header?.classList.add(querySelect);
         });
+        nav?.classList.remove("home");
         bg_image?.classList.add('background'); 
         document.querySelector('.main_bg')?.classList.remove('animate'); 
       }

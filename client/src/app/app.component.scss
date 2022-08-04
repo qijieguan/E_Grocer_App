@@ -38,9 +38,7 @@ header {
 
 .app-wrapper { 
     position: relative;
-    align-items: flex-start !important; 
-    justify-content: space-evenly;
-    padding: 6rem 0; 
+    flex-direction: column;
     min-height: 100vh; 
     width: 100%; 
     z-index: 1; 
@@ -69,7 +67,7 @@ header {
     header.background { background: linear-gradient(transparent, gray 100%) !important;}
     .logo { margin: 0 auto 0 auto; }
     .logo > img { height: 7rem; }
-    .app-wrapper { padding: 5rem 0; }
+    
 }
 
 
