@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --aot",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -35,11 +35,7 @@
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "uuid": "^8.3.2",
-    "zone.js": "~0.11.4",
-    "@angular-devkit/build-angular": "^14.1.0",
-    "@angular/cli": "^14.1.0",
-    "@angular/compiler-cli": "^14.1.0",
-    "typescript": "~4.6.2"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.1.0",
