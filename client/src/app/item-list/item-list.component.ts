@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class ItemListComponent implements OnInit {
 
   data_set: any[] = [];
+  prev_id: string = "";
 
   constructor(private item_service: ItemService, private cart_service: CartService, private router: Router) {
     this.data_set = this.item_service.getItemList();
@@ -24,9 +25,26 @@ export class ItemListComponent implements OnInit {
   //  setTimeout(() => {this.item_service.initList();});
   //}
 
-  hideButton = (id: string) => { 
+  toggleButton = (id: string, action: string) => { 
     let data = this.data_set.find(x => x.id === id);
+
+    if (action === 'cancel') {  
+      this.resetQTY(id)
+      return;
+    }
+
+    if (this.prev_id.length) { 
+      this.resetQTY(this.prev_id);
+    }
+
+    this.prev_id = id;
     data.hide_quantity = true;
+  }
+
+  resetQTY(id: string) {
+    let data = this.data_set.find(x => x.id === id);
+    data.hide_quantity = false;
+    data.quantity = 1;
   }
 
   setQuantity = (action: string, id: string) => {
@@ -47,6 +65,7 @@ export class ItemListComponent implements OnInit {
   }
 
   handleNav = (item: any) => {
+    setTimeout(() => {this.resetQTY(this.prev_id)})
     this.router.navigate(["item_list", item.id]);
     // {queryParams: {data: JSON.stringify(item)}}
   }
