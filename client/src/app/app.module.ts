@@ -20,6 +20,7 @@ import { CustomizedCellComponent } from './customized-cell/customized-cell.compo
 import { ItemExpandComponent } from './item-expand/item-expand.component';
 import { ReviewComponent } from './review/review.component';
 import { RatingComponent } from './rating/rating.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { RatingComponent } from './rating/rating.component';
     ItemExpandComponent,
     ReviewComponent,
     RatingComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

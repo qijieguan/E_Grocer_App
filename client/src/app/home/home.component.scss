@@ -2,12 +2,14 @@
     align-items: flex-start !important;
     padding-left: 12.5%;
     margin: 4rem 0 15rem 0;
-    width: 70vw;
+    width: 100vw;
     border-radius: 0.25rem; 
     overflow: hidden;
 }
 
 .app-home > h1 { 
+    margin-left: 12.5vw;
+    width: 70vw;
     font-size: clamp(1rem, 2.5vw, 1.75rem);
     font-weight: bold;
     font-style: oblique;
@@ -18,13 +20,14 @@
 .app-home > h1 > span { color: gold; }
 
 .app-home > h2 {
-    margin-top: 4rem;
+    margin: 4rem 0 0 12.5vw;
     font-size: clamp(0.75rem, 2.5vw, 1.25rem);
-    color: white;
     letter-spacing: 0.25rem;
+    width: 70vw;
+    color: white;
 }
 
-.contact { position: relative; margin-top: 6rem; column-gap: 2rem; z-index: 1; }
+.contact { position: relative; margin: 6rem 0 0 12.5vw;  column-gap: 2rem; width: 70vw; z-index: 1; }
 
 .icon-wrapper { 
     background: black;
@@ -56,11 +59,84 @@
 .icon-wrapper:hover .linked-in-content { margin-left: 0.5rem; width: 17.5rem; }
 .linked-in-content > a { color: gold; text-decoration: underline; }
 
+.app-quote > h1 { 
+    margin: 0 auto;
+    padding: 3rem;
+    font-size: clamp(1.5rem, 2.5vw, 5rem);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    width: 100vw;
+    color: wheat;
+    background: black;
+}
+
+.app-quote > h1 > span {
+    font-size: clamp(2rem, 3.5vw, 7rem);
+    color: orange;
+}
+
+.app-content {
+    align-items: center;
+    justify-content: center !important;
+    grid-template-columns: 18% 18% 18%;
+    column-gap: 5rem;
+    row-gap: 0;
+    padding: 3rem 0;
+    min-height: 125vh;
+    width: 100vw;
+    background: lightblue;
+}
+
+.app-content > div {
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    min-height: 60vh;
+    background: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 2px 1px gray;
+}
+
+.app-content > div > h1 {
+    margin: 0;
+    padding: 0 0.5rem;
+    font-family: 'Vidaloka', serif;
+    font-size: clamp(1.375rem, 2vw, 1.75rem);
+    font-style: italic;
+    letter-spacing: 1.25px;
+    color: navy;
+}
+
+.app-content > div > mat-icon {
+    margin: 1rem 1rem 2rem 0;
+    font-size: clamp(2rem, 3.5vw, 5rem);
+    color: lightblue;
+}
+
+
+.app-content > div > p {
+    padding: 0 0.5rem;
+    font-size: clamp(0.9rem, 1.125vw, 2.5rem);
+    font-weight: 500;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.5px;
+    min-height: 50%;
+    width: 100%;
+    line-height: 2;
+}
 
 @media (max-width: 50rem) {
     .app-home { margin: 0 0 8rem 0; padding-left: 7.5%; }
-    .contact { flex-direction: column; row-gap: 1.5rem; align-items: flex-start!important;}
+    .contact { margin: 5rem 0 0 12.5vw; flex-direction: column; row-gap: 1.25rem; align-items: flex-start!important;}
     .icon-wrapper > mat-icon { padding: 0.625rem 2.25rem 2.125rem 0.75rem; }
+    .app-content { grid-template-columns: 35% 35%; column-gap: 1.5rem; }
+    .app-content > div > h1 { line-height: 1.25; }
+    .app-content > div > mat-icon { margin: 0.125rem 0.75rem 0.125rem 0; }
+    .app-content > div > p { line-height: 1.5; }
 }
 
 
