@@ -63,7 +63,7 @@ button { letter-spacing: 0.05rem; border: 0; box-shadow: 0 0 2px; }
 
 html { position: relative; }
 html, body { min-height: 100vh; display: flex; flex-direction: column;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden; }
+body { position: relative; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden; }
 
 .overlay {
   position: absolute;
@@ -76,17 +76,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x:
 }
 
 body.main_bg { 
-  background-image: url("https://images.pexels.com/photos/9811160/pexels-photo-9811160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") !important;
-  background-position: right;
+  background-image: url("https://pnptc-media.s3.amazonaws.com/images/header_photo.2e16d0ba.fill-1200x800.jpg") !important;
+  height: 100%;
 }
 
 body.main_bg.animate {
   animation: slideBg 1s ease-in forwards;
-}
-
-@keyframes slideBg {
-  0% { background-position: center; }
-  100%{ background-position: right; }
+  background-size: contain;
 }
 
 a { text-decoration: none; }
+
+@media (max-width: 50rem) {
+  body.main_bg { background-size: cover; }
+}
