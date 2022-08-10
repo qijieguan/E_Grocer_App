@@ -44,12 +44,16 @@ $E-Grocer-theme: mat.define-light-theme((
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
+
 
 //font-family: 'Poppins', sans-serif;
 //font-family: 'Playfair Display', serif;
 //font-family: 'Vidaloka', serif;
 //font-family: 'Bebas Neue', cursive;
 //font-family: 'Lobster', cursive;
+//font-family: 'Tiro Gurmukhi', serif;
+
 
 * { line-height: 1.5; box-sizing: border-box; }
 
@@ -76,10 +80,9 @@ body { position: relative; margin: 0; font-family: Roboto, "Helvetica Neue", san
 }
 
 body.main_bg { 
-  background: brown;
+  background: white;
   background-image: url("https://pnptc-media.s3.amazonaws.com/images/header_photo.2e16d0ba.fill-1200x800.jpg") !important;
   background-repeat: no-repeat;
-  height: 100%;
 }
 
 body.main_bg.animate {

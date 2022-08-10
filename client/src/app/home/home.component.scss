@@ -59,37 +59,68 @@
 .icon-wrapper:hover .linked-in-content { margin-left: 0.5rem; width: 17.5rem; }
 .linked-in-content > a { color: gold; text-decoration: underline; }
 
-.app-quote { 
-    justify-content: space-around; 
-    margin: 0 auto; 
-    padding: 3rem; 
-    column-gap: 2rem;
-    width: 100vw; 
-    background: darkkhaki; 
+.app-body-1 { padding: 20vh 0 15vh 0; height: 100vh; width: 100vw; background: white; }
+
+.app-body-1 > div {
+    margin: 0 auto;
+    grid-template-columns: 45% 45%;
+    row-gap: 0 !important;
+    height: 100%;
+    width: 80%;
+    background: rgb(230, 230, 230);
 }
 
-.app-quote > h1 { flex-direction: column; align-items: flex-start !important; row-gap: 7vh; width: 40%; }
-.app-quote > h1 > span { 
-    font-size: clamp(1.25rem, 2.5vw, 5rem);
+
+.app-body-1 > div > img {
+    transform: translateY(-10%);
+    margin-left: auto;
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    width: 100%; 
+    border-radius: 0.125rem;
+}
+
+.body-1-text { padding: 2rem; height: 50vh; width: 70%; }
+.body-1-text > span { 
+    flex-direction: column;
+    font-size: clamp(1.25rem, 2vw, 3rem);
     font-family: 'Playfair Display', serif;
     font-style: italic;
     letter-spacing: 1px;
     color: black;
 }
 
-.app-quote > h1 > span > span {
-    font-size: clamp(1.375rem, 3.5vw, 6rem);
-    letter-spacing: 1px;
-    color: darkgreen;
+.body-1-text > span > span { font-size: clamp(1.375rem, 2vw, 3rem); letter-spacing: 1px; color: darkgreen; }
+
+.app-body-2 { padding: 10vh 0; justify-content: center; height: 90vh; background: white; }
+
+.app-body-2 > img { height: 100%; background-size: cover; width: 45%; }
+
+.body-2-text {
+    flex-direction: column;
+    align-items: flex-start !important;
+    padding: 2rem;
+    height: 100%;
+    width: 30%;
+    background: rgb(240, 240, 240);
 }
 
-.app-quote > img {
-    background-position: center;
-    background-size: cover;
-    height: 80vh;
-    width: 35vw; 
-    border-radius: 0.125rem;
-    border: 1px solid rgb(128, 123, 64);
+.body-2-text > h1 { 
+    margin: 0 0 15% 0;
+    font-size: clamp(2rem, 3vw, 5rem);
+    font-weight: 500;
+    font-family: 'Tiro Gurmukhi', serif;
+    line-height: 1;
+}
+
+.body-2-text > p {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    word-wrap: break-word;
+    width: 75%;
+    color: black;
 }
 
 .app-content {
@@ -147,11 +178,18 @@
 }
 
 @media (max-width: 50rem) {
-    .app-home { margin: 0; transform: translateY(10%); padding-left: 0; justify-content: space-evenly; width: 90vw; background: black; }
+    .app-home { margin: 0; padding-left: 0; justify-content: space-evenly; width: 90vw; background: black; }
     .home-text { width: 35vw; }
     .contact { margin: 5rem 0 0 12.5vw; flex-direction: column; row-gap: 1.25rem; align-items: flex-start!important;}
     .icon-wrapper > mat-icon { padding: 0.625rem 2.25rem 2.125rem 0.75rem; }
-    .app-quote > img { height: 60vh; width: 45vw; }
+    .app-body-1 { padding: 20vh 0 90vh 0; }
+    .app-body-1 > div { grid-template-columns: 50% 50%; width: 100%; background: white; }
+    .app-body-1 > div > img { position: static; grid-column: 1 / 3; transform: translateY(0); }
+    .body-1-text { grid-column: 1 / 3; width: 100%; background: white; }
+    .body-1-text > br { display: none; }
+    .app-body-2 {  flex-direction: column-reverse;  padding: 10vh 0 15vh 0;}
+    .body-2-text, .app-body-2 > img { width: 100%; }
+    .body-2-text > h1 { margin: 0 0 10% 0; }
     .app-content { grid-template-columns: 35% 35%; column-gap: 1.5rem; }
     .app-content > div > h1 { line-height: 1.25; }
     .app-content > div > mat-icon { margin: 0.125rem 0.75rem 0.125rem 0; }
