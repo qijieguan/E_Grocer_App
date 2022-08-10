@@ -1,6 +1,6 @@
 .nav-bar {
     justify-content: center;
-    margin: 3rem 0 4rem 0;
+    margin: 4.5rem 0;
     width: fit-content;
     background: transparent;
     backdrop-filter: blur(0.125rem) saturate(70%);
@@ -28,6 +28,7 @@
 .highlight { background: brown; color: yellow!important; box-shadow: 0 0 2px 1px gray; pointer-events: none; }
 
 @media (max-width: 50rem) {
+    .nav-bar { margin: 2rem 0 3rem 0; }
     .nav-bar > a { width: 25vw; margin: 0; padding: 0.25rem 0; }
-    .nav-bar > a > mat-icon { margin: 0 0 0 22.5%; }
+    .nav-bar > a > mat-icon { margin: 0 0.25rem 0 22.5%; }
 }
