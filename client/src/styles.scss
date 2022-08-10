@@ -69,29 +69,28 @@ html { position: relative; }
 html, body { min-height: 100vh; display: flex; flex-direction: column;}
 body { position: relative; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden; }
 
-.overlay {
+.main_bg, .overlay {
   position: absolute;
   top: 0;
-  height: 100%;
-  width: 100%;
-  background: black;
-  opacity: 0.6;
-  z-index: 1;
+  height: 150vh;
+  width: 100vw;
 }
 
-body.main_bg { 
-  background: white;
+.main_bg { 
   background-image: url("https://pnptc-media.s3.amazonaws.com/images/header_photo.2e16d0ba.fill-1200x800.jpg") !important;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
-body.main_bg.animate {
-  animation: slideBg 1s ease-in forwards;
-  background-size: contain;
+.overlay { 
+  background: black;
+  opacity: 0.6;
 }
+
 
 a { text-decoration: none; }
 
 @media (max-width: 50rem) {
-  body.main_bg { background-size: cover; }
+  .main_bg, .overlay { height: 47vh; } 
 }
+

@@ -27,7 +27,6 @@ export class NavBarComponent implements OnInit {
       if (querySelect === "home-link") { 
         nav?.classList.add("home");
         bg_image?.classList.remove('background');
-        document.querySelector('.main_bg')?.classList.add('animate'); 
       }
       else { 
         setTimeout(() => {
@@ -35,8 +34,7 @@ export class NavBarComponent implements OnInit {
           header?.classList.add(querySelect);
         });
         nav?.classList.remove("home");
-        bg_image?.classList.add('background'); 
-        document.querySelector('.main_bg')?.classList.remove('animate'); 
+        bg_image?.classList.add('background');
       }
 
       document.querySelector('.highlight')?.classList.remove('highlight');
