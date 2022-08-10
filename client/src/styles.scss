@@ -76,7 +76,9 @@ body { position: relative; margin: 0; font-family: Roboto, "Helvetica Neue", san
 }
 
 body.main_bg { 
+  background: brown;
   background-image: url("https://pnptc-media.s3.amazonaws.com/images/header_photo.2e16d0ba.fill-1200x800.jpg") !important;
+  background-repeat: no-repeat;
   height: 100%;
 }
 

@@ -1,15 +1,15 @@
 .app-home {
     align-items: flex-start !important;
-    padding-left: 12.5%;
+    padding-left: 15vh;
     margin: 2rem 0 9rem 0;
     width: 100vw;
-    border-radius: 0.25rem; 
+    border-radius: 0 0.25rem 0.25rem 0;
     overflow: hidden;
 }
 
-.app-home > h1 { 
-    margin-left: 12.5vw;
-    width: 70vw;
+.home-text { padding-top: 1.5rem; margin-left: 12.5vw; width: 70%; }
+
+.home-text > h1 { 
     font-size: clamp(1.125rem, 2.5vw, 1.75rem);
     font-weight: bold;
     font-style: oblique;
@@ -17,14 +17,13 @@
     color: white;
 }
 
-.app-home > h1 > span { color: gold; }
+.home-text > h1 > span { color: gold; }
 
-.app-home > h2 {
-    margin: 4rem 0 0 12.5vw;
+.home-text > h2 {
+    margin-top: 5rem;
     font-size: clamp(0.875rem, 2.5vw, 1.25rem);
     font-weight: 500;
     letter-spacing: 0.25rem;
-    width: 70vw;
     color: white;
 }
 
@@ -66,7 +65,7 @@
     padding: 3rem; 
     column-gap: 2rem;
     width: 100vw; 
-    background: black; 
+    background: darkkhaki; 
 }
 
 .app-quote > h1 { flex-direction: column; align-items: flex-start !important; row-gap: 7vh; width: 40%; }
@@ -75,21 +74,22 @@
     font-family: 'Playfair Display', serif;
     font-style: italic;
     letter-spacing: 1px;
-    color: wheat;
+    color: black;
 }
 
 .app-quote > h1 > span > span {
     font-size: clamp(1.375rem, 3.5vw, 6rem);
     letter-spacing: 1px;
-    color: orange;
+    color: darkgreen;
 }
 
 .app-quote > img {
     background-position: center;
     background-size: cover;
-    height: 90vh;
+    height: 80vh;
     width: 35vw; 
     border-radius: 0.125rem;
+    border: 1px solid rgb(128, 123, 64);
 }
 
 .app-content {
@@ -147,10 +147,11 @@
 }
 
 @media (max-width: 50rem) {
-    .app-home { margin: 0 0 5rem 0; padding-left: 7.5%; }
+    .app-home { margin: 0; transform: translateY(10%); padding-left: 0; justify-content: space-evenly; width: 90vw; background: black; }
+    .home-text { width: 35vw; }
     .contact { margin: 5rem 0 0 12.5vw; flex-direction: column; row-gap: 1.25rem; align-items: flex-start!important;}
     .icon-wrapper > mat-icon { padding: 0.625rem 2.25rem 2.125rem 0.75rem; }
-    .app-quote > img { height: 70vh; width: 45vw; }
+    .app-quote > img { height: 60vh; width: 45vw; }
     .app-content { grid-template-columns: 35% 35%; column-gap: 1.5rem; }
     .app-content > div > h1 { line-height: 1.25; }
     .app-content > div > mat-icon { margin: 0.125rem 0.75rem 0.125rem 0; }
