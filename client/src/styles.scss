@@ -65,8 +65,8 @@ img { display: block; }
 
 button { letter-spacing: 0.05rem; border: 0; box-shadow: 0 0 2px; }
 
-html { position: relative;  overflow-x: hidden; }
-html, body { min-height: 100vh; display: flex; flex-direction: column; }
+html { position: relative; }
+html, body { min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
 body { position: relative; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .main_bg, .overlay {

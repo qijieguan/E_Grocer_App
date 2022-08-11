@@ -77,12 +77,12 @@
     background-position: center;
     background-size: cover;
     height: 60vh;
-    width: 100%; 
+    width: 115%; 
     border-radius: 0.125rem;
     box-shadow: 1px 1px 5px black; 
 }
 
-.body-1-text { padding: 2rem; height: 50vh; width: 70%; }
+.body-1-text { margin-left: auto; padding: 2rem; width: 70%;}
 .body-1-text > span { 
     flex-direction: column;
     font-size: clamp(1.25rem, 2vw, 3rem);
@@ -127,8 +127,7 @@
 .app-body-3 {
     margin: 5rem auto 8rem auto;
     justify-content: center;
-    height: 90vh;
-    width: 80vw;
+    height: 100vh;
 }
 
 .app-body-3 > img {
@@ -230,7 +229,7 @@
     .app-body-2 {  flex-direction: column-reverse; padding: 10vh 0 15vh 0; margin-bottom: 15vh; } 
     .body-2-text, .app-body-2 > img { width: 100%; align-items: center !important; }
     .body-2-text > h1 { margin: 0 0 10% 0; }
-    .app-body-3 { flex-direction: column; margin: 0 auto 9rem auto; }
+    .app-body-3 { flex-direction: column; margin: 0 auto 9rem auto; height: 80vh;}
     .app-body-3 > img { width: 100vw; }
     .body-3-text { padding: 2rem 0 1rem 0; height: 30vh; width: 100vw; }
     .body-3-text > h1 { margin-bottom: 1vh; width: 70%; }
