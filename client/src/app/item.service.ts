@@ -174,7 +174,7 @@ export class ItemService {
       url: 'https://images.pexels.com/photos/6845651/pexels-photo-6845651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       name: 'Egg',
       description: '10 eggs. Try eating me raw for extra protein.',
-      tag: 'diary',
+      tag: 'dairy',
       quantity: 1,
       price: 2.99,
       ratings: {average: 5.0, values: [5.0]},

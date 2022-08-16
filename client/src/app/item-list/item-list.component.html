@@ -7,8 +7,8 @@
         </label>  
         <label class="container flex">
             <input type="checkbox" name="dairy" (click)="handleCheck($event)"> 
-            Diary
-        </label>      
+            Dairy
+        </label>       
         <label class="container flex">
             <input type="checkbox" name="vegetable" (click)="handleCheck($event)"> 
             Vegetable
@@ -24,11 +24,7 @@
         <label class="container flex">
             <input type="checkbox" name="snack" (click)="handleCheck($event)"> 
             Snacks
-        </label> 
-        <label class="container flex">
-            <input type="checkbox" name="other" (click)="handleCheck($event)"> 
-            Others
-        </label>          
+        </label>       
     </div>
     <div *ngFor="let item of data_set">
         <div class="item grid item.id">

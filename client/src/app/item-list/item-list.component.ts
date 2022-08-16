@@ -45,7 +45,7 @@ export class ItemListComponent implements OnInit {
     this.prev_tag = event.target.name; 
     let el = document.getElementsByName(event.target.name)[0];
     el.parentElement?.classList.add('highlight');
-    
+ 
     this.data_set = this.default_set.filter(d => d.tag === this.prev_tag);
   }
 
