@@ -5,10 +5,13 @@ ngb-rating {
     float: right;
 }
 
+.default { margin-top: 0.75rem; }
+
 .large { font-size: clamp(0.875rem, 5vh, 1.5rem) !important; }
 
 .review { font-weight: normal !important; font-size: clamp(0.75rem, 3vh, 1.5rem) !important;}
 
 @media (max-width: 50rem) {
     ngb-rating { float: left; }
+    .default { margin-top: 0; }
 }

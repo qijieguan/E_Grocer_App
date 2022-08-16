@@ -44,7 +44,7 @@ export class CartComponent implements OnInit, OnDestroy {
       src=${params.data.url} alt="" />`
     },
     { headerName: 'Product', field: 'name',
-     cellRenderer: (params: any) => `<div style="font-weight: 400">${params.data.name}</div>`},
+     cellRenderer: (params: any) => `<div style="font-weight: 400; margin-top: 0.25rem">${params.data.name}</div>`},
     { headerName: 'Quantity', field: 'quantity',
       cellRenderer: CustomizedCellComponent,
       cellRendererParams: { context: 'cell-quantity' }

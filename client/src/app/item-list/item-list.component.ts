@@ -11,11 +11,14 @@ import { Router } from '@angular/router';
 })
 export class ItemListComponent implements OnInit {
 
+  default_set: any[] = []
   data_set: any[] = [];
   prev_id: string = "";
+  prev_tag: string = "";
 
   constructor(private item_service: ItemService, private cart_service: CartService, private router: Router) {
-    this.data_set = this.item_service.getItemList();
+    this.default_set = this.item_service.getItemList();
+    this.data_set = this.default_set;
   }
 
   ngOnInit(): void {
@@ -25,17 +28,33 @@ export class ItemListComponent implements OnInit {
   //  setTimeout(() => {this.item_service.initList();});
   //}
 
+  handleCheck = (event: any) => {
+    if (this.prev_tag.length) {
+     
+        let el = document.getElementsByName(this.prev_tag)[0] as HTMLInputElement;
+        el.checked = false;
+        el.parentElement?.classList.remove('highlight');
+    
+        if (event.target.name === this.prev_tag) {
+          this.data_set = this.default_set;
+          this.prev_tag = "";
+          return;
+        }
+    }
+    
+    this.prev_tag = event.target.name; 
+    let el = document.getElementsByName(event.target.name)[0];
+    el.parentElement?.classList.add('highlight');
+    
+    this.data_set = this.default_set.filter(d => d.tag === this.prev_tag);
+  }
+
   toggleButton = (id: string, action: string) => { 
     let data = this.data_set.find(x => x.id === id);
 
-    if (action === 'cancel') {  
-      this.resetQTY(id)
-      return;
-    }
+    if (action === 'cancel') { this.resetQTY(id); return; }
 
-    if (this.prev_id.length) { 
-      this.resetQTY(this.prev_id);
-    }
+    if (this.prev_id.length) { this.resetQTY(this.prev_id); }
 
     this.prev_id = id;
     data.hide_quantity = true;
@@ -62,6 +81,7 @@ export class ItemListComponent implements OnInit {
     item.price /= item.quantity;
     item.hide_quantity = false;
     item.quantity = 1;
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
   handleNav = (item: any) => {

@@ -23,6 +23,10 @@ const itemListSchema = new Schema({
         type: String,
         trim: true,
     },
+    tag : {
+        type: String,
+        trim: true
+    },
     quantity: {
         type: Number, 
     },

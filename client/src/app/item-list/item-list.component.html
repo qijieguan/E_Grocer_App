@@ -1,5 +1,35 @@
 <div class="item-list grid">
     <!--<button (click)="init_list()" class="set-data">Init List</button> -->
+    <div class="item-filter flex">
+        <label class="container flex">
+            <input type="checkbox" name="meat" (click)="handleCheck($event)"> 
+            Meat
+        </label>  
+        <label class="container flex">
+            <input type="checkbox" name="dairy" (click)="handleCheck($event)"> 
+            Diary
+        </label>      
+        <label class="container flex">
+            <input type="checkbox" name="vegetable" (click)="handleCheck($event)"> 
+            Vegetable
+        </label>    
+        <label class="container flex">
+            <input type="checkbox" name="fruit" (click)="handleCheck($event)"> 
+            Fruit
+        </label> 
+        <label class="container flex">
+            <input type="checkbox" name="dried-good" (click)="handleCheck($event)"> 
+            Dried Goods
+        </label>  
+        <label class="container flex">
+            <input type="checkbox" name="snack" (click)="handleCheck($event)"> 
+            Snacks
+        </label> 
+        <label class="container flex">
+            <input type="checkbox" name="other" (click)="handleCheck($event)"> 
+            Others
+        </label>          
+    </div>
     <div *ngFor="let item of data_set">
         <div class="item grid item.id">
             <img [src]=item.url alt=""/>
@@ -31,4 +61,5 @@
         </div>
         <div class="item-margin" *ngIf="item.hide_quantity"></div>
     </div>
+    <div *ngIf="!data_set.length" class="item-list-empty">No Availiable Items to Browse</div>
 </div>

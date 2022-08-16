@@ -47,12 +47,13 @@ $E-Grocer-theme: mat.define-light-theme((
 @import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
 
 
+
 //font-family: 'Poppins', sans-serif;
 //font-family: 'Playfair Display', serif;
 //font-family: 'Vidaloka', serif;
+//font-family: 'Tiro Gurmukhi', serif;
 //font-family: 'Bebas Neue', cursive;
 //font-family: 'Lobster', cursive;
-//font-family: 'Tiro Gurmukhi', serif;
 
 
 * { line-height: 1.5; box-sizing: border-box; }
@@ -69,12 +70,7 @@ html { position: relative; }
 html, body { min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
 body { position: relative; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.main_bg, .overlay {
-  position: absolute;
-  top: 0;
-  height: 150vh;
-  width: 100vw;
-}
+.main_bg, .overlay { position: absolute; top: 0; height: 150vh; width: 100vw; }
 
 .main_bg { 
   background-image: url("https://pnptc-media.s3.amazonaws.com/images/header_photo.2e16d0ba.fill-1200x800.jpg") !important;
@@ -82,15 +78,9 @@ body { position: relative; margin: 0; font-family: Roboto, "Helvetica Neue", san
   background-size: cover;
 }
 
-.overlay { 
-  background: black;
-  opacity: 0.6;
-}
-
+.overlay { background: black; opacity: 0.6; }
 
 a { text-decoration: none; }
 
-@media (max-width: 50rem) {
-  .main_bg, .overlay { height: 47vh; } 
-}
+@media (max-width: 50rem) { .main_bg, .overlay { height: 47vh; } }
 

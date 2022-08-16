@@ -221,19 +221,23 @@
     .home-text { width: 35vw; }
     .contact { margin: 5rem 0 0 12.5vw; flex-direction: column; row-gap: 1.25rem; align-items: flex-start!important;}
     .icon-wrapper > mat-icon { padding: 0.625rem 2.25rem 2.125rem 0.75rem; }
+
     .app-body-1 { padding: 20vh 0 90vh 0; margin: 0; width: 100vw; }
     .app-body-1 > div { grid-template-columns: 50% 50%; width: 100%; background: white; }
     .app-body-1 > div > img { position: static; grid-column: 1 / 3; transform: translateY(0); box-shadow: unset; }
     .body-1-text { grid-column: 1 / 3; width: 100%; background: white; }
     .body-1-text > br { display: none; }
+
     .app-body-2 {  flex-direction: column-reverse; padding: 10vh 0 15vh 0; margin-bottom: 15vh; } 
     .body-2-text, .app-body-2 > img { width: 100%; align-items: center !important; }
     .body-2-text > h1 { margin: 0 0 10% 0; }
+    
     .app-body-3 { flex-direction: column; margin: 0 auto 9rem auto; height: 80vh;}
     .app-body-3 > img { width: 100vw; }
     .body-3-text { padding: 2rem 0 1rem 0; height: 30vh; width: 100vw; }
     .body-3-text > h1 { margin-bottom: 1vh; width: 70%; }
     .body-3-text > p { width: 70%; }
+
     .app-content { grid-template-columns: 35% 35%; column-gap: 1.5rem; }
     .app-content > div > h1 { line-height: 1.25; }
     .app-content > div > mat-icon { margin: 0.125rem 0.75rem 0.125rem 0; }

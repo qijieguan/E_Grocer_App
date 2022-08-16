@@ -1,13 +1,31 @@
 .item-list {
-    grid-template-columns: 25% 25% 25%;
+    grid-template-columns: 15% 20% 20% 20%;
     row-gap: 5rem;
-    padding: 4rem 0;
+    padding: 5rem 0 4rem 0;
     margin-bottom: 40vh;
     width: 90vw;
     background: white;
     border-radius: 0.125rem;
     box-shadow: 2px 2px 5px;
 }
+
+.item-filter {
+    grid-column: 1 / 2;
+    grid-row: 7 / -1;
+    flex-direction: column;
+}
+
+input[type="checkbox"] { accent-color: brown; }
+.container {
+    margin-bottom: 1.5vh;
+    column-gap: 0.5rem;
+    font-size: 0.875rem; 
+    font-weight: 600; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+.container.highlight { color: brown; }
+
 
 .set-data { z-index: 2; }
 .set-data:hover { color: red; }
@@ -30,6 +48,7 @@
     grid-template-columns: 40% 40%;
     font-size: clamp(0.9rem, 2.5vw, 1rem); 
     font-weight: 500; 
+    height: 15vh;
     border-radius: 0 0 0.125rem 0.125rem;
 }
 .item-name { margin: auto 0; font-weight: bold; font-family: 'Playfair Display', serif; font-size: clamp(1.125rem, 2.5vw, 1.5rem); }
@@ -92,7 +111,7 @@
     background: red; 
     border: 1px solid firebrick;
 }
-.cancel-btn { width: 30%; color: gray; background: rgb(230, 230, 230); border: 1px solid rgb(206, 206, 206); }
+.cancel-btn { width: 30%; color: black; background: rgb(230, 230, 230); border: 1px solid rgb(206, 206, 206); }
 
 .item-margin {  
     margin-bottom: 5rem;
@@ -100,14 +119,24 @@
 
 ::ng-deep app-rating { display: flex; align-items: center; margin-left: auto; }
 
-@media (max-width: 70rem) {
-    .item-list { grid-template-columns: 33% 33%; row-gap: 2.5rem; }
+
+.item-list-empty { 
+    grid-column: 2 / 5; 
+    margin: 15% 0 0 15%;
+    font-size: clamp(1.5rem, 2vw, 3rem); 
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: brown;
 }
 
+@media (max-width: 70rem) { .item-list { grid-template-columns: 33% 33%; row-gap: 2.5rem; } }
+
 @media (max-width: 50rem) {
-    .item-list { grid-template-columns: 90%; row-gap: 2.5rem; }
+    .item-list { grid-template-columns: 20% 70%; row-gap: 2.5rem; }
+    .item-filter { grid-row: 15 / -1; }
     .item { row-gap: 0; }
-    .item > img { grid-column: 1 / 2; border-radius: 0.25rem 0 0 0.25rem; }
+    .item > img { grid-column: 1 / 2; height: 22vh; border-radius: 0.25rem 0 0 0.25rem; }
     .item-label { grid-column: 2 / 3; }
     .increment, .decrement { width: 12.5%; }
     .submit-button { transform: translateY(75%); }
