@@ -47,7 +47,6 @@ $E-Grocer-theme: mat.define-light-theme((
 @import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
 
 
-
 //font-family: 'Poppins', sans-serif;
 //font-family: 'Playfair Display', serif;
 //font-family: 'Vidaloka', serif;
@@ -64,7 +63,7 @@ $E-Grocer-theme: mat.define-light-theme((
 
 img { display: block; }
 
-button { letter-spacing: 0.05rem; border: 0; box-shadow: 0 0 2px; }
+button { letter-spacing: 0.05rem; border: 0; }
 
 html { position: relative; }
 html, body { min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }

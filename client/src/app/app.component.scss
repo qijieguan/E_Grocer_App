@@ -47,8 +47,8 @@ header {
 
 .header-overlay { position: absolute; top: 0; left: 0; height: 100%; z-index: 1; }
 .header-overlay.background { box-shadow: 0 2px 2px rgb(36, 36, 36); animation: scrollEffect 0.5s ease-in forwards; }
-.header-overlay.background.item-list-link { background: linear-gradient(245deg, transparent, brown 100%) !important; }
-.header-overlay.background.cart-link { background: linear-gradient(245deg, transparent, forestgreen 100%) !important;  }
+.header-overlay.background.item-list-link { background: linear-gradient(245deg, transparent, rgb(197, 26, 26) 100%) !important; }
+.header-overlay.background.cart-link { background: linear-gradient(245deg, transparent, limegreen 100%) !important;  }
 .header-overlay.background.note-link { background: linear-gradient(245deg, transparent, orange 100%) !important;  }
 
 @keyframes scrollEffect {
