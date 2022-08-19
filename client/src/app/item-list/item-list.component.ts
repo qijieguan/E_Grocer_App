@@ -15,11 +15,14 @@ export class ItemListComponent implements OnInit {
   data_set: any[] = [];
   prev_id: string = "";
   prev_tag: string = "";
+  searchInp: string = "";
+  search_list: any[] = [];
 
   constructor(private item_service: ItemService, private cart_service: CartService, private router: Router) {
     this.default_set = this.item_service.getItemList();
     this.data_set = this.default_set;
   }
+
 
   ngOnInit(): void {
   }
@@ -30,16 +33,15 @@ export class ItemListComponent implements OnInit {
 
   handleCheck = (event: any) => {
     if (this.prev_tag.length) {
-     
-        let el = document.getElementsByName(this.prev_tag)[0] as HTMLInputElement;
-        el.checked = false;
-        el.parentElement?.classList.remove('highlight');
-    
-        if (event.target.name === this.prev_tag) {
-          this.data_set = this.default_set;
-          this.prev_tag = "";
-          return;
-        }
+      let el = document.getElementsByName(this.prev_tag)[0] as HTMLInputElement;
+      el.checked = false;
+      el.parentElement?.classList.remove('highlight');
+  
+      if (event.target.name === this.prev_tag) {
+        this.data_set = this.default_set;
+        this.prev_tag = "";
+        return;
+      }
     }
     
     this.prev_tag = event.target.name; 
@@ -87,7 +89,25 @@ export class ItemListComponent implements OnInit {
   handleNav = (item: any) => {
     setTimeout(() => {this.resetQTY(this.prev_id)})
     this.router.navigate(["item_list", item.id]);
-    // {queryParams: {data: JSON.stringify(item)}}
+  }
+
+  handleChange = (event: any) => { 
+    this.searchInp = event.target.value; 
+    this.search_list = [];
+    this.default_set.forEach(d => {
+      if (d.name.toLowerCase().includes(this.searchInp.toLowerCase())) { this.search_list.push(d) }
+    });
+  }
+
+  handleSearch = (key: string, action: string) => {
+    if (action === 'case_1') {
+      this.data_set = this.search_list;
+    }
+    else {
+      this.data_set = this.default_set.filter(d => d.name === key);
+    }
+    this.searchInp = "";
+    this.search_list = [];
   }
 
 }

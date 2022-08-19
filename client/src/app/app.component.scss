@@ -1,11 +1,10 @@
 header {
-    padding: 5rem 0 3.5rem 0;
+    padding: 3.5rem 0;
     position: relative;
-    min-height: 15vh;
     width: 100%;
 }
 
-.logo { margin: 0 0 0 10vh;position: relative; width: fit-content; animation: slideDown 0.7s ease-in forwards; z-index: 2; }
+.logo { margin: 0 0 0 10vh; position: relative; width: fit-content; animation: slideDown 0.7s ease-in forwards; z-index: 2; }
 .logo > img { position: absolute; height: 9vh; object-fit: cover; z-index: -1; }
 
 .tomato {
