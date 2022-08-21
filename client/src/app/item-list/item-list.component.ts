@@ -17,14 +17,23 @@ export class ItemListComponent implements OnInit {
   prev_tag: string = "";
   searchInp: string = "";
   search_list: any[] = [];
+  input: any = null;
 
   constructor(private item_service: ItemService, private cart_service: CartService, private router: Router) {
     this.default_set = this.item_service.getItemList();
-    this.data_set = this.default_set;
+    this.data_set = this.default_set
   }
 
 
   ngOnInit(): void {
+    this.input = document.querySelector('.search-bar') as HTMLInputElement;
+    this.input?.addEventListener("keyup", function(event: any) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        let btn = document.querySelector('.search-btn') as HTMLButtonElement;
+        btn.click();
+      }
+    });
   }
 
   //init_list = () => {
