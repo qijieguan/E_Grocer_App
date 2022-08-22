@@ -1,48 +1,26 @@
-header {
-    padding: 3.5rem 0;
-    position: relative;
-    width: 100%;
-}
+header { padding: 3.5rem 0; position: relative; }
 
 .logo { margin: 0 0 0 10vh; position: relative; width: fit-content; animation: slideDown 0.7s ease-in forwards; z-index: 2; }
-.logo > img { position: absolute; height: 9vh; object-fit: cover; z-index: -1; }
 
-.tomato {
-    inset: 0 auto auto 0;
-    transform: rotate(-45deg) translate3d(15%, -35%, 0)
-}
-
-.vine {  
-    inset: 0 0 auto auto;
-    transform: translate3d(30%, -65%, 0);
-}
-
-.bread { 
-    inset: 0 50% auto 50%;
-    margin: auto 0;
-    transform: translate3d(-35%, -50%, 0);
-}
+.logo > img { position: absolute; height: 9vh; z-index: -1; }
+.tomato { inset: 0 auto auto 0; transform: rotate(-45deg) translate3d(18%, -35%, 0); }
+.vine { inset: 0 0 auto auto; transform: translate3d(35%, -70%, 0); }
+.bread { inset: 0 50% auto 50%; transform: translate3d(-35%, -50%, 0); }
 
 .logo > div {
     padding: 0.125rem 0.5rem;
     font-size: clamp(2rem, 1vw, 2.5rem); 
     font-family: 'Bebas Neue', cursive;
     font-style: italic;
-    height: 100%;
-    letter-spacing: 0.125rem;
+    letter-spacing: 0.1rem;
     background: rgb(243, 243, 243);
-    border: 5px solid black;
+    border: 3px solid black;
     border-radius: 2.5rem;
 }
+
 .logo > div > span { color: darkred; }
 
-.app-wrapper { 
-    position: relative;
-    flex-direction: column;
-    min-height: 100vh; 
-    width: 100%; 
-    z-index: 1; 
-}
+.app-wrapper { position: relative; flex-direction: column; min-height: 100vh; width: 100%; z-index: 1; }
 
 .header-overlay { position: absolute; top: 0; left: 0; height: 100%; z-index: 1; }
 .header-overlay.background { box-shadow: 0 2px 2px rgb(36, 36, 36); animation: scrollEffect 0.5s ease-in forwards; }
@@ -50,10 +28,7 @@ header {
 .header-overlay.background.cart-link { background: linear-gradient(245deg, transparent, limegreen 100%) !important;  }
 .header-overlay.background.note-link { background: linear-gradient(245deg, transparent, orange 100%) !important;  }
 
-@keyframes scrollEffect {
-    0% {width: 0;}
-    100% {width: 100%;}
-}
+@keyframes scrollEffect { 0% { width: 0; } 100% { width: 100%; } }
 
 .app-wrapper.background { background: rgb(243, 243, 243) !important; }
 
@@ -63,10 +38,7 @@ header {
 }
 
 @media (max-width: 50rem) {
-    header { padding: 3.5rem 0 1rem 0; }
+    header { padding: 1.5rem 0; }
     header.background { background: linear-gradient(transparent, gray 100%) !important;}
-    .logo { margin: 0 auto; }
+    .logo { margin: 5vh auto 0 auto; }
 }
-
-
-

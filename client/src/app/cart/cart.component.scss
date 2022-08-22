@@ -36,6 +36,4 @@ hr { margin: 0.5rem 0; grid-column: 1 / 3; width: 100%; }
     100% { transform: translateX(0%); opacity: 1; }
 }
 
-@media (max-width: 50rem) {
-    .order-summary > h1, .order-cost { grid-column: 1 / 3; }
-}
+@media (max-width: 50rem) { .order-summary > h1, .order-cost { grid-column: 1 / 3; } }

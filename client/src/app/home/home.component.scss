@@ -77,7 +77,7 @@
     background-position: center;
     background-size: cover;
     height: 60vh;
-    width: 115%; 
+    width: 125%; 
     border-radius: 0.125rem;
     box-shadow: 1px 1px 5px black; 
 }
@@ -85,11 +85,11 @@
 .body-1-text { margin-left: auto; padding: 2rem; width: 70%;}
 .body-1-text > span { 
     flex-direction: column;
-    font-size: clamp(1.25rem, 2vw, 3rem);
-    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.25rem, 2vw, 3.25rem);
+    font-family: 'Vidaloka', serif;
     font-style: italic;
     letter-spacing: 1px;
-    color: black;
+    color: rgb(36, 36, 36);
 }
 
 .body-1-text > span > span { font-size: clamp(1.375rem, 2vw, 3rem); letter-spacing: 1px; color: darkgreen; }
@@ -124,17 +124,9 @@
     color: black;
 }
 
-.app-body-3 {
-    margin: 5rem auto 8rem auto;
-    justify-content: center;
-    height: 100vh;
-}
+.app-body-3 { margin: 5rem auto 8rem auto; justify-content: center; height: 100vh; }
 
-.app-body-3 > img {
-    height: 70%;
-    width: 50%;
-    background-size: cover;
-}
+.app-body-3 > img { height: 70%; width: 50%; background-size: cover; }
 
 .body-3-text {
     flex-direction: column;
@@ -199,11 +191,7 @@
     color: navy;
 }
 
-.app-content > div > mat-icon {
-    margin: 1rem 1rem 2rem 0;
-    font-size: clamp(2rem, 3.5vw, 5rem);
-    color: lightblue;
-}
+.app-content > div > mat-icon { margin: 1rem 1rem 2rem 0; font-size: clamp(2rem, 3.5vw, 5rem); color: lightblue; }
 
 .app-content > div > p {
     padding: 0 0.5rem;
