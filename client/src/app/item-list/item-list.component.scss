@@ -1,5 +1,5 @@
 .search { 
-    padding: 2rem 0;
+    padding: 1rem 0;
     font-family: 'Poppins', sans-serif;
     font-size: clamp(0.75rem, 1vw, 1rem);
     font-weight: 500; 
@@ -23,10 +23,7 @@
 
 .search-bar::placeholder { color: rgb(212, 212, 212); }
 
-.search-bar:focus { 
-    outline-color: rgb(207, 207, 207); 
-    outline-offset: 1px; 
-}
+.search-bar:focus { outline-color: rgb(207, 207, 207); outline-offset: 1px; }
 
 .search-btn { 
     letter-spacing: 0.5px;
@@ -41,27 +38,20 @@
     position: absolute;
     inset: auto 0 0 0;
     margin: 0 auto;
-    padding-bottom: 1vh;
     transform: translateY(100%);
-    min-height: 10vh;
     width: 65%;
     background: white;
     box-shadow: 1px 1px 2px gray;
     z-index: 2;
 }
 
-.droplist {
-    margin: 0.5rem 0 0 3%;
-    font-size: clamp(0.875rem, 1vw, 1.25rem);
-}
+.droplist { padding: 0.5rem 0 0.5rem 3%; font-size: clamp(0.875rem, 1vw, 1.25rem); }
 
-.droplist:hover { 
-    color: brown;
-}
+.droplist:hover { color: yellow; background: brown; }
 
 .item-list {
     grid-template-columns: 15% 20% 20% 20%;
-    row-gap: 5rem;
+    row-gap: 4rem;
     padding: 10vh 0;
     margin-bottom: 40vh;
     width: 100vw;
@@ -69,9 +59,18 @@
     border-radius: 0.125rem;
 }
 
+.list-title { 
+    grid-column: 1 / 5; 
+    font-size: clamp(1.25rem, 2vw, 2rem);
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700; 
+    height: fit-content;
+    letter-spacing: 2px; 
+}
+
 .item-filter {
     grid-column: 1 / 2;
-    grid-row: 1 / span 5;
+    grid-row: 2 / span 5;
     row-gap: 1.5vh;
     padding: 12% 0 15% 0;
     height: fit-content;
@@ -203,9 +202,10 @@ input[type="checkbox"] { accent-color: brown; }
 
 @media (max-width: 50rem) {
     .item-list { grid-template-columns: 22% 68%; row-gap: 2.5rem; }
-    .search { margin-top: 0; grid-column: 1 / 3; width: 100%; }
+    .search { grid-column: 1 / 3; width: 100%; }
     .search-wrapper { height: 5vh; }
-    .item-filter { grid-row: 1 / span 15; border-radius: 0.25rem; }
+    .list-title { grid-column: 1 / 3; margin: 0; font-weight: 500; }
+    .item-filter { grid-row: 2 / span 15; border-radius: 0.25rem; }
     .container { margin-left: 0; font-weight: 500; }
     .item { row-gap: 0; }
     .item > img { grid-column: 1 / 2; height: 22vh; }

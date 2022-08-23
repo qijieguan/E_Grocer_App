@@ -40,11 +40,15 @@ export class ItemListComponent implements OnInit {
   //  setTimeout(() => {this.item_service.initList();});
   //}
 
+  resetTag() {
+    let el = document.getElementsByName(this.prev_tag)[0] as HTMLInputElement;
+    el.checked = false;
+    el.parentElement?.classList.remove('highlight');
+  }
+
   handleCheck = (event: any) => {
     if (this.prev_tag.length) {
-      let el = document.getElementsByName(this.prev_tag)[0] as HTMLInputElement;
-      el.checked = false;
-      el.parentElement?.classList.remove('highlight');
+      this.resetTag()
   
       if (event.target.name === this.prev_tag) {
         this.data_set = this.default_set;
@@ -60,6 +64,12 @@ export class ItemListComponent implements OnInit {
     this.data_set = this.default_set.filter(d => d.tag === this.prev_tag);
   }
 
+  resetQTY(id: string) {
+    let data = this.data_set.find(x => x.id === id);
+    data.hide_quantity = false;
+    data.quantity = 1;
+  }
+
   toggleButton = (id: string, action: string) => { 
     let data = this.data_set.find(x => x.id === id);
 
@@ -69,12 +79,6 @@ export class ItemListComponent implements OnInit {
 
     this.prev_id = id;
     data.hide_quantity = true;
-  }
-
-  resetQTY(id: string) {
-    let data = this.data_set.find(x => x.id === id);
-    data.hide_quantity = false;
-    data.quantity = 1;
   }
 
   setQuantity = (action: string, id: string) => {
@@ -97,7 +101,7 @@ export class ItemListComponent implements OnInit {
 
   handleNav = (item: any) => {
     setTimeout(() => {this.resetQTY(this.prev_id)})
-    this.router.navigate(["item_list", item.id]);
+    this.router.navigate(["browse_groceries", item.id]);
   }
 
   handleChange = (event: any) => { 
@@ -117,6 +121,7 @@ export class ItemListComponent implements OnInit {
     }
     this.searchInp = "";
     this.search_list = [];
+    if (this.prev_tag) { this.resetTag(); }
   }
 
 }

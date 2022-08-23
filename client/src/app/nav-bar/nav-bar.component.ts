@@ -17,9 +17,9 @@ export class NavBarComponent implements OnInit {
       let nav = document.querySelector(".nav-bar");
       let bg_image = document.querySelector(".app-wrapper");
 
-      header?.classList.remove('item-list-link', 'cart-link', 'note-link', 'background');
+      header?.classList.remove('grocery_list-link', 'cart-link', 'note-link', 'background');
 
-      if (path[1] === 'item_list') { querySelect = 'item-list-link'; }
+      if (path[1] === 'browse_groceries') { querySelect = 'grocery_list-link'; }
       else if (path[1] === 'shop_cart') { querySelect = 'cart-link'; }
       else if (path[1] === 'note') { querySelect = 'note-link'; }
       else { querySelect = 'home-link'; }

@@ -45,8 +45,8 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
-      {path: 'item_list', component: ItemListComponent},
-      {path: 'item_list/:id', component: ItemExpandComponent},
+      {path: 'browse_groceries', component: ItemListComponent},
+      {path: 'browse_groceries/:id', component: ItemExpandComponent},
       {path: 'shop_cart', component: CartComponent}, 
       {path: 'note', component: NoteComponent},
     ]),
