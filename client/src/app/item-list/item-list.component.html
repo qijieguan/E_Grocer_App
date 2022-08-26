@@ -1,4 +1,4 @@
-<div class="search flex">
+<div class="search">
     <div class="search-wrapper flex">
         <input class="search-bar"
             type="text"
@@ -21,27 +21,27 @@
     </h1>
     <!--<button (click)="init_list()" class="set-data">Init List</button> -->
     <div class="item-filter flex">
-        <label class="container flex">
+        <label class="container">
             <input type="checkbox" name="meat" (click)="handleCheck($event)"> 
             Meat
         </label>  
-        <label class="container flex">
+        <label class="container">
             <input type="checkbox" name="dairy" (click)="handleCheck($event)"> 
             Dairy
         </label>       
-        <label class="container flex">
+        <label class="container">
             <input type="checkbox" name="vegetable" (click)="handleCheck($event)"> 
             Vegetable
         </label>    
-        <label class="container flex">
+        <label class="container">
             <input type="checkbox" name="fruit" (click)="handleCheck($event)"> 
             Fruit
         </label> 
-        <label class="container flex">
+        <label class="container">
             <input type="checkbox" name="dried-good" (click)="handleCheck($event)"> 
             Dried Goods
         </label>  
-        <label class="container flex">
+        <label class="container">
             <input type="checkbox" name="snack" (click)="handleCheck($event)"> 
             Snacks
         </label>       
@@ -78,4 +78,11 @@
         <div class="item-margin" *ngIf="item.hide_quantity"></div>
     </div>
     <div *ngIf="!data_set.length" class="item-list-empty">No Availiable Items to Browse</div>
+    <div class="pagination">
+        <button (click)="pageNav($event, 'prev')">Previous</button>
+        <div class="page-count flex">
+            <li class="page {{i + 1}}" *ngFor='let in of [].constructor(pageNum); let i = index' (click)="pageNav($event, 'select')">{{i + 1}}</li>
+        </div>
+        <button (click)="pageNav($event, 'next')">Next</button>
+    </div>
 </div>

@@ -101,6 +101,7 @@ input[type="checkbox"] { accent-color: brown; }
     margin-bottom: 1rem;
     width: 100%;
     border-radius: 0 0 0.125rem 0.125rem;
+    animation: fadeIn 0.3s ease-in;
 }
 
 .item:hover { box-shadow: 0 0 5px 1px black; }
@@ -134,7 +135,7 @@ input[type="checkbox"] { accent-color: brown; }
     border-radius: 0 0 0.125rem 0.125rem;
     box-shadow: 0 -1px 2px grey;
 }
-.add-button.remove { display: none !important; }
+.add-button.remove { display: none; }
 
 .quantity-input { position: relative; justify-content: space-between; width: 100%; }
 .quantity-input > button > mat-icon { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
@@ -198,6 +199,34 @@ input[type="checkbox"] { accent-color: brown; }
     color: brown;
 }
 
+.pagination { 
+    padding: 17.5vh 0 5vh 0;
+    grid-column: 1 / 5;
+    column-gap: clamp(1rem, 2vw, 3rem);
+    margin: 0 auto;
+}
+
+.pagination > button {
+    padding: 1rem;
+    font-size: clamp(0.875rem, 1.25vw, 2rem);
+    color: white; 
+    background: black;
+    border-radius: 0.125rem;
+}
+
+.page-count { column-gap: clamp(0.125rem, 1vw, 0.75rem); }
+
+.page { 
+    padding: 0.75rem 1.25rem;
+    font-size: clamp(1rem, 1.25vw, 2rem);
+    font-weight: 500;
+    transition: all 0.3s ease-in;
+}
+
+.page:hover { color: white; background: black; border-radius: 3rem; }
+
+.page.clicked { color: white; background: black; border-radius: 3rem; } 
+
 @media (max-width: 70rem) { .item-list { grid-template-columns: 33% 33%; row-gap: 2.5rem; } }
 
 @media (max-width: 50rem) {
@@ -213,4 +242,7 @@ input[type="checkbox"] { accent-color: brown; }
     .increment, .decrement { width: 12.5%; }
     .submit-button { transform: translateY(75%); }
     ::ng-deep app-rating { grid-column: 1 / 3; margin-left: 0; margin-right: auto; }
+    .pagination { grid-column: 1 / 3; padding: 0; }
+    .page { padding: 0.5rem 0.75rem; }
+    .pagination > button { padding: 0.5rem; }
 }

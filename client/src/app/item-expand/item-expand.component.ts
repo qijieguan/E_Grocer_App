@@ -16,7 +16,8 @@ export class ItemExpandComponent implements OnInit {
   quantity_input: number = 1;
 
   constructor(private route: Router, private item_service: ItemService, private cart_service: CartService) {
-    this.param = this.route.url.split('/')[2];
+    this.param = this.route.url.split('/')[3];
+    window.scrollTo({top: 125, behavior: 'smooth'});
   }
 
   ngOnInit(): void { 
