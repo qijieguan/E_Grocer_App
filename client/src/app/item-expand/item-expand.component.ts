@@ -15,8 +15,8 @@ export class ItemExpandComponent implements OnInit {
   unit_price: number = 0;
   quantity_input: number = 1;
 
-  constructor(private route: Router, private item_service: ItemService, private cart_service: CartService) {
-    this.param = this.route.url.split('/')[3];
+  constructor(private router: Router, private item_service: ItemService, private cart_service: CartService) {
+    this.param = this.router.url.split('/')[3];
     window.scrollTo({top: 125, behavior: 'smooth'});
   }
 
@@ -42,5 +42,7 @@ export class ItemExpandComponent implements OnInit {
     this.item.quantity = 1;
     this.quantity_input = 1;
   }
+
+  goBack = () => { this.router.navigate(["browse_groceries/", this.router.url.split('/')[2]]); }
 
 }
