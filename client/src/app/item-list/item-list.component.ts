@@ -30,21 +30,12 @@ export class ItemListComponent implements OnInit {
 
 
   ngOnInit(): void {
-
     setTimeout(()=> { 
       this.pageNum = Math.ceil(this.default_set.length / 9); 
       window.scrollTo({top: 250, behavior: 'smooth'});
     }, 500);
 
-    setTimeout(() => {
-      let query = this.param;
-      query = query.replace('page_', '');
-      let a  = (Number(query) - 1) * 9;
-      let b = (Number(query) * 9)
-
-      document.getElementsByClassName(query)[0]?.classList.add('clicked');
-      this.data_set = this.default_set.slice(a, b);
-    }, 1000);
+    this.loadPage();    
 
     this.input = document.querySelector('.search-bar') as HTMLInputElement;
     this.input?.addEventListener("keyup", function(event: any) {
@@ -56,9 +47,20 @@ export class ItemListComponent implements OnInit {
     });
   }
 
-  //init_list = () => {
-  //  setTimeout(() => {this.item_service.initList();});
-  //}
+  //init_list = () => { setTimeout(() => {this.item_service.initList();}); }
+
+  loadPage = () => {
+    setTimeout(() => {
+      let query = this.param;
+      query = query.replace('page_', '');
+      let a  = (Number(query) - 1) * 9;
+      let b = (Number(query) * 9)
+
+      document.getElementsByClassName(query)[0]?.classList.add('clicked');
+      this.data_set = this.default_set.slice(a, b);
+      window.scrollTo({top: 250, behavior: 'smooth'});
+    }, 500);
+  }
 
   resetTag() {
     let el = document.getElementsByName(this.prev_tag)[0] as HTMLInputElement;
@@ -69,7 +71,7 @@ export class ItemListComponent implements OnInit {
   handleCheck = (event: any) => {
     if (this.prev_tag.length) {
       this.resetTag();
-      
+      console.log(this.data_set)
       if (event.target.name === this.prev_tag) {
         this.data_set = this.default_set;
         this.prev_tag = "";
@@ -155,8 +157,11 @@ export class ItemListComponent implements OnInit {
     if (action === 'select') { query = newPage.textContent; }
 
     this.param = "page_" + query; 
+    document.getElementsByClassName('clicked')[0].classList.remove('clicked');
+    
+    this.loadPage();
 
-    this.router.navigate(["browse_groceries/", this.param]).then(() => {window.location.reload()});
+    this.router.navigate(["browse_groceries/", this.param]);
   }
-
+  
 }

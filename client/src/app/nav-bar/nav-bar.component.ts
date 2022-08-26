@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,7 +9,7 @@ import { Location } from '@angular/common';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private location: Location) {
+  constructor(private location: Location, private router: Router) {
     this.location.onUrlChange(url => {
       let path = url.split('/');
       let querySelect = "";
@@ -45,5 +46,9 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  //handleNav = (url: string) => {
+  //  this.router.navigate([url]).then(() => window.location.reload());
+  //}
 
 }

@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { v4 as uuidv4 } from 'uuid';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -228,7 +229,6 @@ export class ItemService {
     this.DEFAULT_LIST[foundIndex].ratings.values.forEach((x: number) => { average += x; ++size; });
     this.DEFAULT_LIST[foundIndex].ratings.average = average / size;
 
-    this.subject.next(this.DEFAULT_LIST);
   }
 
 }
