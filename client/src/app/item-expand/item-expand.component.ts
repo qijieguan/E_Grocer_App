@@ -44,8 +44,7 @@ export class ItemExpandComponent implements OnInit {
   }
 
   goBack = () => { 
-    this.router.navigate(["browse_groceries/", this.router.url.split('/')[2]])
-    //.then(() => {window.location.reload()});
+    this.router.navigate(["browse_groceries/", this.router.url.split('/')[2]]);
   }
 
 }

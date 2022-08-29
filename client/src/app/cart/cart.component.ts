@@ -60,6 +60,6 @@ export class CartComponent implements OnInit, OnDestroy {
     }
   ]
 
-  ngOnDestroy(): void { this.gridApi.destroy(); }
+  ngOnDestroy(): void { this.gridApi.destroy(); ; }
   
 }

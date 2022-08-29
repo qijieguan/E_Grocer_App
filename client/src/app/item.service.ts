@@ -195,9 +195,8 @@ export class ItemService {
     if (window.location.hostname === 'localhost' ) { url = 'http://localhost:8080'; }
     
     this.http.get(url + '/api/item-list/', options)
-    .subscribe(
-      data => { this.subject.next(data); }
-    );
+    .subscribe( data => { this.subject.next(data); } );
+    
     this.subject.asObservable().subscribe(list => {
       list.forEach((item: any) => { this.DEFAULT_LIST.push(item); });    
     });

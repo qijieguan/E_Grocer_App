@@ -48,7 +48,7 @@ export class NavBarComponent implements OnInit {
   }
 
   //handleNav = (url: string) => {
-  //  this.router.navigate([url]).then(() => window.location.reload());
+  //  this.router.navigate([url]).then(() => {window.location.reload();});
   //}
 
 }

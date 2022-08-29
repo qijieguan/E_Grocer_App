@@ -24,10 +24,8 @@ export class ItemListComponent implements OnInit {
   constructor(private item_service: ItemService, private cart_service: CartService, private router: Router) {
     this.default_set = this.item_service.getItemList();
     this.data_set = this.default_set;
-
     this.param = this.router.url.split('/')[2];
   }
-
 
   ngOnInit(): void {
     setTimeout(()=> { 
@@ -71,7 +69,6 @@ export class ItemListComponent implements OnInit {
   handleCheck = (event: any) => {
     if (this.prev_tag.length) {
       this.resetTag();
-      console.log(this.data_set)
       if (event.target.name === this.prev_tag) {
         this.data_set = this.default_set;
         this.prev_tag = "";
@@ -79,10 +76,10 @@ export class ItemListComponent implements OnInit {
       }
     }
     
-    this.prev_tag = event.target.name; 
     let el = document.getElementsByName(event.target.name)[0];
     el.parentElement?.classList.add('highlight');
  
+    this.prev_tag = event.target.name; 
     this.data_set = this.default_set.filter(d => d.tag === this.prev_tag);
   }
 
