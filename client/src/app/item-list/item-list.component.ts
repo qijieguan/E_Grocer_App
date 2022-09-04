@@ -33,7 +33,7 @@ export class ItemListComponent implements OnInit {
     setTimeout(()=> { 
       this.pageNum = Math.ceil(this.default_list.length / 9); 
       window.scrollTo({top: 0, behavior: 'smooth'});
-    });
+    }, 125);
     this.loadPage();    
   }
 
