@@ -9,7 +9,8 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class ItemService {
 
-  private subject = new BehaviorSubject<any>([]);
+  private subject_1 = new BehaviorSubject<any>([]);
+  private subject_2 = new BehaviorSubject<number>(1);
   private DEFAULT_LIST: any[] = [];
   
   /*
@@ -195,9 +196,9 @@ export class ItemService {
     if (window.location.hostname === 'localhost' ) { url = 'http://localhost:8080'; }
     
     this.http.get(url + '/api/item-list/', options)
-    .subscribe( data => { this.subject.next(data); } );
+    .subscribe( data => { this.subject_1.next(data); } );
     
-    this.subject.asObservable().subscribe(list => {
+    this.subject_1.asObservable().subscribe(list => {
       list.forEach((item: any) => { this.DEFAULT_LIST.push(item); });    
     });
     
@@ -227,7 +228,13 @@ export class ItemService {
     this.DEFAULT_LIST[foundIndex].ratings.values.push(review.rating);
     this.DEFAULT_LIST[foundIndex].ratings.values.forEach((x: number) => { average += x; ++size; });
     this.DEFAULT_LIST[foundIndex].ratings.average = average / size;
-
   }
 
+  setPageNum = (num: number) => {
+    this.subject_2.next(num);
+  }
+
+  getPageNum = () => {
+    return this.subject_2.asObservable() || 1;
+  }
 }

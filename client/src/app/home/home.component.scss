@@ -9,6 +9,10 @@
 
 .home-text { padding-top: 1.5rem; margin-left: 7.5vw; width: 70%; }
 
+@keyframes slideLeft {
+    0% {}
+}
+
 .home-text > h1 { 
     font-size: clamp(1.125rem, 2.5vw, 1.75rem);
     font-weight: bold;
@@ -61,10 +65,11 @@
 .icon-wrapper:hover .linked-in-content { margin-left: 0.5rem; width: 17rem; }
 .linked-in-content > a { color: gold; text-decoration: underline; }
 
-.app-body-1 { padding: 20vh 0 15vh 0; margin: 60vh 0 10vh 0; height: 100vh; width: 100vw; background: white; }
+.app-body-1 { margin: 55vh 0 30vh 0; width: 100vw; background: white; }
 
 .app-body-1 > div {
     margin: 0 auto;
+    padding: 0 0 7vh 0;
     grid-template-columns: 45% 45%;
     row-gap: 0 !important;
     height: 100%;
@@ -124,7 +129,7 @@
     color: black;
 }
 
-.app-body-3 { margin: 5rem auto 8rem auto; justify-content: center; height: 100vh; }
+.app-body-3 { margin: 7rem auto 10rem auto; justify-content: center; height: 100vh; }
 .app-body-3 > img { height: 70%; width: 50%; background-size: cover; }
 
 .body-3-text {
@@ -209,7 +214,7 @@
     .contact { margin: 5rem 0 0 12.5vw; flex-direction: column; row-gap: 1.25rem; align-items: flex-start!important;}
     .icon-wrapper > mat-icon { padding: 0.625rem 2.25rem 2.125rem 0.75rem; }
 
-    .app-body-1 { padding: 20vh 0 90vh 0; margin: 0; width: 100vw; }
+    .app-body-1 { margin: 30vh 0 10vh 0; width: 100vw; }
     .app-body-1 > div { grid-template-columns: 50% 50%; width: 100%; background: white; }
     .app-body-1 > div > img { position: static; grid-column: 1 / 3; transform: translateY(0); box-shadow: unset; }
     .body-1-text { grid-column: 1 / 3; width: 100%; background: white; }

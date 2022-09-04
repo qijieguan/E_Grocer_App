@@ -1,6 +1,6 @@
-header { padding: 3.5rem 0; position: relative; }
+header { padding: 2.25rem 0 1rem 0; position: relative; justify-content: space-between; }
 
-.logo { margin: 0 0 0 10vh; position: relative; width: fit-content; animation: slideDown 0.7s ease-in forwards; z-index: 2; }
+.logo { margin: 0 0 0 10vh; position: relative; width: fit-content; z-index: 2; }
 
 .logo > img { position: absolute; height: 9vh; z-index: -1; }
 .tomato { inset: 0 auto auto 0; transform: rotate(-45deg) translate3d(18%, -35%, 0); }
@@ -20,25 +20,20 @@ header { padding: 3.5rem 0; position: relative; }
 
 .logo > div > span { color: darkred; }
 
-.app-wrapper { position: relative; flex-direction: column; min-height: 100vh; width: 100%; z-index: 1; }
+.app-wrapper { position: relative; flex-direction: column; width: 100%; z-index: 1; }
 
-.header-overlay { position: absolute; top: 0; left: 0; height: 100%; z-index: 1; }
+.header-overlay { position: absolute; top: 0; height: 100%; z-index: 1;  opacity: 0.5;  }
 .header-overlay.background { box-shadow: 0 2px 2px rgb(36, 36, 36); animation: scrollEffect 0.5s ease-in forwards; }
-.header-overlay.background.grocery_list-link { background: linear-gradient(245deg, transparent, rgb(197, 26, 26) 100%) !important; }
-.header-overlay.background.cart-link { background: linear-gradient(245deg, transparent, olivedrab 100%) !important;  }
-.header-overlay.background.note-link { background: linear-gradient(245deg, transparent, orange 100%) !important;  }
+.header-overlay.background.grocery_list-link { background: rgb(197, 26, 26); }
+.header-overlay.background.cart-link { background: olivedrab;  }
+.header-overlay.background.note-link { background: orange;  }
 
 @keyframes scrollEffect { 0% { width: 0; } 100% { width: 100%; } }
 
 .app-wrapper.background { background: rgb(243, 243, 243) !important; }
 
-@keyframes slideDown {
-    0% {transform: translateY(-50%); opacity: 0;}
-    100% {transform: translateY(0); opacity: 1;}
-}
-
 @media (max-width: 50rem) {
-    header { padding: 1.5rem 0; }
+    header { padding: 0.625rem 0 0 0; flex-direction: column; justify-content: unset; }
     header.background { background: linear-gradient(transparent, gray 100%) !important;}
     .logo { margin: 5vh auto 0 auto; }
 }

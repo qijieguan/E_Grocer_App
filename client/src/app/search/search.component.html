@@ -1,0 +1,16 @@
+<div class="search">
+    <div class="search-wrapper flex">
+        <input class="search-bar"
+            type="text"
+            placeholder="Type your browse item here..."
+            value="{{searchInp}}"
+            (keyup)="handleChange($event)"
+        />
+        <button (click)="handleSearch(searchInp, 'case_1')" class="search-btn">browse</button>
+        <div class="dropdown" *ngIf="searchInp.length">
+            <div class="droplist" *ngFor="let key of search_list">
+                <div class="drop-li" (click)="handleSearch(key.name, 'case_2')">{{key.name}}</div>
+            </div>
+        </div>
+    </div>
+</div>

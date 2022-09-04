@@ -1,49 +1,25 @@
-<div class="search">
-    <div class="search-wrapper flex">
-        <input class="search-bar"
-            type="text"
-            placeholder="Type your browse item here..."
-            value="{{searchInp}}"
-            (keyup)="handleChange($event)"
-        />
-        <button (click)="handleSearch(searchInp, 'case_1')" class="search-btn">browse</button>
-        <div class="dropdown" *ngIf="searchInp.length">
-            <div class="droplist" *ngFor="let key of search_list">
-                <div class="drop-li" (click)="handleSearch(key.name, 'case_2')">{{key.name}}</div>
-            </div>
-        </div>
-    </div>
-</div>
+<app-search></app-search>
 <div class="item-list grid">
-    <h1 class="list-title">
-        <div>GROCERY CATALOG</div>
-        <hr/>
-    </h1>
+    <h1 class="list-title"> <div>GROCERY CATALOG</div> <hr/> </h1>
     <!--<button (click)="init_list()" class="set-data">Init List</button> -->
     <div class="item-filter flex">
         <label class="container">
-            <input type="checkbox" name="meat" (click)="handleCheck($event)"> 
-            Meat
+            <input type="checkbox" name="meat" (click)="handleCheck($event)"> Meat
         </label>  
         <label class="container">
-            <input type="checkbox" name="dairy" (click)="handleCheck($event)"> 
-            Dairy
+            <input type="checkbox" name="dairy" (click)="handleCheck($event)"> Dairy
         </label>       
         <label class="container">
-            <input type="checkbox" name="vegetable" (click)="handleCheck($event)"> 
-            Vegetable
+            <input type="checkbox" name="vegetable" (click)="handleCheck($event)"> Vegetable
         </label>    
         <label class="container">
-            <input type="checkbox" name="fruit" (click)="handleCheck($event)"> 
-            Fruit
+            <input type="checkbox" name="fruit" (click)="handleCheck($event)"> Fruit
         </label> 
         <label class="container">
-            <input type="checkbox" name="dried-good" (click)="handleCheck($event)"> 
-            Dried Goods
+            <input type="checkbox" name="dried-good" (click)="handleCheck($event)"> Dried Goods
         </label>  
         <label class="container">
-            <input type="checkbox" name="snack" (click)="handleCheck($event)"> 
-            Snacks
+            <input type="checkbox" name="snack" (click)="handleCheck($event)"> Snacks
         </label>       
     </div>
     <div *ngFor="let item of data_set">
@@ -84,5 +60,11 @@
             <li class="page {{i + 1}}" *ngFor='let in of [].constructor(pageNum); let i = index' (click)="pageNav($event, 'select')">{{i + 1}}</li>
         </div>
         <button (click)="pageNav($event, 'next')">Next</button>
+    </div>
+    <!--
+    <app-pagination></app-pagination>
+    -->
+    <div class="add-msg flex">
+        <div class="add-msg-text"><span>{{itemHolder}}</span> added to cart successfully!</div>
     </div>
 </div>

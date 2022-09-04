@@ -21,6 +21,8 @@ import { ItemExpandComponent } from './item-expand/item-expand.component';
 import { ReviewComponent } from './review/review.component';
 import { RatingComponent } from './rating/rating.component';
 import { FooterComponent } from './footer/footer.component';
+import { SearchComponent } from './search/search.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { FooterComponent } from './footer/footer.component';
     ReviewComponent,
     RatingComponent,
     FooterComponent,
+    SearchComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
