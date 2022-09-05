@@ -54,17 +54,9 @@
         <div class="item-margin" *ngIf="item.hide_quantity"></div>
     </div>
     <div *ngIf="!data_set.length" class="item-list-empty">No Availiable Items to Browse</div>
-    <div class="pagination">
-        <button (click)="pageNav($event, 'prev')">Previous</button>
-        <div class="page-count flex">
-            <li class="page {{i + 1}}" *ngFor='let in of [].constructor(pageNum); let i = index' (click)="pageNav($event, 'select')">{{i + 1}}</li>
-        </div>
-        <button (click)="pageNav($event, 'next')">Next</button>
-    </div>
-    <!--
+   
     <app-pagination></app-pagination>
-    -->
-    <div class="add-msg flex">
+    <div class="add-msg flex" *ngIf="itemHolder.length">
         <div class="add-msg-text"><span>{{itemHolder}}</span> added to cart successfully!</div>
     </div>
 </div>

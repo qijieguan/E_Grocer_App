@@ -1,1 +1,7 @@
-<p>pagination works!</p>
+<div class="pagination">
+    <button (click)="pageNav($event, 'prev')">Previous</button>
+    <div class="page-count flex">
+        <li class="page {{i + 1}}" *ngFor='let in of [].constructor(pageSize); let i = index' (click)="pageNav($event, 'select')">{{i + 1}}</li>
+    </div>
+    <button (click)="pageNav($event, 'next')">Next</button>
+</div>

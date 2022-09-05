@@ -11,6 +11,8 @@ export class ItemService {
 
   private subject_1 = new BehaviorSubject<any>([]);
   private subject_2 = new BehaviorSubject<number>(1);
+  private subject_3 = new BehaviorSubject<number>(1);
+
   private DEFAULT_LIST: any[] = [];
   
   /*
@@ -199,7 +201,8 @@ export class ItemService {
     .subscribe( data => { this.subject_1.next(data); } );
     
     this.subject_1.asObservable().subscribe(list => {
-      list.forEach((item: any) => { this.DEFAULT_LIST.push(item); });    
+      list.forEach((item: any) => { this.DEFAULT_LIST.push(item); }); 
+      this.subject_2.next(Math.ceil(this.DEFAULT_LIST.length / 9));   
     });
     
     //this.DEFAULT_LIST = this.data_set;
@@ -230,11 +233,10 @@ export class ItemService {
     this.DEFAULT_LIST[foundIndex].ratings.average = average / size;
   }
 
-  setPageNum = (num: number) => {
-    this.subject_2.next(num);
-  }
+  setPageNum = (num: number) => { this.subject_3.next(num); }
 
-  getPageNum = () => {
-    return this.subject_2.asObservable() || 1;
-  }
+  getPageNum = () => { return this.subject_3.asObservable() || 1; }
+
+  getPageSize = () => { return this.subject_2.asObservable() || 1; }
+
 }

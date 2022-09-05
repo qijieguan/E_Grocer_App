@@ -149,34 +149,6 @@ input[type="checkbox"] { accent-color: brown; }
     color: brown;
 }
 
-.pagination { 
-    padding: 17.5vh 0 5vh 0;
-    grid-column: 1 / 5;
-    column-gap: clamp(1rem, 2vw, 3rem);
-    margin: 0 auto;
-}
-
-.pagination > button {
-    padding: 1rem;
-    font-size: clamp(0.875rem, 1.25vw, 2rem);
-    color: white; 
-    background: black;
-    border-radius: 0.125rem;
-}
-
-.page-count { column-gap: clamp(0.125rem, 1vw, 0.75rem); }
-
-.page { 
-    padding: 0.75rem 1.25rem;
-    font-size: clamp(1rem, 1.25vw, 2rem);
-    font-weight: 500;
-    transition: all 0.3s ease-in;
-}
-
-.page:hover { color: white; background: black; border-radius: 3rem; }
-
-.page.clicked { color: white; background: black; border-radius: 3rem; } 
-
 .add-msg.show {
     padding: 5vh 2.25vw;
     position: fixed;
@@ -200,6 +172,8 @@ input[type="checkbox"] { accent-color: brown; }
 
 .add-msg-text > span { color: brown; font-weight: bold; }
 
+::ng-deep app-pagination { grid-column: 1 / 5; margin: 0 auto; }
+
 @keyframes fadeUpSlide {
     0% { transform: translateY(50%); opacity: 1; }
     25% { transform: translateY(0); opacity: 1; }
@@ -221,7 +195,5 @@ input[type="checkbox"] { accent-color: brown; }
     .increment, .decrement { width: 12.5%; }
     .submit-button { transform: translateY(75%); }
     ::ng-deep app-rating { grid-column: 1 / 3; margin-left: 0; margin-right: auto; }
-    .pagination { grid-column: 1 / 3; padding: 0; }
-    .page { padding: 0.5rem 0.75rem; }
-    .pagination > button { padding: 0.5rem; }
+    ::ng-deep app-pagination { grid-column: 1 / 3; }
 }
