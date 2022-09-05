@@ -18,6 +18,7 @@ export class ItemListComponent implements OnInit {
   data_set: any[] = [];
   prev_id: string = "";
   prev_tag: string = "";
+  prev_holder: any[] = [];
   param: string = '';
   pageNum: number = 1;
   itemHolder: string = '';
@@ -53,6 +54,7 @@ export class ItemListComponent implements OnInit {
       let b = (Number(query) * 9)
 
       this.data_set = this.default_list.slice(a, b);
+      this.prev_holder = this.data_set;
       window.scrollTo({top: 0, behavior: 'smooth'});
     }, 250);
   }
@@ -68,6 +70,7 @@ export class ItemListComponent implements OnInit {
       this.resetTag();
       if (event.target.name === this.prev_tag) {
         this.loadPage();
+        this.data_set = this.prev_holder;
         this.prev_tag = "";
         return;
       }
@@ -77,7 +80,7 @@ export class ItemListComponent implements OnInit {
     el.parentElement?.classList.add('highlight');
  
     this.prev_tag = event.target.name; 
-    this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
+    this.data_set = this.data_set.filter(d => d.tag === this.prev_tag);
   }
 
   resetQTY(id: string) {

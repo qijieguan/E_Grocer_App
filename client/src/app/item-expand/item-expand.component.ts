@@ -14,6 +14,7 @@ export class ItemExpandComponent implements OnInit {
   item: any;
   unit_price: number = 0;
   quantity_input: number = 1;
+  isAdded: boolean = false;
 
   constructor(private router: Router, private item_service: ItemService, private cart_service: CartService) {
     this.param = this.router.url.split('/')[3];
@@ -32,6 +33,7 @@ export class ItemExpandComponent implements OnInit {
     this.item.quantity = event.target.value;
 
     this.item.price = this.item.quantity * this.unit_price;
+    if (this.isAdded) { this.isAdded = false; }
   }
 
   addCart = () => {
@@ -41,6 +43,7 @@ export class ItemExpandComponent implements OnInit {
     this.unit_price = this.item.price;
     this.item.quantity = 1;
     this.quantity_input = 1;
+    this.isAdded = true;
   }
 
   goBack = () => { 

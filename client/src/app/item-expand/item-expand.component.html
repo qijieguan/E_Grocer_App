@@ -10,6 +10,7 @@
             <input type="number" [value]=quantity_input (change)="setQuantity($event)" min="1"/>
             <button (click)="addCart()">Add to cart</button>
             <span>PRICE: $<span>{{unit_price.toFixed(2)}}</span></span>
+            <div class="add-msg"><span *ngIf="isAdded">{{item.name}}(s) added to cart!</span></div>
         </div>
     </div>
 </div>

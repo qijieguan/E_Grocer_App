@@ -50,7 +50,7 @@ export class PaginationComponent implements OnInit {
     setTimeout(() => {
       document.getElementsByClassName('clicked')[0].classList.remove('clicked');
       document.getElementsByClassName(newValue.toString())[0].classList.add('clicked');
-    })
+    });
     this.item_service.setPageNum(newValue);
     
     this.router.navigate(["browse_groceries/", this.param]);
