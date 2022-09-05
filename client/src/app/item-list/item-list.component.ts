@@ -80,7 +80,7 @@ export class ItemListComponent implements OnInit {
     el.parentElement?.classList.add('highlight');
  
     this.prev_tag = event.target.name; 
-    this.data_set = this.data_set.filter(d => d.tag === this.prev_tag);
+    this.data_set = this.prev_holder.filter(d => d.tag === this.prev_tag);
   }
 
   resetQTY(id: string) {
