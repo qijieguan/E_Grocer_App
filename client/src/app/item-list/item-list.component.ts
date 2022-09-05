@@ -54,7 +54,7 @@ export class ItemListComponent implements OnInit {
 
       this.data_set = this.default_list.slice(a, b);
       window.scrollTo({top: 0, behavior: 'smooth'});
-    }, 125);
+    }, 250);
   }
 
   resetTag() {
