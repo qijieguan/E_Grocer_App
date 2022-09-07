@@ -13,6 +13,8 @@ export class NavBarComponent implements OnInit {
 
   constructor(private location: Location, private cart_service: CartService) {
     this.location.onUrlChange(url => {
+      setTimeout(()=> { window.scrollTo({top: 0, behavior: 'smooth'}); }, 125); 
+
       let path = url.split('/');
       let querySelect = "";
 

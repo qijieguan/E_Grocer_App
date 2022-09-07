@@ -39,7 +39,6 @@ export class ItemListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(()=> { window.scrollTo({top: 0, behavior: 'smooth'}); }, 125); 
   }
 
   //init_list = () => { setTimeout(() => {this.item_service.initList();}); }
@@ -53,7 +52,6 @@ export class ItemListComponent implements OnInit {
 
       this.data_set = this.default_list.slice(a, b);
       this.prev_holder = this.data_set;
-      window.scrollTo({top: 0, behavior: 'smooth'});
     }, 250);
   }
 
