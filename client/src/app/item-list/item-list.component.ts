@@ -39,9 +39,7 @@ export class ItemListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(()=> { 
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }, 125); 
+    setTimeout(()=> { window.scrollTo({top: 0, behavior: 'smooth'}); }, 125); 
   }
 
   //init_list = () => { setTimeout(() => {this.item_service.initList();}); }
@@ -85,6 +83,7 @@ export class ItemListComponent implements OnInit {
 
   resetQTY(id: string) {
     let data = this.data_set.find(x => x.id === id);
+    if (!data) { return; }
     data.hide_quantity = false;
     data.quantity = 1;
   }
@@ -116,7 +115,7 @@ export class ItemListComponent implements OnInit {
     item.quantity = 1;
     this.itemHolder = item.name;
 
-    setTimeout(() => { document.querySelector('.add-msg')?.classList.add('show'); });
+    setTimeout(() => { document.querySelector('.add-msg')?.classList.add('show'); }, 125);
     document.querySelector('.add-msg')?.classList.remove('show');
   }
 

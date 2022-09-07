@@ -155,7 +155,7 @@ input[type="checkbox"] { accent-color: brown; }
     inset: 4% 3% auto auto;
     width: fit-content;
     background: white;
-    box-shadow: 1px 0 3px;
+    box-shadow: -2px 2px 3px;
     border-left: 5px solid brown;
     border-radius: 0.05rem;
     overflow: hidden;
@@ -175,10 +175,10 @@ input[type="checkbox"] { accent-color: brown; }
 ::ng-deep app-pagination { grid-column: 1 / 5; margin: 0 auto; }
 
 @keyframes fadeUpSlide {
-    0% { transform: translateY(50%); opacity: 1; }
-    25% { transform: translateY(0); opacity: 1; }
-    75% { opacity: 1; }
-    99% { opacity: 0; width: fit-content; padding: 5vh 2.25vw; border-left: 5px solid brown; }
+    0% { transform: translateY(60%); opacity: 1; }
+    25% { transform: translateY(35%); opacity: 1; }
+    75% { transform: translateY(35%); opacity: 1; }
+    99% { transform: translateY(35%); opacity: 0; width: fit-content; padding: 5vh 2.25vw; border-left: 5px solid brown; }
     100% { width: 0; padding: 0; border-left: 0; }
 }
 

@@ -1,4 +1,5 @@
-header { padding: 2.25rem 0 1rem 0; position: relative; justify-content: space-between; }
+header { padding: 3rem 0 1rem 0; position: relative; justify-content: space-between; }
+header.home { box-shadow: 0 2px 1px black; background-color: rgb(100, 5, 5); }
 
 .logo { margin: 0 0 0 10vh; position: relative; width: fit-content; z-index: 2; }
 
@@ -24,16 +25,17 @@ header { padding: 2.25rem 0 1rem 0; position: relative; justify-content: space-b
 
 .header-overlay { position: absolute; top: 0; height: 100%; z-index: 1;  opacity: 0.5;  }
 .header-overlay.background { box-shadow: 0 2px 2px rgb(36, 36, 36); animation: scrollEffect 0.5s ease-in forwards; }
-.header-overlay.background.grocery_list-link { background: rgb(197, 26, 26); }
-.header-overlay.background.cart-link { background: olivedrab;  }
-.header-overlay.background.note-link { background: orange;  }
+.header-overlay.background.grocery_list-link { background: rgb(21, 21, 131); }
+.header-overlay.background.cart-link { background: green;  }
+.header-overlay.background.note-link { background: darkorange;  }
 
 @keyframes scrollEffect { 0% { width: 0; } 100% { width: 100%; } }
 
 .app-wrapper.background { background: rgb(243, 243, 243) !important; }
 
 @media (max-width: 50rem) {
-    header { padding: 0.625rem 0 0 0; flex-direction: column; justify-content: unset; }
+    header { padding: 3rem 0 1.25rem 0; flex-direction: column; justify-content: unset; }
+    header.home { background: unset; box-shadow: unset; }
     header.background { background: linear-gradient(transparent, gray 100%) !important;}
     .logo { margin: 5vh auto 0 auto; }
 }

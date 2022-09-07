@@ -1,6 +1,6 @@
 .app-home {
     justify-content: space-evenly;
-    margin: 10vh 0 0 auto;
+    margin: 15vh 0 0 auto;
     height: 80vh;
     width: 60vw;
     background: black; 
@@ -8,10 +8,6 @@
 }
 
 .home-text { padding-top: 1.5rem; margin-left: 7.5vw; width: 70%; }
-
-@keyframes slideLeft {
-    0% {}
-}
 
 .home-text > h1 { 
     font-size: clamp(1.125rem, 2.5vw, 1.75rem);

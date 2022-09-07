@@ -12,7 +12,8 @@
    
     <a class="cart-link flex" routerLink="/shop_cart" routerLinkActive="active current">
         <mat-icon>shopping_cart</mat-icon>
-        <span>CART</span>
+        <span>CART </span>
+        <span class="cart-num" *ngIf="getCartNum() > 0"> ({{getCartNum()}})</span>
     </a>
 
     <a class="note-link flex" routerLink="/note" routerLinkActive="active current">
