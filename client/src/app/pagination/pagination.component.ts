@@ -28,7 +28,7 @@ export class PaginationComponent implements OnInit {
       
       document.querySelector('.clicked')?.classList.remove('clicked');
       document.getElementsByClassName(query)[0]?.classList.add('clicked');
-    }, 125);
+    }, 250);
   }
 
   pageNav = (event: any, action: string) => {
