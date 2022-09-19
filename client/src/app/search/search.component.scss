@@ -49,7 +49,11 @@
 
 .droplist:hover { color: yellow; background: brown; }
 
+.drop-li { transition: text-indent 0.1s ease-in; }
+.droplist:hover .drop-li { text-indent: 0.5vw; }
+
 @media (max-width: 50rem) {
     .search { grid-column: 1 / 3; width: 100%; }
     .search-wrapper { height: 5vh; }
+    .droplist:hover .drop-li { text-indent: 1vw; }
 }
