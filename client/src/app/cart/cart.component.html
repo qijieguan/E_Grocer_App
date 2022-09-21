@@ -1,26 +1,13 @@
-<h1 class="order-title">
-    <div>YOUR CART</div>
-    <hr/>
-</h1>
-<div class="order-summary grid">
-    <h1 class="flex">Order Sumarry</h1>
-    <div class="order-cost">
-        <div class="flex">Item subtotal: <span>${{subtotal.toFixed(2)}}</span></div>
-        <div class="flex">Estimated taxes (10%): <span>${{tax.toFixed(2)}}</span> </div>
-        <hr class="line"/>
-        <div class="grand-total flex">Order total: <span>${{(subtotal + tax).toFixed(2)}}</span></div>
-    </div>
-</div>
 <ag-grid-angular 
-    class="ag-theme-alpine"
-    style="margin: 0 auto 40vh auto; height: 30rem; width: 75vw; box-shadow: 2px 2px 5px; animation: scrollLeft 0.3s 0.2s ease-in forwards;"
-    [rowData] = "rowData"
-    [columnDefs] = "colDefs"
-    [defaultColDef] = "defaultColDef"
-    [animateRows] = "true"
-    (gridReady)="onGridReady($event)"
-    >
+class="ag-theme-alpine"
+style="margin: 0 auto; height: 30rem; width: 100%; box-shadow: 0 0 2px; animation: scrollLeft 0.3s 0.2s ease-in forwards;"
+[rowData] = "rowData"
+[columnDefs] = "colDefs"
+[defaultColDef] = "defaultColDef"
+[animateRows] = "true"
+(gridReady)="onGridReady($event)"
 >
 </ag-grid-angular>
+    
 
 

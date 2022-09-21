@@ -1,15 +1,17 @@
-<div class="review-section flex">
-    <h1>Review this product</h1>
-    <div class="review-rating flex">
-        <span>Rate this product: </span>
-        <ngb-rating [max]="5" [(rate)]="ratingInp" (rateChange)="onRateChange($event)"></ngb-rating>
+<div class="review-section">
+    <div class="review-form flex">
+        <h1>Review this product</h1>
+        <div class="review-rating flex">
+            <span>Rate this product: </span>
+            <ngb-rating [max]="5" [(rate)]="ratingInp" (rateChange)="onRateChange($event)"></ngb-rating>
+        </div>
+        <textarea
+            placeholder="Type your review here..."
+            [value]="reviewInp"
+            (change)="handleChange($event)"
+        ></textarea>
+        <button (click)="handleSubmit()">SUBMIT</button>
     </div>
-    <textarea
-        placeholder="Type your review here..."
-        [value]="reviewInp"
-        (change)="handleChange($event)"
-    ></textarea>
-    <button (click)="handleSubmit()">SUBMIT</button>
     
     <hr class="line"/>
 

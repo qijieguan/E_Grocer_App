@@ -19,14 +19,6 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.input = document.querySelector('.search-bar') as HTMLInputElement;
-    this.input?.addEventListener("keyup", function(event: any) {
-      event.preventDefault();
-      if (event.keyCode === 13) {
-        let btn = document.querySelector('.search-btn') as HTMLButtonElement;
-        btn.click();
-      }
-    });
   }
 
   handleChange = (event: any) => { 
@@ -37,7 +29,9 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  handleSearch = (key: string, action: string) => {
+  handleSearch = (event: any, key: string, action: string) => {
+    event.preventDefault();
+
     if (action === 'case_1') { this.search_service.setSearch(this.search_list); }
     else {this.search_service.setSearch(this.default_list.filter(item => item.name === key)); }
 

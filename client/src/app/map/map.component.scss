@@ -1,0 +1,24 @@
+.map {
+    padding: 3vh 1.5vw;
+    height: fit-content;
+    width: fit-content;
+    background: white;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 0.5rem;
+}
+
+.map > form { padding-bottom: 2.5vh; border-bottom: 1px solid rgb(211, 211, 211); }
+.map > form > span { font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 700; font-family: 'Playfair Display', serif; }
+.map > form > input { margin-top: 2vh; width: 100%; font-family: 'Playfair Display', serif; font-weight: 500; text-indent: 0.25rem; }
+.map > form > button { 
+    float: right; 
+    margin: 2vh 0 0 auto;
+    padding: 0.75vh 1vw; 
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    background: orange; 
+    color: black; 
+}
+.map > form > button:hover {
+    box-shadow: 0 0 3px darkorange;
+}

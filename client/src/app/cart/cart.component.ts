@@ -11,17 +11,12 @@ export class CartComponent implements OnInit, OnDestroy {
 
   rowData: any[] = [];
   subtotal: number = 0;
-  tax: number = 0.1;
+  map_api_key: string = "AIzaSyAB5KWxkElCuvl0cOF3yMxBdRJkwvhCIz8";
 
   constructor(private cart_service: CartService) {
     this.cart_service.getCartItem().subscribe((cart_data) => { 
-      this.subtotal = 0;
-      this.tax = 0.1;
-      
       this.rowData = cart_data;
       this.rowData.forEach(item => { this.subtotal += item.price; });
-
-      this.tax *= this.subtotal; 
     });
   }
 
@@ -33,6 +28,7 @@ export class CartComponent implements OnInit, OnDestroy {
   onGridReady(params: any) { 
     this.gridApi = params.api; 
     this.gridApi.setRowData(this.rowData);
+    this.gridApi.sizeColumnsToFit();
   }
 
   defaultColDef = { sortable: true, filter: true, autoHeight: true, resizable: true, }

@@ -23,6 +23,8 @@ import { RatingComponent } from './rating/rating.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { MapComponent } from './map/map.component';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { PaginationComponent } from './pagination/pagination.component';
     FooterComponent,
     SearchComponent,
     PaginationComponent,
+    CheckoutComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,7 @@ import { PaginationComponent } from './pagination/pagination.component';
       {path: '', component: HomeComponent},
       {path: 'browse_groceries/:page', component: ItemListComponent},
       {path: 'browse_groceries/:page/:id', component: ItemExpandComponent},
-      {path: 'shop_cart', component: CartComponent}, 
+      {path: 'checkout', component: CheckoutComponent}, 
       {path: 'note', component: NoteComponent},
     ]),
     HttpClientModule,

@@ -33,7 +33,7 @@ export class NavBarComponent implements OnInit {
       nav?.classList.remove('fixed');
 
       if (path[1] === 'browse_groceries') { querySelect = 'grocery_list-link'; nav?.classList.add('fixed'); }
-      else if (path[1] === 'shop_cart') { querySelect = 'cart-link'; }
+      else if (path[1] === 'checkout') { querySelect = 'checkout-link'; }
       else if (path[1] === 'note') { querySelect = 'note-link'; }
       else { querySelect = 'home-link'; }
 
