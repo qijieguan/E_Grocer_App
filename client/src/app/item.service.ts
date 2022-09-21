@@ -190,7 +190,7 @@ export class ItemService {
   
   constructor(private http: HttpClient) {
 
-    const headers = new HttpHeaders().set('Content-Type', 'application/json;charset=UTF-8')
+    const headers = new HttpHeaders().set('Content-Type', 'application/json;charset=UTF-8');
 
     let options = { headers: headers };
     let url = window.location.origin;

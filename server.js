@@ -18,6 +18,7 @@ mongoose.connect(uri);
 
 const itemListRouter = require('./routes/item-list');
 
+app.route('/api/map/getKey').get((req, res) => { res.json(process.env.MAP_API) });
 app.use('/api/item-list', itemListRouter);
  
 app.get('/*', function(req, res) {
