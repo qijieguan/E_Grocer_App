@@ -67,14 +67,14 @@
     padding: 0.5rem 1.25rem;
     min-height: 6rem;  
     width: 80%;
-    font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
     font-style: italic;
     font-weight: bold;
     letter-spacing: 0.05rem;
-    color: darkgoldenrod;
-    border: 2px solid darkorange;
+    color: rgb(223, 122, 0);
+    border: 1px solid darkorange;
     border-radius: 1rem 1rem 0.125rem 1rem;
-    box-shadow: 2px 2px 3px grey;
+    box-shadow: 1px 1px 3px grey;
 }
 
 .review-name { align-self: flex-end; }
@@ -85,4 +85,8 @@
     letter-spacing: 0.05rem;
     color: rgb(184, 184, 184) !important;
     width: 80%;
+}
+
+@media (max-width: 50rem) {
+    .review-text { padding: 0.25rem, 0.5rem; width: 100%; }
 }

@@ -22,40 +22,41 @@
             <input type="checkbox" name="snack" (click)="handleCheck($event)"> Snacks
         </label>       
     </div>
-    <div *ngFor="let item of data_set">
-        <div class="item grid item.id">
-            <img [src]=item.url alt=""/>
-            <div class="item-label grid">
-                <h1 class="item-name">{{item.name}}</h1>
-                <app-rating [itemID]="item.id"></app-rating>
-                <span class="item-price">${{item.price.toFixed(2)}}</span> 
-                <a class="item-link" (click)="handleNav(item)">More...</a>
-            </div>
-            <div class="item-input">
-                <button class="add-button" *ngIf="!item.hide_quantity" (click)="toggleButton(item.id, 'add')">Add To Cart</button>
-                <div class="quantity-input flex" *ngIf="item.hide_quantity">
-                    <button class="decrement flex" (click)="setQuantity('decrement', item.id)">
-                        <mat-icon [ngStyle]="{'color':'white'}">remove</mat-icon>
-                    </button>
-                    <span>{{item.quantity}}</span>
-                    <button class="increment flex" (click)="setQuantity('increment', item.id)">
-                        <mat-icon [ngStyle]="{'color':'white'}" >add</mat-icon>
-                    </button>
-                    <div class="submit-button flex">
-                        <button class="confirm-btn flex" (click)="addCart(item)">
-                            <div>Add Quantity</div>
-                            <mat-icon>shopping_cart</mat-icon>
+    <div class="item-section grid">
+        <div *ngFor="let item of data_set">
+            <div class="item grid item.id">
+                <img [src]=item.url alt=""/>
+                <div class="item-label grid">
+                    <h1 class="item-name">{{item.name}}</h1>
+                    <app-rating [itemID]="item.id"></app-rating>
+                    <span class="item-price">${{item.price.toFixed(2)}}</span> 
+                    <a class="item-link" (click)="handleNav(item)">More...</a>
+                </div>
+                <div class="item-input">
+                    <button class="add-button" *ngIf="!item.hide_quantity" (click)="toggleButton(item.id, 'add')">Add To Cart</button>
+                    <div class="quantity-input flex" *ngIf="item.hide_quantity">
+                        <button class="decrement flex" (click)="setQuantity('decrement', item.id)">
+                            <mat-icon [ngStyle]="{'color':'white'}">remove</mat-icon>
                         </button>
-                        <button class="cancel-btn" (click)="toggleButton(item.id, 'cancel')">Cancel</button>
+                        <span>{{item.quantity}}</span>
+                        <button class="increment flex" (click)="setQuantity('increment', item.id)">
+                            <mat-icon [ngStyle]="{'color':'white'}" >add</mat-icon>
+                        </button>
+                        <div class="submit-button flex">
+                            <button class="confirm-btn flex" (click)="addCart(item)">
+                                <div>Add Quantity</div>
+                                <mat-icon>shopping_cart</mat-icon>
+                            </button>
+                            <button class="cancel-btn" (click)="toggleButton(item.id, 'cancel')">Cancel</button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="item-margin" *ngIf="item.hide_quantity"></div>
         </div>
-        <div class="item-margin" *ngIf="item.hide_quantity"></div>
+        <div *ngIf="!data_set.length" class="item-list-empty">No Availiable Items to Browse</div>
+        <app-pagination></app-pagination>
     </div>
-    <div *ngIf="!data_set.length" class="item-list-empty">No Availiable Items to Browse</div>
-   
-    <app-pagination></app-pagination>
     <div class="add-msg flex" *ngIf="itemHolder.length">
         <div class="add-msg-text"><span>{{itemHolder}}</span> added to cart successfully!</div>
     </div>

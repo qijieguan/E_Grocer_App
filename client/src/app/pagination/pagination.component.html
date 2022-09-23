@@ -1,7 +1,11 @@
-<div class="pagination">
-    <button (click)="pageNav($event, 'prev')">Previous</button>
+<div class="pagination flex">
+    <button (click)="pageNav($event, 'prev')" class="left">
+        <mat-icon>chevron_left</mat-icon>
+    </button>
     <div class="page-count flex">
         <li class="page {{i + 1}}" *ngFor='let in of [].constructor(pageSize); let i = index' (click)="pageNav($event, 'select')">{{i + 1}}</li>
     </div>
-    <button (click)="pageNav($event, 'next')">Next</button>
+    <button (click)="pageNav($event, 'next')" class="right">
+        <mat-icon>chevron_right</mat-icon>
+    </button>
 </div>
