@@ -20,6 +20,6 @@ export class PopUpComponent implements OnInit {
 
   closeModal = () => { 
     this.mat_dialog.closeAll(); 
-    this.cart_service.clearCart(); 
+    setTimeout(() => { this.cart_service.clearCart(); }, 500);
   }
 }
