@@ -14,7 +14,7 @@ export class CartComponent implements OnInit, OnDestroy {
   map_api_key: string = "AIzaSyAB5KWxkElCuvl0cOF3yMxBdRJkwvhCIz8";
 
   constructor(private cart_service: CartService) {
-    this.cart_service.getCartItem().subscribe((cart_data) => { 
+    this.cart_service.getCart().subscribe((cart_data) => { 
       this.rowData = cart_data;
       this.rowData.forEach(item => { this.subtotal += item.price; });
     });

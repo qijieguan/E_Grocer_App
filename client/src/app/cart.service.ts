@@ -37,8 +37,8 @@ export class CartService {
 
   deleteCartItem = (item: any) => {
     let findIndex = this.cart.findIndex(x => x.id === item.id);
-    this.cart.splice(findIndex, 1)
-    this.subject_1.next(this.cart)
+    this.cart.splice(findIndex, 1);
+    this.subject_1.next(this.cart);
   }
 
   updateCartItem = (item: any) => {
@@ -50,7 +50,9 @@ export class CartService {
     this.subject_1.next(this.cart);
   }
 
-  getCartItem() { return this.subject_1.asObservable() || []; }
+  clearCart = () => { this.subject_1.next([]); this.cart = []; }
+
+  getCart() { return this.subject_1.asObservable() || []; }
 
   getMapKey() { return this.subject_2.asObservable() || ""; }
 }

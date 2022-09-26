@@ -1,6 +1,6 @@
 .checkout-title { 
-    margin-top: 5vh;
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-top: 7.5vh;
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
     font-family: 'Playfair Display', serif; 
     font-weight: 700; 
     letter-spacing: 2px;
@@ -19,7 +19,7 @@
     background: rgb(235, 235, 235);
     border: 1px solid rgb(224, 224, 224);
     border-radius: 0.075rem;
-    box-shadow: 2px 2px 5px;
+    box-shadow: 1px 1px 3px;
     animation: scrollLeft 0.3s ease-in forwards;
 }
 
@@ -48,12 +48,24 @@ hr { margin: 0.5rem 0; grid-column: 1 / 3; width: 100%; }
 .checkout-input { 
     grid-template-columns: 60% 35%; 
     justify-content: space-between !important;
-    margin-bottom: 30vh;
-    width: 85vw;
+    margin-bottom: 60vh;
 }
+
+.checkout-input > button { 
+    grid-column: 2 / 3; 
+    margin-top: 20vh;
+    padding: 2vh 0;
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700;
+    color: darkslategrey;
+    background: orange; 
+    box-shadow: 0 0 1px darkorange;
+}
+.checkout-input > button:hover { box-shadow: 0 0 4px darkorange; }
 
 @media (max-width: 50rem) { 
     .order-summary { margin: 3rem auto; }
     .order-summary > h1, .order-cost { grid-column: 1 / 3; } 
-    .checkout-input { grid-template-columns: 100%; }
+    .checkout-input { grid-template-columns: 100%; width: 85vw;}
+    app-cart, app-map, .checkout-input > button { grid-column: 1 / 3; }
 }

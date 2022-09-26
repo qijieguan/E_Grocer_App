@@ -28,6 +28,7 @@
 .fixed { position: fixed; }
 
 .cart-num { margin-left: 0.25rem; }
+.nav-bar { box-shadow: -1px 1px 1px; border-radius: 0 0 0 0.25rem; }
 
 @media (max-width: 50rem) {
     .nav-bar > a { width: 25vw; margin: 0; padding: 0.5rem 0; }

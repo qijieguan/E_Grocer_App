@@ -1,0 +1,17 @@
+.pop-up { 
+    padding: 0 1.5rem;
+    flex-direction: column; 
+    justify-content: flex-start !important; 
+    row-gap: 1rem;
+    min-height: 30vh; 
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-size: 500;
+    font-family: 'Noto Serif Balinese', serif;
+}
+
+.close-icon { align-self: flex-end; font-size: clamp(1.5rem, 2vw, 2rem); color: rgb(206, 206, 206); transition: color 0.1s ease-in; }
+.close-icon:hover { color: black; }
+
+.check-icon { margin-right: 7.5vw; font-size: clamp(5rem, 7.5vw, 7.5rem); color: green; }
+
+@media (max-width: 50rem) { .check-icon { margin-right: 9vw; } }

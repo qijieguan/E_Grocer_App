@@ -6,6 +6,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import {MatIconModule} from '@angular/material/icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ItemService } from './item.service';
 import { CartService } from './cart.service';
@@ -25,6 +26,7 @@ import { SearchComponent } from './search/search.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MapComponent } from './map/map.component';
+import { PopUpComponent } from './pop-up/pop-up.component';
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { MapComponent } from './map/map.component';
     PaginationComponent,
     CheckoutComponent,
     MapComponent,
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import { MapComponent } from './map/map.component';
       {path: 'note', component: NoteComponent},
     ]),
     HttpClientModule,
+    MatDialogModule,
   ],
   providers: [ItemService, CartService],
   bootstrap: [AppComponent]

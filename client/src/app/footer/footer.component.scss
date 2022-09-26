@@ -1,6 +1,7 @@
 .app-footer {
     flex-direction: column;
     justify-content: center !important;
+    font-weight: 500;
     min-height: 30vh;
     width: 100vw;
     background: black;
@@ -10,7 +11,6 @@
 .app-footer > li {
     list-style: none;
     font-size: clamp(1.25rem, 2vw, 1.75rem);
-    font-weight: 500;
     letter-spacing: 1px;
     color: orange;
 }
@@ -18,7 +18,6 @@
 .app-footer > h1 {
     margin-top: 1rem;
     font-size: clamp(1.5rem, 2vw, 2rem);
-    font-weight: 500;
     font-family: 'Playfair Display', serif;
     color: burlywood;
 }

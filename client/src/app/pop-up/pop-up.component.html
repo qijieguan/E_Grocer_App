@@ -1,0 +1,8 @@
+<div class="pop-up flex">
+    <mat-icon (click)="closeModal()" class="close-icon">close</mat-icon>
+    <p *ngIf="cartNum === 0">Cart is empty. Add item(s) to cart to complete order.</p>
+    <p *ngIf="cartNum > 0">
+        <span>Thanks for shopping with us. We will get your groceries ready for you today!</span>
+    </p>
+    <mat-icon *ngIf="cartNum > 0" class="check-icon">check_circle</mat-icon>
+</div>

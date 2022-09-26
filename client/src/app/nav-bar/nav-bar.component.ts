@@ -56,7 +56,7 @@ export class NavBarComponent implements OnInit {
       setTimeout(() => { this.activeObserver(); }, 500);
     });
 
-    this.cart_service.getCartItem().subscribe((cart) => { this.cartNum = cart.length; });
+    this.cart_service.getCart().subscribe((cart) => { this.cartNum = cart.length; });
   }
 
   activeObserver = () => {

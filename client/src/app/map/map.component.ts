@@ -10,6 +10,7 @@ import { CartService } from '../cart.service';
 })
 export class MapComponent implements OnInit {
 
+  deliveryInp: boolean = false;
   address: string = "El Monte, 91733";
   map_key: string = "";
   map_url: any = "https://www.google.com/maps/embed/v1/directions?origin=El Monte, CA 91733&destination=El Monte, 91733&key=";
@@ -24,12 +25,22 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleClick = (event: any) => {
+    let el = document.querySelector('input.active') as HTMLInputElement;
+
+    if (el) { el.checked = false; }
+    if (event.target.name === "delivery") { this.deliveryInp = true; }
+    else { this.deliveryInp = false; }
+
+    event.target.classList.add('active');
+  }
+
   handleChange = (event: any) => { this.address = event.target.value; }
 
   mapUpdate = (event: any) => {
     event.preventDefault();
     let url = "https://www.google.com/maps/embed/v1/directions?origin=" + this.address + "&destination=El Monte, 91733&key=AIzaSyAB5KWxkElCuvl0cOF3yMxBdRJkwvhCIz8";
     this.map_url = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    console.log(document.querySelector('iframe'))
   }
-
 }

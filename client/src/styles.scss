@@ -78,7 +78,9 @@ body { position: relative; margin: 0; font-family: Roboto, "Helvetica Neue", san
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+/*
+https://cdn.pixabay.com/photo/2021/02/16/05/47/apple-6019865_960_720.jpg
+*/
 .overlay { background: black; opacity: 0.4; }
 
 a { text-decoration: none; }
@@ -86,6 +88,11 @@ a { text-decoration: none; }
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+@keyframes fadeSlideUp {
+  0% { transform: translateY(25%); opacity: 0;}
+  100% { transform: translateY(0%); opacity: 1;}
 }
 
 @media (max-width: 50rem) { .main_bg, .overlay { height: 47vh; } }
