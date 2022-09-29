@@ -47,8 +47,8 @@ export class ItemListComponent implements OnInit {
     setTimeout(() => {
       let query = this.param;
       query = query.replace('page_', '');
-      let a  = (Number(query) - 1) * 9;
-      let b = (Number(query) * 9)
+      let a  = (Number(query) - 1) * 12;
+      let b = (Number(query) * 12)
 
       this.data_set = this.default_list.slice(a, b);
       this.prev_holder = this.data_set;
@@ -76,7 +76,7 @@ export class ItemListComponent implements OnInit {
     el.parentElement?.classList.add('highlight');
  
     this.prev_tag = event.target.name; 
-    this.data_set = this.prev_holder.filter(d => d.tag === this.prev_tag);
+    this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
   }
 
   resetQTY(id: string) {
