@@ -24,7 +24,7 @@
 
 .page:hover { color: white; background: black; border-radius: 3rem; }
 
-.page.clicked { color: white; background: black; border-radius: 3rem; } 
+.page.clicked { color: white; background: black; border-radius: 3rem; pointer-events: none; } 
 
 @media (max-width: 50rem) {
     .pagination { margin-top: 15vh; padding: 0; }

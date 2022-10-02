@@ -14,7 +14,8 @@ export class ItemService {
   private subject_3 = new BehaviorSubject<number>(1);
 
   private DATA: any[] = [];
-  
+  private DEFAULT_DATA: any[] = [];
+
   /*
   private data_set = [
     {
@@ -350,7 +351,7 @@ export class ItemService {
       this.subject_2.next(Math.ceil(this.DATA.length / 12));   
     });
     
-
+    this.DEFAULT_DATA = this.DATA;
     //this.DATA = this.data_set;
     this.setPageSize(this.DATA.length);
   }

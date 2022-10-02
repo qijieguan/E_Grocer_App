@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../item.service';
+import { SearchService } from '../search.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,21 +14,24 @@ export class PaginationComponent implements OnInit {
   pageSize: number = 1;
   param: string = "";
 
-  constructor(private item_service: ItemService, private router: Router) { 
-    this.item_service.getPageSize().subscribe((size) => { this.pageSize = size; } );
-    this.item_service.getPageNum().subscribe((number) => { this.pageNum = number; } );
-    this.param = this.router.url.split('/')[2];
+  constructor(private item_service: ItemService, private search_service: SearchService, private router: Router) { 
+    this.item_service.getPageNum().subscribe((num) => { this.pageNum = num; this.loadPage(); });
+    this.item_service.getPageSize().subscribe((size) => { this.pageSize = size; this.loadPage(); } );
+    this.search_service.getSearch().subscribe((search_list) => { this.loadPage(); })
   }
 
-  ngOnInit(): void { this.loadPage(); }
+  ngOnInit(): void {  
+  }
 
   loadPage = () => {
     setTimeout(() => {
+      this.param = this.router.url.split('/')[2];
       let query = this.param;
       query = query.replace('page_', '');
       
       document.querySelector('.clicked')?.classList.remove('clicked');
-      document.getElementsByClassName(query)[0]?.classList.add('clicked');
+      if (this.pageSize > 1) { document.getElementsByClassName(query)[0]?.classList.add('clicked'); }
+      else { document.getElementsByClassName('1')[0]?.classList.add('clicked'); }
     }, 250);
   }
 
@@ -51,8 +55,8 @@ export class PaginationComponent implements OnInit {
       document.getElementsByClassName('clicked')[0].classList.remove('clicked');
       document.getElementsByClassName(newValue.toString())[0].classList.add('clicked');
     }, 125);
-    this.item_service.setPageNum(newValue);
     
+    this.item_service.setPageNum(newValue);
     this.router.navigate(["browse_groceries/", this.param]);
   }
 

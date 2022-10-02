@@ -24,41 +24,50 @@ export class ItemListComponent implements OnInit {
   itemHolder: string = '';
 
   constructor(private item_service: ItemService, private search_service: SearchService, private cart_service: CartService, private router: Router, private location: Location) {
-    this.default_list = this.item_service.getItemList();
-    this.data_set = this.default_list;
-    
-    this.item_service.setPageNum(Number(this.router.url.split('/')[2].replace("page_", "")));
-
-    this.item_service.getPageNum().subscribe((number) => {
-      this.param = "page_" + number.toString();
-      this.loadPage();
-      this.resetTag();
+    this.search_service.getSearch().subscribe((search_list) => { 
+      this.data_set = search_list; 
+      this.item_service.setPageSize(this.data_set.length);
+      this.resetTag(); 
     });
-
-    this.search_service.getSearch().subscribe((search_list) => { this.data_set = search_list; this.resetTag(); });
+  
+    this.item_service.getPageNum().subscribe((num) => { 
+      this.pageNum = num; 
+      this.param = "page_" + this.pageNum.toString();
+      this.loadPage(); 
+    });
   }
 
   ngOnInit(): void {
+    this.param = this.router.url.split('/')[2];
+    this.resetList();
   }
 
   //init_list = () => { setTimeout(() => {this.item_service.initList();}); }
 
   loadPage = () => {
-    setTimeout(() => {
-      let query = this.param;
-      query = query.replace('page_', '');
+    setTimeout(() => {    
+      let query = this.pageNum;
       let a  = (Number(query) - 1) * 12;
       let b = (Number(query) * 12)
 
       this.data_set = this.default_list.slice(a, b);
       this.prev_holder = this.data_set;
+      this.resetTag();
     }, 250);
   }
 
   resetTag() {
     let el = document.getElementsByName(this.prev_tag)[0] as HTMLInputElement;
+    if (!el) { return; }
     el.checked = false;
     el.parentElement?.classList.remove('highlight');
+  }
+
+  resetList = () => {
+    this.default_list = this.item_service.getItemList();
+    this.data_set = this.default_list;
+    this.item_service.setPageSize(this.default_list.length);
+    this.item_service.setPageNum(Number(this.param.replace("page_", "")));
   }
 
   handleCheck = (event: any) => {
@@ -68,15 +77,20 @@ export class ItemListComponent implements OnInit {
         this.loadPage();
         this.data_set = this.prev_holder;
         this.prev_tag = "";
+        this.resetList();
+        this.router.navigate(["browse_groceries/" + this.param]);
         return;
       }
     }
     
     let el = document.getElementsByName(event.target.name)[0];
     el.parentElement?.classList.add('highlight');
- 
+
     this.prev_tag = event.target.name; 
     this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
+
+    this.item_service.setPageSize(this.data_set.length);
+    this.router.navigate(["browse_groceries/page_1"]);
   }
 
   resetQTY(id: string) {
