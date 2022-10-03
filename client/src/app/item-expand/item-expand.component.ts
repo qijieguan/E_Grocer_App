@@ -17,7 +17,7 @@ export class ItemExpandComponent implements OnInit {
   isAdded: boolean = false;
 
   constructor(private router: Router, private item_service: ItemService, private cart_service: CartService) {
-    this.param = this.router.url.split('/')[3];
+    this.param = this.router.url.split('/')[4];
   }
 
   ngOnInit(): void { 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../item.service';
 import { SearchService } from '../search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -14,7 +15,7 @@ export class SearchComponent implements OnInit {
   default_list: any[] = [];
   input: any = null;
 
-  constructor(private item_service: ItemService, private search_service: SearchService) { 
+  constructor(private item_service: ItemService, private search_service: SearchService, private router: Router) { 
     this.default_list = this.item_service.getItemList();
   }
 
@@ -34,6 +35,10 @@ export class SearchComponent implements OnInit {
 
     if (action === 'case_1') { this.search_service.setSearch(this.search_list); }
     else {this.search_service.setSearch(this.default_list.filter(item => item.name === key)); }
+
+    let param = key.replace(" ", '-').toLowerCase();
+
+    this.router.navigate(["browse_groceries/page_1" + "&search_" + param]);
 
     this.searchInp = "";
     this.search_list = [];

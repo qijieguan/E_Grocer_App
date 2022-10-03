@@ -90,7 +90,7 @@ export class ItemListComponent implements OnInit {
     this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
 
     this.item_service.setPageSize(this.data_set.length);
-    this.router.navigate(["browse_groceries/page_1"]);
+    this.router.navigate(["browse_groceries/page_1" + "&category_" + this.prev_tag]);
   }
 
   resetQTY(id: string) {
@@ -133,6 +133,6 @@ export class ItemListComponent implements OnInit {
 
   handleNav = (item: any) => {
     setTimeout(() => {this.resetQTY(this.prev_id)});
-    this.router.navigate(["browse_groceries/" + this.param + '/', item.id]);
+    this.router.navigate(["browse_groceries/" + this.param + '/view/' + item.id]);
   }
 }

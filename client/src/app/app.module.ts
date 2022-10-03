@@ -56,8 +56,8 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
-      {path: 'browse_groceries/:page', component: ItemListComponent},
-      {path: 'browse_groceries/:page/:id', component: ItemExpandComponent},
+      {path: 'browse_groceries/:page?:mode', component: ItemListComponent},
+      {path: 'browse_groceries/:page/view/:id', component: ItemExpandComponent},
       {path: 'checkout', component: CheckoutComponent}, 
       {path: 'note', component: NoteComponent},
     ]),

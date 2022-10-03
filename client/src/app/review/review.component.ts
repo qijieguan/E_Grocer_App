@@ -16,7 +16,7 @@ export class ReviewComponent implements OnInit {
   reviewInp: string = "";
 
   constructor(private router: Router, private item_service: ItemService) {
-    this.param = this.router.url.split('/')[3];
+    this.param = this.router.url.split('/')[4];
   }
 
   ngOnInit(): void { 
