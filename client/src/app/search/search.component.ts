@@ -30,14 +30,12 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  handleSearch = (event: any, key: string, action: string) => {
+  handleSearch = (event: any, name: string) => {
     event.preventDefault();
 
-    if (action === 'case_1') { this.search_service.setSearch(this.search_list); }
-    else {this.search_service.setSearch(this.default_list.filter(item => item.name === key)); }
-
-    let param = key.replace(" ", '-').toLowerCase();
-
+    this.search_service.setSearch(name, this.default_list);
+     
+    let param = name.replace(" ", '-').toLowerCase();
     this.router.navigate(["browse_groceries/page_1" + "&search_" + param]);
 
     this.searchInp = "";

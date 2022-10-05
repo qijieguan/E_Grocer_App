@@ -18,7 +18,6 @@ export class ItemListComponent implements OnInit {
   data_set: any[] = [];
   prev_id: string = "";
   prev_tag: string = "";
-  prev_holder: any[] = [];
   param: string = '';
   pageNum: number = 1;
   itemHolder: string = '';
@@ -38,8 +37,22 @@ export class ItemListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.param = this.router.url.split('/')[2];
+    this.param = this.router.url.split('/')[2].split('&')[0];
     this.resetList();
+
+    this.prev_tag = this.router.url.split('/')[2].split('&')[1]?.replace('category_', '') || '';
+    let word = this.router.url.split('/')[2].split('&')[1]?.replace('search_', '') || '';
+
+    setTimeout(() => {
+      if (this.prev_tag.length) { 
+        this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
+        this.item_service.setPageSize(this.data_set.length || this.default_list.length);
+        this.checkTag();
+      }
+      if (word.includes('category')) { return; } 
+      word = word.replace('-', ' ');
+      this.search_service.setSearch(word, this.default_list); 
+    }, 500);
   }
 
   //init_list = () => { setTimeout(() => {this.item_service.initList();}); }
@@ -51,8 +64,6 @@ export class ItemListComponent implements OnInit {
       let b = (Number(query) * 12)
 
       this.data_set = this.default_list.slice(a, b);
-      this.prev_holder = this.data_set;
-      this.resetTag();
     }, 250);
   }
 
@@ -61,6 +72,13 @@ export class ItemListComponent implements OnInit {
     if (!el) { return; }
     el.checked = false;
     el.parentElement?.classList.remove('highlight');
+  }
+
+  checkTag() {
+    let el = document.getElementsByName(this.prev_tag)[0] as HTMLInputElement;
+    if (!el) { return; }
+    el.checked = true;
+    el.parentElement?.classList.add('highlight');
   }
 
   resetList = () => {
@@ -75,7 +93,6 @@ export class ItemListComponent implements OnInit {
       this.resetTag();
       if (event.target.name === this.prev_tag) {
         this.loadPage();
-        this.data_set = this.prev_holder;
         this.prev_tag = "";
         this.resetList();
         this.router.navigate(["browse_groceries/" + this.param]);
@@ -83,11 +100,9 @@ export class ItemListComponent implements OnInit {
       }
     }
     
-    let el = document.getElementsByName(event.target.name)[0];
-    el.parentElement?.classList.add('highlight');
-
     this.prev_tag = event.target.name; 
     this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
+    this.checkTag();
 
     this.item_service.setPageSize(this.data_set.length);
     this.router.navigate(["browse_groceries/page_1" + "&category_" + this.prev_tag]);

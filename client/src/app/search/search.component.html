@@ -7,10 +7,10 @@
             value="{{searchInp}}"
             (keyup)="handleChange($event)"
         />
-        <button type="submit" (click)="handleSearch($event, searchInp, 'case_1')" class="search-btn">browse</button>
+        <button type="submit" (click)="handleSearch($event, searchInp)" class="search-btn">browse</button>
         <div class="dropdown" *ngIf="searchInp.length">
-            <div class="droplist" *ngFor="let key of search_list">
-                <div class="drop-li" (click)="handleSearch($event, key.name, 'case_2')">{{key.name}}</div>
+            <div class="droplist" *ngFor="let item of search_list">
+                <div class="drop-li" (click)="handleSearch($event, item.name)">{{item.name}}</div>
             </div>
         </div>
     </form>

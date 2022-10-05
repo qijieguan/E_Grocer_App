@@ -11,7 +11,12 @@ export class SearchService {
   constructor() {
   }
 
-  setSearch = (search_set: any[]) => { this.subject.next(search_set) }
+  setSearch = (word: string, list: any[]) => { 
+    let search_list:any[] = [];
+    list.forEach(d => { if (d.name.toLowerCase().includes(word.toLowerCase())) { search_list.push(d) }});
+  
+    this.subject.next(search_list) 
+  }
 
   getSearch = () => { return this.subject.asObservable() || []; }
 }

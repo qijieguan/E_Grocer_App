@@ -25,7 +25,7 @@ export class PaginationComponent implements OnInit {
 
   loadPage = () => {
     setTimeout(() => {
-      this.param = this.router.url.split('/')[2];
+      this.param = this.router.url.split('/')[2].split('&')[0];
       let query = this.param;
       query = query.replace('page_', '');
       
