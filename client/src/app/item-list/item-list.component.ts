@@ -43,28 +43,32 @@ export class ItemListComponent implements OnInit {
     this.prev_tag = this.router.url.split('/')[2].split('&')[1]?.replace('category_', '') || '';
     let word = this.router.url.split('/')[2].split('&')[1]?.replace('search_', '') || '';
 
-    setTimeout(() => {
-      if (!this.router.url.includes('&')) { this.loadPage(); return;} 
-      if (this.prev_tag.length) { 
-        this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
-        this.item_service.setPageSize(this.data_set.length || this.default_list.length);
-        this.checkTag();
-      }
-      if (word.includes('category')) { return; } 
-      word = word.replace('-', ' ');
-      this.search_service.setSearch(word, this.default_list); 
-    }, 1000);
+    if (!this.router.url.includes('&')) { this.loadPage(); return; }
+    else {
+      setTimeout(() => {
+        if (this.prev_tag.length) { 
+          this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
+          this.item_service.setPageSize(this.data_set.length || this.default_list.length);
+          this.checkTag();
+        }
+        if (word.includes('category')) { return; } 
+        word = word.replace('-', ' ');
+        this.search_service.setSearch(word, this.default_list); 
+      }, 350);
+    }
   }
 
   //init_list = () => { setTimeout(() => {this.item_service.initList();}); }
 
   loadPage = () => {
-    let query = this.param.replace('page_', '');
-    let a  = (Number(query) - 1) * 12;
-    let b = (Number(query) * 12)
+    setTimeout(() => {
+      let query = this.param.replace('page_', '');
+      let a  = (Number(query) - 1) * 12;
+      let b = (Number(query) * 12)
 
-    this.data_set = this.default_list.slice(a, b);
-    this.item_service.setPageSize(this.default_list.length);
+      this.data_set = this.default_list.slice(a, b);
+      this.item_service.setPageSize(this.default_list.length);
+    }, 250);
   }
 
   resetTag() {
