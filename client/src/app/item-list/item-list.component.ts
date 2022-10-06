@@ -37,13 +37,14 @@ export class ItemListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.param = this.router.url.split('/')[2].split('&')[0];
+    this.param = this.router.url.split('/')[2]?.split('&')[0];
     this.resetList();
 
     this.prev_tag = this.router.url.split('/')[2].split('&')[1]?.replace('category_', '') || '';
     let word = this.router.url.split('/')[2].split('&')[1]?.replace('search_', '') || '';
 
     setTimeout(() => {
+      if (!this.router.url.includes('&')) { this.loadPage(); return;} 
       if (this.prev_tag.length) { 
         this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
         this.item_service.setPageSize(this.data_set.length || this.default_list.length);
@@ -52,19 +53,18 @@ export class ItemListComponent implements OnInit {
       if (word.includes('category')) { return; } 
       word = word.replace('-', ' ');
       this.search_service.setSearch(word, this.default_list); 
-    }, 500);
+    }, 1000);
   }
 
   //init_list = () => { setTimeout(() => {this.item_service.initList();}); }
 
   loadPage = () => {
-    setTimeout(() => {    
-      let query = this.pageNum;
-      let a  = (Number(query) - 1) * 12;
-      let b = (Number(query) * 12)
+    let query = this.param.replace('page_', '');
+    let a  = (Number(query) - 1) * 12;
+    let b = (Number(query) * 12)
 
-      this.data_set = this.default_list.slice(a, b);
-    }, 250);
+    this.data_set = this.default_list.slice(a, b);
+    this.item_service.setPageSize(this.default_list.length);
   }
 
   resetTag() {
@@ -80,7 +80,7 @@ export class ItemListComponent implements OnInit {
     el.checked = true;
     el.parentElement?.classList.add('highlight');
   }
-
+  
   resetList = () => {
     this.default_list = this.item_service.getItemList();
     this.data_set = this.default_list;
@@ -94,7 +94,6 @@ export class ItemListComponent implements OnInit {
       if (event.target.name === this.prev_tag) {
         this.loadPage();
         this.prev_tag = "";
-        this.resetList();
         this.router.navigate(["browse_groceries/" + this.param]);
         return;
       }
