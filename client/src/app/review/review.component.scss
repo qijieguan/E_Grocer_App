@@ -1,10 +1,8 @@
 .review-section {  
-    padding: 2rem 2rem 7rem 2rem;
-    margin-bottom: 40vh;
-    width: 75vw;
+    padding: 4rem 2rem 7rem 2rem;
+    width: 100vw;
     background: white;
-    border-radius: 0.125rem;
-    box-shadow: 2px 2px 5px;
+    box-shadow: 0 1px 3px;
 }
 
 .review-form { 
@@ -73,7 +71,8 @@
     letter-spacing: 0.025rem;
     color: darkolivegreen;
     border-radius: 0.75rem 0.75rem 0.125rem 0.75rem;
-    box-shadow: 1px 1px 3px grey;
+    border-bottom: 2px solid darkolivegreen;
+    box-shadow: -1px 1px 1px grey;
 }
 
 .review-name { align-self: flex-end; }
@@ -87,5 +86,6 @@
 }
 
 @media (max-width: 50rem) {
+    .review-section { padding: 2rem 2rem 7rem 2rem; }
     .review-text { padding: 0.25rem, 0.5rem; width: 100%; }
 }
