@@ -12,6 +12,11 @@ export class NavBarComponent implements OnInit {
   private cartNum: number = 0;
 
   constructor(private location: Location, private cart_service: CartService) {
+    if (!sessionStorage.getItem('visited')) {
+      sessionStorage.setItem('visited', JSON.stringify('true'));
+      this.cart_service.clearCart();
+    }
+    this.cart_service.getCart().subscribe((cart) => { this.cartNum = cart.length; });
   }
 
   ngOnInit(): void {
@@ -53,8 +58,6 @@ export class NavBarComponent implements OnInit {
       document.querySelector('.' + querySelect)?.classList.add('highlight');
       setTimeout(() => { this.activeObserver(); }, 500);
     });
-
-    this.cart_service.getCart().subscribe((cart) => { this.cartNum = cart.length; });
   }
 
   activeObserver = () => {

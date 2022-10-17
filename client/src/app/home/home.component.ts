@@ -9,10 +9,6 @@ import { CartService } from '../cart.service';
 export class HomeComponent implements OnInit {
 
   constructor(private cart_service: CartService) {
-    if (!sessionStorage.getItem('visited')) {
-      sessionStorage.setItem('visited', JSON.stringify('true'));
-      this.cart_service.clearCart();
-    }
   }
 
   ngOnInit(): void {
