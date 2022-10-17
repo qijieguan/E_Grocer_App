@@ -17,12 +17,14 @@ const uri = process.env.ATLAS_URI;
 mongoose.connect(uri);
 
 const itemListRouter = require('./routes/item-list');
+const cartRouter = require('./routes/cart');
 
 app.route('/api/map/getKey').get((req, res) => { res.json(process.env.MAP_API) });
 app.use('/api/item-list', itemListRouter);
+app.use('/api/cart', cartRouter);
  
 app.get('/*', function(req, res) {
- res.sendFile(path.join(__dirname + '/client/dist/e-grocer/index.html'));
+  res.sendFile(path.join(__dirname + '/client/dist/e-grocer/index.html'));
 });
 
 const port = process.env.PORT || 8080;

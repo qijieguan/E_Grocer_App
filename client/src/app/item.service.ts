@@ -12,9 +12,7 @@ export class ItemService {
   private subject_1 = new BehaviorSubject<any>([]);
   private subject_2 = new BehaviorSubject<number>(1);
   private subject_3 = new BehaviorSubject<number>(1);
-
   private DATA: any[] = [];
-  private DEFAULT_DATA: any[] = [];
 
   /*
   private data_set = [
@@ -350,8 +348,7 @@ export class ItemService {
       list.forEach((item: any) => { this.DATA.push(item); }); 
       this.subject_2.next(Math.ceil(this.DATA.length / 12));   
     });
-    
-    this.DEFAULT_DATA = this.DATA;
+
     //this.DATA = this.data_set;
     this.setPageSize(this.DATA.length);
   }

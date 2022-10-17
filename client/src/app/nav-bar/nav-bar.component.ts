@@ -14,8 +14,6 @@ export class NavBarComponent implements OnInit {
   constructor(private location: Location, private cart_service: CartService) {
   }
 
-  getCartNum = () => { return this.cartNum; }
-
   ngOnInit(): void {
     this.location.onUrlChange(url => {
       setTimeout(()=> { window.scrollTo({top: 0, behavior: 'smooth'}); }, 125); 
@@ -74,4 +72,7 @@ export class NavBarComponent implements OnInit {
 
     faders.forEach(fader => { appearOnScroll.observe(fader); });
   }
+
+  getCartNum = () => { return this.cartNum; }
+  
 }
