@@ -71,17 +71,14 @@ html { position: relative; }
 html, body { min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
 body { position: relative; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.main_bg, .overlay { position: absolute; top: 0; height: 100vh; width: 100vw; }
-
 .main_bg { 
-  background-image: url("https://pnptc-media.s3.amazonaws.com/images/header_photo.2e16d0ba.fill-1200x800.jpg") !important;
-  background-repeat: no-repeat;
+  position: absolute; 
+  inset: 0 0 auto auto; 
+  height: 100vh; 
+  width: 70vw;
+  background-image: url("https://images.pexels.com/photos/21393/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
 }
-/*
-https://cdn.pixabay.com/photo/2021/02/16/05/47/apple-6019865_960_720.jpg
-*/
-.overlay { background: black; opacity: 0.4; }
 
 a { text-decoration: none; }
 
@@ -95,5 +92,5 @@ a { text-decoration: none; }
   100% { transform: translateY(0%); opacity: 1;}
 }
 
-@media (max-width: 50rem) { .main_bg, .overlay { height: 47vh; } }
+@media (max-width: 50rem) { .main_bg { height: 47vh; width: 100vw;} }
 

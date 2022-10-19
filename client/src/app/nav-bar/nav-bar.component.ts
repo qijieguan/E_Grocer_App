@@ -30,20 +30,21 @@ export class NavBarComponent implements OnInit {
       let header_image = document.querySelector(".dynamic-img");
       let bg_image = document.querySelector(".app-wrapper");
 
+      header_image?.classList.remove("active", "grocery", "checkout", "note");
+      bg_image?.classList.remove('background');
+
       document.getElementsByTagName('header')[0].classList.remove('home');
 
-      if (path[1] === 'browse_groceries') { querySelect = 'grocery_list-link'; }
-      else if (path[1] === 'checkout') { querySelect = 'cart-link'; }
-      else if (path[1] === 'note') { querySelect = 'note-link'; }
+      if (path[1] === 'browse_groceries') { querySelect = 'grocery_list-link'; header_image?.classList.add("grocery"); }
+      else if (path[1] === 'checkout') { querySelect = 'cart-link';  header_image?.classList.add("checkout"); }
+      else if (path[1] === 'note') { querySelect = 'note-link'; header_image?.classList.add("note"); }
       else { querySelect = 'home-link'; }
 
       if (querySelect === "home-link") { 
-        document.getElementsByTagName('header')[0].classList.add('home');
-        header_image?.classList.remove('active');
-        bg_image?.classList.remove('background');
+        document.getElementsByTagName('header')[0].classList.add('home'); 
       }
       else {
-        header_image?.classList.add('active'); 
+        setTimeout(() => { header_image?.classList.add('active'); });
         bg_image?.classList.add('background'); 
       }
 
