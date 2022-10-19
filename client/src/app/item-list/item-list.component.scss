@@ -28,7 +28,7 @@
     border-radius: 0.375rem;
 }
 
-input[type="checkbox"] { accent-color: brown; }
+input[type="checkbox"] { accent-color: green; }
 .container {
     margin-left: 17.5%;
     column-gap: 0.5rem; 
@@ -37,10 +37,10 @@ input[type="checkbox"] { accent-color: brown; }
     letter-spacing: 0.5px;
     color: gray;
 }
-.container.highlight { color: brown; }
+.container.highlight { color: green; }
 
 .set-data { z-index: 2; }
-.set-data:hover { color: red; }
+.set-data:hover { color: green; }
 
 .item-section { grid-template-columns: repeat(4, 24%); column-gap: 0.5rem; }
 

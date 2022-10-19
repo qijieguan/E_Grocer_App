@@ -1,19 +1,13 @@
-.nav-bar-wrapper { 
-    position: relative;
-    width: 100vw;
-    background: white;
-}
+.nav-bar-wrapper { position: relative; width: 100vw; }
 
 .nav-bar {
     position: fixed;
     inset: 0 0 auto auto;
     justify-content: center;
     width: fit-content;
-    background: rgb(32, 32, 32);
+    background: white;
     border-radius: 0 0 0.125rem 0.125rem;
-    box-shadow: 0 1px 1px;
     z-index: 2;
-    overflow: hidden;
 }
 
 .nav-bar > a {
@@ -23,14 +17,14 @@
     font-weight: 500;
     letter-spacing: 1px;
     width: 15vw;
-    color: white;  
+    color: black;  
 }
 
 .nav-bar > a:hover { color: rgb(173, 173, 173); border-bottom: 0; }
 
 .nav-bar > a > mat-icon { margin: 0 0.25rem 0 33%; }
 
-.nav-bar > a.highlight { background: brown; color: yellow; }
+.nav-bar > a.highlight { background: green; color: yellow; }
 .fixed { position: fixed; }
 
 .cart-num { margin-left: 0.25rem; }

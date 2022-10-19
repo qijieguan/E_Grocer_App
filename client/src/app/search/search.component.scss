@@ -11,7 +11,7 @@
 .search-wrapper { position: relative; justify-content: center; height: 6vh; width: 100%; }
 
 .search-icon { padding-left: 1vw; height: 100%; background: white; border: 1px solid rgb(216, 216, 216); border-right: 0; }
-.search-icon > mat-icon { color: brown; }
+.search-icon > mat-icon { color: green; }
 
 .search-bar {
     text-indent: 1rem;
@@ -49,7 +49,7 @@
 
 .droplist { padding: 0.5rem 0 0.5rem 3%; font-size: clamp(0.875rem, 1vw, 1.25rem); }
 
-.droplist:hover { color: yellow; background: brown; }
+.droplist:hover { color: yellow; background: green; }
 
 .drop-li { transition: text-indent 0.1s ease-in; }
 .droplist:hover .drop-li { text-indent: 0.5vw; }
