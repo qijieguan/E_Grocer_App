@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { CartService } from '../cart.service';
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-nav-bar',
@@ -26,32 +27,24 @@ export class NavBarComponent implements OnInit {
       let path = url.split('/');
       let querySelect = "";
 
-      let header = document.querySelector(".header-overlay");
-      let nav = document.querySelector(".nav-bar");
+      let header_image = document.querySelector(".dynamic-img");
       let bg_image = document.querySelector(".app-wrapper");
 
       document.getElementsByTagName('header')[0].classList.remove('home');
-    
-      header?.classList.remove('grocery_list-link', 'cart-link', 'note-link', 'background');
-      nav?.classList.remove('fixed');
 
-      if (path[1] === 'browse_groceries') { querySelect = 'grocery_list-link'; nav?.classList.add('fixed'); }
-      else if (path[1] === 'checkout') { querySelect = 'checkout-link'; }
+      if (path[1] === 'browse_groceries') { querySelect = 'grocery_list-link'; }
+      else if (path[1] === 'checkout') { querySelect = 'cart-link'; }
       else if (path[1] === 'note') { querySelect = 'note-link'; }
       else { querySelect = 'home-link'; }
 
       if (querySelect === "home-link") { 
         document.getElementsByTagName('header')[0].classList.add('home');
-        nav?.classList.add('fixed');
+        header_image?.classList.remove('active');
         bg_image?.classList.remove('background');
       }
-      else { 
-        setTimeout(() => {
-          header?.classList.add('background'); 
-          header?.classList.add(querySelect);
-        });
-        nav?.classList.remove("home");
-        bg_image?.classList.add('background');
+      else {
+        header_image?.classList.add('active'); 
+        bg_image?.classList.add('background'); 
       }
 
       document.querySelector('.highlight')?.classList.remove('highlight');

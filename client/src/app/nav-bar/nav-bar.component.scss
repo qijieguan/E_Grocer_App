@@ -1,5 +1,11 @@
+.nav-bar-wrapper { 
+    position: relative;
+    width: 100vw;
+    background: white;
+}
+
 .nav-bar {
-    position: absolute;
+    position: fixed;
     inset: 0 0 auto auto;
     justify-content: center;
     width: fit-content;

@@ -1,25 +1,27 @@
-<nav class="nav-bar flex">
+<div class="nav-bar-wrapper">
+    <nav class="nav-bar flex">
    
-    <a class="home-link flex" routerLink="">
-        <mat-icon>home</mat-icon>
-        <span>HOME</span>
-    </a>  
-
-    <a class="grocery_list-link flex" [routerLink]="['/browse_groceries/page_1']">
-        <mat-icon>shopping_bag</mat-icon>
-        <span>SHOP</span>
-    </a>  
-   
-    <a class="cart-link flex" routerLink="/checkout">
-        <mat-icon>shopping_cart</mat-icon>
-        <span>CART </span>
-        <span class="cart-num" *ngIf="getCartNum() > 0"> ({{getCartNum()}})</span>
-    </a>
-
-    <a class="note-link flex" routerLink="/note">
-        <mat-icon>info</mat-icon>
-        <span>NOTE</span>
-    </a>
+        <a class="home-link flex" routerLink="">
+            <mat-icon>home</mat-icon>
+            <span>HOME</span>
+        </a>  
     
-</nav>
+        <a class="grocery_list-link flex" [routerLink]="['/browse_groceries/page_1']">
+            <mat-icon>shopping_bag</mat-icon>
+            <span>SHOP</span>
+        </a>  
+       
+        <a class="cart-link flex" routerLink="/checkout">
+            <mat-icon>shopping_cart</mat-icon>
+            <span>CART </span>
+            <span class="cart-num" *ngIf="getCartNum() > 0"> ({{getCartNum()}})</span>
+        </a>
+    
+        <a class="note-link flex" routerLink="/note">
+            <mat-icon>info</mat-icon>
+            <span>NOTE</span>
+        </a>
+        
+    </nav>
+</div>
 

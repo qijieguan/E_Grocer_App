@@ -27,8 +27,7 @@ export class MapComponent implements OnInit {
 
   handleClick = (event: any) => {
     let el = document.querySelector('input.active') as HTMLInputElement;
-
-    if (el) { el.checked = false; }
+    if (el) { el.checked = false; el.classList.remove('active'); }
     if (event.target.name === "delivery") { this.deliveryInp = true; }
     else { this.deliveryInp = false; }
 
@@ -41,6 +40,5 @@ export class MapComponent implements OnInit {
     event.preventDefault();
     let url = "https://www.google.com/maps/embed/v1/directions?origin=" + this.address + "&destination=El Monte, 91733&key=AIzaSyAB5KWxkElCuvl0cOF3yMxBdRJkwvhCIz8";
     this.map_url = this.sanitizer.bypassSecurityTrustResourceUrl(url);
-    console.log(document.querySelector('iframe'))
   }
 }

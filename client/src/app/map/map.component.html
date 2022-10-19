@@ -1,12 +1,13 @@
 <div class="map grid">
     <label class="container flex">
-        <input type="radio" (click)="handleClick($event)" name="pick-up" checked>
+        <input type="radio" (click)="handleClick($event)" name="pick-up" class="active" checked>
         <span>Store Pick-Up</span>
     </label>
     <label class="container flex">
         <input type="radio" (click)="handleClick($event)" name="delivery">
         <span>Delivery - Cost Varies</span>
     </label>
+    <img *ngIf="!deliveryInp"  class="pick-up-img" alt=""/>
     <form *ngIf="deliveryInp" (submit)="mapUpdate($event)">
         <span>Delivery Address:</span> 
         <input
