@@ -5,6 +5,7 @@ header {
     min-height: 65vh; 
     background: rgb(224, 224, 224);
     box-shadow: 0 1px 1px gray; 
+    z-index: 2;
 }
 header.home { min-height: 22.5vh; background: rgb(241, 241, 241); }
 

@@ -1,4 +1,4 @@
-.nav-bar-wrapper { position: relative; width: 100vw; }
+.nav-bar-wrapper { position: relative; width: 100vw; z-index: 2; }
 
 .nav-bar {
     position: fixed;
@@ -7,7 +7,6 @@
     width: fit-content;
     background: white;
     border-radius: 0 0 0.125rem 0.125rem;
-    z-index: 2;
 }
 
 .nav-bar > a {
