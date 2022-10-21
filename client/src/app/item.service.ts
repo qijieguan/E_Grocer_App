@@ -66,18 +66,6 @@ export class ItemService {
     },
     {
       id: uuidv4(),
-      url: 'https://images.pexels.com/photos/8446853/pexels-photo-8446853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      name: 'Mango',
-      description: 'Yellow Tropical fruit. Packed with nutrients and protective antioxidants.',
-      tag: 'fruit',
-      quantity: 1,
-      price: 2.99,
-      ratings: {average: 4.5, values: [4.5]},
-      reviews: [{content: "10/10. Very delicious and I am addicted to mangos!", rating: 4.5, name: 'anonymous'}],
-      hide_quantity: false,
-    },
-    {
-      id: uuidv4(),
       url: 'https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       name: 'Whole Avocado',
       description: 'A healthy and oily fruit that keeps you from being hungry.',

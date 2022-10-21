@@ -88,7 +88,7 @@ input[type="checkbox"] { accent-color: green; }
 .quantity-input > button > mat-icon { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 .quantity-input > span { font-weight: bold; }
 
-.increment, .decrement { justify-content: center; width: 20%; background: red; border: 0; border-radius: 0.125rem; }
+.increment, .decrement { justify-content: center; width: 20%; background: green; border: 0; border-radius: 0.125rem; }
 .increment:hover, .decrement:hover { box-shadow: 0 0 3px; }
 
 .submit-button {
@@ -114,8 +114,8 @@ input[type="checkbox"] { accent-color: green; }
     column-gap: 0.25rem; 
     width: 65%; 
     color: white; 
-    background: red; 
-    border: 1px solid firebrick;
+    background: green; 
+    border: 1px solid darkgreen;
 }
 .cancel-btn { width: 30%; color: black; background: rgb(230, 230, 230); border: 1px solid rgb(206, 206, 206); }
 
@@ -130,7 +130,7 @@ app-rating { display: flex; align-items: center; margin-left: auto; }
     font-family: 'Playfair Display', serif;
     font-weight: 500;
     letter-spacing: 1px;
-    color: brown;
+    color: green;
 }
 
 .add-msg.show {
@@ -140,9 +140,8 @@ app-rating { display: flex; align-items: center; margin-left: auto; }
     width: fit-content;
     background: white;
     box-shadow: -2px 2px 3px;
-    border-left: 5px solid brown;
+    border-left: 5px solid green;
     border-radius: 0.05rem;
-    overflow: hidden;
     opacity: 0;
     animation: fadeUpSlide 3s ease-in;
 }
@@ -155,7 +154,7 @@ app-rating { display: flex; align-items: center; margin-left: auto; }
     letter-spacing: 0.75px;
 }
 
-.add-msg-text > span { color: brown; font-weight: bold; }
+.add-msg-text > span { color: green; font-weight: bold; }
 
 app-pagination { grid-column: 1 / 5; margin: 0 auto; }
 

@@ -6,12 +6,12 @@
             <span>HOME</span>
         </a>  
     
-        <a class="grocery_list-link flex" [routerLink]="['/browse_groceries/page_1']">
+        <a class="grocery-list-link flex" [routerLink]="['/browse_groceries/page_1']">
             <mat-icon>shopping_bag</mat-icon>
             <span>SHOP</span>
         </a>  
        
-        <a class="cart-link flex" routerLink="/checkout">
+        <a class="checkout-link flex" routerLink="/checkout">
             <mat-icon>shopping_cart</mat-icon>
             <span>CART </span>
             <span class="cart-num" *ngIf="getCartNum() > 0"> ({{getCartNum()}})</span>

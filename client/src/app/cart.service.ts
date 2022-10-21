@@ -29,24 +29,29 @@ export class CartService {
 
   addCartItem = (item: any) => {    
     let match_data = this.cart.find(x => x.id === item.id);
-    if (!match_data) { this.cart.push({...item}); }
+    if (!match_data) { 
+      this.cart.push({...item}); 
+
+      let new_obj = {
+        id: match_data ? match_data.id : item.id,
+        url: match_data ? match_data.url : item.url,
+        name: match_data ? match_data.name : item.name,
+        quantity: match_data ? match_data.quantity : item.quantity,
+        price: match_data ? match_data.price : item.price
+      }
+      
+      this.http.post(this.url + '/api/cart/add', {cart_obj: new_obj})
+      .subscribe( data => { console.log(data) } );
+    }
     else {
       match_data.quantity = Number(match_data.quantity) + Number(item.quantity);
       match_data.price = Number(match_data.price) + Number(item.price);
+
+      this.http.post(this.url + '/api/cart/update', {updated_obj: match_data})
+      .subscribe( data => { console.log(data) } );
     }
 
     this.subject_1.next(this.cart);
-
-    let new_obj = {
-      id: match_data ? match_data.id : item.id,
-      url: match_data ? match_data.url : item.url,
-      name: match_data ? match_data.name : item.name,
-      quantity: match_data ? match_data.quantity : item.quantity,
-      price: match_data ? match_data.price : item.price
-    }
-    
-    this.http.post(this.url + '/api/cart/add', {cart_obj: new_obj})
-    .subscribe( data => { console.log(data) } );
   }
 
   deleteCartItem = (item: any) => {

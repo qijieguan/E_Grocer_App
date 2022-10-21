@@ -57,7 +57,7 @@
         <div *ngIf="!data_set.length" class="item-list-empty">No Availiable Items to Browse</div>
         <app-pagination></app-pagination>
     </div>
-    <div class="add-msg flex" *ngIf="itemHolder.length">
+    <div class="add-msg flex" *ngIf="itemHolder.length > 0">
         <div class="add-msg-text"><span>{{itemHolder}}</span> added to cart successfully!</div>
     </div>
 </div>

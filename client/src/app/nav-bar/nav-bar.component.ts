@@ -22,7 +22,6 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.location.onUrlChange(url => {
-      setTimeout(()=> { window.scrollTo({top: 0, behavior: 'smooth'}); }, 125); 
 
       let path = url.split('/');
       let querySelect = "";
@@ -35,18 +34,24 @@ export class NavBarComponent implements OnInit {
 
       document.getElementsByTagName('header')[0].classList.remove('home');
 
-      if (path[1] === 'browse_groceries') { querySelect = 'grocery_list-link'; header_image?.classList.add("grocery"); }
-      else if (path[1] === 'checkout') { querySelect = 'cart-link';  header_image?.classList.add("checkout"); }
+      if (path[1] === 'browse_groceries') { querySelect = 'grocery-list-link'; header_image?.classList.add("grocery"); }
+      else if (path[1] === 'checkout') { querySelect = 'checkout-link';  header_image?.classList.add("checkout"); }
       else if (path[1] === 'note') { querySelect = 'note-link'; header_image?.classList.add("note"); }
       else { querySelect = 'home-link'; }
 
-      if (querySelect === "home-link") { 
-        document.getElementsByTagName('header')[0].classList.add('home'); 
+
+      if (querySelect === 'home-link') {
+        setTimeout(() => {window.scrollTo({top: 0, behavior: 'smooth'}); }, 125)
+        document.getElementsByTagName('header')[0].classList.add('home');  
       }
-      else {
-        setTimeout(() => { header_image?.classList.add('active'); });
+      else { 
+        setTimeout(() => { bg_image?.scrollIntoView({ behavior: 'smooth' }); }, 125);
+        document.querySelector('.search')?.scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('.item-expand')?.scrollIntoView({behavior: 'smooth'});
+
         bg_image?.classList.add('background'); 
-      }
+        header_image?.classList.add('active');
+      };
 
       document.querySelector('.highlight')?.classList.remove('highlight');
       document.querySelector('.' + querySelect)?.classList.add('highlight');
