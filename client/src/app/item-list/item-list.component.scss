@@ -54,7 +54,7 @@ input[type="checkbox"] { accent-color: green; }
 }
 .item:hover { box-shadow: 0 0 5px 1px black; }
 
-.item > img { grid-column: 1 / 3; width: 100%; height: 25vh;}
+.item > img { grid-column: 1 / 3; width: 100%; height: 25vh; object-fit: cover; }
 .item-label {  
     grid-column: 1 / 3;
     row-gap: clamp(0rem, 1vw, 1rem) !important;
