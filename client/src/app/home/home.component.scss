@@ -29,14 +29,12 @@
 
 .contact { 
     position: absolute;
-    inset: auto 0 15% auto;
-    transform: translateX(175%);
+    inset: auto 5% 5% auto;
     margin: 6rem 0 0 10vw;  
     padding: 0.5rem 1rem;
-    column-gap: 2rem; 
+    column-gap: 1.25rem; 
     transition: all 0.5s ease-in; 
 }
-.contact:hover { transform: translateX(125%); }
 
 .icon-wrapper { 
     color: gold; 
@@ -44,16 +42,17 @@
     border-radius: 5rem;   
     box-shadow: 0 0 5px black;
     overflow: hidden; 
-    pointer-events: auto; 
 }
 
 .icon-wrapper > mat-icon, .icon-wrapper > i { border-radius: 0 5rem 5rem 0; }
 .icon-wrapper > mat-icon { padding: 0.75rem 2.5rem 2.5rem 0.75rem; font-size: clamp(1.5rem, 2.5vw, 1.75rem); }
 .icon-wrapper > i { padding: 0.875rem; font-size: clamp(1.3rem, 2.5vw, 1.5rem); }
-
-.email-content, .linked-in-content { font-weight: 500; letter-spacing: 0.05rem; height: 3rem; width: 0; transition: all 1s; z-index: 3; }
-.icon-wrapper:hover .email-content { margin-left: 0.5rem; width: 12rem; }
-.icon-wrapper:hover .linked-in-content { margin-left: 0.5rem; width: 17rem; }
+.email-content, .linked-in-content, .tech-content { font-weight: 500; letter-spacing: 0.05rem; height: 3rem; width: 0; transition: all 1s; }
+.tech-content { list-style: none; }
+.tech-content > li { margin-left: 0.5rem; padding: 0.5rem 0.3rem; border-radius: 3rem; }
+.icon-wrapper:hover .email-content { width: 12rem; }
+.icon-wrapper:hover .linked-in-content { width: 17rem; }
+.icon-wrapper:hover .tech-content { width: 18rem; list-style: none; }
 .linked-in-content > a { color: gold; text-decoration: underline; }
 
 .app-body-1 { margin: 55vh 0 30vh 0; width: 100vw; background: white; }
