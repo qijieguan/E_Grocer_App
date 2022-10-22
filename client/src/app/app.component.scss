@@ -46,7 +46,7 @@ header.home { min-height: 22.5vh; background: rgb(241, 241, 241); }
 
 .dynamic-img.active.checkout {
     background-image: url('https://thumbs.dreamstime.com/b/grocery-set-paper-bag-delivery-service-quarantine-coronavirus-covid-horizontal-banner-top-view-image-179977234.jpg');
-    background-size: cover;
+    object-fit: cover;
 }
 
 .dynamic-img.active.note {
