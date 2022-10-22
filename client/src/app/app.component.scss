@@ -4,11 +4,10 @@ header {
     min-height: 65vh;
     padding: 3rem 0;  
     background: rgb(224, 224, 224);
-    box-shadow: 0 1px 1px gray;
 }
-header.home { min-height: 22.5vh; background: rgb(241, 241, 241); }
+header.home { min-height: 22.5vh; background: transparent; }
 
-.logo { margin: 0 auto 0 25vh; position: absolute; width: fit-content; z-index: 1; }
+.logo { margin: 0 auto 0 25vh; position: absolute;  top: 26%; width: fit-content; z-index: 1; }
 
 .logo > img { position: absolute; height: 9vh; z-index: -1; }
 .tomato { inset: 0 auto auto 0; transform: rotate(-45deg) translate3d(18%, -35%, 0); }
