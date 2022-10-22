@@ -17,7 +17,7 @@ export class NavBarComponent implements OnInit {
       sessionStorage.setItem('visited', JSON.stringify('true'));
       this.cart_service.clearCart();
     }
-    this.cart_service.getCart().subscribe((cart) => { this.cartNum = cart.length; });
+    setTimeout(() => { this.cart_service.getCart().subscribe((cart) => { this.cartNum = cart.length; }); });
   }
 
   ngOnInit(): void {

@@ -28,7 +28,8 @@ export class CartComponent implements OnInit, OnDestroy {
   onGridReady(params: any) { 
     this.gridApi = params.api; 
     this.gridApi.setRowData(this.rowData);
-    this.gridApi.sizeColumnsToFit();
+    if (window.innerWidth <= 800) { this.gridApi.autoSizeColumns(); }
+    else { this.gridApi.sizeColumnsToFit(); }
   }
 
   defaultColDef = { sortable: true, filter: true, autoHeight: true, resizable: true, }
