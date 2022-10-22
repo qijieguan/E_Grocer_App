@@ -33,6 +33,8 @@
     .nav-bar > a > mat-icon { margin: 0 0.25rem 0 22.5%; }
 }
 
-@media (max-width: 25rem) {
+@media (max-width: 15rem) {
+    .nav-bar > a { width: 22vw }
     .nav-bar > a > span { display: none; }
+    .nav-bar > a > mat-icon { margin: 0 auto; }
 }
