@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { CartService } from '../cart.service';
-import { style } from '@angular/animations';
+
 
 @Component({
   selector: 'app-nav-bar',

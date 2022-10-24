@@ -46,6 +46,7 @@ $E-Grocer-theme: mat.define-light-theme((
 @import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap');
 
 
 
@@ -56,6 +57,7 @@ $E-Grocer-theme: mat.define-light-theme((
 //font-family: 'Tiro Gurmukhi', serif;
 //font-family: 'Bebas Neue', cursive;
 //font-family: 'Lobster', cursive;
+//font-family: 'Dancing Script', cursive;
 
 
 * { line-height: 1.5; box-sizing: border-box; }
@@ -64,22 +66,10 @@ $E-Grocer-theme: mat.define-light-theme((
 
 .grid { display: grid; justify-content: space-evenly; row-gap: 2rem; }
 
-img { display: block; }
-
 button { letter-spacing: 0.05rem; border: 0; }
 
-html { position: relative; }
 html, body { min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
-body { position: relative; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.main_bg { 
-  position: absolute; 
-  inset: 0 0 auto auto; 
-  height: 125vh; 
-  width: 100vw;
-  background-image: url("https://images.pexels.com/photos/21393/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-size: cover;
-}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 a { text-decoration: none; }
 
@@ -93,5 +83,4 @@ a { text-decoration: none; }
   100% { transform: translateY(0%); opacity: 1;}
 }
 
-@media (max-width: 50rem) { .main_bg { height: 47vh; width: 100vw;} }
 

@@ -7,7 +7,7 @@ header {
 }
 header.home { min-height: 22.5vh; background: transparent; }
 
-.logo { margin: 0 auto 0 25vh; position: absolute;  top: 26%; width: fit-content; z-index: 1; }
+.logo { margin: 0 auto 0 25vh; position: absolute; top: 26%; width: fit-content; z-index: 1; }
 
 .logo > img { position: absolute; height: 9vh; z-index: -1; }
 .tomato { inset: 0 auto auto 0; transform: rotate(-45deg) translate3d(18%, -35%, 0); }
@@ -16,7 +16,7 @@ header.home { min-height: 22.5vh; background: transparent; }
 
 .logo > div {
     padding: 0.125rem 0.5rem;
-    font-size: clamp(2rem, 1vw, 2.5rem); 
+    font-size: clamp(1.5rem, 2vw, 2.5rem); 
     font-family: 'Bebas Neue', cursive;
     font-style: italic;
     letter-spacing: 0.1rem;
@@ -27,7 +27,7 @@ header.home { min-height: 22.5vh; background: transparent; }
 
 .logo > div > span { color: darkgreen; }
 
-.app-wrapper { position: relative; flex-direction: column; width: 100%; z-index: 1; }
+.app-wrapper { flex-direction: column; width: 100%; }
 
 .dynamic-img { display: none; }
 .dynamic-img.active {
@@ -58,6 +58,11 @@ header.home { min-height: 22.5vh; background: transparent; }
 @media (max-width: 50rem) {
     header { padding: 3rem 0 1.25rem 0; flex-direction: column; justify-content: unset; min-height: 35vh; }
     .dynamic-img.active { height: 35vh; }
-    .logo { margin: 5vh auto 0 auto; }
+    .logo { margin: 5vh auto 0 auto; top: 23%; }
+    .logo > img { height: 7vh; }
     .dynamic-img.active { background-size: cover; width: 100vw; inset: 0; margin: 0 };
+}
+
+@media (max-width: 20rem) {
+    .logo { display: none; }
 }
