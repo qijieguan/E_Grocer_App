@@ -17,9 +17,11 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.cart_service.getCart().subscribe((cart_data) => { 
-      this.rowData = cart_data;
-      this.rowData.forEach(item => { this.subtotal += item.price; });
+    this.cart_service.getCart().subscribe((cart_data) => {
+      if (cart_data) { 
+        this.rowData = cart_data;
+        this.rowData.forEach(item => { this.subtotal += item.price; });
+      }
     });
   }
 

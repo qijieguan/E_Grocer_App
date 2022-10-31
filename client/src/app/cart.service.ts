@@ -27,6 +27,11 @@ export class CartService {
     .subscribe( data => { this.subject_2.next(data); } );
   }
 
+  initCart = () => {
+    this.http.post(this.url + '/api/cart/init', {user_id: JSON.parse(sessionStorage.getItem('uid') || '')})
+    .subscribe( data => { console.log(data) } );
+  }
+
   addCartItem = (item: any) => {    
     let match_data = this.cart.find(x => x.id === item.id);
     if (!match_data) { 
@@ -40,7 +45,7 @@ export class CartService {
         price: match_data ? match_data.price : item.price
       }
       
-      this.http.post(this.url + '/api/cart/add', {cart_obj: new_obj})
+      this.http.post(this.url + '/api/cart/add', {user_id: JSON.parse(sessionStorage.getItem('uid') || ''), cart_obj: new_obj})
       .subscribe( data => { console.log(data) } );
     }
     else {
@@ -59,7 +64,7 @@ export class CartService {
     this.cart.splice(findIndex, 1);
     this.subject_1.next(this.cart);
 
-    this.http.post(this.url + '/api/cart/delete', {remove_id: item.id})
+    this.http.post(this.url + '/api/cart/delete', {user_id: JSON.parse(sessionStorage.getItem('uid') || ''), remove_id: item.id})
     .subscribe( data => { console.log(data) } );
   }
 
@@ -71,7 +76,7 @@ export class CartService {
     this.cart[findIndex].price = unit_price * this.cart[findIndex].quantity; 
     this.subject_1.next(this.cart);
 
-    this.http.post(this.url + '/api/cart/update', {updated_obj: this.cart[findIndex]})
+    this.http.post(this.url + '/api/cart/update', {user_id: JSON.parse(sessionStorage.getItem('uid') || ''), updated_obj: this.cart[findIndex]})
     .subscribe( data => { console.log(data) } );
   }
 
@@ -79,13 +84,15 @@ export class CartService {
     this.cart = []; 
     this.subject_1.next(this.cart); 
 
-    this.http.post(this.url + '/api/cart/clear', {})
+    this.http.post(this.url + '/api/cart/clear', {user_id: JSON.parse(sessionStorage.getItem('uid') || '')})
     .subscribe( data => { console.log(data) } );
   }
 
   getCart() { 
-    this.http.get(this.url + '/api/cart/')
-    .subscribe( data => { this.subject_1.next(data); } );
+    this.http.post(this.url + '/api/cart/', {user_id: JSON.parse(sessionStorage.getItem('uid') || '')})
+    .subscribe( (data: any) => { if (data[0].cart) { 
+      this.subject_1.next(data[0].cart); 
+    } } );
 
     this.subject_1.asObservable().subscribe(cart => { 
       this.cart = [];

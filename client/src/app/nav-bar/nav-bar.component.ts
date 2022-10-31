@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { CartService } from '../cart.service';
+import { v4 as uuidv4 } from 'uuid';
 
 
 @Component({
@@ -15,9 +16,12 @@ export class NavBarComponent implements OnInit {
   constructor(private location: Location, private cart_service: CartService) {
     if (!sessionStorage.getItem('visited')) {
       sessionStorage.setItem('visited', JSON.stringify('true'));
-      this.cart_service.clearCart();
+      sessionStorage.setItem('uid', JSON.stringify(uuidv4()));
+      
+      setTimeout(() => {this.cart_service.initCart()});
     }
-    setTimeout(() => { this.cart_service.getCart().subscribe((cart) => { this.cartNum = cart.length; }); });
+    
+    setTimeout(() => { this.cart_service.getCart().subscribe((cart) => { this.cartNum = cart.length; }); }, 1000);
   }
 
   ngOnInit(): void {
