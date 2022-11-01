@@ -52,7 +52,7 @@ export class CartService {
       match_data.quantity = Number(match_data.quantity) + Number(item.quantity);
       match_data.price = Number(match_data.price) + Number(item.price);
 
-      this.http.post(this.url + '/api/cart/update', {updated_obj: match_data})
+      this.http.post(this.url + '/api/cart/update', {user_id: JSON.parse(sessionStorage.getItem('uid') || ''), updated_obj: match_data})
       .subscribe( data => { console.log(data) } );
     }
 

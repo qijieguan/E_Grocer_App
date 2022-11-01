@@ -19,7 +19,7 @@
     background: rgb(235, 235, 235);
     border: 1px solid rgb(224, 224, 224);
     border-radius: 0.075rem;
-    box-shadow: 1px 1px 3px;
+    box-shadow: 0 1px 3px;
     animation: scrollLeft 0.3s ease-in forwards;
 }
 
@@ -59,7 +59,7 @@ hr { margin: 0.5rem 0; grid-column: 1 / 3; width: 100%; }
     font-weight: 700;
     color: darkslategrey;
     background: orange; 
-    box-shadow: 0 0 1px darkorange;
+    box-shadow: 0 1px 2px darkorange;
 }
 .checkout-input > button:hover { box-shadow: 0 0 4px darkorange; }
 
