@@ -1,20 +1,51 @@
 <div class="map grid">
     <label class="container flex">
-        <input type="radio" (click)="handleClick($event)" name="pick-up" class="active" checked>
+        <input type="radio" (click)="handleClick($event)" name="pick-up">
         <span>Store Pick-Up</span>
     </label>
     <label class="container flex">
-        <input type="radio" (click)="handleClick($event)" name="delivery">
+        <input type="radio" (click)="handleClick($event)" name="delivery" class="active" checked>
         <span>Delivery - Cost Varies</span>
     </label>
-    <img *ngIf="!deliveryInp"  class="pick-up-img" alt=""/>
-    <form *ngIf="deliveryInp" (submit)="mapUpdate($event)">
-        <span>Delivery Address:</span> 
-        <input
-            placeholder="e.g. 420 Smoketown Ave, Los Angeles, CA 90001"
-            (keyup)="handleChange($event)"
-        />
-        <button type="submit" (click)="mapUpdate($event)">Track</button>
+    <form class="grid" *ngIf="deliveryInp" (submit)="mapUpdate($event)">
+        <div class="street">
+            <label>Street Address</label><br/>
+            <input 
+                (keyup)="handleChange($event, 'street')"
+                (value)="streetInp"
+                placeholder="ex. 420 Smoketown"
+                required
+            />
+        </div>
+        <div class="city">
+            <label>City</label><br/>
+            <input 
+                (keyup)="handleChange($event, 'city')"
+                (value)="cityInp"
+                placeholder="ex. Los Angeles"
+                required
+            />
+        </div>
+        <div class="state">
+            <label>State</label><br/>
+            <input
+                (keyup)="handleChange($event, 'state')"
+                (value)="stateInp"
+                placeholder="ex. CA" 
+                required
+            />
+        </div>
+        <div class="zip">
+            <label>Zip Code</label><br/>
+            <input 
+                (keyup)="handleChange($event, 'zip')"
+                (value)="zipInp"
+                type="number"
+                placeholder="ex. 90001"
+                required
+            />
+        </div>
+        <button type="submit" (click)="mapUpdate($event)">Enter</button>
     </form>
     <iframe 
         *ngIf="deliveryInp" 

@@ -10,10 +10,16 @@ import { CartService } from '../cart.service';
 })
 export class MapComponent implements OnInit {
 
-  deliveryInp: boolean = false;
+  deliveryInp: boolean = true;
+  trackClicked: boolean = false;
   address: string = "El Monte, 91733";
   map_key: string = "";
   map_url: any = "https://www.google.com/maps/embed/v1/directions?origin=El Monte, CA 91733&destination=El Monte, 91733&key=";
+  
+  streetInp: string = '';
+  cityInp: string = '';
+  stateInp: string = '';
+  zipInp: number = 0;
 
   constructor(public sanitizer: DomSanitizer, public cart_service: CartService) {
     this.cart_service.getMapKey().subscribe(key => { this.map_key = key; });
@@ -34,10 +40,17 @@ export class MapComponent implements OnInit {
     event.target.classList.add('active');
   }
 
-  handleChange = (event: any) => { this.address = event.target.value; }
+  handleChange = (event: any, param: string) => { 
+    if (param === 'street') { this.streetInp = event.target.value; }
+    else if (param === 'city') { this.cityInp = event.target.value; }
+    else if (param === 'state') { this.stateInp = event.target.value; }
+    else { this.zipInp = event.target.value; }
+  }
 
   mapUpdate = (event: any) => {
     event.preventDefault();
+    this.trackClicked = true;
+    this.address = this.streetInp + " " + this.cityInp + ", " + this.stateInp + " " + this.zipInp.toString();
     let url = "https://www.google.com/maps/embed/v1/directions?origin=" + this.address + "&destination=El Monte, 91733&key=AIzaSyAB5KWxkElCuvl0cOF3yMxBdRJkwvhCIz8";
     this.map_url = this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }

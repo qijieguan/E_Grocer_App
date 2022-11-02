@@ -71,6 +71,8 @@ button { letter-spacing: 0.05rem; border: 0; }
 html, body { min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+input:focus { outline-width: 0; }
+
 a { text-decoration: none; }
 
 @keyframes fadeIn {
