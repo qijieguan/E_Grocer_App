@@ -33,7 +33,12 @@ export class MapComponent implements OnInit {
 
   handleClick = (event: any) => {
     let el = document.querySelector('input.active') as HTMLInputElement;
-    if (el) { el.checked = false; el.classList.remove('active'); }
+
+    if (el) {
+      if (el.name === event.target.name) { return; }
+      el.checked = false; 
+      el.classList.remove('active'); 
+    }
     if (event.target.name === "delivery") { this.deliveryInp = true; }
     else { this.deliveryInp = false; }
 

@@ -1,20 +1,29 @@
 .app-note {
     margin: 12.5vh 0 40vh 0;
     padding: 2rem;
-    min-height: 35rem;
+    height: 40rem;
     width: 75vw;
+    font-family: 'Oswald', sans-serif;
     background: rgb(248, 248, 248);
-    box-shadow: 0 0 5px;
-    border-radius: 0.125rem;
+    box-shadow: 0 0 8px;
+    border-radius: 0.25rem;
 }
 
 .app-note > div { margin-bottom: 2.25rem; }
 
 .app-note > div > h1 {
     margin-bottom: 1.75rem;
+    font-size: clamp(1.5rem, 2vw, 2rem);
     font-weight: bold;
     width: fit-content;
     border-bottom: 2px solid black;
 }
 
-.app-note > div > li { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+.app-note > div > li { column-gap: 0.5rem; height: 10vh; font-size: clamp(1rem, 2.5vw, 1.5rem); }
+
+mat-icon { margin-bottom: clamp(2vh, 2%, 10%); color: green; font-size: clamp(2rem, 3vw, 3rem); }
+
+@media (max-width: 50rem) {
+    .app-note { margin: 12.5vh 0; width: 95vw; }
+    .app-note > div > li { height: 7.5vh; }
+}
