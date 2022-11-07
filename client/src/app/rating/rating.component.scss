@@ -1,10 +1,10 @@
-ngb-rating { color: gold; font-size: clamp(1rem, 2.5vw, 1.5rem); margin: 0 0 auto auto; float: right; }
+ngb-rating { color: gold; font-size: clamp(1.5rem, 2vw, 2rem); margin: 0 0 auto auto; float: right; }
 
 .default { margin-top: 0.75rem; }
 
-.large { font-size: clamp(0.875rem, 5vh, 1.5rem) !important; }
+.large { font-size: clamp(1.5rem, 3vw, 3rem) !important; }
 
-.review { font-weight: normal !important; font-size: clamp(0.75rem, 3vh, 1.5rem) !important;}
+.review { font-weight: normal !important; font-size: clamp(0.75rem, 3vw, 3rem) !important;}
 
 @media (max-width: 50rem) {
     ngb-rating { float: left; }
