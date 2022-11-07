@@ -67,6 +67,7 @@ header.home { height: 22.5vh; background: transparent; }
     .dynamic-img.active.grocery { background-size: cover; }
 }
 
-@media (max-width: 15rem) {
-    .logo { display: none; }
+@media (max-width: 25rem) { .dynamic-img.active.checkout { background-position: center left; } }
+
+@media (max-width: 15rem) { .logo { display: none; }
 }

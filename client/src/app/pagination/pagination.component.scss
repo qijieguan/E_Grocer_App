@@ -32,3 +32,5 @@
     .page { padding: 0.5rem 1.05rem; }
     .left { inset: 50% auto auto 25%; }
 }
+
+@media (max-width: 25rem) { .left { inset: 50% auto auto 1%; } }

@@ -1,18 +1,20 @@
 <h1 class="checkout-title">
-    <div>CHECKOUT</div>
+    <div>CART CHECKOUT</div>
     <hr/>
 </h1>
-<div class="order-summary grid">
-    <h1 class="flex">Order Sumarry</h1>
-    <div class="order-cost">
-        <div class="flex">Item subtotal: <span>${{subtotal.toFixed(2)}}</span></div>
-        <div class="flex">Estimated taxes (10%): <span>${{tax.toFixed(2)}}</span> </div>
-        <hr class="line"/>
-        <div class="grand-total flex">Order total: <span>${{(subtotal + tax).toFixed(2)}}</span></div>
+<div class="checkout-detail">
+    <div class="order-summary grid">
+        <h1 class="flex">Order Sumarry</h1>
+        <div class="order-cost">
+            <div class="flex">Item subtotal: <span>${{subtotal.toFixed(2)}}</span></div>
+            <div class="flex">Estimated taxes (10%): <span>${{tax.toFixed(2)}}</span> </div>
+            <hr class="line"/>
+            <div class="grand-total flex">Order total: <span>${{(subtotal + tax).toFixed(2)}}</span></div>
+        </div>
     </div>
-</div>
-<div class="checkout-input grid">
-    <app-cart></app-cart>
-    <app-map></app-map>
-    <button (click)="openModal()">PLACE ORDER</button>
+    <div class="checkout-input grid">
+        <app-cart></app-cart>
+        <app-map></app-map>
+        <button (click)="openModal()">PLACE ORDER</button>
+    </div>
 </div>
