@@ -14,6 +14,7 @@ export class PostingFormComponent implements OnInit {
   descriptionInp: string = '';
   quantityInp: number = 1;
   priceInp: number = 0.01;
+  postMsg: boolean = false;
 
   constructor(private item_service: ItemService) { 
   }
@@ -40,6 +41,8 @@ export class PostingFormComponent implements OnInit {
     else if (event.target.name === 'description') { this.descriptionInp = event.target.value; }
     else if (event.target.name === 'quantity') { this.quantityInp = event.target.value; }
     else { this.priceInp = event.target.value; }
+
+    if (this.postMsg) { this.postMsg = false; }
   }
   
   handleSubmit = (event: any) => {
@@ -63,6 +66,7 @@ export class PostingFormComponent implements OnInit {
     this.descriptionInp = '';
     this.quantityInp = 1;
     this.priceInp = 0.01;
+    this.postMsg = true;
 
     setTimeout(() => { document.querySelector('.post-container')?.scrollIntoView({ behavior: 'smooth' })}, 125);
   }

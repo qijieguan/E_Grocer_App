@@ -1,6 +1,5 @@
 .post-container { 
     flex-direction: column;
-    row-gap: 0;
     padding: 10vh 0;
     width: 100vw;
     background: rgb(201, 201, 201);
@@ -21,9 +20,10 @@
 
 form { 
     margin: auto;
-    padding: 10vh 5vw;
+    padding: 7.5vh 5vw;
     grid-template-columns: 45% 45%;
-    font-family: 'Playfair Display', serif;
+    row-gap: 0;
+    font-family: 'Tiro Gurmukhi', serif; 
     font-weight: 500;
     min-height: 100vh;
     width: 75%;
@@ -31,7 +31,19 @@ form {
     border: 1px solid rgb(194, 194, 194);
 }
 
-form > div { margin-bottom: 4vh; }
+form > div { margin-bottom: 10vh; }
+
+.post-message { 
+    grid-column: 1 / 3;
+    padding: 2.5vh 2.5%;
+    margin-bottom: 7.5vh !important;
+    font-size: clamp(0.875rem, 1.25vw, 1.25rem);
+    font-style: italic;
+    width: 100%;
+    background: rgb(211, 255, 211);
+    border: 1px solid rgb(73, 173, 73);
+    border-radius: 0.125rem;
+}
 
 .product-url { grid-column: 1 / 3; flex-direction: column; row-gap: 3vh; }
 
@@ -104,6 +116,7 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
 
 
 @media (max-width: 50rem) {
+    .post-message { grid-column: 1 / 2; padding: 2vh 5%; margin-bottom: 5vh !important; }
     .preview-container { width: 100%; }
     .post-title, form { width: 90%; }
     form { grid-template-columns: 90%; }
