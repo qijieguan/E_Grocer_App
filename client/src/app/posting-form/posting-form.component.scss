@@ -65,6 +65,7 @@ form > div { margin-bottom: 10vh; }
 .product-title > input { font-size: clamp(0.875rem, 1.25vw, 1.25rem); width: 90%; height: 7.5vh; }
 .product-description { grid-column: 1 / 2; grid-row: span 4; }
 .product-quantity, .product-price, .product-tag { margin: 0 auto; }
+.product-tag { margin-top: 2.5vh; }
 
 form > div > label { font-size: clamp(1rem, 1.5vw, 1.5rem); margin-bottom: 1vh; }
 form > div > label::after { content: " *"; color: red; }
@@ -120,6 +121,7 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
     .preview-container { width: 100%; }
     .post-title, form { width: 90%; }
     form { grid-template-columns: 90%; }
+    form > div { margin-bottom: 8.5vh; }
     .product-title > input { width: 100%; }
     .product-url, .product-title { grid-column: 1 / 2; }
 }
