@@ -12,6 +12,7 @@ export class PostingFormComponent implements OnInit {
   url: any;
   titleInp: string = '';
   descriptionInp: string = '';
+  tagInp: string = '';
   quantityInp: number = 1;
   priceInp: number = 0.01;
   postMsg: boolean = false;
@@ -39,6 +40,7 @@ export class PostingFormComponent implements OnInit {
   handleChange = (event: any) => {
     if (event.target.name === 'title') { this.titleInp = event.target.value; }
     else if (event.target.name === 'description') { this.descriptionInp = event.target.value; }
+    else if (event.target.name === 'tag') { this.tagInp = event.target.value; }
     else if (event.target.name === 'quantity') { this.quantityInp = event.target.value; }
     else { this.priceInp = event.target.value; }
 
@@ -53,7 +55,7 @@ export class PostingFormComponent implements OnInit {
       url: this.url,
       name: this.titleInp,
       description: this.descriptionInp,
-      tag: 'dried-good',
+      tag: this.tagInp,
       quantity: Number(this.quantityInp),
       price: Number(this.priceInp),
       ratings: {average: 5.0, values: [5.0]},
@@ -64,6 +66,7 @@ export class PostingFormComponent implements OnInit {
     this.item_service.postItem(newItem);
     this.url = '';
     this.descriptionInp = '';
+    this.tagInp = '';
     this.quantityInp = 1;
     this.priceInp = 0.01;
     this.postMsg = true;
