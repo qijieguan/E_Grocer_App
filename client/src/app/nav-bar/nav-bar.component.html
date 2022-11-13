@@ -5,9 +5,20 @@
         <span>HOME</span>
     </a>  
 
-    <a class="grocery-list-link flex" [routerLink]="['/browse_groceries/page_1']">
+    <a class="grocery-list-link flex">
         <mat-icon>shopping_bag</mat-icon>
         <span>SHOP</span>
+        <mat-icon class="expand-icon">expand_more</mat-icon>
+        <div class="expand-links flex">
+            <a class="flex" [routerLink]="['/browse_groceries/page_1']">
+                <mat-icon>trolley</mat-icon>
+                <span>Browse Store</span>
+            </a>
+            <a class="flex" [routerLink]="['/post_groceries/form']">
+                <mat-icon>payments</mat-icon>
+                <span>Sell Products</span>
+            </a>
+        </div>
     </a>  
     
     <a class="checkout-link flex" routerLink="/checkout">

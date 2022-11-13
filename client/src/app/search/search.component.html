@@ -1,5 +1,5 @@
 <div class="search">
-    <form class="search-wrapper flex" >
+    <form class="search-form flex" >
         <div class="search-icon flex"><mat-icon>search</mat-icon></div>
         <input class="search-bar"
             type="text"
@@ -7,7 +7,7 @@
             value="{{searchInp}}"
             (keyup)="handleChange($event)"
         />
-        <button type="submit" (click)="handleSearch($event, searchInp)" class="search-btn">browse</button>
+        <button class="search-btn" (click)="handleSearch($event, searchInp)">browse</button>
         <div class="dropdown" *ngIf="searchInp.length">
             <div class="droplist" *ngFor="let item of search_list">
                 <div class="drop-li" (click)="handleSearch($event, item.name)">{{item.name}}</div>

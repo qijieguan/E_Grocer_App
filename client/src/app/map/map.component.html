@@ -7,7 +7,7 @@
         <input type="radio" (click)="handleClick($event)" name="delivery" class="active" checked>
         <span>Delivery - Cost Varies</span>
     </label>
-    <form class="grid" *ngIf="deliveryInp" (submit)="mapUpdate($event)">
+    <form *ngIf="deliveryInp" class="grid" (submit)="mapUpdate($event)">
         <div class="street">
             <label>Street Address</label><br/>
             <input 
@@ -45,7 +45,7 @@
                 required
             />
         </div>
-        <button type="submit" (click)="mapUpdate($event)">Enter Address</button>
+        <button type="submit">Enter Address</button>
     </form>
     <iframe 
         *ngIf="deliveryInp" 

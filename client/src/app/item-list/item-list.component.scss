@@ -61,7 +61,7 @@ input[type="checkbox"] { accent-color: green; }
 .item > img { grid-column: 1 / 3; width: 100%; height: 25vh; object-fit: cover; }
 .item-label {  
     grid-column: 1 / 3;
-    row-gap: clamp(0.25rem, 1vw, 1rem) !important;
+    row-gap: clamp(0.25rem, 1vw, 1rem);
     grid-template-columns: 40% 40%;
     font-size: clamp(0.9rem, 2.5vw, 1rem); 
     font-weight: 500; 
@@ -114,7 +114,7 @@ input[type="checkbox"] { accent-color: green; }
 .submit-button > button:hover { box-shadow: 0 0 5px black; }
 
 .confirm-btn { 
-    justify-content: center !important; 
+    justify-content: center; 
     column-gap: 0.25rem; 
     width: 65%; 
     color: white; 
@@ -128,8 +128,9 @@ input[type="checkbox"] { accent-color: green; }
 app-rating { display: flex; align-items: center; margin-left: auto; }
 
 .item-list-empty { 
-    grid-column: 2 / 5; 
-    margin: 15% 0 0 15%;
+    grid-column: 2 / 5;
+    margin-top: 15%; 
+    text-align: center;
     font-size: clamp(1.5rem, 2vw, 3rem); 
     font-family: 'Playfair Display', serif;
     font-weight: 500;

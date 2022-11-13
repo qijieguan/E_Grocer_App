@@ -1,0 +1,68 @@
+<div class="post-container flex">
+    <h1 class="post-title"><div>PRODUCT POSTING</div></h1>
+
+    <form class="post-form grid" (submit)="handleSubmit($event)">
+        <div class="product-url flex">
+            <img *ngIf="url" [src]="url" class="preview-container" alt=""/>
+            <div *ngIf="!url" class="preview-container flex">Preview Image</div>
+            <label>upload product image <span>(.png, .jpg, jpeg.)</span></label>
+            <input type="file" id="file-input" accept='image/*' (change)="onFileSelected($event)" required />
+        </div>
+
+        <div class="product-title">
+            <label>Product Title</label><br/>
+            <input 
+                placeholder="Ex. Red Sausages"
+                name="title"
+                (value)="titleInp"
+                (keyup)="handleChange($event)"
+                required 
+            />
+        </div>
+
+        <div class="product-description">
+            <label>Product Description</label><br/>
+            <textarea 
+                placeholder="Ex. Extra large, juicy, and glazed with honey"
+                name="description"
+                (value)="descriptionInp"
+                (keyup)="handleChange($event)"
+            ></textarea>
+        </div>
+
+        <div class="product-quantity">
+            <label>Product Quantity</label><br/>
+            <input type="number" min="1" placeholder="Ex. 1" 
+                name="quantity"
+                (value)="quantityInp"
+                (keyup)="handleChange($event)"
+                required
+            />
+        </div>
+
+        <div class="product-price">
+            <label>Product Price</label><br/>
+            <input type="number" step=".01" min="0.01" placeholder="Ex. 0.01"
+                name="price" 
+                (value)="priceInp"
+                (keyup)="handleChange($event)"
+                required
+            />
+        </div>
+
+        <div class="product-tag flex">
+            <label for="tag">Choose a Tag</label>
+            <select name="tag" id="tag" required>
+                <option value="">-- Select --</option>
+                <option value="meat">Meat</option>
+                <option value="diary">Diary</option>
+                <option value="vegetable">Vegetable</option>
+                <option value="fruit">Fruit</option>
+                <option value="dried-good">Dried-Good</option>
+                <option value="snack">Snack</option>
+            </select>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Posting</button>
+    </form>
+</div>

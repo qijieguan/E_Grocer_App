@@ -54,6 +54,7 @@ export class MapComponent implements OnInit {
 
   mapUpdate = (event: any) => {
     event.preventDefault();
+    
     this.trackClicked = true;
     this.address = this.streetInp + " " + this.cityInp + ", " + this.stateInp + " " + this.zipInp.toString();
     let url = "https://www.google.com/maps/embed/v1/directions?origin=" + this.address + "&destination=El Monte, 91733&key=AIzaSyAB5KWxkElCuvl0cOF3yMxBdRJkwvhCIz8";

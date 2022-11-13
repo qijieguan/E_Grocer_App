@@ -27,6 +27,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MapComponent } from './map/map.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
+import { PostingFormComponent } from './posting-form/posting-form.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     CheckoutComponent,
     MapComponent,
     PopUpComponent,
+    PostingFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
       {path: '', component: HomeComponent},
       {path: 'browse_groceries/:page?:mode', component: ItemListComponent},
       {path: 'browse_groceries/:page/view/:id', component: ItemExpandComponent},
+      {path: 'post_groceries/:form', component: PostingFormComponent},
       {path: 'checkout', component: CheckoutComponent}, 
       {path: 'note', component: NoteComponent},
     ]),

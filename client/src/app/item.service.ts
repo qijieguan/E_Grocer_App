@@ -373,4 +373,8 @@ export class ItemService {
 
   getPageSize = () => { return this.subject_2.asObservable() || 1; }
 
+  postItem = (item: Object) => {
+    this.DATA.push(item);
+  }
+
 }
