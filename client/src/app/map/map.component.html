@@ -12,7 +12,7 @@
             <label>Street Address</label><br/>
             <input 
                 (keyup)="handleChange($event, 'street')"
-                (value)="streetInp"
+                value="{{streetInp}}"
                 placeholder="ex. 420 Blazetown"
                 required
             />
@@ -21,7 +21,7 @@
             <label>City</label><br/>
             <input 
                 (keyup)="handleChange($event, 'city')"
-                (value)="cityInp"
+                value="{{cityInp}}"
                 placeholder="ex. Los Angeles"
                 required
             />
@@ -30,7 +30,7 @@
             <label>State</label><br/>
             <input
                 (keyup)="handleChange($event, 'state')"
-                (value)="stateInp"
+                value="{{stateInp}}"
                 placeholder="ex. CA" 
                 required
             />
@@ -39,7 +39,7 @@
             <label>Zip Code</label><br/>
             <input 
                 (keyup)="handleChange($event, 'zip')"
-                (value)="zipInp"
+                value="zipInp"
                 type="number"
                 placeholder="ex. 90001"
                 required

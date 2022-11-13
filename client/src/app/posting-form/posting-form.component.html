@@ -14,7 +14,7 @@
             <input 
                 placeholder="Ex. Red Sausages"
                 name="title"
-                (value)="titleInp"
+                value="{{titleInp}}"
                 (keyup)="handleChange($event)"
                 required 
             />
@@ -25,7 +25,7 @@
             <textarea 
                 placeholder="Ex. Extra large, juicy, and glazed with honey"
                 name="description"
-                (value)="descriptionInp"
+                value="{{descriptionInp}}"
                 (keyup)="handleChange($event)"
             ></textarea>
         </div>
@@ -34,7 +34,7 @@
             <label>Product Quantity</label><br/>
             <input type="number" min="1" placeholder="Ex. 1" 
                 name="quantity"
-                (value)="quantityInp"
+                value="{{quantityInp}}"
                 (keyup)="handleChange($event)"
                 required
             />
@@ -44,7 +44,7 @@
             <label>Product Price</label><br/>
             <input type="number" step=".01" min="0.01" placeholder="Ex. 0.01"
                 name="price" 
-                (value)="priceInp"
+                value="{{priceInp}}"
                 (keyup)="handleChange($event)"
                 required
             />

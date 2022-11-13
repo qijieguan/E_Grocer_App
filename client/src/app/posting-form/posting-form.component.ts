@@ -64,7 +64,12 @@ export class PostingFormComponent implements OnInit {
     }
    
     this.item_service.postItem(newItem);
+
+    let file = document.getElementById('file-input') as HTMLInputElement;
+    file.value = '';
+    
     this.url = '';
+    this.titleInp='';
     this.descriptionInp = '';
     this.tagInp = '';
     this.quantityInp = 1;
