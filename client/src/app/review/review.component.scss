@@ -18,7 +18,7 @@
     border-radius: 0.25rem;
 }
 
-.review-form > textarea:focus { outline-color: grey; }
+.review-form > textarea:focus { outline: 0; border: 0; box-shadow: 0 0 5px 1px gray; }
 
 .review-form > button {
     align-self: flex-end;

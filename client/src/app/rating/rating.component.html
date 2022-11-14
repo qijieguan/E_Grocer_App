@@ -1,5 +1,9 @@
 <ngb-rating [max]="5" [(rate)]="rating" [readonly]="true" *ngIf="!expand && itemID" class="default"></ngb-rating>
-<ngb-rating [max]="5" [(rate)]="rating" [readonly]="true" *ngIf="expand && itemID" class="large"></ngb-rating>
+
+<div class="rating-expand flex" *ngIf="expand && itemID"> 
+    <ngb-rating [max]="5" [(rate)]="rating" [readonly]="true" class="large"></ngb-rating>  
+    <div class="rating-value">({{rating.toFixed(1)}})</div>
+</div>
 
 <ngb-rating [max]="5" [(rate)]="reviewRating" [readonly]="true" *ngIf="reviewRating && !itemID" class="review"></ngb-rating>
 

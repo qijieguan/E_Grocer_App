@@ -1,12 +1,12 @@
-ngb-rating { color: gold; font-size: clamp(1.5rem, 2vw, 2rem); margin: 0 0 auto auto; float: right; }
+ngb-rating { color: gold; font-size: clamp(1.5rem, 2vw, 2rem); margin: 0.75rem 0 auto auto; float: right; }
 
-.default { margin-top: 0.75rem; }
+.rating-expand { font-family: 'Roboto', sans-serif; color: darkgoldenrod; transform: translateY(-39%); }
+.large { font-size: clamp(1.5rem, 3vw, 3rem); }
+.rating-expand > div { margin-left: 0.5vw; font-size: clamp(1.25rem, 1.875vw, 1.875rem); transform: translateY(18%);  }
 
-.large { font-size: clamp(1.5rem, 3vw, 3rem) !important; }
-
-.review { font-weight: normal !important; font-size: clamp(0.75rem, 3vw, 3rem) !important;}
+.review { font-weight: normal; font-size: clamp(0.75rem, 3vw, 3rem);}
 
 @media (max-width: 50rem) {
-    ngb-rating { float: left; }
-    .default { margin-top: 0; }
+    ngb-rating, .rating-expand {margin: 0 0 auto auto; float: left; }
+    .rating-expand > div { font-size: clamp(1rem, 1.5vw, 1.5rem); transform: translateY(0); }
 }

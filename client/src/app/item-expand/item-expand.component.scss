@@ -32,6 +32,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.item-expand-input > input:focus { outline: 0; border: 0; box-shadow: 0 0 5px 1px gray; }
+
 .item-expand-input > button { 
     padding: 0.25rem 0.5rem;
     font-weight: 500;
