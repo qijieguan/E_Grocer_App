@@ -57,7 +57,7 @@ header.home { height: 22.5vh; background: transparent; }
     background-size: cover;
 }
 
-.app-wrapper.background { background: rgb(243, 243, 243) !important; }
+.app-wrapper.bg-color { background: rgb(243, 243, 243) !important; }
 
 @media (max-width: 50rem) {
     header { padding: 3rem 0 1.25rem 0; flex-direction: column; justify-content: unset; height: 35vh; }

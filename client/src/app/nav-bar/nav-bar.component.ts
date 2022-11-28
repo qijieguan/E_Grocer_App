@@ -34,7 +34,7 @@ export class NavBarComponent implements OnInit {
       let bg_image = document.querySelector(".app-wrapper");
 
       header_image?.classList.remove("active", "grocery", "checkout", "note");
-      bg_image?.classList.remove('background');
+      bg_image?.classList.remove('bg-color');
 
       document.getElementsByTagName('header')[0].classList.remove('home');
 
@@ -53,7 +53,7 @@ export class NavBarComponent implements OnInit {
         document.querySelector('.search')?.scrollIntoView({ behavior: 'smooth' });
         document.querySelector('.item-expand')?.scrollIntoView({behavior: 'smooth'});
 
-        bg_image?.classList.add('background'); 
+        bg_image?.classList.add('bg-color'); 
         header_image?.classList.add('active');
       };
 

@@ -9,9 +9,9 @@
     box-shadow: 0 0 3px;
     opacity: 0.5;
 }
-.pagination > button:hover { opacity: 1; }
-.left { inset: 50% auto auto 19.5%; }
-.right { inset: 50% 1% auto auto; }
+.pagination > button:hover { opacity: 1; background: rgb(236, 236, 236); }
+.left { inset: 50% auto auto 5%; }
+.right { inset: 50% 5% auto auto; }
 
 .page-count { column-gap: clamp(0.125rem, 1vw, 0.75rem); font-family: 'Bebas Neue', cursive; }
 
@@ -30,7 +30,7 @@
 @media (max-width: 50rem) {
     .pagination { margin-top: 15vh; padding: 0; }
     .page { padding: 0.5rem 1.05rem; }
-    .left { inset: 50% auto auto 25%; }
+    .left { inset: 50% auto auto 2.5%; }
+    .right { inset: 50% 2.5% auto auto; }
 }
 
-@media (max-width: 25rem) { .left { inset: 50% auto auto 1%; } }
