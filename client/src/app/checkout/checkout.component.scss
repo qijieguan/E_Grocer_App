@@ -68,9 +68,9 @@ hr { margin: 0.5rem 0; grid-column: 1 / 3; width: 100%; }
 .checkout-input > button:hover { box-shadow: 0 0 4px darkorange; }
 
 @media (max-width: 50rem) { 
-    .order-summary { margin: 2.5rem auto; }
+    .order-summary { margin: 1.5rem auto 1rem auto; }
     .order-summary > h1 { grid-column: 1 / 3; margin: 0; }
     .order-cost { grid-column: 1 / 3; } 
-    .checkout-input { grid-template-columns: 100%; padding: 0; margin-bottom: 20vh; background: unset; border: 0; }
+    .checkout-input { grid-template-columns: 100%; row-gap: 1.5rem; padding: 0; margin-bottom: 15vh; background: unset; border: 0; }
     app-cart, app-map, .checkout-input > button { grid-column: 1 / 3; }
 }

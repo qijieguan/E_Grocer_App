@@ -1,13 +1,37 @@
-<div class="app-note">
+<div class="app-note flex">
+    <img class="bg-image" alt=""/>
     <div class="complete">
-        <h1>Completed</h1>
-        <li class="flex">- Integrated routing navigation and services <mat-icon>check_circle</mat-icon></li>
-        <li class="flex">- Connected Angular app with MongoDB database via Express <mat-icon>check_circle</mat-icon></li>
-        <li class="flex">- Defined item/cart model and route queries to use database <mat-icon>check_circle</mat-icon></li>
-        <li class="flex">- Store user unique to cart data in database <mat-icon>check_circle</mat-icon></li>
-        <li class="flex">- Post item to store <mat-icon>check_circle</mat-icon></li>
+        <div class="clickable" (click)="handleClick('complete')">
+            <span>Completed Features</span>
+            <mat-icon *ngIf="!unfoldComplete">unfold_more</mat-icon>
+            <mat-icon *ngIf="unfoldComplete">unfold_less</mat-icon>
+        </div>
+        <ul class="complete-list">
+            <li class="flex">- Integrated routing navigation and services <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">- Connected Angular app with MongoDB database via Express <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">- Defined item/cart model and route queries to use database <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">- Store user unique to cart data in database <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">- Post item to store <mat-icon>check_circle</mat-icon></li>
+        </ul>
     </div>
-    <div>
-        <h1>TODO</h1>
+    <div class="feedback grid">
+        <div class="clickable" (click)="handleClick('feedback')">
+            <span>Feedback</span>
+            <mat-icon *ngIf="!unfoldFeedback">unfold_more</mat-icon>
+            <mat-icon *ngIf="unfoldFeedback">unfold_less</mat-icon>
+        </div>
+        <div *ngIf="unfoldFeedback" class="feedback-list">
+            <ul *ngFor="let feedback of feedbackArr">
+                <li class="flex">- {{feedback}} <mat-icon>info</mat-icon></li>
+            </ul>
+        </div>
+        <textarea
+            name="feedback-area"
+            *ngIf="unfoldFeedback"
+            placeholder="Your feedback is appreciated!"
+            (keyup)="handleChange($event)"
+            value="feedbackInp"
+        ></textarea>
+        <button *ngIf="unfoldFeedback" (click)="handleSubmit()">Submit</button>
     </div>
 </div>

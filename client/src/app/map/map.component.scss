@@ -73,3 +73,6 @@ iframe {
     animation: fadeIn 0.7s ease-in; 
 }
 
+@media (max-width: 50rem) {
+    .map { border-radius: 0; }
+}

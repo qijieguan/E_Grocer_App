@@ -5,7 +5,18 @@
     background: rgb(201, 201, 201);
 }
 
+.bg-image {
+    position: fixed;
+    inset: 0% auto auto 0% ;
+    background-image: url("https://images.pexels.com/photos/8069553/pexels-photo-8069553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    min-height: 100vh;
+    width: 100vw;
+    opacity: 0.3;
+}
+
 .post-title {
+    margin: 0;
     padding: 1.5rem 0.75rem;
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     font-family: 'Oswald', sans-serif; 
@@ -13,22 +24,21 @@
     letter-spacing: 3px;
     text-align: center;
     width: 75%; 
-    color: gold;
-    background: seagreen;
-    border: 2px solid gold;
+    background: rgb(238, 238, 238);
+    box-shadow: 0 0 3px;
+    z-index: 1;
 }
 
 form { 
-    margin: auto;
     padding: 7.5vh 5vw;
     grid-template-columns: 45% 45%;
     row-gap: 0;
     font-family: 'Tiro Gurmukhi', serif; 
     font-weight: 500;
-    min-height: 100vh;
     width: 75%;
     background: rgb(235, 235, 235);
-    border: 1px solid rgb(194, 194, 194);
+    box-shadow: 0 0 3px rgb(61, 61, 61);
+    z-index: 1;
 }
 
 form > div { margin-bottom: 10vh; }

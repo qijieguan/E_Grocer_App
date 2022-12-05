@@ -191,8 +191,6 @@ app-pagination { grid-column: 1 / 5; margin: 0 auto; }
 }
 
 @media (max-width: 25rem) {
-    .item-list { grid-template-columns: 90%; }
-    .list-title { grid-column: 1 / 2; }
     .item-filter { display: grid; grid-template-columns: 45% 45%; }
     .container { display: block; margin-left: 12.5%; border-width: 1px 1px 1px 1px; }
     .container.highlight { padding: 1.5vh 0; }

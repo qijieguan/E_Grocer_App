@@ -30,23 +30,21 @@ export class NavBarComponent implements OnInit {
       let path = url.split('/');
       let querySelect = "";
 
-      let header_image = document.querySelector(".dynamic-img");
-      let bg_image = document.querySelector(".app-wrapper");
+      document.querySelector('header')?.classList.remove('home');
 
-      header_image?.classList.remove("active", "grocery", "checkout", "note");
+      let bg_image = document.querySelector(".app-wrapper");
       bg_image?.classList.remove('bg-color');
 
-      document.getElementsByTagName('header')[0].classList.remove('home');
 
-      if (path[1] === 'browse_groceries' || path[1] === 'post_groceries') { querySelect = 'grocery-list-link'; header_image?.classList.add("grocery"); }
-      else if (path[1] === 'checkout') { querySelect = 'checkout-link';  header_image?.classList.add("checkout"); }
-      else if (path[1] === 'note') { querySelect = 'note-link'; header_image?.classList.add("note"); }
+      if (path[1] === 'browse_groceries' || path[1] === 'post_groceries') { querySelect = 'grocery-list-link'; }
+      else if (path[1] === 'checkout') { querySelect = 'checkout-link'; }
+      else if (path[1] === 'note') { querySelect = 'note-link'; }
       else { querySelect = 'home-link'; }
 
 
       if (querySelect === 'home-link') {
         setTimeout(() => {window.scrollTo({top: 0, behavior: 'smooth'}); }, 125);
-        document.getElementsByTagName('header')[0].classList.add('home');  
+        document.querySelector('header')?.classList.add('home');
       }
       else { 
         setTimeout(() => { bg_image?.scrollIntoView({ behavior: 'smooth' }); }, 125);
@@ -54,7 +52,6 @@ export class NavBarComponent implements OnInit {
         document.querySelector('.item-expand')?.scrollIntoView({behavior: 'smooth'});
 
         bg_image?.classList.add('bg-color'); 
-        header_image?.classList.add('active');
       };
 
       document.querySelector('.highlight')?.classList.remove('highlight');

@@ -1,14 +1,14 @@
 header { 
     position: relative; 
     justify-content: space-between; 
-    height: 50vh;
-    padding: 3rem 0;  
+    padding: 10vh 0 5vh 0;  
     margin: 0;
     background: rgb(245, 245, 245);
+    box-shadow: 0 2px 2px rgb(180, 180, 180);
+    z-index: 2;
 }
-header.home { height: 22.5vh; background: transparent; }
 
-.logo { margin: 0 auto 0 25vh; position: absolute; top: 26%; width: fit-content; z-index: 1; }
+.logo { margin: 2vh auto 0 8vh; position: absolute; top: 26%; width: fit-content; z-index: 1; }
 
 .logo > img { position: absolute; height: 9vh; z-index: -1; }
 .tomato { inset: 0 auto auto 0; transform: rotate(-45deg) translate3d(18%, -35%, 0); }
@@ -30,44 +30,13 @@ header.home { height: 22.5vh; background: transparent; }
 
 .app-wrapper { flex-direction: column; width: 100%; }
 
-.dynamic-img { display: none; }
-.dynamic-img.active {
-    display: block; 
-    position: absolute;
-    inset: 0 0 auto auto;
-    height: 100%;
-    width: 100vw;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    animation: fadeIn 0.4s ease-in;
-}
-.dynamic-img.active.grocery {
-    background-image: url('https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    background-size: 125vh;
-}
-
-.dynamic-img.active.checkout {
-    background-image: url('https://thumbs.dreamstime.com/b/grocery-set-paper-bag-delivery-service-quarantine-coronavirus-covid-horizontal-banner-top-view-image-179977234.jpg');
-    background-size: cover;
-}
-
-.dynamic-img.active.note {
-    background-image: url('https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    background-position: center;
-    background-size: cover;
-}
-
 .app-wrapper.bg-color { background: rgb(243, 243, 243) !important; }
 
 @media (max-width: 50rem) {
-    header { padding: 3rem 0 1.25rem 0; flex-direction: column; justify-content: unset; height: 35vh; }
-    .logo { margin: 5vh auto 0 auto; top: 23%; }
+    header { padding: 3rem 0 1.25rem 0; flex-direction: column; justify-content: unset; height: 20vh; }
+    header.home { background: transparent; box-shadow: unset; }
+    .logo { margin: 10vh auto 0 auto; top: 10%; }
     .logo > img { height: 7vh; }
-    .dynamic-img.active { background-size: cover; width: 100vw; inset: 0; margin: 0 };
-    .dynamic-img.active.grocery { background-size: cover; }
 }
 
-@media (max-width: 25rem) { .dynamic-img.active.checkout { background-position: center left; } }
-
-@media (max-width: 15rem) { .logo { display: none; }
-}
+@media (max-width: 15rem) { .logo { display: none; } }
