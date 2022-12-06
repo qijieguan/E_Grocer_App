@@ -5,6 +5,7 @@
         <h1>{{item.name}}</h1>
         <app-rating [itemID]="param" [expand]="true"></app-rating>
         <p>{{item.description}}</p>
+        <hr/>
         <div class="item-expand-input flex">
             <span>QTY: </span>
             <input type="number" [value]=quantity_input (change)="setQuantity($event)" min="1"/>

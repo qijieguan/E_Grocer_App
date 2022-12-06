@@ -16,14 +16,22 @@
 
 .item-expand-detail > h1 {
     margin: 0;
-    font-size: clamp(1.5rem, 2.5vw, 1.75rem);
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     font-family: 'Playfair Display', serif;
     font-weight: bold;
 }
 
-.item-expand-detail > p { grid-column: 1 / 3; font-weight: bold; font-family: 'Playfair Display', serif; color: gray; }
+.item-expand-detail > p { 
+    grid-column: 1 / 3; 
+    font-size: clamp(1rem, 1.25vw, 1.25rem); 
+    font-weight: 500; 
+    font-family: 'Vollkorn', serif; 
+    min-height: 20vh;
+}
 
-.item-expand-input { grid-column: 1 / 3; column-gap: 1rem; font-family: 'Playfair Display', serif; }
+hr { grid-column: 1 / 3; }
+
+.item-expand-input { flex-wrap: wrap; grid-column: 1 / 3; gap: 1rem; font-family: 'Playfair Display', serif; }
 
 .item-expand-input > input { width: 15%; font-family: 'Poppins', sans-serif; font-weight: 500; }
 input::-webkit-outer-spin-button,
@@ -65,4 +73,5 @@ input::-webkit-inner-spin-button {
     .item-expand-detail { padding-bottom: 12.5vh; }
     .item-expand-input { column-gap: 0.75rem; }
     .add-msg { bottom: 7.5%; }
+    .expand-price { width: 75vw; }
 }
