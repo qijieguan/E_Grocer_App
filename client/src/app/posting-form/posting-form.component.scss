@@ -1,6 +1,7 @@
 .post-container { 
     flex-direction: column;
     padding: 10vh 0;
+    font-family: 'Vollkorn', serif;
     width: 100vw;
     background: rgb(201, 201, 201);
 }
@@ -17,31 +18,30 @@
 
 .post-title {
     margin: 0;
-    padding: 1.5rem 0.75rem;
+    padding: 2vh 0;
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-    font-family: 'Oswald', sans-serif; 
     font-weight: 700; 
     letter-spacing: 3px;
     text-align: center;
-    width: 75%; 
-    background: rgb(238, 238, 238);
-    box-shadow: 0 0 3px;
+    width: 60%; 
+    background: rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(241, 241, 241);
+    border-radius: 2rem 2rem 0 0;
     z-index: 1;
 }
 
 form { 
-    padding: 7.5vh 5vw;
-    grid-template-columns: 45% 45%;
+    padding: 5vh 1.5vw;
+    grid-template-columns: 48% 48%;
     row-gap: 0;
-    font-family: 'Tiro Gurmukhi', serif; 
     font-weight: 500;
-    width: 75%;
-    background: rgb(235, 235, 235);
-    box-shadow: 0 0 3px rgb(61, 61, 61);
+    width: 60%;
+    background: rgb(241, 241, 241);
+    border-radius: 0 0 2rem 2rem;
     z-index: 1;
 }
 
-form > div { margin-bottom: 10vh; }
+form > div { margin-bottom: 7.5vh; }
 
 .post-message { 
     grid-column: 1 / 3;
@@ -55,22 +55,24 @@ form > div { margin-bottom: 10vh; }
     border-radius: 0.125rem;
 }
 
-.product-url { grid-column: 1 / 3; flex-direction: column; row-gap: 3vh; }
+.product-image { grid-column: 1 / 3; row-gap: 1vh; }
+.product-upload { flex-direction: column; row-gap: 1vh; }
 
-.preview-container {
+.preview-image {
     justify-content: center;
     font-size: clamp(1.375rem, 2vw, 2rem);
-    font-family: 'Vidaloka', serif;
     font-weight: 500;
-    height: 40vh;
+    height: 50vh;
     width: 40vw;
     color: gray;
     background: white;
-    box-shadow: 0 0 10px rgb(214, 214, 214);
+    border-radius: 1rem;
+    box-shadow: 0 0 3px rgb(214, 214, 214);
 }
 
-#file-input { padding: 1vh 0; height: fit-content; background: rgb(224, 224, 224); }
+#file-input { padding: 1vh 0; width: 90%; height: fit-content; background: rgb(224, 224, 224); }
 
+hr { grid-column: 1 / 3; margin-bottom: 5vh; height: 0.5vh; }
 .product-title { grid-column: 1 / 3; }
 .product-title > input { font-size: clamp(0.875rem, 1.25vw, 1.25rem); width: 90%; height: 7.5vh; }
 .product-description { grid-column: 1 / 2; grid-row: span 4; }
@@ -79,12 +81,6 @@ form > div { margin-bottom: 10vh; }
 
 form > div > label { font-size: clamp(1rem, 1.5vw, 1.5rem); margin-bottom: 1vh; }
 form > div > label::after { content: " *"; color: red; }
-
-.product-url > label { 
-    font-size: clamp(0.75rem, 1.25vw, 1.25rem); 
-    font-style: italic;
-    color: rgb(46, 46, 46);
-}
 
 .product-description > label::after {
     content: " <optional>" !important;
@@ -113,7 +109,7 @@ input::-webkit-inner-spin-button {
 select { margin-left: 0.75vw; border-radius: 0.25rem; }
 
 .submit-btn { 
-    margin-top: 7.5vh;
+    margin-top: 10vh;
     padding: 1vh 0; 
     font-weight: 500; 
     font-family: 'Bebas Neue', cursive;
@@ -121,21 +117,24 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
     letter-spacing: 1px;
     width: 100%;
     color: white;
-    background: seagreen; 
-    box-shadow: 0 0 5px black;
+    background: gray; 
+    box-shadow: 0 0 3px black;
 }
 
+.submit-btn:hover { background: black; } 
 
 @media (max-width: 50rem) {
     .post-message { grid-column: 1 / 2; padding: 2vh 5%; margin-bottom: 5vh !important; }
-    .preview-container { width: 100%; }
-    .post-title, form { width: 90%; }
+    .preview-image { height: 50vh; width: 100%; }
+    .post-title, form { width: 100%; border-radius: 0; }
     form { grid-template-columns: 90%; }
-    form > div { margin-bottom: 8.5vh; }
+    form > div { margin-bottom: 5vh; }
     .product-title > input { width: 100%; }
-    .product-url, .product-title { grid-column: 1 / 2; }
+    .product-image, .product-title { grid-column: 1 / 2; }
+    hr { grid-column: 1 / 2; }
 }
 
 @media (max-width: 25rem) {
-    .product-url > input { width: 100%; }
+    .product-upload > input { width: 100%; }
+    .preview-image { height: 30vh; }
 }
