@@ -1,11 +1,15 @@
-<div class="post-container flex">
+<div class="post-container grid">
     <img class="bg-image" alt=""/>
-    <h1 class="post-title"><div>PRODUCT FORM</div></h1>
+    <img class="side-image" alt=""/>
     <form class="post-form grid" (submit)="handleSubmit($event)">
+        <h1 class="post-title"><div>PRODUCT FORM</div></h1>
         <div *ngIf="postMsg" class="post-message">Product successfully added to the store listing. Thank you for using this service!</div>
         <div class="product-image flex">
             <img *ngIf="url" [src]="url" class="preview-image" alt=""/>
-            <div *ngIf="!url" class="preview-image flex">Preview Image</div>
+            <div *ngIf="!url" class="preview-image flex">
+                <mat-icon>image</mat-icon>
+                <span>Image</span>
+            </div>
             <div class="product-upload flex">
                 <div>upload product image <span>(.png, .jpg, jpeg.)</span></div>
                 <input type="file" id="file-input" accept='image/*' (change)="onFileSelected($event)" required />

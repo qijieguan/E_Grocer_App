@@ -53,7 +53,7 @@
 .grocery-list-link:hover .expand-icon { transform: rotate(180deg); }
 
 .expand-links > a { column-gap: 0.5vw; color: rgb(82, 82, 82); }
-.expand-links > a:hover { padding: 0.625vh 1vw 0.25vh 1vw; color: gray; background: rgb(245, 245, 245); box-shadow: 0 0 3px; border-radius: 0.375rem; }
+.expand-links > a:hover { font-size: clamp(0.75rem, 2.5vw, 1rem); font-weight: bold; color: green; }
 
 .cart-num { margin-left: 0.25rem; }
 
