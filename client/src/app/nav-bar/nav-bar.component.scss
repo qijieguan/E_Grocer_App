@@ -25,7 +25,7 @@
 
 .nav-bar > a:hover { color: rgb(173, 173, 173); border-bottom: 0; }
 
-.nav-bar > a.highlight { background: green; color: yellow; }
+.nav-bar > a.highlight { background: black; color: white; }
 .fixed { position: fixed; }
 
 .nav-bar > a > span { margin: 0.25rem 0 0 0.25rem; }
@@ -52,8 +52,8 @@
 .expand-icon { transition: all 0.3s ease-in; }
 .grocery-list-link:hover .expand-icon { transform: rotate(180deg); }
 
-.expand-links > a { column-gap: 0.5vw; color: rgb(82, 82, 82); }
-.expand-links > a:hover { font-size: clamp(0.75rem, 2.5vw, 1rem); font-weight: bold; color: green; }
+.expand-links > a { padding: 0.5vh 0.75vw; column-gap: 0.5vw; color: rgb(82, 82, 82); border: 1px solid transparent; }
+.expand-links > a:hover { font-size: clamp(0.75rem, 2.5vw, 1rem); font-weight: bold; border-color: black; }
 
 .cart-num { margin-left: 0.25rem; }
 
