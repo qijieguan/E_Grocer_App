@@ -59,7 +59,6 @@ input[type="checkbox"] { accent-color: green; }
     border-radius: 0 0 0.125rem 0.125rem;
     animation: fadeIn 0.5s ease-in;
 }
-.item:hover { box-shadow: 0 0 5px 1px; }
 
 .item > img { grid-column: 1 / 3; width: 100%; height: 25vh; object-fit: cover; }
 .item-label {  
@@ -82,20 +81,20 @@ input[type="checkbox"] { accent-color: green; }
     font-family: 'Playfair Display', serif;
     font-weight: 500;
     letter-spacing: 0.5px;
-    width: 100%; 
-    background: rgb(29, 29, 29); 
-    color: white; 
+    width: 100%;  
+    color: rgb(29, 29, 29);
+    border: 1px solid rgb(29, 29, 29); 
     border-radius: 0 0 0.125rem 0.125rem;
-    box-shadow: 0 -1px 2px grey;
+    transition: all 0.2s ease-in;
 }
+.add-button:hover { color: white; background: black; }
 .add-button.remove { display: none; }
 
 .quantity-input { position: relative; justify-content: space-between; width: 100%; }
 .quantity-input > button > mat-icon { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 .quantity-input > span { font-weight: bold; }
 
-.increment, .decrement { justify-content: center; width: 20%; background: green; border: 0; border-radius: 0.125rem; }
-.increment:hover, .decrement:hover { box-shadow: 0 0 3px; }
+.increment, .decrement { justify-content: center; width: 20%; background: green; border: 0; border-radius: 0.125rem; box-shadow: 0 0 1px black; }
 
 .submit-button {
     position: absolute;
@@ -113,17 +112,19 @@ input[type="checkbox"] { accent-color: green; }
     font-weight: 500; 
     border-radius: 3rem;
 }
-.submit-button > button:hover { box-shadow: 0 0 5px black; }
 
 .confirm-btn { 
     justify-content: center; 
     column-gap: 0.25rem; 
     width: 65%; 
-    color: white; 
-    background: green; 
+    color: green;
     border: 1px solid darkgreen;
 }
+
+.confirm-btn:hover { color: white; background: green; box-shadow: 0 0 3px black; }
+
 .cancel-btn { width: 30%; color: black; background: rgb(230, 230, 230); border: 1px solid rgb(206, 206, 206); }
+.cancel-btn:hover { box-shadow: 0 0 3px; }
 
 .item-margin { margin-bottom: 5rem; }
 

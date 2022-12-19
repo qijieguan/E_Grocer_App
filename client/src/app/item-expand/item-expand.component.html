@@ -1,16 +1,18 @@
 <div class="item-expand grid">
     <mat-icon (click)="goBack()">arrow_circle_left</mat-icon>
-    <img class="item-expand-img" [src]=item.url alt=""/>
+    <canvas id="canvas"></canvas>
     <div class="item-expand-detail grid">
         <h1>{{item.name}}</h1>
         <app-rating [itemID]="param" [expand]="true"></app-rating>
         <p>{{item.description}}</p>
         <hr/>
         <div class="item-expand-input flex">
-            <span>QTY: </span>
-            <input type="number" [value]=quantity_input (change)="setQuantity($event)" min="1"/>
-            <button (click)="addCart()">Add to cart</button>
             <span class="expand-price">PRICE: $<span>{{unit_price.toFixed(2)}}</span></span>
+            <div>
+                <span>QTY: </span>
+                <input type="number" [value]=quantity_input (change)="setQuantity($event)" min="1"/>
+            </div>
+            <button (click)="addCart()">Add to cart</button>
             <div class="add-msg"><span *ngIf="isAdded">{{item.name}}(s) added to cart!</span></div>
         </div>
     </div>

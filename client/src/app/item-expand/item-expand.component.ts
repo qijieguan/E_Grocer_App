@@ -20,12 +20,42 @@ export class ItemExpandComponent implements OnInit {
     this.param = this.router.url.split('/')[4];
   }
 
+  canvas: any;
+  context: any;
+  zoom_canvas: any;
+  zoom_context:any;
+
   ngOnInit(): void { 
     setTimeout(() => {
       this.item = this.item_service.getItem(this.param);
       this.unit_price = this.item.price / this.item.quantity;
+
+
+      this.canvas = document.getElementById('canvas');
+      this.context = this.canvas.getContext('2d');
+
+      let origImg = new Image();
+      origImg.src = this.item.url;
+
+      this.canvas.width = origImg.naturalWidth;
+      this.canvas.height = origImg.naturalHeight;
+
+      this.context.drawImage(origImg, 0, 0);
+  
+      this.canvas.addEventListener('mousemove', (event: any) => {
+        const transformedCursorPosition = this.getTransformedPoint(event.offsetX, event.offsetY);
+      });
+
+
     }, 250);
   }
+
+  getTransformedPoint = (x: any, y: any) => {
+    const transform = this.context.getTransform();
+    const transformedX = x - transform.e;
+    const transformedY = y - transform.f;
+    return { x: transformedX, y: transformedY };
+  }  
 
   setQuantity = (event: any) => { 
     this.quantity_input = event.target.value;
