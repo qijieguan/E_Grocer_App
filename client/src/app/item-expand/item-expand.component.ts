@@ -34,17 +34,11 @@ export class ItemExpandComponent implements OnInit {
       this.canvas = document.getElementById('canvas');
       this.context = this.canvas.getContext('2d');
 
-      this.zoom_canvas = document.getElementById('zoom-canvas');
-      this.zoom_context = this.zoom_canvas.getContext('2d');
-
       let origImg = new Image();
       origImg.src = this.item.url;
 
       this.canvas.width = origImg.naturalWidth;
       this.canvas.height = origImg.naturalHeight;
-
-      this.zoom_canvas.width = 250;
-      this.zoom_canvas.height = 250;
 
       this.context.drawImage(origImg, 0, 0);
   
