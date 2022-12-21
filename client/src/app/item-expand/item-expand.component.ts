@@ -22,8 +22,8 @@ export class ItemExpandComponent implements OnInit {
 
   canvas: any;
   context: any;
-  zoom_canvas: any;
-  zoom_context: any;
+  canvas_zoom: any;
+  context_zoom: any;
 
   ngOnInit(): void { 
     setTimeout(() => {
@@ -34,17 +34,31 @@ export class ItemExpandComponent implements OnInit {
       this.canvas = document.getElementById('canvas');
       this.context = this.canvas.getContext('2d');
 
+      this.canvas_zoom = document.getElementById('canvas-zoom');
+      this.context_zoom = this.canvas_zoom.getContext('2d');
+
       let origImg = new Image();
       origImg.src = this.item.url;
 
-      this.canvas.width = origImg.naturalWidth;
       this.canvas.height = origImg.naturalHeight;
+      this.canvas.width = origImg.naturalWidth;
+
+      this.canvas_zoom.height = 500;
+      this.canvas_zoom.width = 500;
 
       this.context.drawImage(origImg, 0, 0);
   
       this.canvas.addEventListener('mousemove', (event: any) => {
         const transformedCursorPosition = this.getTransformedPoint(event.offsetX, event.offsetY);
-        console.log(transformedCursorPosition);
+        document.getElementById('canvas-zoom')?.classList.remove("disable");
+
+        this.context_zoom.clearRect(0, 0, this.canvas_zoom.width, this.canvas_zoom.height);
+        this.context_zoom.drawImage(origImg, transformedCursorPosition.x * 1.5, transformedCursorPosition.y * 0.75, this.canvas.width, this.canvas.height, 0, 0, this.canvas.width, this.canvas.height);
+      });
+
+      this.canvas.addEventListener('mouseout', (event: any) => {
+        document.getElementById('canvas-zoom')?.classList.add("disable");
+        this.context_zoom.clearRect(0, 0, this.canvas_zoom.width, this.canvas_zoom.height);
       });
 
     }, 250);
