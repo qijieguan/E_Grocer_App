@@ -1,8 +1,8 @@
-.name { font-weight: 500; margin-top: 0.25rem; color: blue; }
+.name { font-size: clamp(0.875rem, 1vw, 1rem);font-weight: 500; font-family: 'Oswald', sans-serif; margin-top: 0.25rem; color: blue; }
 .name:hover { text-decoration: underline; }
 
 .delete { color: red; font-weight: 400; }
 .delete:hover { border-bottom: 1px solid; width: fit-content; }
 
 .quantity { column-gap: 0.75rem; }
-.quantity > div { font-weight: 400; }
+.quantity > div { font-weight: 500; }
