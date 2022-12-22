@@ -1,7 +1,7 @@
 <div class="expand grid">
     <mat-icon (click)="goBack()">arrow_circle_left</mat-icon>
     <canvas id="canvas"></canvas>
-    <canvas id="canvas-zoom"></canvas>
+    <canvas id="canvas-zoom" class="disable"></canvas>
     <div class="expand-container grid">
         <h1>{{item.name}}</h1>
         <app-rating [itemID]="param" [expand]="true"></app-rating>
