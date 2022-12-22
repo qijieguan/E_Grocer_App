@@ -1,4 +1,4 @@
-.item-expand {
+.expand {
     position: relative;
     grid-template-columns: 50% 45%;
     padding: 3.5rem 0 7rem 0;
@@ -8,23 +8,23 @@
     box-shadow: 0 1px 2px;
 }
 
-.item-expand > mat-icon { margin-bottom: 3vh; grid-column: 1 / 3; color: green; font-size: clamp(3rem, 5vw, 5rem); }
+.expand > mat-icon { margin-bottom: 3vh; grid-column: 1 / 3; color: green; font-size: clamp(3rem, 5vw, 5rem); }
 
 #canvas { width: 100%; }
 #canvas:hover { cursor: none; }
 #canvas-zoom { position: absolute; top: 15%; right: 0; min-height: 60vh; width: 47.5vw; z-index: 1; }
 #canvas-zoom.disable { display: none; }
 
-.item-expand-detail { position: relative; grid-template-columns: 45% 45%; }
+.expand-container { position: relative; grid-template-columns: 45% 45%; }
 
-.item-expand-detail > h1 {
+.expand-container > h1 {
     margin: 0;
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     font-family: 'Playfair Display', serif;
     font-weight: bold;
 }
 
-.item-expand-detail > p { 
+.expand-container > p { 
     grid-column: 1 / 3; 
     font-size: clamp(1rem, 1.25vw, 1.25rem); 
     font-weight: 500; 
@@ -34,7 +34,7 @@
 
 hr { grid-column: 1 / 3; }
 
-.item-expand-input { 
+.expand-input { 
     flex-wrap: wrap; 
     flex-direction: column; 
     grid-column: 1 / 3; 
@@ -42,16 +42,17 @@ hr { grid-column: 1 / 3; }
     font-family: 'Playfair Display', serif; 
 }
 
-.item-expand-input > div > input { width: 70%; font-family: 'Poppins', sans-serif; }
+.expand-quantity { justify-content: center; column-gap: 1vh; }
+.expand-quantity > input { width: 70%; font-family: 'Poppins', sans-serif; }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.item-expand-input > input:focus { outline: 0; border: 0; box-shadow: 0 0 5px 1px gray; }
+.expand-input > input:focus { outline: 0; border: 0; box-shadow: 0 0 5px 1px gray; }
 
-.item-expand-input > button { 
+.expand-input > button { 
     padding: 0.25rem 0.5rem;
     width: 80%;
     font-weight: 500;
@@ -61,7 +62,7 @@ input::-webkit-inner-spin-button {
     border-radius: 0.125rem; 
 }
 
-.item-expand-input * { font-weight: bold; }
+.expand-input * { font-weight: bold; }
 .expand-price > span { font-size: clamp(1.25rem, 1.75vw, 1.75rem); }
 
 .add-msg { 
@@ -78,11 +79,11 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 50rem) {
-    .item-expand { padding: 2rem 0; margin-bottom: 0; }
-    #canvas, .item-expand-detail, .item-expand-detail > h1 { grid-column: 1 / 3; }
+    .expand { padding: 2rem 0; margin-bottom: 0; }
+    #canvas, .expand-container, .expand-container > h1 { grid-column: 1 / 3; }
     #canvas:hover { cursor: unset; }
     #canvas-zoom { display: none; }
-    .item-expand-detail { padding-bottom: 12.5vh; }
-    .item-expand-input { column-gap: 0.75rem; }
+    .expand-container { padding-bottom: 12.5vh; }
+    .expand-input { column-gap: 0.75rem; row-gap: 7vh; }
     .add-msg { bottom: 7.5%; }
 }

@@ -58,7 +58,7 @@ export class ItemExpandComponent implements OnInit {
       //console.log(transformedCursorPosition);
       //console.log("x: " + this.canvas.getBoundingClientRect().width + ", y: " + this.canvas.getBoundingClientRect().height)
       document.getElementById('canvas-zoom')?.classList.remove("disable");
-      let screenWidth = document.getElementsByClassName('item-expand')[0].getBoundingClientRect().width;
+      let screenWidth = document.getElementsByClassName('expand')[0].getBoundingClientRect().width;
       
 
       this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);

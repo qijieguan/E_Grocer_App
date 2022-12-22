@@ -1,15 +1,15 @@
-<div class="item-expand grid">
+<div class="expand grid">
     <mat-icon (click)="goBack()">arrow_circle_left</mat-icon>
     <canvas id="canvas"></canvas>
     <canvas id="canvas-zoom"></canvas>
-    <div class="item-expand-detail grid">
+    <div class="expand-container grid">
         <h1>{{item.name}}</h1>
         <app-rating [itemID]="param" [expand]="true"></app-rating>
         <p>{{item.description}}</p>
         <hr/>
-        <div class="item-expand-input flex">
+        <div class="expand-input flex">
             <span class="expand-price">PRICE: $<span>{{unit_price.toFixed(2)}}</span></span>
-            <div>
+            <div class="expand-quantity flex">
                 <span>QTY: </span>
                 <input type="number" [value]=quantity_input (change)="setQuantity($event)" min="1"/>
             </div>
