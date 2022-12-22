@@ -30,38 +30,67 @@ export class ItemExpandComponent implements OnInit {
       this.item = this.item_service.getItem(this.param);
       this.unit_price = this.item.price / this.item.quantity;
 
-
-      this.canvas = document.getElementById('canvas');
-      this.context = this.canvas.getContext('2d');
-
-      this.canvas_zoom = document.getElementById('canvas-zoom');
-      this.context_zoom = this.canvas_zoom.getContext('2d');
-
-      let origImg = new Image();
-      origImg.src = this.item.url;
-
-      this.canvas.height = origImg.naturalHeight;
-      this.canvas.width = origImg.naturalWidth;
-
-      this.canvas_zoom.height = 500;
-      this.canvas_zoom.width = 500;
-
-      this.context.drawImage(origImg, 0, 0);
-  
-      this.canvas.addEventListener('mousemove', (event: any) => {
-        const transformedCursorPosition = this.getTransformedPoint(event.offsetX, event.offsetY);
-        document.getElementById('canvas-zoom')?.classList.remove("disable");
-
-        this.context_zoom.clearRect(0, 0, this.canvas_zoom.width, this.canvas_zoom.height);
-        this.context_zoom.drawImage(origImg, transformedCursorPosition.x * 1.5, transformedCursorPosition.y * 0.75, this.canvas.width, this.canvas.height, 0, 0, this.canvas.width, this.canvas.height);
-      });
-
-      this.canvas.addEventListener('mouseout', (event: any) => {
-        document.getElementById('canvas-zoom')?.classList.add("disable");
-        this.context_zoom.clearRect(0, 0, this.canvas_zoom.width, this.canvas_zoom.height);
-      });
+      this.canvasRender();
 
     }, 250);
+  }
+
+  canvasRender = () => {
+    this.canvas = document.getElementById('canvas');
+    this.context = this.canvas.getContext('2d');
+
+    this.canvas_zoom = document.getElementById('canvas-zoom');
+    this.context_zoom = this.canvas_zoom.getContext('2d');
+
+    let origImg = new Image();
+    origImg.src = this.item.url;
+
+    this.canvas.height = origImg.naturalHeight;
+    this.canvas.width = origImg.naturalWidth;
+
+    this.canvas_zoom.height = 500;
+    this.canvas_zoom.width = 500;
+
+    this.context.drawImage(origImg, 0, 0);
+
+    this.canvas.addEventListener('mousemove', (event: any) => {
+      const transformedCursorPosition = this.getTransformedPoint(event.offsetX, event.offsetY);
+      //console.log(transformedCursorPosition);
+      //console.log("x: " + this.canvas.getBoundingClientRect().width + ", y: " + this.canvas.getBoundingClientRect().height)
+      document.getElementById('canvas-zoom')?.classList.remove("disable");
+      let screenWidth = document.getElementsByClassName('item-expand')[0].getBoundingClientRect().width;
+      
+
+      this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.context.drawImage(origImg, 0, 0);
+
+      let ratio = 1.4;
+      let width = 200;
+      let height = 150;
+      let boundWidth = this.canvas.getBoundingClientRect().width;
+
+      if (boundWidth > 600 && boundWidth < 650) { width = 300; height = 225; ratio = 1.4 }
+      else if (boundWidth <= 600) { width = 400; height = 300; ratio = 1.7 }
+      
+      let posX = (transformedCursorPosition.x * ratio);
+      let posY = (transformedCursorPosition.y * ratio);
+
+      if (screenWidth > 800) {
+        this.context.fillRect(posX, posY, width, height);
+        this.context.fillStyle = 'rgb(85, 85, 85, 0.5)';
+      }
+    
+      this.context_zoom.clearRect(0, 0, this.canvas_zoom.width, this.canvas_zoom.height);
+      this.context_zoom.drawImage(origImg, transformedCursorPosition.x * 1.5, transformedCursorPosition.y * 0.75, this.canvas.width, this.canvas.height, 0, 0, this.canvas.width, this.canvas.height);
+    });
+
+    this.canvas.addEventListener('mouseout', (event: any) => {
+      document.getElementById('canvas-zoom')?.classList.add("disable");
+      this.context_zoom.clearRect(0, 0, this.canvas_zoom.width, this.canvas_zoom.height);
+
+      this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.context.drawImage(origImg, 0, 0);
+    });
   }
 
   getTransformedPoint = (x: any, y: any) => {

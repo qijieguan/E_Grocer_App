@@ -52,8 +52,8 @@
 .expand-icon { transition: all 0.3s ease-in; }
 .grocery-list-link:hover .expand-icon { transform: rotate(180deg); }
 
-.expand-links > a { padding: 0.5vh 0.75vw; column-gap: 0.5vw; color: rgb(82, 82, 82); border: 1px solid transparent; }
-.expand-links > a:hover { font-size: clamp(0.75rem, 2.5vw, 1rem); font-weight: bold; border-color: black; }
+.expand-links > a { padding: 0.5vh 0.75vw; column-gap: 0.5vw; color: rgb(82, 82, 82); box-shadow: 0 0 2px 1px transparent; border-radius: 0.25rem; }
+.expand-links > a:hover { font-size: clamp(0.75rem, 2.5vw, 1rem); color: darkorange; box-shadow: 0 0 2px 1px darkorange; }
 
 .cart-num { margin-left: 0.25rem; }
 
