@@ -1,4 +1,6 @@
-<span class="quantity flex" *ngIf="this.context ==='cell-quantity'">
+<div class="name" *ngIf="this.context === 'cell-name'" (click)="handleNav()">{{params.data.name}}</div>
+
+<div class="quantity flex" *ngIf="this.context ==='cell-quantity'">
     <mat-icon 
         [ngStyle]="{'color':'black', 'font-size':'1.5rem'}"
         (click)="setQuantity('decrement')"
@@ -8,5 +10,6 @@
         [ngStyle]="{'color':'black', 'font-size':'1.5rem'}"
         (click)="setQuantity('increment')"
     >arrow_right</mat-icon>
-</span>
-<span class="delete" *ngIf="this.context ==='cell-delete'" (click)="handleDelete()">remove</span>
+</div>
+
+<div class="delete" *ngIf="this.context ==='cell-delete'" (click)="handleDelete()">remove</div>
