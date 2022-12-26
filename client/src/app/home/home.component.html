@@ -1,4 +1,9 @@
-<main class="home-bg grid flex">
+<main class="home-bg flex">
+    <div class="logo">
+        <span class="logo-1">E-Grocer </span>
+        <span class="logo-2">App</span>
+    </div>
+    <div class="home-overlay"></div>
     <div class="home-quote">
         <span class="home-quote-1">Organic and Natural</span><br/>
         <span class="home-quote-2">Follow old traditions to grow food</span><br/>
@@ -6,35 +11,33 @@
             <a class="grocery-list-link flex" [routerLink]="['/browse_groceries/page_1']"> START SHOPPING</a>
         </button>  
     </div>
-</main>
-<div class="app-home flex">
-    <div class="home-text">
-        <h1>MAKE YOUR <span>GROCERY SHOPPING</span> A <span>CONVENIENCE</span></h1>
-        <h2>SHOP ONLINE FOR A VARIETY OF FRESH GROCERIES</h2>
-    </div>
     <div class="contact flex">
-        <div class="icon-wrapper flex">
-            <mat-icon>email</mat-icon>
-            <div class="email-content flex">qijieguan7@gmail.com</div>
-        </div>
-        <div class="icon-wrapper flex">
-            <i class="pi pi-linkedin"></i>
-            <div class="linked-in-content">
-                <a href="https://www.linkedin.com/in/qi-jie-guan-002924201/" target="_blank">
-                    https://www.linkedin.com/in/qi-jie-guan-002924201/
-                </a>
+        <h2>Feel Free to Contact Me</h2>
+        <div class="icons flex">
+            <div class="icon-wrapper email flex">
+                <mat-icon>email</mat-icon>
+                <div class="email-content flex">qijieguan7@gmail.com</div>
             </div>
-        </div>
-        <div class="icon-wrapper flex">
-            <mat-icon>build</mat-icon>
-            <div class="tech-content flex">
-                <li>Angular</li>
-                <li>HTML/CSS/JS</li>
-                <li>MongoDB</li>
+            <div class="icon-wrapper linkedin flex">
+                <i class="pi pi-linkedin"></i>
+                <div class="linked-in-content">
+                    <a href="https://www.linkedin.com/in/qi-jie-guan-002924201/" target="_blank">
+                        https://www.linkedin.com/in/qi-jie-guan-002924201/
+                    </a>
+                </div>
+            </div>
+            <div class="icon-wrapper tech flex">
+                <mat-icon>build</mat-icon>
+                <div class="tech-content flex">
+                    <li>Angular</li>
+                    <li>HTML/CSS/JS</li>
+                    <li>MongoDB</li>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</main>
+
 <div class="home-body-1">
     <div class="grid">
         <img src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""/>

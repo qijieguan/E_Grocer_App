@@ -25,12 +25,15 @@ export class NavBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.onNavSwitch();
+    this.navMoveAway();
+  }
+
+  onNavSwitch = () => {
     this.location.onUrlChange(url => {
 
       let path = url.split('/');
       let querySelect = "";
-
-      document.querySelector('header')?.classList.remove('home');
 
       let bg_image = document.querySelector(".app-wrapper");
       bg_image?.classList.remove('bg-color');
@@ -44,7 +47,6 @@ export class NavBarComponent implements OnInit {
 
       if (querySelect === 'home-link') {
         setTimeout(() => {window.scrollTo({top: 0, behavior: 'smooth'}); }, 125);
-        document.querySelector('header')?.classList.add('home');
       }
       else { 
         setTimeout(() => { bg_image?.scrollIntoView({ behavior: 'smooth' }); }, 125);
@@ -57,6 +59,19 @@ export class NavBarComponent implements OnInit {
       document.querySelector('.highlight')?.classList.remove('highlight');
       document.querySelector('.' + querySelect)?.classList.add('highlight');
       setTimeout(() => { this.activeObserver(); }, 500);
+    });
+  }
+
+  navMoveAway = () => {
+    let nav = document.getElementsByClassName('nav-bar')[0];
+
+    document.getElementsByTagName('body')[0].addEventListener('wheel', (event) => {
+      const delta = Math.sign(event.deltaY);
+      console.log(nav)
+      if (delta === 1) {
+        nav.classList?.add("hide");
+      }
+      else {  nav.classList.remove("hide") }
     });
   }
 

@@ -39,22 +39,7 @@ export class ItemListComponent implements OnInit {
   ngOnInit(): void {
     this.param = this.router.url.split('/')[2]?.split('&')[0];
     this.resetList();
-
-    this.prev_tag = this.router.url.split('/')[2].split('&')[1]?.replace('category_', '') || '';
-    let word = this.router.url.split('/')[2].split('&')[1]?.replace('search_', '') || '';
-    word = word.replace('-', ' ');
-
-    if (this.router.url.includes('&category_')) {
-      setTimeout(() => {
-        this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
-        this.item_service.setPageSize(this.data_set.length || this.default_list.length);
-        this.checkTag();
-      }, 250);
-    }
-    else if (this.router.url.includes('&search_')) { 
-      setTimeout(() => { this.search_service.setSearch(word, this.default_list); }, 250); 
-    } 
-    else { this.loadPage(); }
+    this.checkParameter();
   }
 
   //init_list = () => { setTimeout(() => {this.item_service.initList();}); }
@@ -70,18 +55,36 @@ export class ItemListComponent implements OnInit {
     }, 250);
   }
 
-  resetTag() {
+  resetTag = () => {
     let el = document.getElementsByName(this.prev_tag)[0] as HTMLInputElement;
     if (!el) { return; }
     el.checked = false;
     el.parentElement?.classList.remove('highlight');
   }
 
-  checkTag() {
+  checkTag = () => {
     let el = document.getElementsByName(this.prev_tag)[0] as HTMLInputElement;
     if (!el) { return; }
     el.checked = true;
     el.parentElement?.classList.add('highlight');
+  }
+
+  checkParameter = () => {
+    this.prev_tag = this.router.url.split('/')[2].split('&')[1]?.replace('category_', '') || '';
+    let word = this.router.url.split('/')[2].split('&')[1]?.replace('search_', '') || '';
+    word = word.replace('-', ' ');
+
+    if (this.router.url.includes('&category_')) {
+      setTimeout(() => {
+        this.data_set = this.default_list.filter(d => d.tag === this.prev_tag);
+        this.item_service.setPageSize(this.data_set.length || this.default_list.length);
+        this.checkTag();
+      }, 250);
+    }
+    else if (this.router.url.includes('&search_')) { 
+      setTimeout(() => { this.search_service.setSearch(word, this.default_list); }, 250); 
+    } 
+    else { this.loadPage(); }
   }
   
   resetList = () => {

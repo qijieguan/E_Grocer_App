@@ -2,14 +2,16 @@
     position: fixed;
     inset: 0 0 auto auto;
     justify-content: center;
-    width: fit-content;
+    width: 100%;
     background: white;
     border-radius: 0 0 0 0.25rem;
     box-shadow: 0 0 2px;
     z-index: 2;
+    transition: all 0.5s ease-in;
 }
 
-.home-link { border-radius: 0 0 0 0.25rem; }
+.nav-bar.hide { transform: translateY(-100%); }
+
 .nav-bar > a {
     position: relative;
     list-style: none;
@@ -17,15 +19,15 @@
     padding: 3vh 0;
     font-size: clamp(0.625rem, 2.5vw, 0.9rem);
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Assistant', sans-serif;
     letter-spacing: 1px;
     width: 15vw;
-    color: black;  
+    color: green;  
 }
 
 .nav-bar > a:hover { color: rgb(173, 173, 173); border-bottom: 0; }
 
-.nav-bar > a.highlight { background: black; color: white; }
+.nav-bar > a.highlight { background: green; color: white; }
 .fixed { position: fixed; }
 
 .nav-bar > a > span { margin: 0.25rem 0 0 0.25rem; }
@@ -52,8 +54,16 @@
 .expand-icon { transition: all 0.3s ease-in; }
 .grocery-list-link:hover .expand-icon { transform: rotate(180deg); }
 
-.expand-links > a { padding: 0.5vh 0.75vw; column-gap: 0.5vw; color: rgb(82, 82, 82); box-shadow: 0 0 2px 1px transparent; border-radius: 0.25rem; }
-.expand-links > a:hover { color: darkorange; box-shadow: 0 0 2px 1px darkorange; }
+.expand-links > a { 
+    padding: 0.5vh 0.75vw; 
+    column-gap: 0.5vw; 
+    font-family: 'Assistant', sans-serif; 
+    color: green;
+    box-shadow: 0 0 2px 1px transparent; 
+    border-radius: 0.25rem; 
+}
+
+.expand-links > a:hover { box-shadow: 0 0 2px 1px; }
 
 .cart-num { margin-left: 0.25rem; }
 
