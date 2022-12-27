@@ -4,7 +4,6 @@
     justify-content: center;
     width: 100%;
     background: white;
-    border-radius: 0 0 0 0.25rem;
     box-shadow: 0 0 2px;
     z-index: 2;
     transition: all 0.5s ease-in;
@@ -17,7 +16,7 @@
     list-style: none;
     justify-content: center;
     padding: 3vh 0;
-    font-size: clamp(0.625rem, 2.5vw, 0.9rem);
+    font-size: clamp(0.625rem, 2vw, 0.9rem);
     font-weight: 500;
     font-family: 'Assistant', sans-serif;
     letter-spacing: 1px;
@@ -70,14 +69,14 @@
 @media (max-width: 50rem) {
     .nav-bar > a { width: 25vw; margin: 0; padding: 0.5rem 0; }
     .nav-bar > a > span { margin: 0.125rem 0 0 0.125rem; }
-    .expand-links { left: -65%; width: 90vw; }  
+    .expand-links { left: -65%; width: 80vw; }  
     .grocery-list-link:hover .expand-links { height: 12.5vh; border: 1px solid rgb(190, 190, 190); }
 }
 
 
 @media (max-width: 25rem) { 
     .nav-bar > a { flex-direction: column; }
-    .grocery-list-link:hover .expand-links { height: 10vh; border: 1px solid rgb(190, 190, 190); }
+    .grocery-list-link:hover .expand-links { height: 10vh; border: 1px solid rgb(190, 190, 190); } 
     .expand-icon { display: none; } 
 }
 

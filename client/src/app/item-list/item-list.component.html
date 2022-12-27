@@ -25,12 +25,11 @@
     <div class="item-section grid">
         <div *ngFor="let item of data_set">
             <div class="item grid item.id">
-                <img [src]=item.url alt=""/>
+                <div class="item-image"><img [src]=item.url alt=""/></div>
                 <div class="item-label grid">
-                    <h1 class="item-name">{{item.name}}</h1>
+                    <h1 class="item-name" (click)="handleNav(item)">{{item.name}}</h1>
                     <app-rating [itemID]="item.id"></app-rating>
-                    <span class="item-price">${{item.price.toFixed(2)}}</span> 
-                    <a class="item-link" (click)="handleNav(item)">More...</a>
+                    <span class="item-price flex">${{item.price.toFixed(2)}}</span> 
                 </div>
                 <div class="item-input">
                     <button class="add-button" *ngIf="!item.hide_quantity" (click)="toggleButton(item.id, 'add')">Add To Cart</button>
