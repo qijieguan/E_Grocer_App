@@ -76,7 +76,7 @@
 .icon-wrapper:hover .tech-content { width: 18rem; list-style: none; }
 .linked-in-content > a { color: gold; text-decoration: underline; }
 
-.home-body-1 { margin: 55vh 0 30vh 0; width: 100vw; background: white; }
+.home-body-1 { margin: 35vh 0 30vh 0; width: 100vw; background: white; }
 .home-body-1 > div {
     margin: 0 auto;
     padding: 0 0 7vh 0;
@@ -172,7 +172,7 @@
     column-gap: 7.5vw;
     row-gap: 5vh;
     width: 100vw;
-    background: rgb(187, 187, 187);
+    background: rgb(240, 240, 240);
 }
 
 .home-services > div {
@@ -181,7 +181,7 @@
     justify-content: space-evenly;
     text-align: center;
     min-height: 60vh;
-    background: rgb(243, 255, 243);
+    background: white;
     border-radius: 0.25rem;
     box-shadow: 0 0 2px 1px rgb(172, 172, 172);
 }
