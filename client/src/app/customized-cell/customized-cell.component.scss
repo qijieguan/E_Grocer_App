@@ -1,4 +1,11 @@
-.name { font-size: clamp(0.875rem, 1vw, 1rem);font-weight: 500; font-family: 'Oswald', sans-serif; margin-top: 0.25rem; color: blue; }
+.name { 
+    font-size: clamp(0.875rem, 1vw, 1rem); 
+    font-weight: 500; 
+    font-family: 'Oswald', sans-serif; 
+    height: 4rem;
+    margin-top: 0.25rem; 
+    color: blue; 
+}
 .name:hover { text-decoration: underline; }
 
 .delete { color: red; font-weight: 400; }

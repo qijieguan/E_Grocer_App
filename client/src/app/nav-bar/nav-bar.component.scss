@@ -55,7 +55,7 @@
 
 .expand-links > a { 
     padding: 0.5vh 0.75vw; 
-    column-gap: 0.5vw; 
+    column-gap: 1vw; 
     font-family: 'Assistant', sans-serif; 
     color: green;
     box-shadow: 0 0 2px 1px transparent; 
@@ -77,11 +77,12 @@
 @media (max-width: 25rem) { 
     .nav-bar > a { flex-direction: column; }
     .grocery-list-link:hover .expand-links { height: 10vh; border: 1px solid rgb(190, 190, 190); } 
+    .expand-links { left: -110%; width: 100vw; } 
+    .expand-links > a { width: 40vw; }
     .expand-icon { display: none; } 
 }
 
 @media (max-width: 15rem) {
-    .nav-bar > a { width: 22vw }
     .nav-bar > a > span { display: none; }
     .nav-bar > a > mat-icon { margin: 0 auto; }
 }

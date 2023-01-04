@@ -30,30 +30,28 @@ export class CartComponent implements OnInit, OnDestroy {
   onGridReady(params: any) { 
     this.gridApi = params.api; 
     this.gridApi.setRowData(this.rowData);
-    if (window.innerWidth <= 800) { this.gridApi.autoSizeColumns(); }
-    else { this.gridApi.sizeColumnsToFit(); }
   }
 
-  defaultColDef = { sortable: true, filter: true, autoHeight: true, resizable: true, }
+  defaultColDef = { sortable: true, filter: true, autoHeight: true, resizable: true, wrapText: true, }
 
   colDefs = [
-    { headerName: '', field: 'url', 
+    { headerName: '', field: 'url', width: 150,
       cellRenderer: (params: any) => 
       `<img style="height: 4rem; width: 4rem; border-radius: 2rem; margin: 0.5rem; border: 1px solid grey;"  
-      src=${params.data.url} alt="" />`
+      src=${params.data.url} alt="" />`,
     },
-    { headerName: 'Product', field: 'name',
+    { headerName: 'Product', field: 'name', minWidth: 100, maxWidth: 150,
       cellRenderer: CustomizedCellComponent,
       cellRendererParams: { context: 'cell-name' }
     },
-    { headerName: 'Quantity', field: 'quantity',
+    { headerName: 'Quantity', field: 'quantity', width: 150, 
       cellRenderer: CustomizedCellComponent,
       cellRendererParams: { context: 'cell-quantity' }
     },
-    { headerName: 'Price', field: 'price',
+    { headerName: 'Price', field: 'price', width: 125,
       cellRenderer: (params: any) => `<div style=" font-weight: 500;">$${params.data.price.toFixed(2)}</div>`
     },
-    { headerName: 'Action', field: 'action',
+    { headerName: 'Action', field: 'action', width: 125,
       cellRenderer: CustomizedCellComponent,
       cellRendererParams: {
         context: 'cell-delete'

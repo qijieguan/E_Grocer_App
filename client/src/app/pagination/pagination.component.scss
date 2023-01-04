@@ -6,10 +6,10 @@
     color: black; 
     background: rgb(187, 187, 187);
     border-radius: 5rem;
-    box-shadow: 0 0 3px;
+    box-shadow: 0 1px 3px gray;
     opacity: 0.5;
 }
-.pagination > button:hover { opacity: 1; background: rgb(236, 236, 236); }
+.pagination > button:hover { opacity: 1; background: rgb(245, 245, 245); }
 .left { inset: 50% auto auto 5%; }
 .right { inset: 50% 5% auto auto; }
 
