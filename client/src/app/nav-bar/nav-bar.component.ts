@@ -67,7 +67,6 @@ export class NavBarComponent implements OnInit {
 
     document.getElementsByTagName('body')[0].addEventListener('wheel', (event) => {
       const delta = Math.sign(event.deltaY);
-      console.log(nav)
       if (delta === 1) {
         nav.classList?.add("hide");
       }

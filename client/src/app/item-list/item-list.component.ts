@@ -122,9 +122,16 @@ export class ItemListComponent implements OnInit {
 
   toggleButton = (id: string, action: string) => { 
     let data = this.data_set.find(x => x.id === id);
+    let overlayElement = document.getElementById(id);
+    
+    if (action === 'add') { overlayElement?.classList.add('active'); }
+    else { overlayElement?.classList.remove('active'); this.resetQTY(id); return; }
 
-    if (action === 'cancel') { this.resetQTY(id); return; }
-    if (this.prev_id.length) { this.resetQTY(this.prev_id); }
+    if (this.prev_id.length) { 
+      this.resetQTY(this.prev_id); 
+      overlayElement = document.getElementById(this.prev_id);
+      overlayElement?.classList.remove('active');
+    }
 
     this.prev_id = id;
     data.hide_quantity = true;
@@ -149,6 +156,7 @@ export class ItemListComponent implements OnInit {
 
     setTimeout(() => { document.querySelector('.add-msg')?.classList.add('show'); }, 125);
     document.querySelector('.add-msg')?.classList.remove('show');
+    document.getElementById(item.id)?.classList.remove('active');
   }
 
   handleNav = (item: any) => {

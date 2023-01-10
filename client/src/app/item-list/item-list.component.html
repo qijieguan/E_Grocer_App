@@ -24,9 +24,9 @@
     </div>
     <div class="item-section grid">
         <div *ngFor="let item of data_set">
-            <div class="item flex item.id">
+            <div class="{{'item' + ' flex ' + item.id}}">
                 <div class="item-image">
-                    <div class="image-overlay">
+                    <div class="image-overlay" id="{{item.id}}">
                         <app-rating class="flex" [itemID]="item.id"></app-rating>
                         <div class="item-description">{{item.description}}</div>
                     </div>

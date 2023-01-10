@@ -90,7 +90,7 @@ export class CartService {
 
   getCart() { 
     this.http.post(this.url + '/api/cart/', {user_id: JSON.parse(sessionStorage.getItem('uid') || '')})
-    .subscribe( (data: any) => { if (data[0].cart) { 
+    .subscribe( (data: any) => { if (data[0]) { 
       this.subject_1.next(data[0].cart); 
     } } );
 
