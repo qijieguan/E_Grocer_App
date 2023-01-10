@@ -192,6 +192,8 @@ input[type="checkbox"] { accent-color: green; }
     .item-list-empty ,app-pagination { grid-column: 1 / 3; }
     .item { row-gap: 0; }
     .item-image { height: 22vh; }
+    .image-overlay { padding: 0 1vw 0 2vw; }
+    .item-description { font-size: 0.8rem;  }
     .item-label { padding-bottom: 2vh; }
     .item-name { margin: 0; }
     .increment, .decrement { width: 12.5%; }

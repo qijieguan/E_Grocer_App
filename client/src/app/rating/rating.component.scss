@@ -14,3 +14,8 @@ ngb-rating { color: gold; margin: 0.75rem 0 auto auto; float: right; }
     ngb-rating, .rating-expand {margin: 0 0 auto auto; float: left; }
     .rating-card > div, .rating-expand > div { font-size: clamp(1rem, 1.5vw, 1.5rem); transform: translateY(0); }
 }
+
+@media (max-width: 25rem) {
+    .rating-card > ngb-rating { font-size: clamp(1.25rem, 1.75vw, 1.75rem); }
+    .rating-card > div { color: gold; font-size: clamp(0.875rem, 1.125vw, 1.125rem); }
+}

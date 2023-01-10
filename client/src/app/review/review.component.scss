@@ -1,7 +1,7 @@
 .review-section { padding: 4rem 2rem 7rem 2rem; width: 100vw; background: white; box-shadow: 0 1px 3px; }
 
 .review-form { flex-direction: column; align-items: flex-start !important; row-gap: 1rem; width: 100%; }
-.review-form > h1 { font-size: clamp(1.375rem, 2.5vw, 1.75rem); font-weight: bold; color: darkorange; }
+.review-form > h1 { font-size: clamp(1.375rem, 2.5vw, 1.75rem); font-weight: bold; color: orange; text-shadow: 1px 1px 2px rgb(143, 82, 8); }
 
 .review-rating > span { font-weight: 500; }
 .review-rating > ngb-rating { margin: 0 0 auto 0.5rem; font-size: clamp(1.25rem, 5vh, 1.5rem); color: gold; }
@@ -22,12 +22,11 @@
 
 .review-form > button {
     align-self: flex-end;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
     font-size: clamp(0.875rem, 2.5vw, 0.9rem);
     color: white;
     background: darkorange;
     box-shadow: 1px 1px 1px grey;
-    border-radius: 0.125rem;
 }
 
 .review-form > button:hover { box-shadow: 2px 2px 2px grey; }
