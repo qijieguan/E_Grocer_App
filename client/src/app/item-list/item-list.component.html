@@ -24,11 +24,16 @@
     </div>
     <div class="item-section grid">
         <div *ngFor="let item of data_set">
-            <div class="item grid item.id">
-                <div class="item-image"><img [src]=item.url alt=""/></div>
-                <div class="item-label grid">
+            <div class="item flex item.id">
+                <div class="item-image">
+                    <div class="image-overlay">
+                        <app-rating class="flex" [itemID]="item.id"></app-rating>
+                        <div class="item-description">{{item.description}}</div>
+                    </div>
+                    <img [src]=item.url alt=""/>
+                </div>
+                <div class="item-label flex">
                     <h1 class="item-name" (click)="handleNav(item)">{{item.name}}</h1>
-                    <app-rating [itemID]="item.id"></app-rating>
                     <span class="item-price flex">${{item.price.toFixed(2)}}</span> 
                 </div>
                 <div class="item-input">

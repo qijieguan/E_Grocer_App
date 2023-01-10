@@ -35,9 +35,9 @@
     position: absolute; 
     justify-content: space-evenly;
     bottom: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: clamp(0.75rem, 2vw, 1rem);
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
     letter-spacing: 0;
     height: 0;
     width: 45vw;
@@ -59,7 +59,6 @@
     font-family: 'Assistant', sans-serif; 
     color: green;
     box-shadow: 0 0 2px 1px transparent; 
-    border-radius: 0.25rem; 
 }
 
 .expand-links > a:hover { box-shadow: 0 0 2px 1px; }

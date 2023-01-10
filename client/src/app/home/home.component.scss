@@ -25,6 +25,7 @@
 }
 
 .logo-1 { color: darkgreen; }
+.logo-2 { color: rgb(139, 98, 43); }
 
 .home-overlay { position: absolute; height: 100%; width: 100%; background: black; opacity: 0.4; }
 
@@ -39,8 +40,34 @@
 
 .home-quote-2 { font-size: clamp(1.25rem, 2vw, 2rem); }
 
-.home-quote > button { margin-top: 25%; padding: 0.375rem; background: rgb(7, 160, 7); box-shadow: 0 0 2px; border-radius: 0.25rem; }
-.home-quote > button > a { font-size: clamp(0.625rem, 1.125vw, 1.125rem); font-family: 'Vidaloka', serif; color: rgb(228, 228, 228); }
+.shop-button { 
+    position: relative; 
+    margin-top: 25%; 
+    padding: 0.375rem 0.5rem; 
+    background: rgb(54, 54, 54);
+    box-shadow: 0 0 2px; 
+    overflow: hidden; 
+}
+.btn-overlay { 
+    position: absolute; 
+    inset: 0 auto auto 0; 
+    height: 100%; 
+    width: 0; 
+    background: green; 
+    transition: all 0.3s ease-in;
+}
+
+.shop-button > a { 
+    position: relative; 
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem); 
+    font-family: 'Vidaloka', serif; 
+    color: rgb(228, 228, 228); 
+    z-index: 1; 
+}
+
+.shop-button:hover .btn-overlay { width: 100%; }
+.shop-button:hover a { color: burlywood; }
+
 
 .contact {
     position: absolute;

@@ -1,12 +1,16 @@
-ngb-rating { color: gold; font-size: clamp(1.5rem, 2vw, 2rem); margin: 0.75rem 0 auto auto; float: right; }
+ngb-rating { color: gold; margin: 0.75rem 0 auto auto; float: right; }
 
-.rating-expand { font-family: 'Roboto', sans-serif; font-weight: 500; color: darkgoldenrod; transform: translateY(-39%); }
-.large { font-size: clamp(1.5rem, 3vw, 3rem); }
+.rating-card { justify-content: flex-end; column-gap: 0.2vw; width: 100%; }
+.rating-card > ngb-rating { font-size: clamp(1.5rem, 2vw, 2rem); }
+.rating-card > div { color: gold; font-size: clamp(1rem, 1.25vw, 1.25rem); transform: translateY(18%); }
+
+.rating-expand { font-family: 'Roboto', sans-serif; font-weight: 500; color: goldenrod; transform: translateY(-39%); }
+.rating-expand > ngb-rating { font-size: clamp(1.5rem, 3vw, 3rem);  }
 .rating-expand > div { margin-left: 0.5vw; font-size: clamp(1.25rem, 1.875vw, 1.875rem); transform: translateY(18%);  }
 
-.review { font-weight: normal; font-size: clamp(0.75rem, 3vw, 3rem);}
+.rating-review { font-weight: normal; font-size: clamp(0.75rem, 3vw, 3rem);}
 
 @media (max-width: 50rem) {
     ngb-rating, .rating-expand {margin: 0 0 auto auto; float: left; }
-    .rating-expand > div { font-size: clamp(1rem, 1.5vw, 1.5rem); transform: translateY(0); }
+    .rating-card > div, .rating-expand > div { font-size: clamp(1rem, 1.5vw, 1.5rem); transform: translateY(0); }
 }
