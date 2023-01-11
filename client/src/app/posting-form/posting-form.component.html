@@ -1,8 +1,9 @@
-<div class="post-container grid">
+<div class="post-container flex">
     <img class="bg-image" alt=""/>
-    <img class="side-image" alt=""/>
+    <div class="image-overlay"></div>
     <form class="post-form grid" (submit)="handleSubmit($event)">
         <h1 class="post-title"><div>PRODUCT FORM</div></h1>
+        <img class="post-header-image" alt=""/>
         <div *ngIf="postMsg" class="post-message">Product successfully added to the store listing. Thank you for using this service!</div>
         <div class="product-image flex">
             <img *ngIf="url" [src]="url" class="preview-image" alt=""/>
@@ -71,6 +72,9 @@
             </select>
         </div>
 
-        <button type="submit" class="submit-btn">Upload Posting</button>
+        <button type="submit" class="submit-btn">
+            Upload Posting
+            <div class="btn-overlay"></div>
+        </button>
     </form>
 </div>
