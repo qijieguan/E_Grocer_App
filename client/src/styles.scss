@@ -85,8 +85,18 @@ a { text-decoration: none; }
 }
 
 @keyframes fadeSlideUp {
-  0% { transform: translateY(25%); opacity: 0;}
+  0% { transform: translateY(35%); opacity: 0;}
   100% { transform: translateY(0%); opacity: 1;}
+}
+
+@keyframes fadeSlideRight {
+  0% { transform: translateX(-15%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeSlideLeft {
+  0% { transform: translateX(15%); }
+  100% { transform: translateX(0); }
 }
 
 

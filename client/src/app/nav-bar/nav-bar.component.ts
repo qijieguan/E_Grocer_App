@@ -77,12 +77,12 @@ export class NavBarComponent implements OnInit {
   activeObserver = () => {
     const faders = document.querySelectorAll('.fade-slide');
     
-    const appearOptions = { threshold: 0, rootMargin: '0px 0px 0px 0px' }; 
+    const appearOptions = { threshold: 0.5, rootMargin: '0px 0px 0px 0px' }; 
 
     const appearOnScroll = new IntersectionObserver (
       function( entries ) {
           entries.forEach(entry => {
-              if (entry.isIntersecting) { entry.target.classList.add('appear'); }
+              if (entry.isIntersecting) { entry.target.classList.add('active'); }
           });
       },
     appearOptions);  

@@ -16,6 +16,7 @@
     text-indent: 3.5vw;
     height: fit-content;
     width: 95%;
+    color: goldenrod;
     background: rgb(247, 247, 247);
     box-shadow: 0 0 1px;
 }
@@ -23,7 +24,7 @@ hr { margin: 0; }
 
 .item-filter { margin:0 auto 3.75vh auto; min-height: 10vh; width: 95%; }
 
-input[type="checkbox"] { accent-color: green; }
+input[type="checkbox"] { accent-color: darkorange; }
 .container {
     display: flex;
     justify-content: center;
@@ -41,7 +42,7 @@ input[type="checkbox"] { accent-color: green; }
 }
 
 .container:hover { padding: 2.5vh 0; border-left-width: 1px; }
-.container.highlight { color: green; border-left-width: 1px; }
+.container.highlight { color: darkorange; border-left-width: 1px; }
 
 .set-data { z-index: 2; }
 .set-data:hover { color: green; }
@@ -107,7 +108,7 @@ input[type="checkbox"] { accent-color: green; }
 .quantity-input > button > mat-icon { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 .quantity-input > span { font-weight: bold; }
 
-.increment, .decrement { justify-content: center; width: 20%; background: green; border: 0; border-radius: 0.125rem; box-shadow: 0 0 1px black; }
+.increment, .decrement { justify-content: center; width: 20%; background: darkorange; border: 0; border-radius: 0.125rem; box-shadow: 0 0 1px black; }
 
 .submit-button {
     position: absolute;
@@ -127,8 +128,8 @@ input[type="checkbox"] { accent-color: green; }
     border-radius: 3rem;
 }
 
-.confirm-btn { justify-content: center; column-gap: 0.25rem; width: 65%; color: green; border: 1px solid darkgreen; }
-.confirm-btn:hover { color: white; background: green; box-shadow: 0 0 3px black; }
+.confirm-btn { justify-content: center; column-gap: 0.25rem; width: 65%; color: darkgoldenrod; border: 1px solid goldenrod; }
+.confirm-btn:hover { color: white; background: darkorange; box-shadow: 0 0 3px black; }
 
 .cancel-btn { width: 30%; color: black; background: rgb(230, 230, 230); border: 1px solid rgb(206, 206, 206); }
 .cancel-btn:hover { box-shadow: 0 0 3px; }
@@ -143,7 +144,6 @@ input[type="checkbox"] { accent-color: green; }
     font-family: 'Playfair Display', serif;
     font-weight: 500;
     letter-spacing: 1px;
-    color: green;
 }
 
 .add-msg.show {

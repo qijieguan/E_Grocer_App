@@ -21,12 +21,12 @@
     font-family: 'Assistant', sans-serif;
     letter-spacing: 1px;
     width: 15vw;
-    color: green;  
+    color: black;  
 }
 
 .nav-bar > a:hover { color: rgb(173, 173, 173); border-bottom: 0; }
 
-.nav-bar > a.highlight { background: green; color: white; }
+.nav-bar > a.highlight { background: black; color: gold; }
 .fixed { position: fixed; }
 
 .nav-bar > a > span { margin: 0.25rem 0 0 0.25rem; }
@@ -42,7 +42,7 @@
     height: 0;
     width: 45vw;
     color: rgb(37, 37, 37);
-    background: rgb(250, 250, 250);
+    background: rgb(250, 250, 250, 0.9);
     transform: translateY(100%); 
     transition: height 0.5s ease-in;
     overflow: hidden;
@@ -54,10 +54,11 @@
 .grocery-list-link:hover .expand-icon { transform: rotate(180deg); }
 
 .expand-links > a { 
+    position: relative;
     padding: 0.5vh 0.75vw; 
     column-gap: 1vw; 
     font-family: 'Assistant', sans-serif; 
-    color: green;
+    color: black;
     box-shadow: 0 0 2px 1px transparent; 
 }
 

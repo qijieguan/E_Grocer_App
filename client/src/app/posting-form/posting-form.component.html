@@ -2,8 +2,14 @@
     <img class="bg-image" alt=""/>
     <div class="image-overlay"></div>
     <form class="post-form grid" (submit)="handleSubmit($event)">
-        <h1 class="post-title"><div>PRODUCT FORM</div></h1>
-        <img class="post-header-image" alt=""/>
+        <div class="post-header-banner">
+            <img class="post-header-image" alt=""/>
+            <div class="post-header-overlay"></div>
+            <h1 class="post-title">
+                <h1>PRODUCT SUBMISSION</h1>
+                <h2>Grow Your Products and Business</h2>
+            </h1>
+        </div>
         <div *ngIf="postMsg" class="post-message">Product successfully added to the store listing. Thank you for using this service!</div>
         <div class="product-image flex">
             <img *ngIf="url" [src]="url" class="preview-image" alt=""/>
