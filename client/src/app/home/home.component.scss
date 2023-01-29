@@ -6,16 +6,16 @@
     width: 100vw;
     background-image: url("https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
+    font-family: 'Poppins', sans-serif;
 }
 
 .logo {
     position: absolute; 
     padding: 0.125rem 0.5rem;
     inset: 12% 0 0 5%; 
-    font-size: clamp(1.25rem, 2vw, 2rem); 
-    font-family: 'Bebas Neue', cursive;
-    font-style: italic;
-    letter-spacing: 0.1rem;
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem); 
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     height: fit-content;
     width: fit-content;
     background: rgb(243, 243, 243);
@@ -31,45 +31,33 @@
 
 .home-quote {
     text-align: center;
-    margin-top: 5%;
-    font-size: clamp(1.875rem, 4vw, 5rem);
-    font-family: 'Dancing Script', cursive;
+    margin-top: 5vh;
+    font-size: clamp(1.875rem, 4vw, 4rem);
     color: white;
     text-shadow: 1px 1px 1px gray;
     z-index: 1;
 }
 
-.home-quote-2 { font-size: clamp(1.25rem, 2vw, 2rem); }
+.home-quote-2 { font-size: clamp(1.25rem, 1vw, 1.5rem); }
 
 .shop-button { 
-    position: relative; 
     margin-top: 25%; 
     padding: 0.5rem 0.75rem; 
     box-shadow: 0 0 2px; 
     background: transparent;
     border: 2px solid white;
-    overflow: hidden; 
-}
-.btn-overlay { 
-    position: absolute; 
-    inset: 0 auto auto 0; 
-    height: 100%; 
-    width: 0; 
-    background: black; 
-    transition: all 0.3s ease-in;
+    overflow: hidden;
 }
 
 .shop-button > a { 
     position: relative; 
-    font-size: clamp(0.875rem, 1.25vw, 1.25rem); 
-    font-family: 'Vidaloka', serif; 
+    font-size: clamp(0.875rem, 1vw, 1.25rem); 
     font-weight: 500;
     color: white; 
     z-index: 1; 
 }
 
-.shop-button:hover { border: 1px solid black; }
-.shop-button:hover .btn-overlay { width: 100%; }
+.shop-button:hover { animation: fadeIn 0.3s ease-in; border: 2px solid black; background: black; }
 .shop-button:hover a { color: gold; }
 
 
@@ -87,10 +75,10 @@
 
 .contact > h2 { 
     margin: 0; 
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(1.5rem, 2.5vw, 3rem); 
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.5rem); 
     font-weight: 500; 
-    color: white; 
+    color: gold; 
 }
 
 .icons { column-gap: 2rem; }
@@ -105,7 +93,7 @@
 .icon-wrapper:hover .email-content { width: 12rem; }
 .icon-wrapper:hover .linked-in-content { width: 17rem; }
 .icon-wrapper:hover .tech-content { width: 18rem; list-style: none; }
-.linked-in-content > a { color: gold; text-decoration: underline; }
+.linked-in-content > a { color: black; text-decoration: underline; }
 
 .home-body-1 { height: fit-content; width: 100vw; padding: 25vh 0; background: gold; }
 .home-body-1 > div {
@@ -115,7 +103,6 @@
     row-gap: 0;
     height: 100%;
     width: 80%;
-    background: rgb(230, 230, 230);
 }
 
 .home-body-1 > div > img {
@@ -126,22 +113,22 @@
     width: 125%; 
     border-radius: 0.125rem;
     box-shadow: 1px 1px 5px black;
+    opacity: 0;
     transition: all 1s ease-in; 
 }
 
 .home-body-1 > div > img.active { transform: translateY(-10%); }
 
-.body-1-text { margin-left: auto; padding: 3rem 2rem; width: 75%;}
+.body-1-text { margin-left: auto; padding: 3rem 2rem; width: 75%; }
 .body-1-text > span { 
     font-size: clamp(1.125rem, 1.75vw, 2rem);
-    font-family: 'Tiro Gurmukhi', serif;
     font-style: oblique;
     letter-spacing: 0.5px;
 }
 .body-1-text > span > span { font-size: clamp(1.25rem, 2vw, 2rem); font-weight: bold; color: black; }
 
 .home-body-2 { padding: 20vh 0; justify-content: center; height: 110vh; background: purple; }
-.home-body-2 > img { height: 100%; object-fit: cover; width: 50%; }
+.home-body-2 > img { height: 100%; object-fit: cover; width: 50%; opacity: 0; box-shadow: -1px 1px 5px black; }
 
 .body-2-text {
     flex-direction: column;
@@ -149,18 +136,17 @@
     padding: 2rem;
     height: 100%;
     width: 30%;
-    background: rgb(240, 240, 240);
+    color: white;
 }
 
 .body-2-text > h1 { 
     margin: 0 0 15% 0;
     font-size: clamp(2rem, 3vw, 5rem);
     font-weight: 500;
-    font-family: 'Tiro Gurmukhi', serif;
     line-height: 1;
 }
 
-.body-2-text > h1 > span { color: purple; }
+.body-2-text > h1 > span { color: gold; }
 
 .body-2-text > p {
     font-size: clamp(1rem, 1.25vw, 1.25rem);
@@ -169,20 +155,18 @@
     letter-spacing: 0.5px;
     word-wrap: break-word;
     width: 75%;
-    color: black;
 }
 
 .home-body-3 { justify-content: center; height: 100vh; background: gold; }
-.home-body-3 > img { height: 70%; width: 50%; object-fit: cover; }
+.home-body-3 > img { height: 70%; width: 50%; object-fit: cover; opacity: 0; box-shadow: 1px 1px 5px black; }
 
-.body-3-text { flex-direction: column; padding: 2rem 0 0 1rem; height: 60%; width: 30%; background: rgb(240, 240, 240); }
+.body-3-text { flex-direction: column; padding: 2rem 0 0 1rem; height: 60%; width: 30%; }
 
 .body-3-text > h1 {
     margin: 0;
     margin-bottom: 4vh;
     font-size: clamp(2rem, 3vw, 5rem);
     font-weight: 500;
-    font-family: 'Tiro Gurmukhi', serif;
     line-height: 1;
     width: 75%;
 }
@@ -200,8 +184,8 @@
 }
 
 .text.fade-slide.active { animation: fadeSlideUp 0.5s ease-in; }
-.image.left.fade-slide.active { animation: fadeSlideRight 0.7s ease-in; }
-.image.right.fade-slide.active { animation: fadeSlideLeft 0.7s ease-in; }
+.image.left.fade-slide.active { animation: fadeSlideRight 0.7s ease-in forwards; }
+.image.right.fade-slide.active { animation: fadeSlideLeft 0.7s ease-in forwards; }
 
 .home-services {
     padding: 20vh 0;
@@ -229,8 +213,8 @@
 .home-services > div > h1 {
     margin: 0;
     padding: 0 0.5rem;
-    font-family: 'Vollkorn', serif;
-    font-size: clamp(1.375rem, 2vw, 1.75rem);
+    font-size: clamp(1.375rem, 1.5vw, 1.75rem);
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
@@ -240,7 +224,7 @@
     padding: 0 0.5rem;
     font-size: clamp(0.9rem, 1.125vw, 2.5rem);
     font-weight: 500;
-    font-family: 'Vollkorn', serif;
+    font-family: 'Assistant', sans-serif;
     letter-spacing: 0.75px;
     min-height: 50%;
     width: 100%;
@@ -250,38 +234,37 @@
 @media (max-width: 75rem) { .home-services { grid-template-columns: 25% 25% 25% } }
 
 @media (max-width: 50rem) {
-    .home-bg { height: 70vh; }
-    .home-quote { margin: 0; }
+    .home-bg {  padding-bottom: 10vh; }
     .logo { inset: 15% 0 0 2%; }
     .contact { flex-direction: column; row-gap: 1vh; }
     .icon-wrapper > mat-icon { padding: 0.625rem 2.25rem 2.125rem 0.75rem; }
-    .home-body-1 { padding: 15vh 0; width: 100vw; }
-    .home-body-1 > div { grid-template-columns: 50% 50%; width: 100%; background: white; }
-    .home-body-1 > div > img { position: static; grid-column: 1 / 3; transform: translateY(0); box-shadow: unset; }
-    .body-1-text { grid-column: 1 / 3; padding: 2rem; width: 100%; }
-    .body-1-text > br { display: none; }
+    .fade-slide { animation: unset !important; }
+    .home-body-1 { padding: 10vh 0 0 0; width: 100vw; }
+    .home-body-1 > div { grid-template-columns: 50% 50%; width: 100%; }
+    .home-body-1 > div > img { position: static; grid-column: 1 / 3; transform: translateY(0); box-shadow: unset; opacity: 1; transition: unset; }
+    .body-1-text { grid-column: 1 / 3; padding: 5vh 18% 2.5vh 18%; width: 100%; }
 
-    .home-body-2 { padding: 15vh 0; flex-direction: column-reverse; height: fit-content; } 
-    .body-2-text, .home-body-2 > img { width: 100%; align-items: center; }
+    .home-body-2 { padding: 10vh 0; flex-direction: column-reverse; height: fit-content; } 
+    .body-2-text, .home-body-2 > img { width: 100%; align-items: center; box-shadow: unset; opacity: 1; }
     .body-2-text > h1 { margin: 0 0 10% 0; }
     
-    .home-body-3 { padding: 15vh 0; flex-direction: column; height: fit-content; }
-    .home-body-3 > img { width: 100vw; }
-    .body-3-text { padding: 2rem 0 1rem 0; height: 35vh; width: 100vw; }
+    .home-body-3 { padding: 15vh 0 5vh 0; flex-direction: column; height: fit-content; }
+    .home-body-3 > img { width: 100vw; box-shadow: unset; opacity: 1; }
+    .body-3-text { padding: 7.5vh 0 2.5vh 0; width: 100vw; }
     .body-3-text > h1 { margin-bottom: 1vh; width: 70%; }
     .body-3-text > p { width: 70%; }
 
-    .home-services { grid-template-columns: 45% 45%; column-gap: 1rem; row-gap: 2vh; padding: 10vh 0 5vh 0;}
+    .home-services { grid-template-columns: 45% 45%; column-gap: 1rem; row-gap: 2vh; padding: 5vh 0;}
+    .home-services > div { padding: 2.5vh 0.5vw; }
     .home-services > div > h1 { line-height: 1.25; }
     .home-services > div > mat-icon { margin: 0.125rem 0.75rem 0.125rem 0; }
     .home-services > div > p { line-height: 1.5; }
 }
 
 @media (max-width: 25rem) {
-    .home-bg { height: 80vh; }
-    .logo { inset: 20% 0 0 2%; }
+    .logo { inset: 12.5% 0 0 2%; }
     .email:hover { transform: translateX(20%); } 
-    .tech:hover { transform: translateX(-20%); }
+    .tech:hover { transform: translateX(-20%); } 
     .body-3-text { height: 50vh; }
     .home-services { grid-template-columns: 90%; row-gap: 2vh; }
 }

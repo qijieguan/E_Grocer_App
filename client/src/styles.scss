@@ -90,13 +90,13 @@ a { text-decoration: none; }
 }
 
 @keyframes fadeSlideRight {
-  0% { transform: translateX(-15%); }
-  100% { transform: translateX(0); }
+  0% { transform: translateX(-15%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1;}
 }
 
 @keyframes fadeSlideLeft {
-  0% { transform: translateX(15%); }
-  100% { transform: translateX(0); }
+  0% { transform: translateX(15%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
 
