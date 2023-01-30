@@ -8,7 +8,7 @@ ngb-rating { color: gold; margin: 0.75rem 0 auto auto; float: right; }
 .rating-expand > ngb-rating { font-size: clamp(1.5rem, 3vw, 3rem);  }
 .rating-expand > div { margin-left: 0.5vw; font-size: clamp(1.25rem, 1.875vw, 1.875rem); transform: translateY(18%);  }
 
-.rating-review { font-weight: normal; font-size: clamp(0.75rem, 3vw, 3rem);}
+.rating-review { font-weight: normal; font-size: clamp(1.5rem, 2.25vw, 2.25rem);}
 
 @media (max-width: 50rem) {
     ngb-rating, .rating-expand {margin: 0 0 auto auto; float: left; }
