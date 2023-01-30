@@ -17,6 +17,10 @@ export class CartService {
   private url: any;
 
   constructor(private http: HttpClient) { 
+    this.fetchCart();
+  }
+
+  fetchCart = async() => {
     this.headers = new HttpHeaders().set('Content-Type', 'application/json;charset=UTF-8');
     this.options = { headers: this.headers };
     this.url = window.location.origin;

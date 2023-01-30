@@ -329,16 +329,20 @@ export class ItemService {
     
     if (window.location.hostname === 'localhost' ) { url = 'http://localhost:8080'; }
     
-    this.http.get(url + '/api/item-list/', options)
+    this.fetchItemList(url, options);
+
+    //this.DATA = this.data_set;
+    this.setPageSize(this.DATA.length);
+  }
+
+  fetchItemList = async(url: string, options: object) => {
+    await this.http.get(url + '/api/item-list/', options)
     .subscribe( data => { this.subject_1.next(data); } );
     
     this.subject_1.asObservable().subscribe(list => {
       list.forEach((item: any) => { this.DATA.push(item); }); 
       this.subject_2.next(Math.ceil(this.DATA.length / 12));   
     });
-
-    //this.DATA = this.data_set;
-    this.setPageSize(this.DATA.length);
   }
 
   /*
@@ -349,7 +353,7 @@ export class ItemService {
   }
   */
 
-  getItemList() { return this.DATA || []; }
+  getItemList() { return this.DATA; }
 
   getItem(id: string) { return this.DATA.find(x => x.id === id) || {}; }
 
