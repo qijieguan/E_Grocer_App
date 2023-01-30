@@ -14,16 +14,20 @@
             <li class="flex">- Post item to store <mat-icon>check_circle</mat-icon></li>
         </ul>
     </div>
-    <div class="feedback grid">
+    <div class="feedback-section grid">
         <div class="clickable" (click)="handleClick('feedback')">
             <span>Feedback</span>
             <mat-icon *ngIf="!unfoldFeedback">unfold_more</mat-icon>
             <mat-icon *ngIf="unfoldFeedback">unfold_less</mat-icon>
         </div>
-        <div *ngIf="unfoldFeedback" class="feedback-list">
+        <div *ngIf="unfoldFeedback" class="feedback-list grid">
+            <h1 *ngIf="!feedbackArr.length" class="feedback-empty">We would like some feedback on this project! Thank You.</h1>
             <ul *ngFor="let feedback of feedbackArr">
-                <li class="flex">- {{feedback}} <mat-icon>info</mat-icon></li>
-                <hr/>
+                <li id="{{feedback.id}}" class="feedback grid">
+                    <h1 class="feedback-content">{{feedback.feedback}}</h1>
+                    <span class="feedback-id">ID: {{feedback.id}}</span>
+                    <span class=clear-feedback (click)="clearFeedback(feedback.id)">clear</span>
+                </li>
             </ul>
         </div>
         <textarea

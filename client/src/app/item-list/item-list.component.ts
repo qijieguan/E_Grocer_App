@@ -87,8 +87,8 @@ export class ItemListComponent implements OnInit {
     else { this.loadPage(); }
   }
   
-  resetList = () => {
-    this.default_list = this.item_service.getItemList();
+  resetList = async () => {
+    this.default_list = await this.item_service.getItemList();
     this.data_set = this.default_list;
     this.item_service.setPageSize(this.default_list.length);
     this.item_service.setPageNum(Number(this.param.replace("page_", "")));

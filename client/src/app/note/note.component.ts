@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-note',
@@ -10,7 +11,7 @@ export class NoteComponent implements OnInit {
   unfoldComplete: boolean = false;
   unfoldFeedback: boolean = false;
   feedbackInp: string = "";
-  feedbackArr: Array<string> = [];
+  feedbackArr: Array<any> = [];
 
   constructor() { }
 
@@ -36,11 +37,15 @@ export class NoteComponent implements OnInit {
 
   handleSubmit = () => {
     if (!this.feedbackInp) { return; }
-    this.feedbackArr.push(this.feedbackInp);
+    this.feedbackArr.push({id: uuidv4(), feedback: this.feedbackInp});
     
     this.feedbackInp = "";
     let area = document.getElementsByName('feedback-area')[0] as HTMLInputElement;
     area.value = "";
+  }
+
+  clearFeedback = (id: string) => {
+    this.feedbackArr = this.feedbackArr.filter(feedback => feedback.id != id);
   }
 
 }

@@ -16,7 +16,7 @@
     text-indent: 3.5vw;
     height: fit-content;
     width: 95%;
-    color: goldenrod;
+    color: darkorange;
     background: rgb(247, 247, 247);
     box-shadow: 0 0 1px;
 }
@@ -138,7 +138,6 @@ input[type="checkbox"] { accent-color: darkorange; }
 
 .item-list-empty { 
     grid-column: 2 / 5;
-    margin-top: 15%; 
     text-align: center;
     font-size: clamp(1.5rem, 2vw, 3rem); 
     font-family: 'Playfair Display', serif;
@@ -151,8 +150,8 @@ input[type="checkbox"] { accent-color: darkorange; }
     position: fixed;
     width: fit-content;
     inset: 4% 3% auto auto;
-    background: blue;
-    border-left: 5px solid navy;
+    background: orange;
+    border-left: 5px solid darkorange;
     border-radius: 0.05rem;
     opacity: 0;
     animation: fadeUpSlide 3s ease-in;
@@ -174,7 +173,7 @@ input[type="checkbox"] { accent-color: darkorange; }
     0% { transform: translateY(60%); opacity: 1; }
     25% { transform: translateY(35%); opacity: 1; }
     75% { transform: translateY(35%); opacity: 1; }
-    99% { transform: translateY(35%); opacity: 0; width: fit-content; padding: 5vh 1vw; border-left: 5px solid navy; }
+    99% { transform: translateY(35%); opacity: 0; width: fit-content; padding: 5vh 1vw; border-left: 5px solid darkorange; }
     100% { width: 0; padding: 0; border-left: 0; }
 }
 
