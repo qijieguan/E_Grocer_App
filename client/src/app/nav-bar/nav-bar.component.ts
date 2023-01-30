@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { CartService } from '../cart.service';
+import { ItemService } from '../item.service';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -13,7 +14,8 @@ export class NavBarComponent implements OnInit {
 
   private cartNum: number = 0;
 
-  constructor(private location: Location, private cart_service: CartService) {
+  constructor(private location: Location, private item_service: ItemService, private cart_service: CartService) {
+    this.item_service.getItemList();
     if (!sessionStorage.getItem('visited')) {
       sessionStorage.setItem('visited', JSON.stringify('true'));
       sessionStorage.setItem('uid', JSON.stringify(uuidv4()));

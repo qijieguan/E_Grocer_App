@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemService } from '../item.service';
+
 
 @Component({
   selector: 'app-home',
@@ -8,8 +8,7 @@ import { ItemService } from '../item.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private item_service: ItemService) {
-    this.item_service.getItemList();
+  constructor() {
   }
 
   ngOnInit(): void {
