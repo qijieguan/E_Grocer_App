@@ -27,6 +27,7 @@ export class ItemService {
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "A bit expensive. But I am addicted to blueberries and it tastes fantastic!", rating: 4.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -39,6 +40,7 @@ export class ItemService {
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "Tasty strawberries. I would buy it again in the future.", rating: 5.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -51,6 +53,7 @@ export class ItemService {
       ratings: {average: 4.5, values: [4.5]},
       reviews: [{content: "The grapes tasted great. It seemed like it was naturally grown.", rating: 4.5, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -63,6 +66,7 @@ export class ItemService {
       ratings: {average: 4.5, values: [4.5]},
       reviews: [{content: "10/10. Very delicious and I am addicted to mangos!", rating: 4.5, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -75,6 +79,7 @@ export class ItemService {
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Very fresh. Goes great on my sandwiches!", rating: 4.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -87,6 +92,7 @@ export class ItemService {
       ratings: {average: 3.8, values: [3.8]},
       reviews: [{content: "7.5/10. Came in warm. Would have loved it if it was refrigerated on delivery.", rating: 3.8, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -99,6 +105,7 @@ export class ItemService {
       ratings: {average: 2.0, values: [2.0]},
       reviews: [{content: "It was rotten. Don\'t buy it. I had to sue the company to receive compensation.", rating: 2.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -111,6 +118,7 @@ export class ItemService {
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Loved it! Great value for its price.", rating: 4.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -123,6 +131,7 @@ export class ItemService {
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Large and healthy red onions. I am happy with the purchase.", rating: 4.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -135,6 +144,7 @@ export class ItemService {
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Worth the purchase. It was nicely cut for me and well packaged.", rating: 4.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -147,6 +157,7 @@ export class ItemService {
       ratings: {average: 3.0, values: [3.0]},
       reviews: [{content: "Tastes ok. But it is a little bit hard to chew off.", rating: 3.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -159,6 +170,7 @@ export class ItemService {
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "8/10. Very happy with the product!", rating: 4.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -171,6 +183,7 @@ export class ItemService {
       ratings: {average: 4.5, values: [4.5]},
       reviews: [{content: "High quality bread. My go-to bread for my sandwiches!", rating: 4.5, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -183,6 +196,7 @@ export class ItemService {
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "10/10. The package was delivered to me cold!", rating: 5.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -195,6 +209,7 @@ export class ItemService {
       ratings: {average: 3.5, values: [3.5]},
       reviews: [{content: "Well cut and fresh. Cost is a bit on the high end.", rating: 3.5, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -207,6 +222,7 @@ export class ItemService {
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "A big piece of meat that is very tender. Would buy again to spoil myself.", rating: 5.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -219,6 +235,7 @@ export class ItemService {
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "I can't denied. I am in love with their meat product.", rating: 5.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -231,6 +248,7 @@ export class ItemService {
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "It is safe to say their meat product is their specialty. Well packaged and fresh.", rating: 5.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -243,6 +261,7 @@ export class ItemService {
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "Large slices of salmon fillet. Tasted fantastic when I seasoned and grilled it.", rating: 5.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -255,6 +274,7 @@ export class ItemService {
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "The eggs were cold and completely intact when I received it!", rating: 5.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -267,6 +287,7 @@ export class ItemService {
       ratings: {average: 3.5, values: [3.5]},
       reviews: [{content: "Not enough variety to choose from. There are better places to buy cheese.", rating: 3.5, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -279,6 +300,7 @@ export class ItemService {
       ratings: {average: 3.0, values: [3.0]},
       reviews: [{content: "Not enough variety to choose from. There are better places to buy cheese.", rating: 3.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -291,6 +313,7 @@ export class ItemService {
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Great value. Yogurt is often on discount in store.", rating: 4.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -303,6 +326,7 @@ export class ItemService {
       ratings: {average: 4.5, values: [4.5]},
       reviews: [{content: "Very crunchy and sweet. My kids enjoy it very much.", rating: 4.5, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
     {
       id: uuidv4(),
@@ -315,6 +339,7 @@ export class ItemService {
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Bought 12 pieces today. It was sweet and texture is softer than most macorons.", rating: 4.0, name: 'anonymous'}],
       hide_quantity: false,
+      made_by: 'admin',
     },
   ];
   */
@@ -354,6 +379,8 @@ export class ItemService {
   */
 
   getItemList() { return this.DATA; }
+
+  getUserList() { return this.DATA.filter(item => item.made_by === 'user'); }
 
   getItem(id: string) { return this.DATA.find(x => x.id === id) || {}; }
 

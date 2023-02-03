@@ -41,9 +41,9 @@ export class NavBarComponent implements OnInit {
       bg_image?.classList.remove('bg-color');
 
 
-      if (path[1] === 'browse_groceries' || path[1] === 'post_groceries') { querySelect = 'grocery-list-link'; }
+      if (path[1] === 'browse_products' || path[1] === 'post_product') { querySelect = 'grocery-list-link'; }
       else if (path[1] === 'checkout') { querySelect = 'checkout-link'; }
-      else if (path[1] === 'note') { querySelect = 'note-link'; }
+      else if (path[1] === 'feedback') { querySelect = 'feedback-link'; }
       else { querySelect = 'home-link'; }
 
 

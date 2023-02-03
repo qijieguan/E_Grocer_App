@@ -4,10 +4,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-posting-form',
-  templateUrl: './posting-form.component.html',
-  styleUrls: ['./posting-form.component.scss']
+  templateUrl: './item-posting.component.html',
+  styleUrls: ['./item-posting.component.scss']
 })
-export class PostingFormComponent implements OnInit {
+export class ItemPostingComponent implements OnInit {
+
+  userList: Array<any> = [];
 
   url: any;
   titleInp: string = '';
@@ -17,10 +19,20 @@ export class PostingFormComponent implements OnInit {
   priceInp: number = 0.01;
   postMsg: boolean = false;
 
+  currOption: number = 1;
+
   constructor(private item_service: ItemService) { 
   }
 
   ngOnInit(): void {
+  }
+
+  toggleSection = (activeVal: number) => {
+    if (activeVal === 1) { this.userList = this.item_service.getUserList(); this.resetInputs() ;}
+
+    document.getElementsByClassName('post-option ' + this.currOption.toString())[0].classList.remove('active');
+    this.currOption = activeVal;
+    document.getElementsByClassName('post-option ' + this.currOption.toString())[0].classList.add('active');
   }
 
   onFileSelected = (event: any) => {
@@ -61,6 +73,7 @@ export class PostingFormComponent implements OnInit {
       ratings: {average: 5.0, values: [5.0]},
       reviews: [],
       hide_quantity: false,
+      made_by: 'user',
     }
    
     this.item_service.postItem(newItem);
@@ -68,14 +81,18 @@ export class PostingFormComponent implements OnInit {
     let file = document.getElementById('file-input') as HTMLInputElement;
     file.value = '';
     
+    this.resetInputs();
+    this.postMsg = true;
+
+    setTimeout(() => { document.querySelector('.post-container')?.scrollIntoView({ behavior: 'smooth' })}, 125);
+  }
+
+  resetInputs = () => {
     this.url = '';
     this.titleInp='';
     this.descriptionInp = '';
     this.tagInp = '';
     this.quantityInp = 1;
     this.priceInp = 0.01;
-    this.postMsg = true;
-
-    setTimeout(() => { document.querySelector('.post-container')?.scrollIntoView({ behavior: 'smooth' })}, 125);
   }
 }

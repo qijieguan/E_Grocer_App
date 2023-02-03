@@ -16,7 +16,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { CartComponent } from './cart/cart.component';
-import { NoteComponent } from './note/note.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 import { CustomizedCellComponent } from './customized-cell/customized-cell.component';
 import { ItemExpandComponent } from './item-expand/item-expand.component';
 import { ReviewComponent } from './review/review.component';
@@ -27,7 +27,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MapComponent } from './map/map.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
-import { PostingFormComponent } from './posting-form/posting-form.component';
+import { ItemPostingComponent } from './item-posting/item-posting.component';
 
 
 @NgModule({
@@ -38,7 +38,7 @@ import { PostingFormComponent } from './posting-form/posting-form.component';
     CartComponent,
     CustomizedCellComponent,
     NavBarComponent,
-    NoteComponent,
+    FeedbackComponent,
     ItemExpandComponent,
     ReviewComponent,
     RatingComponent,
@@ -48,7 +48,7 @@ import { PostingFormComponent } from './posting-form/posting-form.component';
     CheckoutComponent,
     MapComponent,
     PopUpComponent,
-    PostingFormComponent,
+    ItemPostingComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,11 +58,11 @@ import { PostingFormComponent } from './posting-form/posting-form.component';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
-      {path: 'browse_groceries/:page?:mode', component: ItemListComponent},
-      {path: 'browse_groceries/:page/view/:id', component: ItemExpandComponent},
-      {path: 'post_groceries/:form', component: PostingFormComponent},
+      {path: 'browse_products/:page?:mode', component: ItemListComponent},
+      {path: 'browse_products/:page/view/:id', component: ItemExpandComponent},
+      {path: 'post_product/:form', component: ItemPostingComponent},
       {path: 'checkout', component: CheckoutComponent}, 
-      {path: 'note', component: NoteComponent},
+      {path: 'feedback', component: FeedbackComponent},
     ]),
     HttpClientModule,
     MatDialogModule,

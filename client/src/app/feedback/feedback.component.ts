@@ -3,10 +3,10 @@ import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-note',
-  templateUrl: './note.component.html',
-  styleUrls: ['./note.component.scss']
+  templateUrl: './feedback.component.html',
+  styleUrls: ['./feedback.component.scss']
 })
-export class NoteComponent implements OnInit {
+export class FeedbackComponent implements OnInit {
 
   unfoldComplete: boolean = false;
   unfoldFeedback: boolean = false;

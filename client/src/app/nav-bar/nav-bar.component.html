@@ -10,11 +10,11 @@
         <span>SHOP</span>
         <mat-icon class="expand-icon">expand_more</mat-icon>
         <div class="expand-links flex">
-            <a class="flex" [routerLink]="['/browse_groceries/page_1']">
+            <a class="flex" [routerLink]="['/browse_products/page_1']">
                 <mat-icon>trolley</mat-icon>
                 <span>View Our Products</span>
             </a>
-            <a class="flex" [routerLink]="['/post_groceries/form']">
+            <a class="flex" [routerLink]="['/post_product/form']">
                 <mat-icon>payments</mat-icon>
                 <span>Product Submission</span>
             </a>
@@ -27,7 +27,7 @@
         <span class="cart-num" *ngIf="getCartNum() > 0"> ({{getCartNum()}})</span>
     </a>
 
-    <a class="note-link flex" routerLink="/note">
+    <a class="feedback-link flex" routerLink="/feedback">
         <mat-icon>info</mat-icon>
         <span>FEEDBACK</span>
     </a>

@@ -45,6 +45,9 @@ const itemListSchema = new Schema({
     hide_quantity: {
         type: Boolean,
     },
+    made_by: {
+        type: String,
+    }
 },
 {
     timestamps: true,   

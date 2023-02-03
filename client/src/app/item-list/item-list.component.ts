@@ -100,7 +100,7 @@ export class ItemListComponent implements OnInit {
       if (event.target.name === this.prev_tag) {
         this.loadPage();
         this.prev_tag = "";
-        this.router.navigate(["browse_groceries/" + this.param]);
+        this.router.navigate(["browse_products/" + this.param]);
         return;
       }
     }
@@ -110,7 +110,7 @@ export class ItemListComponent implements OnInit {
     this.checkTag();
 
     this.item_service.setPageSize(this.data_set.length);
-    this.router.navigate(["browse_groceries/page_1" + "&category_" + this.prev_tag]);
+    this.router.navigate(["browse_products/page_1" + "&category_" + this.prev_tag]);
   }
 
   resetQTY(id: string) {
@@ -161,6 +161,6 @@ export class ItemListComponent implements OnInit {
 
   handleNav = (item: any) => {
     setTimeout(() => {this.resetQTY(this.prev_id)});
-    this.router.navigate(["browse_groceries/" + this.param + '/view/' + item.id]);
+    this.router.navigate(["browse_products/" + this.param + '/view/' + item.id]);
   }
 }

@@ -114,7 +114,6 @@
     width: 125%; 
     border-radius: 0.125rem;
     box-shadow: 1px 1px 5px black;
-    opacity: 0;
     transition: all 1s ease-in; 
 }
 
@@ -129,7 +128,7 @@
 .body-1-text > span > span { font-size: clamp(1.25rem, 2vw, 2rem); font-weight: bold; color: black; }
 
 .home-body-2 { padding: 20vh 0; justify-content: center; height: 110vh; background: purple; }
-.home-body-2 > img { height: 100%; object-fit: cover; width: 50%; opacity: 0; box-shadow: -1px 1px 5px black; }
+.home-body-2 > img { height: 100%; object-fit: cover; width: 50%; box-shadow: -1px 1px 5px black; }
 
 .body-2-text {
     flex-direction: column;
@@ -159,7 +158,7 @@
 }
 
 .home-body-3 { justify-content: center; height: 100vh; background: gold; }
-.home-body-3 > img { height: 70%; width: 50%; object-fit: cover; opacity: 0; box-shadow: 1px 1px 5px black; }
+.home-body-3 > img { height: 70%; width: 50%; object-fit: cover; box-shadow: 1px 1px 5px black; }
 
 .body-3-text { flex-direction: column; padding: 2rem 0 0 1rem; height: 60%; width: 30%; }
 
@@ -184,7 +183,8 @@
     color: black;
 }
 
-.text.fade-slide.active { animation: fadeSlideUp 0.5s ease-in; }
+.text, .image { opacity: 0; }
+.text.fade-slide.active { animation: fadeSlideUp 0.5s ease-in 0.2s forwards; }
 .image.left.fade-slide.active { animation: fadeSlideRight 0.7s ease-in forwards; }
 .image.right.fade-slide.active { animation: fadeSlideLeft 0.7s ease-in forwards; }
 

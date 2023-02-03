@@ -1,10 +1,10 @@
-.post-container { 
+.post-section { 
     position: relative;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 10vh;
+    padding: 10vh 0;
     font-family: 'Bebas Neue', cursive;
-    height: 200vh;
+    height: fit-content;
     width: 100vw;
     background: rgb(201, 201, 201);
 }
@@ -26,20 +26,51 @@
     background: linear-gradient(to top, rgb(0, 0, 0, 0.9) 10%, rgb(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.5));
 }
 
-form { 
+.post-container { 
     position: relative;
     margin-top: 10vh;
-    padding: 1.5vw;
-    grid-template-columns: 48% 48%;
-    justify-content: space-around;
-    row-gap: 0;
-    font-weight: 500;
+    padding: 2.5vw;
     height: 90%;
     width: 80%;
     background: rgb(241, 241, 241);
-    box-shadow: 0 0 2px;
     z-index: 1;
 }
+
+.user-products { padding: 0 2.5vw; min-height: 75vh; }
+
+.user-products > h1 {
+    font-family: 'Poppins', sans-serif;
+    margin: 2.5vh 0;
+    text-decoration: underline;
+}
+
+.user-list {
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+}
+
+.user-product {
+    width: 100%;
+}
+
+.user-product > img { background-size: cover; }
+
+.post-form { 
+    margin-top: 2.5vh;
+    grid-template-columns: 48% 48%;
+    justify-content: space-around;
+}
+
+.post-option {
+    padding: 2.5vh 0;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid;
+    color: rgb(161, 161, 161);
+}
+
+.post-option.active { color: black; background: orange; }
+.post-option:not(.active):hover { color: black; box-shadow: 0 0 3px; }
 
 .post-header-banner {
     position: relative;
@@ -80,12 +111,12 @@ form {
 
 .post-message { 
     grid-column: 1 / 3;
-    margin-bottom: 1vh;
-    padding: 2.5vh 2.5% 0.5vh 2.5%;
+    margin: 0 auto 1vh auto;
+    padding: 2.5vh 2.5vw;
     font-size: clamp(0.875rem, 1.25vw, 1.25rem);
     font-style: italic;
     letter-spacing: 0.5px;
-    width: 100%;
+    width: 80%;
     background: rgb(211, 255, 211);
     border: 1px solid rgb(73, 173, 73);
     border-radius: 0.125rem;
@@ -148,6 +179,7 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
 
 .submit-btn { 
     position: relative;
+    padding: 2.5vh 0;
     margin: 5vh 0 0 0;
     font-weight: 500;
     font-size: clamp(1.25rem, 1.625vw, 1.625rem); 
@@ -171,11 +203,10 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
 .submit-btn:hover { color: goldenrod; border-color: black; } 
 .submit-btn:hover .btn-overlay { width: 100%; opacity: 1; }
 
-@media (max-width: 75rem) { .post-container { grid-template-columns: 25% 65%; } }
 
 @media (max-width: 50rem) {
-    .post-container { height: 200vh; }
-    form { width: 95%; }
+    .post-container { width: 100%; }
+    .user-list { grid-template-columns: 48% 48%; }
     .post-message { padding: 2vh 5%; }
     .preview-image { height: 25vh; width: 50%; }
     .preview-image * { font-size: clamp(1.5rem, 1.5vw, 2rem); }
@@ -183,17 +214,14 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
 }
 
 @media (max-width: 35rem) {
-    .post-container { display: flex; padding: 0 1.5vw; height: 225vh; border-radius: 0; }
-    .preview-image { height: 30vh; width: 75%; font-size: clamp(0.875rem, 1.5vw, 2.5rem); }
+    .post-container { display: flex; flex-direction: column; row-gap: 2vh; border-radius: 0; }
+    .post-form { display: flex; flex-direction: column; border-radius: 0; }
+    .user-list { grid-template-columns: 100%; }
+    .preview-image { height: 30vh; width: 85%; font-size: clamp(0.875rem, 1.5vw, 2.5rem); }
     .product-upload { margin-top: 3vh; }
     hr { margin: 1vh 0; }
-    form { display: flex; flex-direction: column; padding: 0 5vw; row-gap: 2vh; border-radius: 0; }
-    .product-title { grid-column: 1 / 2; }
     .product-title > input { width: 100%; }
     .product-image { flex-direction: column; margin-bottom: 2.5vh; }
     .product-tag { margin: 2.5vh 0; }
 }
 
-@media (max-width: 15rem) {
-    .post-container { height: 260vh; }
-}

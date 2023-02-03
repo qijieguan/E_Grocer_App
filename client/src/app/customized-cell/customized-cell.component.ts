@@ -29,7 +29,7 @@ export class CustomizedCellComponent implements OnInit, ICellRendererAngularComp
   }
 
   handleNav = () => {
-    this.router.navigate(["browse_groceries/page_1/view/" + this.params.data.id]);
+    this.router.navigate(["browse_products/page_1/view/" + this.params.data.id]);
   }
 
   setQuantity = (action: String) => {
