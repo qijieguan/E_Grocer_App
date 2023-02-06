@@ -36,17 +36,19 @@
     z-index: 1;
 }
 
-.user-products { grid-template-columns: 30% 30% 30%; justify-content: space-around; padding: 0 2.5vw; min-height: 75vh; }
+.user-products { grid-template-columns: 30% 30% 30%; justify-content: space-around; padding: 2.5vh 2.5vw 5vh 2.5vw; }
 
 .user-products > h1 {
     grid-column: 1 / 3;
     padding: 0;
+    margin: 2.5vh 0 5vh 0;
     font-family: 'Poppins', sans-serif;
-    margin: 2.5vh 0;
+    font-weight: 700;
     text-decoration: underline;
 }
+.user-product { margin-bottom: 5vh; }
 
-.user-product > img { width: 100%; background-size: cover; }
+.user-product > img { max-height: 40vh; width: 100%; background-size: cover; }
 .user-product > h1 { font-size: clamp(0.75rem, 1vw, 1rem); }
 .user-product > h1 > span { color: gray; }
 .product-btns > button { 
@@ -220,7 +222,7 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
 @media (max-width: 50rem) {
     .post-container { width: 100%; }
     .user-products { grid-template-columns: 48% 48%; }
-    .user-products > h1 { grid-column: 1 / 2; }
+    .user-products > h1 { grid-column: 1 / 2; margin: 2.5vh 0 0 0; }
     .post-message { padding: 2vh 5%; }
     .preview-image { height: 25vh; width: 50%; }
     .preview-image * { font-size: clamp(1.5rem, 1.5vw, 2rem); }
@@ -230,6 +232,8 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
 @media (max-width: 35rem) {
     .post-container { display: flex; flex-direction: column; row-gap: 2vh; border-radius: 0; }
     .user-products { grid-template-columns: 100%; }
+    .user-product > img { max-height: 60vh; }
+    .user-product { margin-bottom: 15vh; }
     .user-list { grid-template-columns: 100%; }
     .post-form { display: flex; flex-direction: column; border-radius: 0; }
     .preview-image { height: 30vh; width: 85%; font-size: clamp(0.875rem, 1.5vw, 2.5rem); }

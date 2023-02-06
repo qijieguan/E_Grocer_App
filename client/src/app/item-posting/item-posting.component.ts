@@ -80,7 +80,7 @@ export class ItemPostingComponent implements OnInit {
       price: Number(this.priceInp),
       ratings: {average: 5.0, values: [5.0]},
       reviews: [],
-      hide_quantity: false,
+      mode: {show_quantity: false, edit: false},
       made_by: 'user',
     }
    
