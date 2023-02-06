@@ -28,6 +28,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { MapComponent } from './map/map.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { ItemPostingComponent } from './item-posting/item-posting.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { ItemPostingComponent } from './item-posting/item-posting.component';
     MapComponent,
     PopUpComponent,
     ItemPostingComponent,
+    EditFormComponent,
   ],
   imports: [
     BrowserModule,

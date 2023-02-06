@@ -1,0 +1,28 @@
+form {
+    flex-direction: column;
+    row-gap: 5vh;
+    min-height: 75vh;
+    width: 55vw;
+}
+
+.close-btn {
+    align-self: flex-end;
+    color: white;
+    background: red;
+}
+
+form > h1 {
+    font-weight: clamp(0.875rem, 1.25vw, 1.25vw);
+}
+
+input, textarea { width: 100%; }
+textarea { height: 40vh; }
+
+.confirm-btn {
+    padding: 1.5vh 1.5vw;
+    font-weight: 500;
+    color: white;
+    background: blue;
+    box-shadow: 0 0 3px darkblue;
+    border-radius: 2rem;
+}

@@ -370,7 +370,6 @@ export class ItemService {
   ];
   */
   
-  
   constructor(private http: HttpClient) {
 
     const headers = new HttpHeaders().set('Content-Type', 'application/json;charset=UTF-8');
@@ -383,6 +382,7 @@ export class ItemService {
     this.fetchItemList(url, options);
 
     //this.DATA = this.data_set;
+    
     /*
     this.DATA = [
       {
@@ -413,6 +413,7 @@ export class ItemService {
       },
     ];
     */
+    
     this.setPageSize(this.DATA.length);
   }
 
@@ -438,7 +439,17 @@ export class ItemService {
   getItemList() { return this.DATA; }
 
   getUserList() { 
-    return this.DATA.filter(item => item.made_by === 'user');; 
+    return this.DATA.filter(item => item.made_by === 'user'); 
+  }
+
+  editUserItem = (id: string, newChanges: any) => {
+    this.DATA.forEach(item => {
+      if (item.id === id) {
+        item.name = newChanges.name;
+        item.description = newChanges.description;
+        item.price = newChanges.price;
+      }
+    })
   }
 
   removeUserItem = (id: string) => { 

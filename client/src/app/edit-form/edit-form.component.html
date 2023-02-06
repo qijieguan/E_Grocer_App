@@ -1,0 +1,27 @@
+<form class="flex" (submit)="handleSubmit($event)">
+    <button class="close-btn" (click)="closeModal($event)">Close</button>
+    <h1>Please enter new product name</h1>
+    <input
+        name="edit-name"
+        class="edit-name"
+        value="{{editNameInp}}"
+        (keyup)="handleChange($event)"
+    />
+    <h1>Please enter new product description</h1>
+    <textarea
+        name="edit-description"
+        class="edit-description"
+        value="{{editDescInp}}"
+        (keyup)="handleChange($event)"
+    ></textarea>
+    <h1>Please enter new product price</h1>
+    <input
+        name="edit-price"
+        class="edit-price"
+        type="number"
+        step=".01"
+        value="{{editPriceInp}}"
+        (keyup)="handleChange($event)"
+    />
+    <button type="submit" class="confirm-btn">Confirm Changes</button>
+</form>

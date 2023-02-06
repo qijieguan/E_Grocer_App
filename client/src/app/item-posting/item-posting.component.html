@@ -13,7 +13,7 @@
                     <h1><span>Product Name: </span>{{product.name}} </h1>
                     <h1><span>Product Price: </span>${{product.price}}</h1>
                     <div class="product-btns flex">
-                        <!--<button class="edit-btn">Edit</button>-->
+                        <button class="edit-btn" (click)="openModal(product)">Edit</button>
                         <button class="remove-btn" (click)="removeUserItem(product.id)">Remove</button>
                     </div>
                 </div>

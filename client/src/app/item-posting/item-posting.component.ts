@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../item.service';
 import { v4 as uuidv4 } from 'uuid';
+import { MatDialog } from '@angular/material/dialog';
+import { EditFormComponent } from '../edit-form/edit-form.component';
 
 @Component({
   selector: 'app-posting-form',
@@ -21,25 +23,25 @@ export class ItemPostingComponent implements OnInit {
 
   currOption: number = 1;
 
-  constructor(private item_service: ItemService) { 
+  constructor(private item_service: ItemService, private mat_dialog: MatDialog) { 
   }
 
-  ngOnInit(): void {
-    this.toggleSection(this.currOption);
+  ngOnInit(): void { 
+    this.toggleSection(this.currOption); 
   }
 
   toggleSection = (activeVal: number) => {
     this.resetInputs() ;
-    if (activeVal === 1) { this.userList = this.item_service.getUserList(); }
+    setTimeout(() => { this.userList = this.item_service.getUserList();}, 125)
 
     document.getElementsByClassName('post-option ' + this.currOption.toString())[0].classList.remove('active');
     this.currOption = activeVal;
     document.getElementsByClassName('post-option ' + this.currOption.toString())[0].classList.add('active');
   }
 
-  removeUserItem = (id: string) => {
-    this.userList = this.item_service.removeUserItem(id);
-  }
+  openModal = (product: object) => { this.mat_dialog.open(EditFormComponent, {height: '90vh', data: {productData: product}}); }
+
+  removeUserItem = (id: string) => { this.userList = this.item_service.removeUserItem(id); }
 
   onFileSelected = (event: any) => {
     if (event.target.files && event.target.files[0]) {
