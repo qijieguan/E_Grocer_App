@@ -42,8 +42,9 @@ const itemListSchema = new Schema({
         rating: { type: Number },
         name: { type: String, trim: true }
     }],
-    hide_quantity: {
-        type: Boolean,
+    mode: {
+        show_quantity: { type: Boolean },
+        edit: { type: Boolean }
     },
     made_by: {
         type: String,

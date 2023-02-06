@@ -37,8 +37,8 @@
                     <span class="item-price flex">${{item.price.toFixed(2)}}</span> 
                 </div>
                 <div class="item-input">
-                    <button class="add-button" *ngIf="!item.hide_quantity" (click)="toggleButton(item.id, 'add')">Add To Cart</button>
-                    <div class="quantity-input flex" *ngIf="item.hide_quantity">
+                    <button class="add-button" *ngIf="!item.mode.hide_quantity" (click)="toggleButton(item.id, 'add')">Add To Cart</button>
+                    <div class="quantity-input flex" *ngIf="item.mode.hide_quantity">
                         <button class="decrement flex" (click)="setQuantity('decrement', item.id)">
                             <mat-icon [ngStyle]="{'color':'white'}">remove</mat-icon>
                         </button>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item-margin" *ngIf="item.hide_quantity"></div>
+            <div class="item-margin" *ngIf="item.mode.hide_quantity"></div>
         </div>
         <div *ngIf="!data_set.length" class="item-list-empty flex">Sorry, there seems to be a problem. Please refresh page to load products.</div>
         <app-pagination></app-pagination>

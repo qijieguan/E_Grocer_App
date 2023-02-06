@@ -4,14 +4,18 @@
     <div class="post-container" (submit)="handleSubmit($event)">
         <div class="post-option 1 active flex" (click)="toggleSection(1)">Your Product Catalog</div>
         <div class="post-option 2 flex" (click)="toggleSection(2)">Add Product to Store</div>
-        <div *ngIf="currOption === 1" class="user-products">
+        <div *ngIf="currOption === 1" class="user-products grid">
             <h1>Own Catelog</h1><br/>
             <h2 *ngIf="!userList.length">Your list is empty. Please fill the submission form to list your products.</h2>
-            <div *ngFor="let product of userList" class="user-list grid">
-                <div class="user-product">
+            <div *ngFor="let product of userList">
+                <div class="user-product" id="{{product.id}}">
                     <img src="{{product.url}}" alt=""/>
-                    <h1>{{product.name}} </h1>
-                    <h1>${{product.price}}</h1>
+                    <h1><span>Product Name: </span>{{product.name}} </h1>
+                    <h1><span>Product Price: </span>${{product.price}}</h1>
+                    <div class="product-btns flex">
+                        <!--<button class="edit-btn">Edit</button>-->
+                        <button class="remove-btn" (click)="removeUserItem(product.id)">Remove</button>
+                    </div>
                 </div>
             </div>
         </div>

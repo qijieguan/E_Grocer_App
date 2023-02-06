@@ -53,7 +53,7 @@ export class PaginationComponent implements OnInit {
     this.param = "page_" + newValue; 
     
     this.item_service.setPageNum(newValue);
-    this.router.navigate(["browse_groceries/", this.param]);
+    this.router.navigate(["browse_products/", this.param]);
   }
 
 }

@@ -25,14 +25,20 @@ export class ItemPostingComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.toggleSection(this.currOption);
   }
 
   toggleSection = (activeVal: number) => {
-    if (activeVal === 1) { this.userList = this.item_service.getUserList(); this.resetInputs() ;}
+    this.resetInputs() ;
+    if (activeVal === 1) { this.userList = this.item_service.getUserList(); }
 
     document.getElementsByClassName('post-option ' + this.currOption.toString())[0].classList.remove('active');
     this.currOption = activeVal;
     document.getElementsByClassName('post-option ' + this.currOption.toString())[0].classList.add('active');
+  }
+
+  removeUserItem = (id: string) => {
+    this.userList = this.item_service.removeUserItem(id);
   }
 
   onFileSelected = (event: any) => {

@@ -36,24 +36,37 @@
     z-index: 1;
 }
 
-.user-products { padding: 0 2.5vw; min-height: 75vh; }
+.user-products { grid-template-columns: 30% 30% 30%; justify-content: space-around; padding: 0 2.5vw; min-height: 75vh; }
 
 .user-products > h1 {
+    grid-column: 1 / 3;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
     margin: 2.5vh 0;
     text-decoration: underline;
 }
 
-.user-list {
-    grid-template-columns: 30% 30% 30%;
-    justify-content: center;
-}
-
-.user-product {
+.user-product > img { width: 100%; background-size: cover; }
+.user-product > h1 { font-size: clamp(0.75rem, 1vw, 1rem); }
+.user-product > h1 > span { color: gray; }
+.product-btns > button { 
+    padding: 1vh 1.5vw 0.75vh 1.5vw; 
+    font-size: clamp(0.75rem, 0.75vw, 1rem);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0;
     width: 100%;
+    color: white;
+    border-radius: 1rem; 
+    box-shadow: 0 0 3px;
 }
-
-.user-product > img { background-size: cover; }
+.edit-btn {
+    background: navy; 
+    border: 2px solid rgb(160, 151, 219); 
+}
+.remove-btn { 
+    background: darkorange; 
+    border: 2px solid orange; 
+}
 
 .post-form { 
     margin-top: 2.5vh;
@@ -206,7 +219,8 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
 
 @media (max-width: 50rem) {
     .post-container { width: 100%; }
-    .user-list { grid-template-columns: 48% 48%; }
+    .user-products { grid-template-columns: 48% 48%; }
+    .user-products > h1 { grid-column: 1 / 2; }
     .post-message { padding: 2vh 5%; }
     .preview-image { height: 25vh; width: 50%; }
     .preview-image * { font-size: clamp(1.5rem, 1.5vw, 2rem); }
@@ -215,8 +229,9 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
 
 @media (max-width: 35rem) {
     .post-container { display: flex; flex-direction: column; row-gap: 2vh; border-radius: 0; }
-    .post-form { display: flex; flex-direction: column; border-radius: 0; }
+    .user-products { grid-template-columns: 100%; }
     .user-list { grid-template-columns: 100%; }
+    .post-form { display: flex; flex-direction: column; border-radius: 0; }
     .preview-image { height: 30vh; width: 85%; font-size: clamp(0.875rem, 1.5vw, 2.5rem); }
     .product-upload { margin-top: 3vh; }
     hr { margin: 1vh 0; }

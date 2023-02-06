@@ -87,11 +87,13 @@ export class ItemListComponent implements OnInit {
     else { this.loadPage(); }
   }
   
-  resetList = async () => {
-    this.default_list = await this.item_service.getItemList();
-    this.data_set = this.default_list;
-    this.item_service.setPageSize(this.default_list.length);
-    this.item_service.setPageNum(Number(this.param.replace("page_", "")));
+  resetList = () => {
+    setTimeout(() => {
+      this.default_list = this.item_service.getItemList();
+      this.data_set = this.default_list;
+      this.item_service.setPageSize(this.default_list.length);
+      this.item_service.setPageNum(Number(this.param.replace("page_", "")));
+    }, 125);
   }
 
   handleCheck = (event: any) => {
@@ -116,7 +118,7 @@ export class ItemListComponent implements OnInit {
   resetQTY(id: string) {
     let data = this.data_set.find(x => x.id === id);
     if (!data) { return; }
-    data.hide_quantity = false;
+    data.mode.hide_quantity = false;
     data.quantity = 1;
   }
 
@@ -134,7 +136,7 @@ export class ItemListComponent implements OnInit {
     }
 
     this.prev_id = id;
-    data.hide_quantity = true;
+    data.mode.hide_quantity = true;
   }
 
   setQuantity = (action: string, id: string) => {
@@ -150,7 +152,7 @@ export class ItemListComponent implements OnInit {
     this.cart_service.addCartItem(item);
 
     item.price /= item.quantity;
-    item.hide_quantity = false;
+    item.mode.hide_quantity = false;
     item.quantity = 1;
     this.itemHolder = item.name;
 

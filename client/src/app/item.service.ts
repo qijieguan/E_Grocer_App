@@ -26,7 +26,7 @@ export class ItemService {
       price: 3.99,
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "A bit expensive. But I am addicted to blueberries and it tastes fantastic!", rating: 4.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -39,7 +39,7 @@ export class ItemService {
       price: 3.99,
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "Tasty strawberries. I would buy it again in the future.", rating: 5.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -52,7 +52,7 @@ export class ItemService {
       price: 4.99,
       ratings: {average: 4.5, values: [4.5]},
       reviews: [{content: "The grapes tasted great. It seemed like it was naturally grown.", rating: 4.5, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -65,7 +65,7 @@ export class ItemService {
       price: 2.99,
       ratings: {average: 4.5, values: [4.5]},
       reviews: [{content: "10/10. Very delicious and I am addicted to mangos!", rating: 4.5, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -78,7 +78,7 @@ export class ItemService {
       price: 3.29,
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Very fresh. Goes great on my sandwiches!", rating: 4.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -91,7 +91,7 @@ export class ItemService {
       price: 1.50,
       ratings: {average: 3.8, values: [3.8]},
       reviews: [{content: "7.5/10. Came in warm. Would have loved it if it was refrigerated on delivery.", rating: 3.8, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -104,7 +104,7 @@ export class ItemService {
       price: 1.99,
       ratings: {average: 2.0, values: [2.0]},
       reviews: [{content: "It was rotten. Don\'t buy it. I had to sue the company to receive compensation.", rating: 2.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -117,7 +117,7 @@ export class ItemService {
       price: 1.39,
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Loved it! Great value for its price.", rating: 4.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -130,7 +130,7 @@ export class ItemService {
       price: 1.39,
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Large and healthy red onions. I am happy with the purchase.", rating: 4.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -143,7 +143,7 @@ export class ItemService {
       price: 4.39,
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Worth the purchase. It was nicely cut for me and well packaged.", rating: 4.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -156,7 +156,7 @@ export class ItemService {
       price: 5.79,
       ratings: {average: 3.0, values: [3.0]},
       reviews: [{content: "Tastes ok. But it is a little bit hard to chew off.", rating: 3.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -169,7 +169,7 @@ export class ItemService {
       price: 4.59,
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "8/10. Very happy with the product!", rating: 4.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -182,7 +182,7 @@ export class ItemService {
       price: 6.49,
       ratings: {average: 4.5, values: [4.5]},
       reviews: [{content: "High quality bread. My go-to bread for my sandwiches!", rating: 4.5, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -195,7 +195,7 @@ export class ItemService {
       price: 11.39,
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "10/10. The package was delivered to me cold!", rating: 5.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -208,7 +208,7 @@ export class ItemService {
       price: 16.39,
       ratings: {average: 3.5, values: [3.5]},
       reviews: [{content: "Well cut and fresh. Cost is a bit on the high end.", rating: 3.5, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -221,7 +221,7 @@ export class ItemService {
       price: 18.39,
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "A big piece of meat that is very tender. Would buy again to spoil myself.", rating: 5.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -234,7 +234,7 @@ export class ItemService {
       price: 6.59,
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "I can't denied. I am in love with their meat product.", rating: 5.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -247,7 +247,7 @@ export class ItemService {
       price: 7.49,
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "It is safe to say their meat product is their specialty. Well packaged and fresh.", rating: 5.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -260,7 +260,7 @@ export class ItemService {
       price: 12.99,
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "Large slices of salmon fillet. Tasted fantastic when I seasoned and grilled it.", rating: 5.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -273,7 +273,7 @@ export class ItemService {
       price: 3.29,
       ratings: {average: 5.0, values: [5.0]},
       reviews: [{content: "The eggs were cold and completely intact when I received it!", rating: 5.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -286,7 +286,7 @@ export class ItemService {
       price: 4.59,
       ratings: {average: 3.5, values: [3.5]},
       reviews: [{content: "Not enough variety to choose from. There are better places to buy cheese.", rating: 3.5, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -299,7 +299,7 @@ export class ItemService {
       price: 7.59,
       ratings: {average: 3.0, values: [3.0]},
       reviews: [{content: "Not enough variety to choose from. There are better places to buy cheese.", rating: 3.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -312,7 +312,7 @@ export class ItemService {
       price: 2.59,
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Great value. Yogurt is often on discount in store.", rating: 4.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -325,7 +325,7 @@ export class ItemService {
       price: 6.39,
       ratings: {average: 4.5, values: [4.5]},
       reviews: [{content: "Very crunchy and sweet. My kids enjoy it very much.", rating: 4.5, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
     },
     {
@@ -338,8 +338,34 @@ export class ItemService {
       price: 10.39,
       ratings: {average: 4.0, values: [4.0]},
       reviews: [{content: "Bought 12 pieces today. It was sweet and texture is softer than most macorons.", rating: 4.0, name: 'anonymous'}],
-      hide_quantity: false,
+      mode: { show_quantity: false, edit: false },
       made_by: 'admin',
+    },
+    {
+      id: uuidv4(),
+      url: 'https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      name: 'Hot Dog (Deli)',
+      description: 'Single hot dog served from our deli. Provided with 1 ketchup and 1 mustard packages.',
+      tag: 'snack',
+      quantity: 1,
+      price: 1.59,
+      ratings: {average: 5.0, values: [5.0]},
+      reviews: [{content: "Very pleased. They took the time to keep it warm during delivery.", rating: 5.0, name: 'anonymous'}],
+      mode: { show_quantity: false, edit: false },
+      made_by: 'user',
+    },
+    {
+      id: uuidv4(),
+      url: 'https://images.pexels.com/photos/5292916/pexels-photo-5292916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      name: 'Chicken Salad (1 Pound)',
+      description: 'Made and packaged by our deli. Provided with mayonnaise, sour cream, and ranch packages for mixes.',
+      tag: 'snack',
+      quantity: 1,
+      price: 7.59,
+      ratings: {average: 4.5, values: [4.5]},
+      reviews: [{content: "Good portion and delicious. I am in love with their deli food.", rating: 4.5, name: 'anonymous'}],
+      mode: { show_quantity: false, edit: false },
+      made_by: 'user',
     },
   ];
   */
@@ -357,6 +383,36 @@ export class ItemService {
     this.fetchItemList(url, options);
 
     //this.DATA = this.data_set;
+    /*
+    this.DATA = [
+      {
+        id: uuidv4(),
+        url: 'https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        name: 'Hot Dog (Deli)',
+        description: 'Single hot dog served from our deli. Provided with 1 ketchup and 1 mustard packages.',
+        tag: 'snack',
+        quantity: 1,
+        price: 1.59,
+        ratings: {average: 5.0, values: [5.0]},
+        reviews: [{content: "Very pleased. They took the time to keep it warm during delivery.", rating: 5.0, name: 'anonymous'}],
+        mode: { show_quantity: false, edit: false },
+        made_by: 'user',
+      },
+      {
+        id: uuidv4(),
+        url: 'https://images.pexels.com/photos/5292916/pexels-photo-5292916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        name: 'Chicken Salad (1 Pound)',
+        description: 'Made and packaged by our deli. Provided with mayonnaise, sour cream, and ranch packages for mixes.',
+        tag: 'snack',
+        quantity: 1,
+        price: 7.59,
+        ratings: {average: 4.5, values: [4.5]},
+        reviews: [{content: "Good portion and delicious. I am in love with their deli food.", rating: 4.5, name: 'anonymous'}],
+        mode: { show_quantity: false, edit: false },
+        made_by: 'user',
+      },
+    ];
+    */
     this.setPageSize(this.DATA.length);
   }
 
@@ -377,10 +433,18 @@ export class ItemService {
     );
   }
   */
+  
 
   getItemList() { return this.DATA; }
 
-  getUserList() { return this.DATA.filter(item => item.made_by === 'user'); }
+  getUserList() { 
+    return this.DATA.filter(item => item.made_by === 'user');; 
+  }
+
+  removeUserItem = (id: string) => { 
+    this.DATA = this.DATA.filter(item => item.id !== id);
+    return this.getUserList(); 
+  }
 
   getItem(id: string) { return this.DATA.find(x => x.id === id) || {}; }
 
