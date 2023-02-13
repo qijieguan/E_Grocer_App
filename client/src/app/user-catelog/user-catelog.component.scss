@@ -1,0 +1,99 @@
+.user-catelog {  grid-template-columns: 25% 70%; padding: 10vh 2.5vw 25vh 2.5vw; min-height: 100vh; width: 100vw; }
+label {
+    grid-column: 1 / 3;
+    margin: 5vh 0;
+    padding-left: 2.5vw;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.625rem, 2.5vw, 2rem); 
+    font-weight: 500;
+    color: rgb(75, 75, 75);
+    height: fit-content;
+    border-left: 3px solid;
+}
+
+.profile {
+    padding: 5vh 0;
+    flex-direction: column;
+    row-gap: 1vh;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 50vh;
+    background: rgb(248, 248, 248);
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 0.5rem;
+}
+
+.profile > img {
+    height: 40%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    border: 0 !important;
+}
+
+.profile > h1 { color: grey; font-style: italic; }
+hr { width: 100%; border: 1px solid rgb(158, 158, 158); }
+
+.profile > ul {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.profile > ul > a {
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    color: rgb(44, 44, 44);
+    cursor: pointer;
+}
+
+li { text-align: center; border: 3px solid transparent; }
+
+a.active > li, .profile > ul > a:hover {
+    color: darkorange;
+    border-left-color: darkorange;
+}
+
+.user-products {
+    grid-template-columns: 30% 30% 30%;
+    padding: 5vh 1vw;
+    width: 100%;
+    background: rgb(248, 248, 248);
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 0.5rem;
+}
+
+.product { margin-bottom: 5vh; }
+
+.product > img { max-height: 40vh; width: 100%; background-size: cover; }
+.product > h1 { font-size: clamp(0.75rem, 1vw, 1rem); }
+.product > h1 > span { color: gray; }
+.product-price { color: green; }
+.product-btns > button { 
+    padding: 1vh 1.5vw 0.75vh 1.5vw; 
+    font-size: clamp(0.75rem, 0.75vw, 1rem);
+    letter-spacing: 0;
+    width: 100%;
+    color: white;
+    border-radius: 1rem; 
+    box-shadow: 0 0 3px;
+}
+.edit-btn {
+    background: navy; 
+    border: 2px solid rgb(160, 151, 219); 
+}
+.remove-btn { 
+    background: darkorange; 
+    border: 2px solid orange; 
+}
+
+@media (max-width: 50rem) {
+    .user-products { grid-template-columns: 45% 45%; }
+}
+
+@media (max-width: 35rem) {
+    .user-catelog { grid-template-columns: 100%; }
+    label { grid-column: 1 / 2; }
+    .user-products { grid-template-columns: 100%; width: 100%; }
+    .product > img { max-height: 60vh; }
+    .product { margin-bottom: 15vh; }
+}

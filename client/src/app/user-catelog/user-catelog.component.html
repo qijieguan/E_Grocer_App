@@ -1,0 +1,33 @@
+<div class="user-catelog grid">
+    <label>Your Collection Overview</label>
+    <h1 class="profile flex">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png" alt=""/>
+        <h1>Guest</h1>
+        <hr/>
+        <ul>
+            <a [routerLink]="['/post_product/main/']">
+                <li>Home Overview</li>
+            </a>
+            <a class="active" [routerLink]="['/post_product/main/user_catalog']">
+                <li>My Collection</li>
+            </a>
+            <a [routerLink]="['/post_product/main/product_submission']">
+                <li>Product Form</li>
+            </a>
+        </ul>
+    </h1>
+    <h2 *ngIf="!userProducts.length">Your list is empty. Please fill the submission form to list your products.</h2>
+    <div class="user-products grid">
+        <div *ngFor="let product of userProducts">
+            <div class="product" id="{{product.id}}">
+                <img src="{{product.url}}" alt=""/>
+                <h1 class="product-name"><span>Product Name: </span>{{product.name}} </h1>
+                <h1 class="product-price"><span>Product Price: </span>${{product.price}}</h1>
+                <div class="product-btns flex">
+                    <button class="edit-btn" (click)="openModal(product)">Edit</button>
+                    <button class="remove-btn" (click)="removeUserItem(product.id)">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

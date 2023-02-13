@@ -1,105 +1,21 @@
 <div class="post-section flex">
-    <img class="bg-image" alt=""/>
-    <div class="image-overlay"></div>
-    <div class="post-container" (submit)="handleSubmit($event)">
-        <div class="post-option 1 active flex" (click)="toggleSection(1)">Your Product Catalog</div>
-        <div class="post-option 2 flex" (click)="toggleSection(2)">Add Product to Store</div>
-        <div *ngIf="currOption === 1" class="user-products grid">
-            <h1>Own Catelog</h1><br/>
-            <h2 *ngIf="!userList.length">Your list is empty. Please fill the submission form to list your products.</h2>
-            <div *ngFor="let product of userList">
-                <div class="user-product" id="{{product.id}}">
-                    <img src="{{product.url}}" alt=""/>
-                    <h1><span>Product Name: </span>{{product.name}} </h1>
-                    <h1><span>Product Price: </span>${{product.price}}</h1>
-                    <div class="product-btns flex">
-                        <button class="edit-btn" (click)="openModal(product)">Edit</button>
-                        <button class="remove-btn" (click)="removeUserItem(product.id)">Remove</button>
-                    </div>
+    <div class="post-container flex">
+        <h1 class="post-label">Let's get started</h1>
+        <div class="post-links grid">
+            <a [routerLink]="['/post_product/main/user_catalog']">
+                <div class="post-option one active flex">
+                    <div class="post-overlay"></div>
+                    <h1>Build Your Catalog</h1>
+                    <span>Explore new business opportunities. We offer support with our friendly partnership.</span>
                 </div>
-            </div>
-        </div>
-        <form *ngIf="currOption === 2" class="post-form grid">
-            <div class="post-header-banner">
-                <img class="post-header-image" alt=""/>
-                <div class="post-header-overlay"></div>
-                <h1 class="post-title">
-                    <h1>PRODUCT SUBMISSION</h1>
-                    <h2>Grow Your Products and Business</h2>
-                </h1>
-            </div>
-            <div *ngIf="postMsg" class="post-message">Product successfully added to the store listing. Thank you for using this service!</div>
-            <div class="product-image flex">
-                <img *ngIf="url" [src]="url" class="preview-image" alt=""/>
-                <div *ngIf="!url" class="preview-image flex">
-                    <mat-icon>image</mat-icon>
-                    <span>Image</span>
+            </a>
+            <a [routerLink]="['/post_product/main/product_submission']">
+                <div class="post-option two flex">
+                    <div class="post-overlay"></div>
+                    <h1>Product Submission</h1>
+                    <span>New products ready to hit the market. Make it happen with a quick form in one go.</span>
                 </div>
-                <div class="product-upload flex">
-                    <div>upload product image <span>(.png, .jpg, jpeg.)</span></div>
-                    <input type="file" id="file-input" accept='image/*' (change)="onFileSelected($event)" required />
-                </div>
-            </div>
-            <hr/>
-    
-            <div class="product-title">
-                <label>Product Title</label><br/>
-                <input 
-                    placeholder="Ex. Red Sausages"
-                    name="title"
-                    value="{{titleInp}}"
-                    (keyup)="handleChange($event)"
-                    required 
-                />
-            </div>
-    
-            <div class="product-description">
-                <label>Product Description</label><br/>
-                <textarea 
-                    placeholder="Ex. Extra large, juicy, and glazed with honey"
-                    name="description"
-                    value="{{descriptionInp}}"
-                    (keyup)="handleChange($event)"
-                ></textarea>
-            </div>
-    
-            <div class="product-quantity">
-                <label>Product Quantity</label><br/>
-                <input type="number" min="1" placeholder="Ex. 1" 
-                    name="quantity"
-                    value="{{quantityInp}}"
-                    (keyup)="handleChange($event)"
-                    required
-                />
-            </div>
-    
-            <div class="product-price">
-                <label>Product Price</label><br/>
-                <input type="number" step=".01" min="0.01" placeholder="Ex. 0.01"
-                    name="price" 
-                    value="{{priceInp}}"
-                    (keyup)="handleChange($event)"
-                    required
-                />
-            </div>
-    
-            <div class="product-tag flex">
-                <label for="tag">Choose a Tag</label>
-                <select name="tag" id="tag" (change)="handleChange($event)" required>
-                    <option value="">-- Select --</option>
-                    <option value="meat">Meat</option>
-                    <option value="diary">Diary</option>
-                    <option value="vegetable">Vegetable</option>
-                    <option value="fruit">Fruit</option>
-                    <option value="dried-good">Dried-Good</option>
-                    <option value="snack">Snack</option>
-                </select>
-            </div>
-    
-            <button type="submit" class="submit-btn">
-                Upload Posting
-                <div class="btn-overlay"></div>
-            </button>
-        </form>   
+            </a>
+        </div>  
     </div>
 </div>

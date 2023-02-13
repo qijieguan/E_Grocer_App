@@ -29,6 +29,8 @@ import { MapComponent } from './map/map.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { ItemPostingComponent } from './item-posting/item-posting.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
+import { UserCatelogComponent } from './user-catelog/user-catelog.component';
+import { SubmissionFormComponent } from './submission-form/submission-form.component';
 
 
 @NgModule({
@@ -51,6 +53,8 @@ import { EditFormComponent } from './edit-form/edit-form.component';
     PopUpComponent,
     ItemPostingComponent,
     EditFormComponent,
+    UserCatelogComponent,
+    SubmissionFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,9 @@ import { EditFormComponent } from './edit-form/edit-form.component';
       {path: '', component: HomeComponent},
       {path: 'browse_products/:page?:mode', component: ItemListComponent},
       {path: 'browse_products/:page/view/:id', component: ItemExpandComponent},
-      {path: 'post_product/:form', component: ItemPostingComponent},
+      {path: 'post_product/:main', component: ItemPostingComponent},
+      {path: 'post_product/:main/user_catalog', component: UserCatelogComponent},
+      {path: 'post_product/:main/product_submission', component: SubmissionFormComponent},
       {path: 'checkout', component: CheckoutComponent}, 
       {path: 'feedback', component: FeedbackComponent},
     ]),

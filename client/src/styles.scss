@@ -99,4 +99,11 @@ a { text-decoration: none; }
   100% { transform: translateX(0); opacity: 1; }
 }
 
+@keyframes slideText {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+
+
 
