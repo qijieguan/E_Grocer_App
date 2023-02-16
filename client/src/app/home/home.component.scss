@@ -119,7 +119,7 @@
 
 .home-body-1 > div > img.active { transform: translateY(-10%); }
 
-.body-1-text { margin-left: auto; padding: 3rem 2rem; width: 75%; }
+.body-1-text { margin-left: auto; padding: 3vh 0 3vh 5vw; width: 85%; }
 .body-1-text > span { 
     font-size: clamp(1.125rem, 1.75vw, 2rem);
     font-style: oblique;
@@ -239,11 +239,12 @@
     .logo { inset: 15% 0 0 2%; }
     .contact { flex-direction: column; row-gap: 1vh; }
     .icon-wrapper > mat-icon { padding: 0.625rem 2.25rem 2.125rem 0.75rem; }
-    .fade-slide { animation: unset !important; }
+    .image.fade-slide { animation: unset !important; }
+    
     .home-body-1 { padding: 15vh 0 0 0; width: 100vw; }
     .home-body-1 > div { grid-template-columns: 50% 50%; width: 100%; }
-    .home-body-1 > div > img { position: static; grid-column: 1 / 3; transform: translateY(0); box-shadow: unset; opacity: 1; transition: unset; }
-    .body-1-text { grid-column: 1 / 3; padding: 5vh 18% 2.5vh 18%; width: 100%; }
+    .home-body-1 > div > img { position: static; grid-column: 1 / 3; height: 100%; transform: translateY(0); box-shadow: unset; opacity: 1; transition: unset; }
+    .body-1-text { grid-column: 1 / 3; padding: 1.5vh 15% 1.5vh 23%; width: 100%; }
 
     .home-body-2 { padding: 10vh 0; flex-direction: column-reverse; height: fit-content; } 
     .body-2-text, .home-body-2 > img { width: 100%; align-items: center; box-shadow: unset; opacity: 1; }
@@ -266,6 +267,8 @@
     .logo { inset: 12.5% 0 0 2%; }
     .email:hover { transform: translateX(20%); } 
     .tech:hover { transform: translateX(-20%); } 
+    .breakline { display: none; }
+    .body-1-text { padding: 1.5vh 15% 1.5vh 20%; }
     .body-3-text { height: 50vh; }
     .home-services { grid-template-columns: 90%; row-gap: 2vh; }
 }

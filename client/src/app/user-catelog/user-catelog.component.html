@@ -9,7 +9,10 @@
                 <li>Home Overview</li>
             </a>
             <a class="active" [routerLink]="['/post_product/main/user_catalog']">
-                <li>My Collection</li>
+                <li>My Catalog</li>
+            </a>
+            <a [routerLink]="['/checkout']">
+                <li>Shopping Cart <span *ngIf="cartSize">{{cartSize}}</span></li>
             </a>
             <a [routerLink]="['/post_product/main/product_submission']">
                 <li>Product Form</li>

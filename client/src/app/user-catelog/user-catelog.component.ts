@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../item.service';
+import { CartService } from '../cart.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditFormComponent } from '../edit-form/edit-form.component';
 
@@ -10,10 +11,13 @@ import { EditFormComponent } from '../edit-form/edit-form.component';
 })
 export class UserCatelogComponent implements OnInit {
 
-  userProducts: Array<any> = [
-  ];
+  userProducts: Array<any> = [];
+  cartSize: number = 0;
 
-  constructor(private item_service: ItemService, private mat_dialog: MatDialog) { setTimeout(() => { this.userProducts = this.item_service.getUserList();}, 125); }
+  constructor(private item_service: ItemService, private cart_service: CartService, private mat_dialog: MatDialog) { 
+    setTimeout(() => { this.userProducts = this.item_service.getUserList();}, 125); 
+    this.cart_service.getCart().subscribe((cart_data) => { this.cartSize = cart_data.length; });
+  }
 
   ngOnInit(): void {
   }

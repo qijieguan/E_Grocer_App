@@ -17,7 +17,7 @@ label {
     row-gap: 1vh;
     font-family: 'Poppins', sans-serif;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     background: rgb(248, 248, 248);
     border: 1px solid rgb(214, 214, 214);
     border-radius: 0.5rem;
@@ -47,6 +47,14 @@ hr { width: 100%; border: 1px solid rgb(158, 158, 158); }
 }
 
 li { text-align: center; border: 3px solid transparent; }
+li > span {
+    margin-left: 0.25vw;
+    padding: 0.125rem 0.5rem;
+    color: white;
+    background: darkorange;
+    border-radius: 2rem;
+    box-shadow: 0 0 3px gray;
+}
 
 a.active > li, .profile > ul > a:hover {
     color: darkorange;
@@ -68,22 +76,22 @@ a.active > li, .profile > ul > a:hover {
 .product > h1 { font-size: clamp(0.75rem, 1vw, 1rem); }
 .product > h1 > span { color: gray; }
 .product-price { color: green; }
+.product-btns { column-gap: 2.5%; }
 .product-btns > button { 
     padding: 1vh 1.5vw 0.75vh 1.5vw; 
     font-size: clamp(0.75rem, 0.75vw, 1rem);
     letter-spacing: 0;
-    width: 100%;
-    color: white;
     border-radius: 1rem; 
-    box-shadow: 0 0 3px;
+    box-shadow: 0 0 2px;
+    background: rgb(238, 238, 238); 
 }
 .edit-btn {
-    background: navy; 
-    border: 2px solid rgb(160, 151, 219); 
+    color: darkorange;
+    border: 1px solid rgb(255, 228, 194);
 }
 .remove-btn { 
-    background: darkorange; 
-    border: 2px solid orange; 
+    color: red;
+    border: 1px solid rgb(255, 228, 228);
 }
 
 @media (max-width: 50rem) {
@@ -93,6 +101,7 @@ a.active > li, .profile > ul > a:hover {
 @media (max-width: 35rem) {
     .user-catelog { grid-template-columns: 100%; }
     label { grid-column: 1 / 2; }
+    .profile { height: 55vh; }
     .user-products { grid-template-columns: 100%; width: 100%; }
     .product > img { max-height: 60vh; }
     .product { margin-bottom: 15vh; }
