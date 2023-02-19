@@ -1,4 +1,4 @@
-<form class="post-form grid" (submit)="handleSubmit($event)">
+<form class="post-form flex" (submit)="handleSubmit($event)">
     <div class="post-header-banner">
         <img class="post-header-image" alt=""/>
         <div class="post-header-overlay"></div>
@@ -7,8 +7,8 @@
             <h2>Grow Your Product Collection and Brand</h2>
         </h1>
     </div>
-    <div *ngIf="postMsg" class="post-message">Product successfully added to the store listing. Thank you for using this service!</div>
-    <div class="product-image flex">
+    <div *ngIf="postMsg" class="post-message">Product successfully added to the store listing. Thank you for submitting your product!</div>
+    <div class="product-image product-input flex">
         <img *ngIf="url" [src]="url" class="preview-image" alt=""/>
         <div *ngIf="!url" class="preview-image flex">
             <mat-icon>image</mat-icon>
@@ -21,8 +21,9 @@
     </div>
     <hr/>
 
-    <div class="product-title">
+    <div class="product-title product-input">
         <label>Product Title</label><br/>
+        <span>Please pick the name for your product</span>
         <input 
             placeholder="Ex. Red Sausages"
             name="title"
@@ -32,8 +33,9 @@
         />
     </div>
 
-    <div class="product-description">
+    <div class="product-description product-input">
         <label>Product Description</label><br/>
+        <span>Please include descriptions for your product</span>
         <textarea 
             placeholder="Ex. Extra large, juicy, and glazed with honey"
             name="description"
@@ -42,8 +44,9 @@
         ></textarea>
     </div>
 
-    <div class="product-quantity">
+    <div class="product-quantity product-input">
         <label>Product Quantity</label><br/>
+        <span>Please enter in-stock amount for the product</span>
         <input type="number" min="1" placeholder="Ex. 1" 
             name="quantity"
             value="{{quantityInp}}"
@@ -52,8 +55,9 @@
         />
     </div>
 
-    <div class="product-price">
+    <div class="product-price product-input">
         <label>Product Price</label><br/>
+        <span>Please enter the price of product per unit</span>
         <input type="number" step=".01" min="0.01" placeholder="Ex. 0.01"
             name="price" 
             value="{{priceInp}}"
@@ -62,8 +66,9 @@
         />
     </div>
 
-    <div class="product-tag flex">
+    <div class="product-tag product-input flex">
         <label for="tag">Choose a Tag</label>
+        <span>Please assign a tag filter for your product</span>
         <select name="tag" id="tag" (change)="handleChange($event)" required>
             <option value="">-- Select --</option>
             <option value="meat">Meat</option>
@@ -76,7 +81,7 @@
     </div>
 
     <button type="submit" class="submit-btn">
-        Upload Posting
+        Submit Form
         <div class="btn-overlay"></div>
     </button>
 </form>   

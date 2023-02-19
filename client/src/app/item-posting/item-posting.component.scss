@@ -25,9 +25,9 @@
 }
 
 .post-links { 
-    grid-template-columns: 30% 30%;
+    grid-template-columns: 30% 30% 30%;
     justify-content: center;
-    width: 100%;
+    width: 80%;
 }
 
 .post-option {
@@ -47,6 +47,9 @@
 }   
 .post-option.two {
     background-image: url("https://images.pexels.com/photos/4497733/pexels-photo-4497733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+.post-option.three {
+    background-image: url("https://images.pexels.com/photos/6888760/pexels-photo-6888760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 }
 
 .post-overlay {

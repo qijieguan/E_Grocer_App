@@ -29,17 +29,21 @@
 
 .home-overlay { position: absolute; height: 100%; width: 100%; background: black; opacity: 0.4; }
 
-.home-quote {
-    text-align: center;
+.home-motto {
+    flex-direction: column;
+    justify-content: center;
     margin-top: 5vh;
-    padding: 0 2.5vh;
-    font-size: clamp(1.875rem, 4vw, 4rem);
-    color: white;
-    text-shadow: 1px 1px 1px gray;
+    padding: 0 10vh;
     z-index: 1;
 }
 
-.home-quote-2 { font-size: clamp(1.25rem, 1vw, 1.5rem); }
+.home-motto-1 { animation: fadeIn 0.75s ease-in forwards; }
+.home-motto-2 { animation: fadeIn 0.75s ease-in 0.75s forwards; }
+
+
+.home-motto > span { align-self: flex-start; font-size: clamp(1.5rem, 2vw, 2rem); color: white; opacity: 0; }
+
+.key-motto { font-size: clamp(2.125rem, 3.5vw, 3.5rem); font-style: italic; color: gold; text-shadow: 0 2px 1px darkorange; }
 
 .shop-button { 
     margin-top: 25%; 
@@ -189,7 +193,7 @@
 .image.right.fade-slide.active { animation: fadeSlideLeft 0.7s ease-in forwards; }
 
 .home-services {
-    padding: 20vh 0;
+    padding: 30vh 0;
     align-items: center;
     justify-content: center;
     grid-template-columns: 19% 19% 19%;
@@ -197,7 +201,7 @@
     column-gap: 7.5vw;
     row-gap: 5vh;
     width: 100vw;
-    background: rgb(37, 37, 37);
+    background: rgb(231, 231, 231);
 }
 
 .home-services > div {
@@ -208,7 +212,7 @@
     min-height: 60vh;
     background: white;
     border-radius: 0.25rem;
-    box-shadow: 0 0 2px 1px rgb(172, 172, 172);
+    box-shadow: 0 0 10px rgb(201, 201, 201);
 }
 
 .home-services > div > h1 {
