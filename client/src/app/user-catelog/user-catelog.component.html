@@ -5,16 +5,16 @@
         <h1 class="profile-name flex">Guest</h1>
         <ul>
             <a [routerLink]="['/post_product/main/']">
-                <li>Home Overview</li>
+                <li class="flex"><span>Home Overview</span><mat-icon>auto_awesome_mosaic</mat-icon></li>
             </a>
-            <a class="active" [routerLink]="['/post_product/main/user_catalog']">
-                <li>My Catalog</li>
+            <a [routerLink]="['/post_product/main/user_catalog']">
+                <li class="active flex"><span>My Catalog</span><mat-icon>storefront</mat-icon></li>
             </a>
             <a [routerLink]="['/checkout']">
-                <li>Shopping Cart <span *ngIf="cartSize">{{cartSize}}</span></li>
+                <li class="flex"><span>Shopping Cart</span><span *ngIf="cartSize">( {{cartSize}} )</span><mat-icon>shopping_cart</mat-icon></li>
             </a>
             <a [routerLink]="['/post_product/main/product_submission']">
-                <li>Product Form</li>
+                <li class="flex"><span>Product Form</span><mat-icon>edit_note</mat-icon></li>
             </a>
         </ul>
     </h1>
