@@ -16,6 +16,7 @@ label {
     font-family: 'Raleway', sans-serif;
     width: 100%;
     height: 60vh;
+    background: white;
     border: 1px solid rgb(214, 214, 214);
     border-radius: 0.5rem;
     overflow: hidden;
@@ -37,7 +38,6 @@ label {
     padding: 2.5vh 0 0 0;
     list-style: none;
     width: 100%;
-    background: rgb(240, 240, 240);
     border-top: 1px solid rgb(204, 204, 204);
 }
 
@@ -71,12 +71,12 @@ li.active, li:hover {
     grid-template-columns: 30% 30% 30%;
     padding: 5vh 1vw;
     width: 100%;
-    background: rgb(248, 248, 248);
+    background: rgb(252, 252, 252);
     border: 1px solid rgb(214, 214, 214);
     border-radius: 0.5rem;
 }
 
-.product { margin-bottom: 5vh; }
+.product { margin-bottom: 5vh; padding: 0.75rem 0.5rem; border: 1px solid rgb(194, 194, 194); border-radius: 0.25rem; }
 
 .product > img { max-height: 40vh; width: 100%; background-size: cover; }
 .product > h1 { font-size: clamp(0.75rem, 1vw, 1rem); font-family: 'Raleway', sans-serif; }
@@ -109,5 +109,4 @@ li.active, li:hover {
     .profile { height: 55vh; }
     .user-products { grid-template-columns: 100%; width: 100%; }
     .product > img { max-height: 60vh; }
-    .product { margin-bottom: 15vh; padding: 0 2.5vw;}
 }

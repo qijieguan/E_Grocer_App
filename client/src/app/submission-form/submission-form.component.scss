@@ -47,11 +47,10 @@
     margin: 0 auto 1vh auto;
     padding: 4vh 2.5vw;
     font-size: clamp(0.875rem, 1.25vw, 1.25rem);
-    font-style: italic;
-    font-weight: 700;
+    font-weight: 500;
     width: 95%;
-    background: rgb(211, 255, 211);
-    border: 2px solid goldenrod;
+    background: white;
+    border: 2px solid black;
     border-left-width: 6px;
     border-radius: 0.5rem;
 }

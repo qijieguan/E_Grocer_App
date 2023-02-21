@@ -81,6 +81,10 @@ export class SubmissionFormComponent implements OnInit {
     this.tagInp = '';
     this.quantityInp = 1;
     this.priceInp = 0.01;
+
+    let select = document.getElementById("tag") as HTMLSelectElement;
+    select.value = "";
+    document.querySelector('.post-form')?.scrollIntoView({behavior: 'smooth'});
   }
 
 }
