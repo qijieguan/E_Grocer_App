@@ -4,7 +4,7 @@ ngb-rating { color: gold; margin: 0.75rem 0 auto auto; float: right; }
 .rating-card > ngb-rating { font-size: clamp(1.5rem, 2vw, 2rem); }
 .rating-card > div { color: gold; font-size: clamp(1rem, 1.25vw, 1.25rem); transform: translateY(18%); }
 
-.rating-expand { font-family: 'Roboto', sans-serif; font-weight: 500; color: goldenrod; transform: translateY(-39%); }
+.rating-expand { font-family: 'Roboto', sans-serif; color: goldenrod; transform: translateY(-39%); }
 .rating-expand > ngb-rating { font-size: clamp(1.5rem, 3vw, 3rem);  }
 .rating-expand > div { margin-left: 0.5vw; font-size: clamp(1.25rem, 1.875vw, 1.875rem); transform: translateY(18%);  }
 

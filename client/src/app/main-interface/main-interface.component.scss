@@ -1,6 +1,7 @@
 .interface-section { 
     justify-content: center;
     align-items: flex-start;
+    font-family: 'Raleway', sans-serif;
     padding: 10vh 0;
     min-height: 125vh;
     width: 100%;
@@ -12,7 +13,6 @@
     flex-direction: column;
     row-gap: 5vh;
     padding: 2.5vw;
-    font-family: Arial, Helvetica, sans-serif;
     z-index: 1;
 }
 
@@ -30,9 +30,9 @@
     opacity: 0;
 }
 
-.interface-label > span:nth-of-type(2) {
-    animation-delay: 0.5s;
-}
+.interface-label > span > span { color: darkorange; }
+
+.interface-label > span:nth-of-type(2) { animation-delay: 0.5s; }
 
 .interface-links { 
     grid-template-columns: 30% 30% 30%;
@@ -49,16 +49,27 @@
     height: 65vh;
     font-size: clamp(1rem, 1.5vw, 1.5rem);
     color: white;
-    background-size: cover;
+    overflow: hidden;
 }
 
-.interface-option.one {
+.interface-option > img {
+    position: absolute;
+    inset: 0 auto auto 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    transition: all 1s ease-in;
+}
+
+.interface-option:hover img { transform: scale(1.05); }
+
+.interface-image-1 {
     background-image: url("https://images.pexels.com/photos/3184603/pexels-photo-3184603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 }   
-.interface-option.two {
+.interface-image-2 {
     background-image: url("https://images.pexels.com/photos/4497733/pexels-photo-4497733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 }
-.interface-option.three {
+.interface-image-3 {
     background-image: url("https://images.pexels.com/photos/6888760/pexels-photo-6888760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 }
 
@@ -74,8 +85,9 @@
 
 .interface-option:hover .interface-overlay { background: darkorange; }
 
-.interface-option > h1 { position: relative; z-index: 1; font-weight: bold; }
-.interface-option > span { position: relative; z-index: 1; padding: 0 2.5vw; font-weight: 700; }
+.interface-option > h1 { font-weight: bold; z-index: 1; }
+.interface-option > span { color: white; z-index: 1; }
+.clickable { position: absolute; bottom: 10%; justify-self: flex-end; }
 
 
 @media (max-width: 50rem) {

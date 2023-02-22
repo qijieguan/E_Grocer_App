@@ -1,4 +1,5 @@
-.app-note {
+.app-feedback {
+    position: relative;
     flex-direction: column;
     margin: 12.5vh 0 40vh 0;
     font-family: 'Raleway', sans-serif;
@@ -14,10 +15,10 @@
     background-size: cover;
     min-height: 100vh;
     width: 100vw;
-    opacity: 0.3;
+    z-index: 1;
 }
 
-.complete, .feedback-section { width: 90vw; background: white; z-index: 1; }
+.complete, .feedback-section { width: 90vw; background: white; z-index: 2; }
 .feedback-section { grid-template-columns: 80% 20%; row-gap: 2.5vh; }
 
 .clickable {
@@ -25,12 +26,13 @@
     font-size: clamp(1.25rem, 1.5vw, 1.5rem);
     font-weight: bold;
     width: 100%;
-    border-bottom: 2px solid; 
-    box-shadow: 0 1px 3px;
+    border-bottom: 2px solid black; 
+    box-shadow: 0 1px 3px gray;
+    background: rgb(190, 0, 190);
 }
 
 .clickable > mat-icon { transform: translateY(45%); font-size: clamp(2rem, 3vw, 3rem); }
-.clickable:hover { color: gray; }
+.clickable:hover { color: white; }
 
 .complete-list { margin: 0; height: 0; transition: height 0.5s ease-in; }
 .complete-list.active { height: 50vh; } 
@@ -63,13 +65,11 @@
 .feedback-section > button { margin: 1rem; font-size: clamp(1rem, 1.25vw, 1.25rem); height: 50vh; background: black; color: white;}
 
 @media (max-width: 50rem) {
-    .app-note { font-weight: 500; }
     .complete, .feedback-section { width: 100vw; }
     .feedback-section > textarea { width: 95vw; margin: 0 0 0 2.5vw; }
     .feedback-section > button { grid-column: 1 / 3; height: 10vh; }
     .feedback-list, .feedback { grid-template-columns: 95%; margin: 0 auto; }
     .feedback-content { grid-column: 1 / 2; }
-    
 }
 
 @media (max-width: 25rem) {

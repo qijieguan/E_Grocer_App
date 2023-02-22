@@ -1,11 +1,9 @@
-.user-portal { grid-template-columns: 25% 70%; padding: 10vh 2.5vw 25vh 2.5vw; min-height: 100vh; width: 100vw; }
+.user-portal { grid-template-columns: 25% 70%; padding: 10vh 2.5vw 25vh 2.5vw; font-family: 'Raleway', sans-serif; min-height: 100vh; width: 100vw; }
 .portal-label {
     grid-column: 1 / 3;
     margin: 5vh 0;
     padding-left: 2.5vw;
-    font-family: 'Raleway', sans-serif;
     font-size: clamp(1.625rem, 2.5vw, 2rem); 
-    font-weight: 500;
     color: rgb(75, 75, 75);
     height: fit-content;
     border-left: 3px solid;
@@ -36,7 +34,7 @@
     background-color: rgb(151, 138, 236);
 }
 
-.profile-name { text-align: center; justify-content: center; margin: 0; padding: 0; font-weight: 500; width: 100%; height: 15%; color: darkslateblue; background: rgb(151, 138, 236); }
+.profile-name { text-align: center; justify-content: center; margin: 0; padding: 0; width: 100%; height: 15%; color: darkslateblue; background: rgb(151, 138, 236); }
 
 .profile > ul {
     padding: 2.5vh 0 0 0;
@@ -83,7 +81,6 @@ li.active, li:hover {
     margin-bottom: 5vh;
     text-align: center;
     font-size: clamp(1.25rem, 2vw, 2rem);
-    font-family: 'Raleway', sans-serif;
     font-weight: 700;
     width: 100%;
     color: rgb(218, 218, 218);
@@ -101,7 +98,7 @@ li.active, li:hover {
 .product > h1 > span { color: gray; }
 .product-name { color: darkslateblue; }
 .product-price { color: green; }
-.product-btns { column-gap: 2.5%; font-family: 'Raleway', sans-serif; }
+.product-btns { column-gap: 2.5%; }
 .product-btns > button { 
     padding: 1vh 1.5vw 0.75vh 1.5vw; 
     font-size: clamp(0.75rem, 0.75vw, 1rem);
