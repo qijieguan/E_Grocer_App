@@ -5,11 +5,8 @@ form {
     width: 55vw;
 }
 
-.close-btn {
-    align-self: flex-end;
-    color: white;
-    background: red;
-}
+.close-btn { align-self: flex-end; color: gray; transition: all 0.3s ease-in; }
+.close-btn:hover { transform: rotate(90deg); }
 
 form > h1 {
     font-weight: clamp(0.875rem, 1.25vw, 1.25vw);

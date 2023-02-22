@@ -93,7 +93,7 @@ input[type="checkbox"] { accent-color: darkorange; }
 .add-button { 
     font-size: clamp(0.875rem, 1vw, 1rem);
     font-family: 'Playfair Display', serif;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.5px;
     width: 100%;  
     color: rgb(29, 29, 29);
@@ -128,7 +128,7 @@ input[type="checkbox"] { accent-color: darkorange; }
     border-radius: 3rem;
 }
 
-.confirm-btn { justify-content: center; column-gap: 0.25rem; width: 65%; color: darkgoldenrod; border: 1px solid goldenrod; }
+.confirm-btn { justify-content: center; column-gap: 0.25rem; width: 65%; color: darkorange; border: 1px solid darkorange; }
 .confirm-btn:hover { color: white; background: darkorange; box-shadow: 0 0 3px black; }
 
 .cancel-btn { width: 30%; color: black; background: rgb(230, 230, 230); border: 1px solid rgb(206, 206, 206); }

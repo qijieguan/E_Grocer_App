@@ -24,10 +24,10 @@
     z-index: 1;
 }
 
-.logo-1 { color: goldenrod; }
+.logo-1 { color: purple; }
 .logo-2 { color: black; }
 
-.home-overlay { position: absolute; height: 100%; width: 100%; background: black; opacity: 0.4; }
+.home-overlay { position: absolute; height: 100%; width: 100%; background: black; opacity: 0.3; }
 
 .home-motto {
     flex-direction: column;
@@ -43,7 +43,7 @@
 
 .home-motto > span { align-self: flex-start; font-size: clamp(1.5rem, 2vw, 2rem); color: white; opacity: 0; }
 
-.key-motto { font-size: clamp(2.125rem, 3.5vw, 3.5rem); font-style: italic; color: gold; text-shadow: 0 2px 1px darkorange; }
+.key-motto { font-size: clamp(2.125rem, 3.5vw, 3.5rem); font-style: italic; color: gold; text-shadow: 0 2px 1px gray; }
 
 .shop-button { 
     margin-top: 25%; 
@@ -73,7 +73,7 @@
     justify-content: center;
     column-gap: 10vw;
     width: 100vw; 
-    background: black;
+    background: purple;
     box-shadow: 0 0 1px;
     transition: all 0.3s ease-in; 
 }
@@ -161,10 +161,10 @@
     width: 75%;
 }
 
-.home-body-3 { justify-content: center; height: 100vh; background: gold; }
+.home-body-3 { justify-content: center; height: 100vh; background: salmon; }
 .home-body-3 > img { height: 70%; width: 50%; object-fit: cover; box-shadow: 1px 1px 5px black; }
 
-.body-3-text { flex-direction: column; padding: 2rem 0 0 1rem; height: 60%; width: 30%; }
+.body-3-text { flex-direction: column; padding: 2rem 0 0 1rem; height: 60%; width: 30%; color: whitesmoke; }
 
 .body-3-text > h1 {
     margin: 0;
@@ -175,7 +175,7 @@
     width: 75%;
 }
 
-.body-3-text > h1 > span { color: darkgoldenrod; }
+.body-3-text > h1 > span { color: brown; }
 
 .body-3-text > p {
     font-size: clamp(1rem, 1.25vw, 1.25rem);
@@ -184,7 +184,6 @@
     letter-spacing: 0.5px;
     word-wrap: break-word;
     width: 75%;
-    color: black;
 }
 
 .text, .image { opacity: 0; }

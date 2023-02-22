@@ -1,0 +1,38 @@
+<div class="user-portal grid">
+    <label class="portal-label"><span class="highlight">Hello, Guest. </span> <span>Welcome to your portal.</span></label>
+    <h1 class="profile flex">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png" alt=""/>
+        <h1 class="profile-name flex">Guest</h1>
+        <ul>
+            <a [routerLink]="['/main']">
+                <li class="flex"><span>Home Overview</span><mat-icon>auto_awesome_mosaic</mat-icon></li>
+            </a>
+            <a [routerLink]="['/main/user_portal']">
+                <li class="active flex"><span>My Catalog</span><mat-icon>storefront</mat-icon></li>
+            </a>
+            <a [routerLink]="['/checkout']">
+                <li class="flex"><span>Shopping Cart</span><span *ngIf="cartSize">( {{cartSize}} )</span><mat-icon>shopping_cart</mat-icon></li>
+            </a>
+            <a [routerLink]="['/main/product_submission']">
+                <li class="flex"><span>Product Form</span><mat-icon>edit_note</mat-icon></li>
+            </a>
+        </ul>
+    </h1>
+    <h2 *ngIf="!userProducts.length" class="empty-list">Your list is empty. Please fill the submission form to list your products.</h2>
+    <div class="user-collection">
+        <label class="collection-label">Collection Overview</label>
+        <div class="user-products grid">
+            <div *ngFor="let product of userProducts">
+                <div class="product" id="{{product.id}}">
+                    <img src="{{product.url}}" alt=""/>
+                    <h1 class="product-name"><span>Product Name: </span>{{product.name}} </h1>
+                    <h1 class="product-price"><span>Product Price: </span>${{product.price}}</h1>
+                    <div class="product-btns flex">
+                        <button class="edit-btn" (click)="openModal(product)">Edit</button>
+                        <button class="remove-btn" (click)="removeUserItem(product.id)">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

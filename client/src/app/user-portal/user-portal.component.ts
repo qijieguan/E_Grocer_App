@@ -6,10 +6,10 @@ import { EditFormComponent } from '../edit-form/edit-form.component';
 
 @Component({
   selector: 'app-user-catelog',
-  templateUrl: './user-catelog.component.html',
-  styleUrls: ['./user-catelog.component.scss']
+  templateUrl: './user-portal.component.html',
+  styleUrls: ['./user-portal.component.scss']
 })
-export class UserCatelogComponent implements OnInit {
+export class UserPortalComponent implements OnInit {
 
   userProducts: Array<any> = [];
   cartSize: number = 0;

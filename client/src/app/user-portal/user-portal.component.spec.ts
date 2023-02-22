@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostingFormComponent } from './posting-form.component';
+import { UserPortalComponent } from './user-portal.component';
 
-describe('PostingFormComponent', () => {
-  let component: PostingFormComponent;
-  let fixture: ComponentFixture<PostingFormComponent>;
+describe('UserCatelogComponent', () => {
+  let component: UserPortalComponent;
+  let fixture: ComponentFixture<UserPortalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostingFormComponent ]
+      declarations: [ UserPortalComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PostingFormComponent);
+    fixture = TestBed.createComponent(UserPortalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

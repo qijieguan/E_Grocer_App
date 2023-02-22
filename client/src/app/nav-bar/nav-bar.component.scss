@@ -26,7 +26,7 @@
 
 .nav-bar > a:hover { color: rgb(173, 173, 173); border-bottom: 0; }
 
-.nav-bar > a.highlight { background: black; color: gold; }
+.nav-bar > a.highlight { font-weight: 700; background: purple; color: gold; }
 .fixed { position: fixed; }
 
 .nav-bar > a > span { margin: 0.25rem 0 0 0.25rem; }
@@ -64,7 +64,7 @@
     box-shadow: 0 0 2px 1px transparent; 
 }
 
-.expand-links > a:hover { background: orange; }
+.expand-links > a:hover { font-weight: 700; background: purple; color: gold; }
 
 .cart-num { margin-left: 0.25rem; }
 

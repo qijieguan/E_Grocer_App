@@ -383,7 +383,7 @@ export class ItemService {
 
     //this.DATA = this.data_set;
     
-    /*
+
     this.DATA = [
       {
         id: uuidv4(),
@@ -412,7 +412,7 @@ export class ItemService {
         made_by: 'user',
       },
     ];
-    */
+
     
     this.setPageSize(this.DATA.length);
   }

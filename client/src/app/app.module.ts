@@ -27,9 +27,9 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MapComponent } from './map/map.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
-import { ItemPostingComponent } from './item-posting/item-posting.component';
+import { MainInterfaceComponent } from './main-interface/main-interface.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
-import { UserCatelogComponent } from './user-catelog/user-catelog.component';
+import { UserPortalComponent } from './user-portal/user-portal.component';
 import { SubmissionFormComponent } from './submission-form/submission-form.component';
 
 
@@ -51,9 +51,9 @@ import { SubmissionFormComponent } from './submission-form/submission-form.compo
     CheckoutComponent,
     MapComponent,
     PopUpComponent,
-    ItemPostingComponent,
+    MainInterfaceComponent,
     EditFormComponent,
-    UserCatelogComponent,
+    UserPortalComponent,
     SubmissionFormComponent,
   ],
   imports: [
@@ -66,9 +66,9 @@ import { SubmissionFormComponent } from './submission-form/submission-form.compo
       {path: '', component: HomeComponent},
       {path: 'browse_products/:page?:mode', component: ItemListComponent},
       {path: 'browse_products/:page/view/:id', component: ItemExpandComponent},
-      {path: 'post_product/:main', component: ItemPostingComponent},
-      {path: 'post_product/:main/user_catalog', component: UserCatelogComponent},
-      {path: 'post_product/:main/product_submission', component: SubmissionFormComponent},
+      {path: 'main', component: MainInterfaceComponent},
+      {path: 'main/user_portal', component: UserPortalComponent},
+      {path: 'main/product_submission', component: SubmissionFormComponent},
       {path: 'checkout', component: CheckoutComponent}, 
       {path: 'feedback', component: FeedbackComponent},
     ]),

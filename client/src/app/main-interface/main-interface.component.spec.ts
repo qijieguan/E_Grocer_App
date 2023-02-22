@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserCatelogComponent } from './user-catelog.component';
+import { MainInterfaceComponent } from './main-interface.component';
 
-describe('UserCatelogComponent', () => {
-  let component: UserCatelogComponent;
-  let fixture: ComponentFixture<UserCatelogComponent>;
+describe('PostingFormComponent', () => {
+  let component: MainInterfaceComponent;
+  let fixture: ComponentFixture<MainInterfaceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserCatelogComponent ]
+      declarations: [ MainInterfaceComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UserCatelogComponent);
+    fixture = TestBed.createComponent(MainInterfaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
