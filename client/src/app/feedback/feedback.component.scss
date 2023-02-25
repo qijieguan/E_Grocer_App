@@ -1,24 +1,17 @@
 .app-feedback {
     position: relative;
     flex-direction: column;
-    margin: 12.5vh 0 40vh 0;
+    padding: 5vh 0;
+    row-gap: 1vh;
     font-family: 'Raleway', sans-serif;
-    box-shadow: 0 0 5px;
-    border-radius: 0.5rem;
-    overflow: hidden;
-}
-
-.bg-image {
-    position: fixed;
-    inset: 0% auto auto 0% ;
     background-image: url("https://images.pexels.com/photos/3782235/pexels-photo-3782235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    background-size: cover;
     min-height: 100vh;
     width: 100vw;
-    z-index: 1;
 }
 
-.complete, .feedback-section { width: 90vw; background: white; z-index: 2; }
+.overlay { position: absolute; inset: 0 auto auto 0; height: 100%; width: 100%; background: black; opacity: 0.5; }
+
+.complete, .feedback-section { width: 90vw; background: white; z-index: 2; overflow: hidden; border-radius: 1rem; box-shadow: 0 0 3px black; }
 .feedback-section { grid-template-columns: 80% 20%; row-gap: 2.5vh; }
 
 .clickable {
@@ -26,13 +19,12 @@
     font-size: clamp(1.25rem, 1.5vw, 1.5rem);
     font-weight: bold;
     width: 100%;
-    border-bottom: 2px solid black; 
-    box-shadow: 0 1px 3px gray;
-    background: rgb(190, 0, 190);
+    box-shadow: 0 1px 2px gray;
+    background: rgb(255, 185, 255);
 }
 
 .clickable > mat-icon { transform: translateY(45%); font-size: clamp(2rem, 3vw, 3rem); }
-.clickable:hover { color: white; }
+.clickable:hover { color: darkmagenta; }
 
 .complete-list { margin: 0; height: 0; transition: height 0.5s ease-in; }
 .complete-list.active { height: 50vh; } 
@@ -62,7 +54,7 @@
 
 .feedback-section > textarea { text-indent: 0.5rem; margin: 1rem 0 1rem 1rem; height: 50vh; font-size: clamp(1rem, 1.5vw, 1.5rem); }
 .feedback-section > textarea:focus { outline: 0; box-shadow: 0 0 5px 1px gray; }
-.feedback-section > button { margin: 1rem; font-size: clamp(1rem, 1.25vw, 1.25rem); height: 50vh; background: black; color: white;}
+.feedback-section > button { margin: 1rem; font-size: clamp(1rem, 1.5vw, 1.5rem); font-weight: 500; height: 50vh; background: purple; color: white;}
 
 @media (max-width: 50rem) {
     .complete, .feedback-section { width: 100vw; }
@@ -75,5 +67,5 @@
 @media (max-width: 25rem) {
     .complete-list.active { height: 55vh; } 
     .complete-list > li { padding: 0 1rem 0 0; margin-bottom: 1vh; }
-    .clickable { padding: 0.5rem 1.5rem 1rem 1rem; ; } 
+    .clickable { padding: 0.5rem 1.5rem 1rem 1rem; } 
 }

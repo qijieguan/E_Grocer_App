@@ -23,7 +23,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => { document.querySelector('.checkout-title')?.scrollIntoView({ behavior: 'smooth' }); }, 150);
   }
 
   openModal = () => { this.mat_dialog.open(PopUpComponent); }

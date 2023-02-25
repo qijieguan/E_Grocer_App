@@ -1,5 +1,5 @@
 <div class="app-feedback flex">
-    <img class="bg-image" alt=""/>
+    <div class="overlay"></div>
     <div class="complete">
         <div class="clickable" (click)="handleClick('complete')">
             <span>Completed Features</span>
@@ -7,11 +7,11 @@
             <mat-icon *ngIf="unfoldComplete">unfold_less</mat-icon>
         </div>
         <ul class="complete-list">
-            <li class="flex">- Integrated routing navigation and services <mat-icon>check_circle</mat-icon></li>
-            <li class="flex">- Connected Angular app with MongoDB database via Express <mat-icon>check_circle</mat-icon></li>
-            <li class="flex">- Defined item/cart model and route queries to use database <mat-icon>check_circle</mat-icon></li>
-            <li class="flex">- Store user unique to cart data in database <mat-icon>check_circle</mat-icon></li>
-            <li class="flex">- Post item to store <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">- Set up routing navigation and services <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">- Connected Angular app with MongoDB database <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">- Defined item/cart model and routing queries to database <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">- Store user uniquely to cart data in database <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">- Post user item to store list <mat-icon>check_circle</mat-icon></li>
         </ul>
     </div>
     <div class="feedback-section grid">

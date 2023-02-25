@@ -24,4 +24,6 @@
     color: gold;
 }
 
-
+@media (max-width: 70rem) {
+    .app-footer { padding-bottom: 4vh; }
+}
