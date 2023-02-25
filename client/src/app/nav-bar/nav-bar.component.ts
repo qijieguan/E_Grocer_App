@@ -28,30 +28,30 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.onNavSwitch();
-    this.navMoveAway();
   }
 
   onNavSwitch = () => {
     this.location.onUrlChange(url => {
-
+      
       let path = url.split('/');
       let querySelect = "";
 
       let bg_image = document.querySelector(".app-wrapper");
       bg_image?.classList.remove('bg-color');
 
+      setTimeout(() => {window.scrollTo({top: 0, behavior: 'smooth'}); }, 125);
 
-      if (path[1] === 'browse_products' || path[1] === 'post_product') { querySelect = 'grocery-list-link'; }
+      if (path[1] === 'browse_products' || path[1] === 'main-interface') { querySelect = 'grocery-list-link'; }
       else if (path[1] === 'checkout') { querySelect = 'checkout-link'; }
       else if (path[1] === 'feedback') { querySelect = 'feedback-link'; }
       else { querySelect = 'home-link'; }
 
 
       if (querySelect === 'home-link') {
-        setTimeout(() => {window.scrollTo({top: 0, behavior: 'smooth'}); }, 125);
+        document.querySelector('.nav-bar')?.classList.remove('color');
       }
       else { 
-        setTimeout(() => { bg_image?.scrollIntoView({ behavior: 'smooth' }); }, 125);
+        document.querySelector('.nav-bar')?.classList.add('color');
         document.querySelector('.search')?.scrollIntoView({ behavior: 'smooth' });
         document.querySelector('.item-expand')?.scrollIntoView({behavior: 'smooth'});
 
@@ -64,34 +64,37 @@ export class NavBarComponent implements OnInit {
     });
   }
 
-  navMoveAway = () => {
-    let nav = document.getElementsByClassName('nav-bar')[0];
-
-    document.getElementsByTagName('body')[0].addEventListener('wheel', (event) => {
-      const delta = Math.sign(event.deltaY);
-      if (delta === 1) {
-        nav.classList?.add("hide");
-      }
-      else {  nav.classList.remove("hide") }
-    });
-  }
-
   activeObserver = () => {
     const faders = document.querySelectorAll('.fade-slide');
+    const navWrapper = document.querySelectorAll('.nav-bar-wrapper');
     
     const appearOptions = { threshold: 0.5, rootMargin: '0px 0px 0px 0px' }; 
+    const wrapperOptions = { threshold: 0, rootMargin: '0px 0px 0px 0px' };
 
     const appearOnScroll = new IntersectionObserver (
       function( entries ) {
           entries.forEach(entry => {
-              if (entry.isIntersecting) { entry.target.classList.add('active'); }
+            if (entry.isIntersecting) { entry.target.classList.add('active'); }
           });
       },
-    appearOptions);  
+    appearOptions);   
+
+    const wrapperScrollOut = new IntersectionObserver (
+      function( entries ) {
+          entries.forEach(entry => {
+              if (entry.isIntersecting ) { 
+                document.querySelector('.nav-bar')?.classList.remove('scrollable'); 
+              }
+              else { 
+                document.querySelector('.nav-bar')?.classList.add('scrollable'); 
+              }
+          });
+      },
+    wrapperOptions);   
 
     faders.forEach(fader => { appearOnScroll.observe(fader); });
+    navWrapper.forEach(wrapper => { wrapperScrollOut.observe(wrapper) });
   }
 
   getCartNum = () => { return this.cartNum; }
-  
 }

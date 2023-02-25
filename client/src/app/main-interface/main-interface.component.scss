@@ -42,7 +42,7 @@
 
 .interface-option {
     position: relative;
-    padding: 2.5vh 0;
+    padding: 2.5vh 0.25vw;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -50,6 +50,21 @@
     font-size: clamp(1rem, 1.5vw, 1.5rem);
     color: white;
     overflow: hidden;
+}
+
+.interface-color {
+    position: absolute;
+    height: 100px;
+    width: 0;
+    background: orange;
+    transition: all 1s ease-in;
+}
+
+.interface-color.expand {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .interface-option > img {
@@ -83,7 +98,7 @@
     transition: all 0.2s ease-in;
 }
 
-.interface-option:hover .interface-overlay { background: darkorange; }
+.interface-option:hover .interface-overlay { background: darkorange; opacity: 0.7; }
 
 .interface-option > h1 { font-weight: bold; z-index: 1; }
 .interface-option > span { color: white; z-index: 1; }

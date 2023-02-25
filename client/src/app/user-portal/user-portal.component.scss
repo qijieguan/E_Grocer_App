@@ -1,4 +1,11 @@
-.user-portal { grid-template-columns: 25% 70%; padding: 10vh 2.5vw 25vh 2.5vw; font-family: 'Raleway', sans-serif; min-height: 100vh; width: 100vw; }
+.user-portal { 
+    grid-template-columns: 25% 70%; 
+    padding: 10vh 2.5vw 25vh 2.5vw; 
+    font-family: 'Raleway', sans-serif; 
+    min-height: 100vh; 
+    width: 100vw; 
+}
+
 .portal-label {
     grid-column: 1 / 3;
     margin: 5vh 0;

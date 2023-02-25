@@ -1,37 +1,45 @@
-<nav class="nav-bar flex">
+<div class="nav-bar-wrapper">
+    <nav class="nav-bar flex">
 
-    <a class="home-link flex" routerLink="">
-        <mat-icon>home</mat-icon>
-        <span>HOME</span>
-    </a>  
-
-    <a class="grocery-list-link flex">
-        <mat-icon>shopping_bag</mat-icon>
-        <span>SHOP</span>
-        <mat-icon class="expand-icon">expand_more</mat-icon>
-        <div class="expand-links flex">
-            <a class="flex" [routerLink]="['/browse_products/page_1']">
-                <mat-icon>trolley</mat-icon>
-                <span>View Our Products</span>
-            </a>
-            <a class="flex" [routerLink]="['/main']">
-                <mat-icon>payments</mat-icon>
-                <span>Manage Your Account</span>
-            </a>
+        <div class="logo">
+            <span class="logo-1">E-Grocer </span>
+            <span class="logo-2">App</span>
         </div>
-    </a>  
+        <div class="linebreak"></div>
     
-    <a class="checkout-link flex" routerLink="/checkout">
-        <mat-icon>shopping_cart</mat-icon>
-        <span>CART </span>
-        <span class="cart-num" *ngIf="getCartNum() > 0"> ({{getCartNum()}})</span>
-    </a>
-
-    <a class="feedback-link flex" routerLink="/feedback">
-        <mat-icon>info</mat-icon>
-        <span>FEEDBACK</span>
-    </a>
+        <a class="home-link flex" routerLink="">
+            <mat-icon>home</mat-icon>
+            <span>HOME</span>
+        </a>  
     
-</nav>
-
+        <a class="grocery-list-link flex">
+            <mat-icon>shopping_bag</mat-icon>
+            <span>SHOP</span>
+            <mat-icon class="expand-icon">expand_more</mat-icon>
+            <div class="expand-links flex">
+                <a class="flex" [routerLink]="['/browse_products/page_1']">
+                    <mat-icon>trolley</mat-icon>
+                    <span>View Our Products</span>
+                </a>
+                <a class="flex" [routerLink]="['/main-interface']">
+                    <mat-icon>payments</mat-icon>
+                    <span>Manage Your Account</span>
+                </a>
+            </div>
+        </a>  
+        
+        <a class="checkout-link flex" routerLink="/checkout">
+            <mat-icon>shopping_cart</mat-icon>
+            <span>CART </span>
+            <span class="cart-num" *ngIf="getCartNum() > 0"> ({{getCartNum()}})</span>
+        </a>
+    
+        <a class="feedback-link flex" routerLink="/feedback">
+            <mat-icon>info</mat-icon>
+            <span>FEEDBACK</span>
+        </a>
+        
+    </nav>
+    
+</div>
 

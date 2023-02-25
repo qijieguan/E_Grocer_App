@@ -414,7 +414,6 @@ export class ItemService {
     ];
     */
   
-    
     this.setPageSize(this.DATA.length);
   }
 
