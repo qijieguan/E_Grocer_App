@@ -29,8 +29,9 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     this.onNavSwitch();
 
-    document.querySelector('.expand-links')?.addEventListener('click', (event: any) => {
-      document.querySelector('.nav-bar')?.classList.add('clicked');
+    document.querySelector('.grocery-list-link')?.addEventListener('click', (event: any) => {
+      document.querySelector('.grocery-list-link')?.classList.add('clicked');
+      setTimeout(() => { document.querySelector('.grocery-list-link')?.classList.remove('clicked'); }, 250);
     });
   }
 
@@ -46,8 +47,6 @@ export class NavBarComponent implements OnInit {
       setTimeout(() => {
         window.scrollTo({top: 0, behavior: 'smooth'}); 
       }, 125);
-
-      document.querySelector('.nav-bar')?.classList.remove('clicked');
 
       if (path[1] === 'browse_products' || path[1] === 'main-interface') { querySelect = 'grocery-list-link'; }
       else if (path[1] === 'checkout') { querySelect = 'checkout-link'; }
@@ -65,8 +64,6 @@ export class NavBarComponent implements OnInit {
         bg_image?.classList.add('bg-color'); 
       };
 
-      document.querySelector('.highlight')?.classList.remove('highlight');
-      document.querySelector('.' + querySelect)?.classList.add('highlight');
       setTimeout(() => { this.activeObserver(); }, 500);
     });
   }
