@@ -28,6 +28,10 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.onNavSwitch();
+
+    document.querySelector('.expand-links')?.addEventListener('click', (event: any) => {
+      document.querySelector('.nav-bar')?.classList.add('clicked');
+    });
   }
 
   onNavSwitch = () => {
@@ -39,13 +43,16 @@ export class NavBarComponent implements OnInit {
       let bg_image = document.querySelector(".app-wrapper");
       bg_image?.classList.remove('bg-color');
 
-      setTimeout(() => {window.scrollTo({top: 0, behavior: 'smooth'}); }, 125);
+      setTimeout(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'}); 
+      }, 125);
+
+      document.querySelector('.nav-bar')?.classList.remove('clicked');
 
       if (path[1] === 'browse_products' || path[1] === 'main-interface') { querySelect = 'grocery-list-link'; }
       else if (path[1] === 'checkout') { querySelect = 'checkout-link'; }
       else if (path[1] === 'feedback') { querySelect = 'feedback-link'; }
       else { querySelect = 'home-link'; }
-
 
       if (querySelect === 'home-link') {
         document.querySelector('.nav-bar')?.classList.remove('color');

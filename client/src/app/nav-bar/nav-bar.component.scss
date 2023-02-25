@@ -8,12 +8,12 @@
     justify-content: center;
     font-family: 'Assistant', sans-serif;
     width: 100%;
+    z-index: 2;
     background-color: transparent;
-    z-index: 3;
     transition: position 0.5s ease-in, background-color 0.5s ease-in;
 }
 
-.nav-bar.color { position: relative; padding: 1vh 0; background-color: white; box-shadow: 0 1px 1px rgb(209, 209, 209); }
+.nav-bar.color { position: relative; background-color: white; box-shadow: 0 1px 1px rgb(209, 209, 209); }
 
 .nav-bar.scrollable { position: fixed; background: white; }
 .nav-bar.scrollable > a { color: black; }
@@ -28,7 +28,7 @@
     background: rgb(243, 243, 243);
     box-shadow: 0 0 1px;
     border: 3px solid black;
-    border-radius: 2.5rem;
+    border-radius: 2rem;
     z-index: 1;
 }
 
@@ -72,6 +72,13 @@
     z-index: 1;
 }
 
+.nav-bar.clicked { animation: timer 0.3s ease-in; }
+
+@keyframes timer {
+    from { pointer-events: none; }
+    to { pointer-events: unset; }
+}
+
 .grocery-list-link:hover .expand-links { height: fit-content; border: 1px solid rgb(190, 190, 190); }
 
 .expand-icon { transition: all 0.3s ease-in; }
@@ -93,8 +100,8 @@
 .cart-num { margin-left: 0.25rem; }
 
 @media (max-width: 50rem) {
-    .nav-bar { justify-content: space-evenly; padding: 1vh 0; }
-    .nav-bar > a { width: 15%; margin: 0; padding: 0.5rem 0; }
+    .nav-bar { justify-content: space-evenly; }
+    .nav-bar > a { width: 15%; margin: 0; }
     .nav-bar > .logo { position: absolute; transform: translateY(125%); }
     .nav-bar.scrollable > .logo { position: relative; transform: translateY(0); }
     .nav-bar.color > .logo { position: relative;  transform: translateY(0); }
@@ -105,7 +112,7 @@
 @media (max-width: 35rem) {
     .nav-bar { flex-wrap: wrap; }
     .logo { inset: auto auto auto auto; }
-    .linebreak { width: 100%; padding: 0.5vh 0; } 
+    .linebreak { width: 100%; } 
 }
 
 @media (max-width: 25rem) { 
