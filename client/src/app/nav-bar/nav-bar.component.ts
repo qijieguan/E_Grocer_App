@@ -37,6 +37,8 @@ export class NavBarComponent implements OnInit {
       
       let path = url.split('/');
       let querySelect = "";
+      
+      this.linkDropdown = false;
 
       let bg_image = document.querySelector(".app-wrapper");
       bg_image?.classList.remove('bg-color');
