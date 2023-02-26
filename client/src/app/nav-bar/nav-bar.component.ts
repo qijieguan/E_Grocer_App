@@ -67,11 +67,14 @@ export class NavBarComponent implements OnInit {
 
   onLinksDropdown = () => {
     document.querySelector('.grocery-list-link')?.addEventListener('click', (event: any) => {
-      this.linkDropdown = false;
+      this.linkDropdown = true;
     });
     document.querySelector('.grocery-list-link')?.addEventListener('mouseenter', (event: any) => {
       this.linkDropdown = true;
     })
+    document.querySelector('.expand-links')?.addEventListener('click', (event: any) => {
+      this.linkDropdown = false;
+    });
   }
 
   activeObserver = () => {
