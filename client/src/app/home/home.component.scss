@@ -246,7 +246,10 @@
 }
 
 @media (max-width: 25rem) {
+    .home-page { height: 105vh; justify-content: space-evenly; }
+    .home-motto { margin-top: 0; }
     .logo { inset: 12.5% 0 0 2%; }
+    .shop-button { margin-top: 5%; } 
     .email:hover { transform: translateX(20%); } 
     .tech:hover { transform: translateX(-20%); } 
     .breakline { display: none; }

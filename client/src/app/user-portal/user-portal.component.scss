@@ -77,6 +77,7 @@ li.active, li:hover {
 }
 
 .user-collection { 
+    min-height: 25vh;
     background: rgb(242, 240, 255);
     border: 1px solid rgb(214, 214, 214);
     border-radius: 0.5rem;
@@ -94,6 +95,14 @@ li.active, li:hover {
     background: darkslateblue;
     border: 0;
     box-shadow: 0 3px 1px rgb(223, 223, 223);
+}
+
+.empty-collection { 
+    margin: 0 auto;
+    text-align: center;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: 500;
+    color: grey;
 }
 
 .user-products { grid-template-columns: 30% 30% 30%; }

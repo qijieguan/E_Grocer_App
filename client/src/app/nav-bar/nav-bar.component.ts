@@ -12,7 +12,8 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class NavBarComponent implements OnInit {
 
-  private cartNum: number = 0;
+  cartNum: number = 0;
+  linkDropdown: boolean = false;
 
   constructor(private location: Location, private item_service: ItemService, private cart_service: CartService) {
     this.item_service.getItemList();
@@ -28,11 +29,7 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.onNavSwitch();
-
-    document.querySelector('.grocery-list-link')?.addEventListener('click', (event: any) => {
-      document.querySelector('.grocery-list-link')?.classList.add('clicked');
-      setTimeout(() => { document.querySelector('.grocery-list-link')?.classList.remove('clicked'); }, 250);
-    });
+    this.onLinksDropdown();
   }
 
   onNavSwitch = () => {
@@ -68,6 +65,15 @@ export class NavBarComponent implements OnInit {
     });
   }
 
+  onLinksDropdown = () => {
+    document.querySelector('.grocery-list-link')?.addEventListener('click', (event: any) => {
+      this.linkDropdown = false;
+    });
+    document.querySelector('.grocery-list-link')?.addEventListener('mouseenter', (event: any) => {
+      this.linkDropdown = true;
+    })
+  }
+
   activeObserver = () => {
     const faders = document.querySelectorAll('.fade-slide');
     const navWrapper = document.querySelectorAll('.nav-bar-wrapper');
@@ -99,6 +105,4 @@ export class NavBarComponent implements OnInit {
     faders.forEach(fader => { appearOnScroll.observe(fader); });
     navWrapper.forEach(wrapper => { wrapperScrollOut.observe(wrapper) });
   }
-
-  getCartNum = () => { return this.cartNum; }
 }

@@ -25,13 +25,13 @@
 
 .interface-label > span {
     padding-left: 2vw;
-    animation: fadeIn 0.5s ease-in forwards;
+    animation: fadeIn 0.75s ease-in forwards;
     opacity: 0;
 }
 
 .interface-label > span > span { color: darkorange; }
 
-.interface-label > span:nth-of-type(2) { animation-delay: 0.5s; }
+.interface-label > span:nth-of-type(2) { animation-delay: 0.75s; }
 
 .interface-links { 
     grid-template-columns: 30% 30% 30%;

@@ -21,7 +21,7 @@
     <h2 *ngIf="!userProducts.length" class="empty-list">Your list is empty. Please fill the submission form to list your products.</h2>
     <div class="user-collection">
         <label class="collection-label">Collection Overview</label>
-        <div class="user-products grid">
+        <div *ngIf="userProducts" class="user-products grid">
             <div *ngFor="let product of userProducts">
                 <div class="product" id="{{product.id}}">
                     <img src="{{product.url}}" alt=""/>
@@ -34,5 +34,6 @@
                 </div>
             </div>
         </div>
+        <div *ngIf="!userProducts.length" class="empty-collection">Your collection is empty</div>
     </div>
 </div>

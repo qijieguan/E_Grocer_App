@@ -34,7 +34,7 @@
 .logo {
     position: absolute; 
     padding: 0.25rem 0.5rem;
-    inset: 20% 0 0 5%; 
+    inset: 25% 0 0 5%; 
     font-size: clamp(1.125rem, 1.5vw, 1.5rem); 
     height: fit-content;
     width: fit-content;
@@ -81,13 +81,6 @@
 .expand-icon { transition: all 0.3s ease-in; }
 .grocery-list-link:hover .expand-icon { transform: rotate(180deg); }
 
-.grocery-list-link.clicked { animation: timer 0.3s ease-in forwards; }
-
-@keyframes timer {
-    from { pointer-events: none; }
-    to { pointer-events: all; }
-}
-
 .cart-num { margin-left: 0.25rem; }
 
 @media (max-width: 50rem) {
@@ -107,12 +100,14 @@
 
 @media (max-width: 25rem) { 
     .nav-bar > .logo { transform: translateY(150%); }
-    .nav-bar > a { flex-direction: column; }
-    .expand-links { left: -200%; width: 90vw; } 
+    .nav-bar > a { flex-direction: column; padding: 3vh 0 1vh 0; }
+    .nav-bar > a > span { margin: 0.25rem 0 0 0; }
+    .expand-links { left: -190%; width: 90vw; } 
     .expand-icon { display: none; } 
 }
 
 @media (max-width: 15rem) {
     .nav-bar > a > span { display: none; }
     .nav-bar > a > mat-icon { margin: 0 auto; }
+    .expand-links { padding: 0 5vw; left: -210%; width: 100vw; border-radius: 0; } 
 }
