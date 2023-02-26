@@ -34,6 +34,8 @@ export class ItemListComponent implements OnInit {
       this.param = "page_" + this.pageNum.toString();
       this.loadPage(); 
     });
+
+    this.router.onSameUrlNavigation = 'reload';
   }
 
   ngOnInit(): void {
@@ -112,7 +114,7 @@ export class ItemListComponent implements OnInit {
     this.checkTag();
 
     this.item_service.setPageSize(this.data_set.length);
-    this.router.navigate(["browse_products/page_1" + "&category_" + this.prev_tag]);
+    this.router.navigate(["/browse_products/page_1" + "&category_" + this.prev_tag]);
   }
 
   resetQTY(id: string) {

@@ -15,13 +15,13 @@
         <a class="grocery-list-link flex">
             <mat-icon>shopping_bag</mat-icon>
             <span>SHOP</span>
-            <mat-icon class="expand-icon">expand_more</mat-icon>
-            <div *ngIf="linkDropdown" class="expand-links flex">
-                <a class="flex" [routerLink]="['/browse_products/page_1']">
+            <mat-icon class="dropdown-icon">expand_more</mat-icon>
+            <div *ngIf="linkDropdown" class="dropdown-links flex">
+                <a class="flex" (click)="handleNavigation('/browse_products/page_1')">
                     <mat-icon>trolley</mat-icon>
                     <span>View Our Products</span>
                 </a>
-                <a class="flex" [routerLink]="['/main-interface']">
+                <a class="flex" (click)="handleNavigation('/main-interface')">
                     <mat-icon>payments</mat-icon>
                     <span>Manage Your Account</span>
                 </a>

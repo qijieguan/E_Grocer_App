@@ -4,16 +4,16 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png" alt=""/>
         <h1 class="profile-name flex">Guest</h1>
         <ul>
-            <a [routerLink]="['/main-interface']">
+            <a (click)="handleNavigation('/main-interface')">
                 <li class="flex"><span>Home Overview</span><mat-icon>auto_awesome_mosaic</mat-icon></li>
             </a>
-            <a [routerLink]="['/main-interface/user_portal']">
+            <a (click)="handleNavigation('/main-interface/user_portal')">
                 <li class="active flex"><span>My Catalog</span><mat-icon>storefront</mat-icon></li>
             </a>
-            <a [routerLink]="['/checkout']">
+            <a  (click)="handleNavigation('/checkout')">
                 <li class="flex"><span>Shopping Cart</span><span *ngIf="cartSize">( {{cartSize}} )</span><mat-icon>shopping_cart</mat-icon></li>
             </a>
-            <a [routerLink]="['/main-interface/product_submission']">
+            <a (click)="handleNavigation('/main-interface/product_submission')">
                 <li class="flex"><span>Product Form</span><mat-icon>edit_note</mat-icon></li>
             </a>
         </ul>

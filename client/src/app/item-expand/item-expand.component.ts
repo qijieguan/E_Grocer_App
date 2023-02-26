@@ -18,6 +18,7 @@ export class ItemExpandComponent implements OnInit {
 
   constructor(private router: Router, private item_service: ItemService, private cart_service: CartService) {
     this.param = this.router.url.split('/')[4];
+    this.router.onSameUrlNavigation = 'reload';
   }
 
   canvas: any;
@@ -119,7 +120,7 @@ export class ItemExpandComponent implements OnInit {
   }
 
   goBack = () => { 
-    this.router.navigate(["browse_products/", this.router.url.split('/')[2]]);
+    this.router.navigate(["/browse_products/", this.router.url.split('/')[2]]);
   }
 
 }

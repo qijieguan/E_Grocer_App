@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { CartService } from '../cart.service';
 import { ItemService } from '../item.service';
+import { Router } from '@angular/router';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -15,7 +16,7 @@ export class NavBarComponent implements OnInit {
   cartNum: number = 0;
   linkDropdown: boolean = false;
 
-  constructor(private location: Location, private item_service: ItemService, private cart_service: CartService) {
+  constructor(private location: Location, private item_service: ItemService, private cart_service: CartService, private router: Router) {
     this.item_service.getItemList();
     if (!sessionStorage.getItem('visited')) {
       sessionStorage.setItem('visited', JSON.stringify('true'));
@@ -25,6 +26,8 @@ export class NavBarComponent implements OnInit {
     }
     
     setTimeout(() => { this.cart_service.getCart().subscribe((cart) => { this.cartNum = cart.length; }); }, 1000);
+
+    this.router.onSameUrlNavigation = 'reload';
   }
 
   ngOnInit(): void {
@@ -32,18 +35,21 @@ export class NavBarComponent implements OnInit {
     this.onLinksDropdown();
   }
 
+  handleNavigation = (param: any) => {
+    this.router.navigate([param]);
+  }
+
   onNavSwitch = () => {
     this.location.onUrlChange(url => {
       
       let path = url.split('/');
       let querySelect = "";
-      
-      this.linkDropdown = false;
 
       let bg_image = document.querySelector(".app-wrapper");
       bg_image?.classList.remove('bg-color');
 
       setTimeout(() => {
+        this.linkDropdown = false;
         window.scrollTo({top: 0, behavior: 'smooth'}); 
       }, 125);
 
@@ -74,7 +80,7 @@ export class NavBarComponent implements OnInit {
     document.querySelector('.grocery-list-link')?.addEventListener('mouseenter', (event: any) => {
       this.linkDropdown = true;
     })
-    document.querySelector('.expand-links')?.addEventListener('click', (event: any) => {
+    document.querySelector('.drop-links')?.addEventListener('click', (event: any) => {
       this.linkDropdown = false;
     });
   }

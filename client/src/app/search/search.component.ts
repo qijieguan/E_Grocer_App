@@ -17,6 +17,8 @@ export class SearchComponent implements OnInit {
 
   constructor(private item_service: ItemService, private search_service: SearchService, private router: Router) { 
     this.default_list = this.item_service.getItemList();
+    
+    this.router.onSameUrlNavigation = 'reload';
   }
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class SearchComponent implements OnInit {
     this.search_service.setSearch(name, this.default_list);
      
     let param = name.replace(" ", '-').toLowerCase();
-    this.router.navigate(["browse_groceries/page_1" + "&search_" + param]);
+    this.router.navigate(["/browse_groceries/page_1" + "&search_" + param]);
 
     this.searchInp = "";
     this.search_list = [];

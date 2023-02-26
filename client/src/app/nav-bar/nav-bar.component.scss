@@ -47,7 +47,7 @@
 .logo-1 { font-weight: bold; color: purple; }
 .logo-2 { font-weight: bold; color: darkgreen; }
 
-.expand-links { 
+.dropdown-links { 
     position: absolute; 
     bottom: 0;
     flex-direction: column;
@@ -63,7 +63,7 @@
     z-index: 1;
 }
 
-.expand-links > a { 
+.dropdown-links > a { 
     position: relative;
     padding: 0.5vh 0.75vw; 
     column-gap: 1vw; 
@@ -74,12 +74,12 @@
     box-shadow: 0 0 2px 1px transparent; 
 }
 
-.expand-links > a:hover { font-weight: 700; background: gold; color: purple; }
+.dropdown-links > a:hover { font-weight: 700; background: gold; color: purple; }
 
-.grocery-list-link:hover .expand-links { height: fit-content; border: 1px solid rgb(190, 190, 190); }
+.grocery-list-link:hover .dropdown-links { height: fit-content; border: 1px solid rgb(190, 190, 190); }
 
-.expand-icon { transition: all 0.3s ease-in; }
-.grocery-list-link:hover .expand-icon { transform: rotate(180deg); }
+.dropdown-icon { transition: all 0.3s ease-in; }
+.grocery-list-link:hover .dropdown-icon { transform: rotate(180deg); }
 
 .cart-num { margin-left: 0.25rem; }
 
@@ -88,8 +88,8 @@
     .nav-bar > a { width: 15%; margin: 0; }
     .nav-bar > .logo { position: absolute; transform: translateY(125%); }
     .nav-bar.scrollable > .logo, .nav-bar.color > .logo { position: relative; transform: translateY(0); }
-    .expand-links { width: 50vw; }  
-    .grocery-list-link:hover .expand-links { border: 1px solid rgb(190, 190, 190); }
+    .dropdown-links { width: 50vw; }  
+    .grocery-list-link:hover .dropdown-links { border: 1px solid rgb(190, 190, 190); }
 }
 
 @media (max-width: 35rem) {
@@ -102,12 +102,12 @@
     .nav-bar > .logo { transform: translateY(150%); }
     .nav-bar > a { flex-direction: column; padding: 3vh 0 1vh 0; }
     .nav-bar > a > span { margin: 0.25rem 0 0 0; }
-    .expand-links { left: -190%; width: 90vw; } 
-    .expand-icon { display: none; } 
+    .dropdown-links { left: -190%; width: 90vw; } 
+    .dropdown-icon { display: none; } 
 }
 
 @media (max-width: 15rem) {
     .nav-bar > a > span { display: none; }
     .nav-bar > a > mat-icon { margin: 0 auto; }
-    .expand-links { padding: 0 5vw; left: -210%; width: 100vw; border-radius: 0; } 
+    .dropdown-links { padding: 0 5vw; left: -210%; width: 100vw; border-radius: 0; } 
 }

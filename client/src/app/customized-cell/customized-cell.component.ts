@@ -14,7 +14,7 @@ export class CustomizedCellComponent implements OnInit, ICellRendererAngularComp
   params: any;
   context: any;
 
-  constructor(private cart_service: CartService, private router: Router) { }
+  constructor(private cart_service: CartService, private router: Router) { this.router.onSameUrlNavigation = 'reload'; }
 
   ngOnInit(): void {
   }
@@ -29,7 +29,7 @@ export class CustomizedCellComponent implements OnInit, ICellRendererAngularComp
   }
 
   handleNav = () => {
-    this.router.navigate(["browse_products/page_1/view/" + this.params.data.id]);
+    this.router.navigate(["/browse_products/page_1/view/" + this.params.data.id]);
   }
 
   setQuantity = (action: String) => {

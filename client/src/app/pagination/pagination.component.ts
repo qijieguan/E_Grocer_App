@@ -17,7 +17,7 @@ export class PaginationComponent implements OnInit {
   constructor(private item_service: ItemService, private search_service: SearchService, private router: Router) { 
     this.item_service.getPageNum().subscribe((num) => { this.pageNum = num; this.loadPage(); });
     this.item_service.getPageSize().subscribe((size) => { this.pageSize = size; this.loadPage(); } );
-    this.search_service.getSearch().subscribe((search_list) => { this.loadPage(); })
+    this.search_service.getSearch().subscribe((search_list) => { this.loadPage(); });
   }
 
   ngOnInit(): void {  
