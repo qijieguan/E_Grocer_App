@@ -76,10 +76,10 @@
 
 .dropdown-links > a:hover { font-weight: 700; background: gold; color: purple; }
 
-.grocery-list-link:hover .dropdown-links { height: fit-content; border: 1px solid rgb(190, 190, 190); }
+.shop-link:hover .dropdown-links { height: fit-content; border: 1px solid rgb(190, 190, 190); }
 
 .dropdown-icon { transition: all 0.3s ease-in; }
-.grocery-list-link:hover .dropdown-icon { transform: rotate(180deg); }
+.shop-link:hover .dropdown-icon { transform: rotate(180deg); }
 
 .cart-num { margin-left: 0.25rem; }
 
@@ -89,7 +89,7 @@
     .nav-bar > .logo { position: absolute; transform: translateY(125%); }
     .nav-bar.scrollable > .logo, .nav-bar.color > .logo { position: relative; transform: translateY(0); }
     .dropdown-links { width: 50vw; }  
-    .grocery-list-link:hover .dropdown-links { border: 1px solid rgb(190, 190, 190); }
+    .shop-link:hover .dropdown-links { border: 1px solid rgb(190, 190, 190); }
 }
 
 @media (max-width: 35rem) {

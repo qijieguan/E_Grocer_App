@@ -15,9 +15,10 @@
 .feedback-section { grid-template-columns: 80% 20%; row-gap: 2.5vh; }
 
 .clickable {
-    padding: 1rem 2rem 1.5rem 2rem; 
+    padding: 0.75rem 2rem 1.5rem 2rem; 
     font-size: clamp(1.25rem, 1.5vw, 1.5rem);
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
     width: 100%;
     box-shadow: 0 1px 2px gray;
     background: rgb(255, 185, 255);
@@ -27,34 +28,60 @@
 .clickable:hover { color: darkmagenta; }
 
 .complete-list { margin: 0; height: 0; transition: height 0.5s ease-in; }
-.complete-list.active { height: 50vh; } 
-.complete-list > li { padding: 0 3rem 0 2rem; column-gap: 0.5rem; min-height: 10vh; font-size: clamp(1rem, 1.5vw, 1.5rem); }
+.complete-list.active { height: fit-content; padding: 5vh 5vw; } 
+.complete-list > li { 
+    margin-bottom: 2.5vh;
+    padding: 1rem 3rem 1rem 2rem; 
+    column-gap: 0.5rem; 
+    min-height: 10vh; 
+    width: fit-content;
+    font-size: clamp(1rem, 1.5vw, 1.5rem); 
+    color: rgb(58, 0, 58);
+    background: plum;
+    border: 3px dashed purple;
+    border-radius: 1rem;
+}
 .complete-list > li > mat-icon { margin-bottom: clamp(1vh, 2%, 10%); color: purple; font-size: clamp(2rem, 3vw, 3rem); }
 
 .feedback-section > div, .feedback-list { grid-column: 1 / 3; }
 .feedback-list { grid-template-columns: 45% 45%; padding: 0 1.5vw; margin-top: 5vh; }
 .feedback-list > ul { padding-left: 0; }
-.feedback-empty { grid-column: 1 / 3; margin: 5vh auto; padding: 0 5vw; color: gray; font-style: italic; }
+.feedback-empty { grid-column: 1 / 3; margin: 5vh auto; padding: 0 5vw; color: purple; font-style: italic; }
 .feedback { 
     grid-template-columns: 75% 25%;
-    padding: 1rem 3rem 1rem 2rem; 
+    padding: 1rem 3rem 0.5rem 2rem; 
     column-gap: 0.5rem;
     row-gap: 1vh;
     font-size: clamp(1rem, 1.5vw, 1.5rem); 
     word-break: break-all;
-    min-height: 25vh;
-    border: 2px solid grey;
+    min-height: 20vh;
+    color: purple;
+    border: 2px solid purple;
+    border-radius: 1rem;
 }
 .feedback:hover { background: rgb(235, 235, 235); }
 
 .feedback-content { grid-column: 1 / 3; }
-.feedback-id { color: gray; }
-.clear-feedback { margin-left: auto; color: blue; text-decoration: underline; cursor: pointer; }
+.feedback-id { color: gray; font-size: clamp(0.75rem, 1vw, 1rem); }
+.clear-feedback { margin-left: auto; color: purple; text-decoration: underline; cursor: pointer; }
 
 
 .feedback-section > textarea { text-indent: 0.5rem; margin: 1rem 0 1rem 1rem; height: 50vh; font-size: clamp(1rem, 1.5vw, 1.5rem); }
 .feedback-section > textarea:focus { outline: 0; box-shadow: 0 0 5px 1px gray; }
-.feedback-section > button { margin: 1rem; font-size: clamp(1rem, 1.5vw, 1.5rem); font-weight: 500; height: 50vh; background: purple; color: white;}
+.feedback-section > button { 
+    margin: auto auto 1rem auto;
+    padding: 6vh 4vw; 
+    font-size: clamp(1rem, 1.5vw, 1.5rem); 
+    font-weight: 700;  
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 0.5px;
+    height: fit-content;
+    width: fit-content;
+    background: purple; 
+    color: white;
+    border-radius: 10rem;
+    box-shadow: 0 0 3px black;
+}
 
 @media (max-width: 50rem) {
     .complete, .feedback-section { width: 100vw; }

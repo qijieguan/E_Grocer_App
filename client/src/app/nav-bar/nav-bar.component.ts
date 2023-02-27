@@ -53,7 +53,7 @@ export class NavBarComponent implements OnInit {
         window.scrollTo({top: 0, behavior: 'smooth'}); 
       }, 125);
 
-      if (path[1] === 'browse_products' || path[1] === 'main-interface') { querySelect = 'grocery-list-link'; }
+      if (path[1] === 'browse_products' || path[1] === 'main-interface') { querySelect = 'shop-link'; }
       else if (path[1] === 'checkout') { querySelect = 'checkout-link'; }
       else if (path[1] === 'feedback') { querySelect = 'feedback-link'; }
       else { querySelect = 'home-link'; }
@@ -74,10 +74,10 @@ export class NavBarComponent implements OnInit {
   }
 
   onLinksDropdown = () => {
-    document.querySelector('.grocery-list-link')?.addEventListener('click', (event: any) => {
+    document.querySelector('.shop-link')?.addEventListener('click', (event: any) => {
       this.linkDropdown = true;
     });
-    document.querySelector('.grocery-list-link')?.addEventListener('mouseenter', (event: any) => {
+    document.querySelector('.shop-link')?.addEventListener('mouseenter', (event: any) => {
       this.linkDropdown = true;
     })
     document.querySelector('.drop-links')?.addEventListener('click', (event: any) => {

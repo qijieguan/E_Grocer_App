@@ -85,7 +85,7 @@
 .home-body-1 > div {
     margin: 0 auto;
     padding: 0 0 7vh 0;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 60% 35%;
     row-gap: 0;
     height: 100%;
     width: 80%;
@@ -96,7 +96,7 @@
     margin-left: auto;
     object-fit: cover;
     height: 60vh;
-    width: 125%; 
+    width: 100%; 
     border-radius: 0.125rem;
     box-shadow: 1px 1px 5px black;
     transition: all 1s ease-in; 
@@ -104,7 +104,7 @@
 
 .home-body-1 > div > img.active { transform: translateY(-10%); }
 
-.body-1-text { margin-left: auto; padding: 3vh 0 3vh 5vw; width: 85%; }
+.body-1-text { margin-left: auto; padding: 3vh 0 3vh 5vw; width: 100%; }
 .body-1-text > span { 
     font-size: clamp(1.125rem, 1.75vw, 2rem);
     font-style: oblique;
@@ -137,7 +137,7 @@
     font-size: clamp(1rem, 1.25vw, 1.25rem);
     font-weight: 400;
     letter-spacing: 0.5px;
-    word-wrap: break-word;
+    word-wrap: new-word;
     width: 75%;
 }
 
@@ -161,7 +161,7 @@
     font-size: clamp(1rem, 1.25vw, 1.25rem);
     font-weight: 400;
     letter-spacing: 0.5px;
-    word-wrap: break-word;
+    word-wrap: new-word;
     width: 75%;
 }
 
@@ -252,7 +252,7 @@
     .shop-button { margin-top: 5%; } 
     .email:hover { transform: translateX(20%); } 
     .tech:hover { transform: translateX(-20%); } 
-    .breakline { display: none; }
+    .newline { display: none; }
     .body-1-text { padding: 1.5vh 15% 1.5vh 20%; }
     .body-3-text { height: 50vh; }
     .home-services { grid-template-columns: 90%; row-gap: 2vh; }

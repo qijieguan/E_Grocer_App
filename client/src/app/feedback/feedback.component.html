@@ -7,11 +7,11 @@
             <mat-icon *ngIf="unfoldComplete">unfold_less</mat-icon>
         </div>
         <ul class="complete-list">
-            <li class="flex">- Set up routing navigation and services <mat-icon>check_circle</mat-icon></li>
-            <li class="flex">- Connected Angular app with MongoDB database <mat-icon>check_circle</mat-icon></li>
-            <li class="flex">- Defined item/cart model and routing queries to database <mat-icon>check_circle</mat-icon></li>
-            <li class="flex">- Store user uniquely to cart data in database <mat-icon>check_circle</mat-icon></li>
-            <li class="flex">- Post user item to store list <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">> Set up routing navigation and services <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">> Connected Angular app with MongoDB <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">> Defined item/cart model and query logic to database <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">> Organize userbase with their cart data in database <mat-icon>check_circle</mat-icon></li>
+            <li class="flex">> Add user products to store list <mat-icon>check_circle</mat-icon></li>
         </ul>
     </div>
     <div class="feedback-section grid">
@@ -37,6 +37,6 @@
             (keyup)="handleChange($event)"
             value="feedbackInp"
         ></textarea>
-        <button *ngIf="unfoldFeedback" (click)="handleSubmit()">Submit</button>
+        <button class="flex" *ngIf="unfoldFeedback" (click)="handleSubmit()">Submit</button>
     </div>
 </div>

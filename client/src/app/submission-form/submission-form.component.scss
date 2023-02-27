@@ -27,7 +27,7 @@
     inset: 0 auto auto 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(to top, rgba(goldenrod, 0.9), rgb(goldenrod, 0.9) 20%, rgb(255, 255, 255, 0.3) 100%);
+    background: linear-gradient(to top, rgba(black, 0.9), rgb(black, 0.9) 20%, rgb(255, 255, 255, 0.3) 100%);
 }
 
 .post-title {
@@ -35,13 +35,13 @@
     inset: auto auto 5% 5%;
     padding: 2vh 1.5vw;
     letter-spacing: 3px;
-    color: white;
+    color: orange;
     text-align: center;
     z-index: 1;
 }
 
 .post-title > h1 { font-size: clamp(1.5rem, 2.5vw, 2.5rem); font-weight: 500;  }
-.post-title > h2 { font-size: clamp(1rem, 1.5vw, 2rem); }
+.post-title > h2 { font-size: clamp(1rem, 1.5vw, 2rem); color: white; }
 
 .post-message { 
     margin: 0 auto 1vh auto;
@@ -54,7 +54,7 @@
     border-radius: 0.5rem;
 }
 
-.product-image { width: 100%; color: goldenrod; }
+.product-image { width: 100%; color: darkorange; }
 .product-upload { flex-direction: column; width: 90%; }
 
 .preview-image {
@@ -66,7 +66,7 @@
     width: 100%;
     background: white;
     object-fit: cover;
-    border: 2px solid goldenrod;
+    border: 2px solid darkorange;
     border-radius: 0.125rem;
 }
 
@@ -75,14 +75,14 @@
     height: fit-content; 
     width: 90%; 
     background: rgb(226, 226, 226); 
-    border: 1px solid goldenrod;
+    border: 1px solid darkorange;
 }
 
 hr { margin: 5vh 0 0 0; padding: 0; color: black; }
 .product-title > input { font-size: clamp(0.875rem, 1vw, 1rem); width: 90%; height: 5vh; }
 .product-quantity, .product-price, .product-tag { margin: 0 auto; }
 
-label { margin-bottom: 0.5vh; font-size: clamp(0.875rem, 1.5vw, 1.5rem); color: goldenrod; }
+label { margin-bottom: 0.5vh; font-size: clamp(0.875rem, 1.5vw, 1.5rem); color: darkorange; }
 label::after { content: " *"; color: red; }
 
 .product-description > label::after {
@@ -120,14 +120,15 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
     letter-spacing: 1px;
     width: 95%;
     border: 1px solid; 
-    box-shadow: 0 0 3px black;
+    color: darkorange;
+    box-shadow: 0 0 3px darkorange;
     z-index: 1;
 }
 
 .btn-overlay { 
     position: absolute;
     inset: 0 auto auto 0;
-    background: black;
+    background: darkorange;
     height: 100%;
     width: 25%;
     transition: all 0.3s ease-in;
@@ -135,7 +136,7 @@ select { margin-left: 0.75vw; border-radius: 0.25rem; }
     opacity: 0;
 }
 
-.submit-btn:hover { color: goldenrod; border-color: black; } 
+.submit-btn:hover { color: white; border-color: darkorange; } 
 .submit-btn:hover .btn-overlay { width: 100%; opacity: 1; }
 
 @media (max-width: 50rem) {
